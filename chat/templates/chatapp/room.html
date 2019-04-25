@@ -1,47 +1,144 @@
-<!-- chat/templates/chat/room.html -->
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="utf-8"/>
-    <title>Chat Room</title>
-</head>
-<body>
-    <textarea id="chat-log" cols="100" rows="20"></textarea><br/>
+{% extends "chatapp/base.html" %}
+{% block content %}
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/top.css' %}">
+    <div class="mesgs">     
+        <div class="msg_history">
+        {% for message in messages %}
+        {% if message.speaker == user %}
+        <div class="outgoing_msg">
+            <div class="sent_msg">
+                <p>{{ message.message }}</p>
+                <span class="time_date">{{ message.sent_at }}</span>
+            </div>
+        </div>
+        {% else %}
+        <div class="incoming_msg">
+            <div class="incoming_msg_img">
+                <img src="https://ptetutorials.com/images/user-profile.png" alt="sunil">
+            </div>
+            <div class="received_msg">
+                <div class="received_withd_msg">
+                    <p>{{ message.message }}</p>
+                    <span class="time_date">{{ message.sent_at }}</span>
+                </div>
+            </div>
+        </div>
+        {% endif %}
+        {% endfor %}
+        </div>
+    </div>
+
+
+    <!-- <textarea id="chat-log" cols="100" rows="20"></textarea><br/> -->
     <input id="chat-message-input" type="text" size="100"/><br/>
     <input id="chat-message-submit" type="button" value="Send"/>
-</body>
+
+{% endblock %}
+{% block extra_js %}
 <script>
-    var roomName = {{ room_name_json }};
+    var history_url = "{% url 'chatapp:history' room_pk %}";
+    var user_pk = '{{ user.pk }}';
 
-    var chatSocket = new WebSocket(
-        'ws://' + window.location.host +
-        '/ws/chat/' + roomName + '/');
+    function call_history_api(room_pk) {
+        return $.ajax({
+            url: history_url,
+            type: 'GET',
+            dataType: 'json',
+            async: true,
+            data: {
+                room_pk : room_pk
+            }
+        });
+    }
 
-    chatSocket.onmessage = function(e) {
-        var data = JSON.parse(e.data);
-        var message = data['message'];
-        document.querySelector('#chat-log').value += (message + '\n');
-    };
+    function create_outgoing_message_dom(sent_at, message) {
 
-    chatSocket.onclose = function(e) {
-        console.error('Chat socket closed unexpectedly');
-    };
+        var $outer = $('<div>', { class: 'outgoing_msg' });
+        var $inner = $('<div>', { class: 'sent_msg' });
+        var $message = $('<p>', { text: message });
+        var $sent_at = $('<span>', { class : 'time_date', text: sent_at });
+        return $outer.append($inner.append($message).append($sent_at));
+    }
+    
+    function create_incomming_message_dom(speaker_name, thumbnail_url, sent_at, message) {
 
-    document.querySelector('#chat-message-input').focus();
-    document.querySelector('#chat-message-input').onkeyup = function(e) {
-        if (e.keyCode === 13) {  // enter, return
-            document.querySelector('#chat-message-submit').click();
-        }
-    };
+        var $outer = $('<div>', { class: 'incoming_msg' });
+        var $img_wrapper = $('<div>', { class: 'incoming_msg_img' });
+        var $img = $('<img>', { src: thumbnail_url, alt: '' });
+        
+        var $msg_outer = $('<div>', { class: 'received_msg' });
+        var $msg_inner = $('<div>', { class: 'received_withd_msg' });
+        var $message = $('<p>', { text: message });
+        var $sent_at = $('<span>', { class : 'time_date', text: sent_at });
 
-    document.querySelector('#chat-message-submit').onclick = function(e) {
-        var messageInputDom = document.querySelector('#chat-message-input');
-        var message = messageInputDom.value;
-        chatSocket.send(JSON.stringify({
-            'message': message
-        }));
+        return $outer.append($img_wrapper.append($img)).append($msg_outer.append($msg_inner.append($message).append($sent_at)));
+    }
 
-        messageInputDom.value = '';
-    };
+    $(function() {
+        var $messageInputDom = $('#chat-message-input');
+        var $historyDiv = $('.msg_history');
+
+        var $chat_log =  $('#chat-log');
+        var room_pk = {{ room_pk }};
+        var chatSocket = new WebSocket(
+            'ws://' + window.location.host + '/ws/chat/' + room_pk + '/'
+        );
+
+
+        chatSocket.onmessage = function(e) {
+            var data = JSON.parse(e.data);
+            console.log(data)
+            var message = data.message;
+            var speaker_pk = data.speaker.pk;
+            var speaker_name = data.speaker.name;
+            var sent_at = data.sent_at;
+
+            if (user_pk == speaker_pk) {
+                var $msg = create_outgoing_message_dom(sent_at, message);
+            } else {
+                var $msg = create_incomming_message_dom(speaker_name, '', sent_at, message);
+            }
+            
+            $historyDiv.append($msg);
+
+            $chat_log.append(message + '\n');
+        };
+
+        chatSocket.onclose = function(e) {
+            console.error('Chat socket closed unexpectedly');
+        };
+
+        $('#chat-message-input').focus();
+
+        $('#chat-message-input').on('keyup', function(e) {
+            if (e.keyCode === 13) {  // enter, return
+                $('#chat-message-submit').click();
+            }
+        });
+
+        $('#chat-message-submit').on('click', function(e) {
+            
+            var message = $messageInputDom.val();
+            chatSocket.send(JSON.stringify({
+                'message': message
+            }));
+            $messageInputDom.val('');
+        });
+
+
+        call_history_api(room_pk)
+        .done(function(data) {
+            console.log(data);
+            data.forEach(obj => {
+                $chat_log.append(obj.message + '\n');
+            });
+            alert('success');
+        })
+        .fail(function() {
+            alert('hello');
+        });
+    });
+  
 </script>
-</html>
+{% endblock %}

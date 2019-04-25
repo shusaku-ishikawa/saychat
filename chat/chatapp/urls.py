@@ -1,9 +1,15 @@
 # chat/urls.py
 from django.conf.urls import url
-
+from django.urls import path
 from . import views
+from django.contrib.auth.views import LogoutView
+
+app_name = 'chatapp'
 
 urlpatterns = [
-    url(r'^$', views.index, name='index'),
-    url(r'^(?P<room_name>[^/]+)/$', views.room, name='room'),
+    path('', views.Login.as_view(), name = "login"),
+    path('logout', views.LogoutView.as_view(), name = "logout"),
+    path('history/<int:room_pk>', views.history, name = "history"),
+    url(r'^top$', views.Top.as_view(), name='top'),
+    url(r'^(?P<room_pk>[^/]+)/$', views.Room.as_view(), name='room'),
 ]
