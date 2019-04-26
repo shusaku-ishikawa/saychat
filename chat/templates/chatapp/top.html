@@ -37,23 +37,29 @@
           </div>
           <div class="mesgs">
             <div class="msg_history">
-         
+              
             </div>
-            <div class="type_msg">
-              <!-- <div class="input_msg_write">
-                <input type="text" class="write_msg" placeholder="Type a message" />
-                <button class="msg_send_btn" type="button"><i class="fa fa-paper-plane-o" aria-hidden="true"></i></button>
-              </div> -->
-
-                  <div class="input-group">
-                    <input id="chat-message-input" type="text" class="form-control" placeholder="message here..">
+            <div id="message_form" class="type_msg" style="display:none">
+                <div  class="input-group">
+                  <input id="chat-message-input" type="text" class="form-control" placeholder="message here..">
+                  <div class="input-group-btn">
+                    <button id="send_msg_button" class="btn btn-default" type="submit">
+                      <i class="far fa-comment-alt"></i>
+                    </button>
+                  </div>
+                  <form name="file_upload">
                     <div class="input-group-btn">
-                      <button id="send_msg_button" class="btn btn-default" type="submit">
-                          <i class="fa fa-paper-plane-o" aria-hidden="true"></i>
+                      <button name="fileupload" class="btn btn-default" type="button">
+                        <i class="fas fa-paperclip"></i>
                       </button>
                     </div>
-                  </div>
-      
+                    
+                    <input id="fileupload" type="file" name="attachment" multiple style="display:none"
+                                data-url="{% url 'chatapp:upload' %}"
+                                data-form-data='{"csrfmiddlewaretoken": "{{ csrf_token }}"}'>
+                    <div id="preview_zone"></div>
+                  </form>    
+                </div>
             </div>
           </div>
         </div>
@@ -70,19 +76,43 @@
     var active_room_id;
 
     var history_url = "{% url 'chatapp:history' %}";
+    var login_url = "{% url 'chatapp:login' %}"
+    var attachment_url = "{% url 'chatapp:upload' %}";
+
     var user_pk = '{{ user.pk }}';
     var $input_message = $('#chat-message-input');
     var $btn_message_send = $('#send_msg_button');
     var $div_history = $('.msg_history');
     var $room_buttons = $('#room_btn');
+    var $message_form = $('#message_form');
 
-    function call_history_api(room_pk) {
+    var $file_uploader = $('#fileupload');
+    var $preview_zone = $('#preview_zone');
+    var attachment_pk_list = [];
+    var $file_select_btn = $('button[name="fileupload"]');
+
+
+    function call_attachment(method, pk) {
+        return $.ajax({
+            url: attachment_url,
+            type: 'POST',
+            dataType: 'json',
+            data : {
+                method: method,
+                pk: pk
+            },
+        });
+    }
+
+    function call_history_api(room_pk, offset, limit) {
         return $.ajax({
             url: history_url,
             type: 'GET',
             dataType: 'json',
             data : {
-              'room_pk': room_pk
+              'room_pk': room_pk,
+              'offset': offset,
+              'limit': limit
             }
         });
     }
@@ -109,6 +139,17 @@
 
         return $outer.append($img_wrapper.append($img)).append($msg_outer.append($msg_inner.append($message).append($sent_at)));
     }
+    function readURL(file, target_img) {
+    if (file) {
+        var reader = new FileReader();
+
+        reader.onload = function (e) {
+            $(target_img).attr('src', e.target.result);
+        };
+
+        reader.readAsDataURL(file);
+    }
+}
 
     $(function() {
 
@@ -118,7 +159,7 @@
         console.log("Connecting to " + ws_path);
         //var chatSocket = new WebSocket(ws_path);
         var chatSocket = new ReconnectingWebSocket(ws_path);
-
+        
         chatSocket.onopen = function(e) {
           $room_buttons.each(function(index, btn) {
             chatSocket.send(JSON.stringify({
@@ -129,6 +170,8 @@
         }
 
         chatSocket.onmessage = function(e) {
+            $div_history.animate({ scrollTop: $div_history.prop("scrollHeight")}, 1000);
+
             var data = JSON.parse(e.data);
           
             
@@ -171,7 +214,7 @@
         $btn_message_send.on('click', function(e) {
             
             var message = $input_message.val();
-            alert(active_room_id);
+            
             chatSocket.send(JSON.stringify({
                 'command': 'send',
                 'room': active_room_id,
@@ -182,12 +225,13 @@
         
         $room_buttons.on('click' , function() {
           var room_id = $(this).attr('room_id');
-          alert(room_id);
+          $message_form.show();
+
           if ($(this).attr('room_id') != active_room_id) {
             active_room_id = $(this).attr('room_id');
 
             $div_history.html('');
-            call_history_api(active_room_id)
+            call_history_api(active_room_id, 0, 10)
             .done(function(data) {
                 console.log(data);
                 data.forEach(obj => {
@@ -201,14 +245,87 @@
                   
                   $div_history.append($msg);
                 });
-             
+                $div_history.animate({ scrollTop: $div_history.prop("scrollHeight")}, 1000);
             })
             .fail(function() {
                 alert('hello');
             });
           }
         })
-        
+    
+         /* 2. INITIALIZE THE FILE UPLOAD COMPONENT */
+         $file_select_btn.on('click', function() {
+           $file_uploader.click();
+         });
+
+         $file_uploader.fileupload({
+            dataType: 'json',
+            singleFileUploads: true,
+            autoUpload: true,
+            replaceFileInput: false,
+            done: function (e, data) {  /* 3. PROCESS THE RESPONSE FROM THE SERVER */
+                if (data.result.error) {
+                    alert('error');
+                  
+                    return;
+                }
+                if (attachment_pk_list.length >= 3) {
+                    alert('添付ファイルは3つまでです');
+                    return;
+                }
+                attachment_pk_list.push(data.result.pk + '');
+                
+                $container = $('<div>', {
+                    class: "container attachment_preview",
+                    style: "width:30%;height:auto;float:left;position:relative"
+                }).appendTo(preview_zone);
+
+                $img_wrapper = $('<div>', {
+                    style: "position:relative"
+                })
+                .appendTo($container)
+                .on('click', function() {
+                    var i = attachment_pk_list.indexOf($(this).attr('pk'));
+                    attachment_pk_list.splice(i, 1);
+                    call_attachment('DELETE', $(this).attr('pk'))
+                    .done((data) => {
+                        if (data.error) {
+                            alert(data.error);
+                            return;
+                        }
+                        $(this).parent().remove();
+                    })
+                    .fail(function(data, textStatus, xhr) {
+                        if (data.status == 401) {
+                            window.location.href = login_url;
+                        }
+                        alert(xhr);
+                    });
+                });
+
+                $img = $('<img>', {
+                    class: 'img-thumbnail',
+                    id: 'file_' + data.result.pk,
+                }).appendTo($img_wrapper);
+                
+                $('<div>', {
+                    class: 'text',
+                    text: '×'
+                }).appendTo($img_wrapper);
+                
+                $('<p>', {
+                    text: data.files[0].name,
+                    style:"word-break : break-all;"
+                }).appendTo($container);
+
+                readURL(data.files[0], $img);
+                
+            },
+            fail: function (e, data) {
+                alert('失敗しました');
+                return;
+            }
+        });
     });
   
 </script>

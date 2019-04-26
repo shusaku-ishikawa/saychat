@@ -52,12 +52,24 @@ def room(request, room_pk):
 
 def history(request):
     room_pk = request.GET.get('room_pk')
+    offset = int(request.GET.get('offset'))
+    limit = int(request.GET.get('limit'))
+
     room = ChatRoom.objects.get(pk = room_pk)
 
-    all_messages = ChatMessage.objects.filter(room = room)
+    all_messages = ChatMessage.objects.filter(room = room).order_by('-sent_at')[offset:offset + limit]
 
     serializer = ChatMessageSerializer(all_messages, many = True)
     return JsonResponse(serializer.data, status = 200, safe = False)
+
+def upload_file(request):
+    method = request.method
+
+    if method == 'POST':
+        a = Attachment()
+        a.file = request.FILES['attachment']
+        a.save()
+        return JsonResponse({'success': True, 'pk': a.pk, 'url': a.file.url})
 
 class Login(LoginView): # 追加
     """ログインページ"""

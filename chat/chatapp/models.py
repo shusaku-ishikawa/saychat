@@ -146,3 +146,28 @@ class ChatMessage(models.Model):
         auto_now_add = True
     )
 
+class Attachment(models.Model):
+    def __str__(self):
+        return self.file.name
+    class Meta:
+        verbose_name = "添付ファイル"
+        verbose_name_plural = "添付ファイル"
+    
+    parent_message = models.ForeignKey(
+        to = ChatMessage,
+        on_delete = models.CASCADE,
+        related_name = 'attachments',
+        null = True,
+        blank = True,
+    )
+    file = models.FileField(
+        verbose_name = 'ファイル',
+        upload_to = 'attachments',
+        null = False,
+        blank = False,
+    )
+    uploaded_at = models.DateTimeField(
+        verbose_name = 'アップロード日時',
+        auto_now_add = True,
+    )
+    
