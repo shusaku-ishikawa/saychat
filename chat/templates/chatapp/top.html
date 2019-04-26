@@ -3,59 +3,213 @@
 {% load static %}
 <link rel="stylesheet" type="text/css" href="{% static 'css/top.css' %}">
 <div class="container">
-    <h3 class=" text-center">Messaging</h3>
-        <div class="messaging">
-            <div class="inbox_msg">
-                <div class="inbox_people">
-                  <div class="headind_srch">
-                    <div class="recent_heading">
-                      <h4>Recent</h4>
-                    </div>
-                    <div class="srch_bar">
-                      <div class="stylish-input-group">
-                        <input type="text" class="search-bar"  placeholder="Search" >
-                        <span class="input-group-addon">
-                        <button type="button"> <i class="fa fa-search" aria-hidden="true"></i> </button>
-                        </span> </div>
-                    </div>
+  <h3 class=" text-center">Messaging</h3>
+  <div class="messaging">
+        <div class="inbox_msg">
+          <div class="inbox_people">
+            <div class="headind_srch">
+              <div class="recent_heading">
+                <h4>Recent</h4>
+              </div>
+              <div class="srch_bar">
+                <div class="stylish-input-group">
+                  <input type="text" class="search-bar"  placeholder="Search" >
+                  <span class="input-group-addon">
+                  <button type="button"> <i class="fa fa-search" aria-hidden="true"></i> </button>
+                  </span> </div>
+              </div>
+            </div>
+            <div class="inbox_chat">
+              {% for room in my_rooms %}
+              <div class="chat_list active_chat">
+                <div class="chat_people">
+                  <div class="chat_img">
+                    <img src="https://ptetutorials.com/images/user-profile.png" alt="sunil">
                   </div>
-                  
-                  <div class="inbox_chat">
-                    {% for room in my_rooms %}
-                    <div class="chat_list active_chat">
-                      <div class="chat_people">
-                        <div class="chat_img"> <img src="https://ptetutorials.com/images/user-profile.png" alt="sunil"> </div>
-                        <div class="chat_ib">
-                          <h5><a href="{% url 'chatapp:room' room.room.pk %}">{{ room.room.title }}</a><span class="chat_date">{{ room.get_latest_message.sent_at }}</span></h5>
-                          <p>{{ room.room.get_latest_message }}</p>
-                        </div>
-                      </div>
-                    </div>
-                    {% endfor %}
+                  <div class="chat_ib">
+                    <h5><button room_id="{{ room.room.pk }}" type="button" class="btn btn-primary" id="room_btn">{{ room.room.title }}</button><span class="chat_date">{{ room.room.get_latest_message.sent_at }}</span></h5>
+                    <p>{{ room.room.get_latest_message.message }}</p>
                   </div>
                 </div>
-       
               </div>
-              
-              
-              <p class="text-center top_spac"> Design by <a target="_blank" href="#">Sunil Rajput</a></p>
-              
+              {% endfor %}
+            </div>
+          </div>
+          <div class="mesgs">
+            <div class="msg_history">
+         
+            </div>
+            <div class="type_msg">
+              <!-- <div class="input_msg_write">
+                <input type="text" class="write_msg" placeholder="Type a message" />
+                <button class="msg_send_btn" type="button"><i class="fa fa-paper-plane-o" aria-hidden="true"></i></button>
+              </div> -->
+
+                  <div class="input-group">
+                    <input id="chat-message-input" type="text" class="form-control" placeholder="message here..">
+                    <div class="input-group-btn">
+                      <button id="send_msg_button" class="btn btn-default" type="submit">
+                          <i class="fa fa-paper-plane-o" aria-hidden="true"></i>
+                      </button>
+                    </div>
+                  </div>
+      
+            </div>
+          </div>
         </div>
-</div>
+        
+        
+        <p class="text-center top_spac"> Design by <a target="_blank" href="#">Sunil Rajput</a></p>
+        
+      </div></div>
 {% endblock %}
 {% block extra_js %}
 
 <script>
-    $('#room-name-input').focus();
-    $('#room-name-input').on('keyup', function(e) {
-        if (e.keyCode === 13) {  // enter, return
-            $('#room-name-submit').click();
-        }
-    });
 
-    $('#room-name-submit').on('click', function(e) {
-        var roomName = $('#room-name-input').val();
-        window.location.pathname = '/chat/' + roomName + '/';
+    var active_room_id;
+
+    var history_url = "{% url 'chatapp:history' %}";
+    var user_pk = '{{ user.pk }}';
+    var $input_message = $('#chat-message-input');
+    var $btn_message_send = $('#send_msg_button');
+    var $div_history = $('.msg_history');
+    var $room_buttons = $('#room_btn');
+
+    function call_history_api(room_pk) {
+        return $.ajax({
+            url: history_url,
+            type: 'GET',
+            dataType: 'json',
+            data : {
+              'room_pk': room_pk
+            }
+        });
+    }
+
+    function create_outgoing_message_dom(sent_at, message) {
+
+        var $outer = $('<div>', { class: 'outgoing_msg' });
+        var $inner = $('<div>', { class: 'sent_msg' });
+        var $message = $('<p>', { text: message });
+        var $sent_at = $('<span>', { class : 'time_date', text: sent_at });
+        return $outer.append($inner.append($message).append($sent_at));
+    }
+    
+    function create_incomming_message_dom(speaker_name, thumbnail_url, sent_at, message) {
+
+        var $outer = $('<div>', { class: 'incoming_msg' });
+        var $img_wrapper = $('<div>', { class: 'incoming_msg_img' });
+        var $img = $('<img>', { src: thumbnail_url, alt: '' });
+        
+        var $msg_outer = $('<div>', { class: 'received_msg' });
+        var $msg_inner = $('<div>', { class: 'received_withd_msg' });
+        var $message = $('<p>', { text: message });
+        var $sent_at = $('<span>', { class : 'time_date', text: sent_at });
+
+        return $outer.append($img_wrapper.append($img)).append($msg_outer.append($msg_inner.append($message).append($sent_at)));
+    }
+
+    $(function() {
+
+         // Correctly decide between ws:// and wss://
+        var ws_scheme = window.location.protocol == "https:" ? "wss" : "ws";
+        var ws_path = ws_scheme + '://' + window.location.host + "/chat/";
+        console.log("Connecting to " + ws_path);
+        //var chatSocket = new WebSocket(ws_path);
+        var chatSocket = new ReconnectingWebSocket(ws_path);
+
+        chatSocket.onopen = function(e) {
+          $room_buttons.each(function(index, btn) {
+            chatSocket.send(JSON.stringify({
+                  'command': 'join',
+                  'room': $(btn).attr('room_id'),
+            }));
+          });
+        }
+
+        chatSocket.onmessage = function(e) {
+            var data = JSON.parse(e.data);
+          
+            
+            // me joined chat
+            if ('join' in data) {
+              // do nothing
+            // me leaved chat
+            console.log('join: ' + data);
+            } else if ('leave' in data) {
+              // do nothing
+            } else {
+              console.log(typeof(data.message));
+              messageJson = JSON.parse(data.message);
+
+              if (user_pk == messageJson.speaker.pk) {
+                var $msg = create_outgoing_message_dom(messageJson.sent_at, messageJson.message);
+              } else {
+                  var $msg = create_incomming_message_dom(messageJson.speaker.name, '', messageJson.sent_at, messageJson.message);
+              }
+              
+              $div_history.append($msg);
+            }
+
+            
+
+        };
+
+        chatSocket.onclose = function(e) {
+            console.error('Chat socket closed unexpectedly');
+        };
+
+        $input_message.focus();
+
+        $input_message.on('keyup', function(e) {
+            if (e.keyCode === 13) {  // enter, return
+              $btn_message_send.click();
+            }
+        });
+
+        $btn_message_send.on('click', function(e) {
+            
+            var message = $input_message.val();
+            alert(active_room_id);
+            chatSocket.send(JSON.stringify({
+                'command': 'send',
+                'room': active_room_id,
+                'message': message,
+            }));
+            $input_message.val('');
+        });
+        
+        $room_buttons.on('click' , function() {
+          var room_id = $(this).attr('room_id');
+          alert(room_id);
+          if ($(this).attr('room_id') != active_room_id) {
+            active_room_id = $(this).attr('room_id');
+
+            $div_history.html('');
+            call_history_api(active_room_id)
+            .done(function(data) {
+                console.log(data);
+                data.forEach(obj => {
+                  console.log(obj);
+                 
+                  if (user_pk == obj.speaker.pk) {
+                    var $msg = create_outgoing_message_dom(obj.sent_at, obj.message);
+                  } else {
+                    var $msg = create_incomming_message_dom(obj.speaker.name, '', obj.sent_at, obj.message);
+                  }
+                  
+                  $div_history.append($msg);
+                });
+             
+            })
+            .fail(function() {
+                alert('hello');
+            });
+          }
+        })
+        
     });
+  
 </script>
 {% endblock %}

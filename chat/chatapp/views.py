@@ -27,7 +27,7 @@ class Top(LoginRequiredMixin, generic.TemplateView):
         my_rooms = self.request.user.rooms.all()
         context['users'] = users
         context['my_rooms'] = my_rooms
-        context['all_rooms'] = all_rooms
+       
         return context
 
 
@@ -50,8 +50,12 @@ def room(request, room_pk):
         'room_pk': room_pk
     })
 
-def history(request, room_pk):
-    all_messages = ChatMessage.objects.all()
+def history(request):
+    room_pk = request.GET.get('room_pk')
+    room = ChatRoom.objects.get(pk = room_pk)
+
+    all_messages = ChatMessage.objects.filter(room = room)
+
     serializer = ChatMessageSerializer(all_messages, many = True)
     return JsonResponse(serializer.data, status = 200, safe = False)
 

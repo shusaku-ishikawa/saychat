@@ -85,7 +85,6 @@ class User(AbstractBaseUser, PermissionsMixin):
         メールアドレスを返す
         """
         return self.email
-
 class ChatRoom(models.Model):
     def __str__(self):
         return self.title
@@ -93,12 +92,25 @@ class ChatRoom(models.Model):
     title = models.CharField(
         max_length = 50,
     )
+
+    @property
+    def group_name(self):
+        """
+        Returns the Channels Group name that sockets should subscribe to to get sent
+        messages as they are generated.
+        """
+        return "room-%s" % self.pk
+
     @property
     def get_latest_message(self):
         my_messages = self.messages.all().order_by('-pk')
         if len(my_messages) > 0:
             return my_messages[0]
         return '会話がありません'
+
+    def is_member(self, user_id):
+        user = User.objects.get(pk = user_id)
+        return len(self.members.filter(user = user)) > 0
 
 class ChatRoomMember(models.Model):
     def __str__(self):

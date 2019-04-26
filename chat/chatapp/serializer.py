@@ -24,6 +24,7 @@ class ChatRoomMemberSerializer(serializers.ModelSerializer):
 class ChatMessageSerializer(serializers.ModelSerializer):
     speaker = UserSerializer(many = False, read_only = True)
     room = ChatRoomSerializer(many = False, read_only = True)
+    sent_at = serializers.DateTimeField(format="%m/%d %H:%M")
     class Meta:
         model = ChatMessage
         fields = ('pk', 'speaker', 'room', 'message', 'sent_at')

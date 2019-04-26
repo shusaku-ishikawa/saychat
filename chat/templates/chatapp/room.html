@@ -80,10 +80,12 @@
         var $historyDiv = $('.msg_history');
 
         var $chat_log =  $('#chat-log');
-        var room_pk = {{ room_pk }};
-        var chatSocket = new WebSocket(
-            'ws://' + window.location.host + '/ws/chat/' + room_pk + '/'
-        );
+
+         // Correctly decide between ws:// and wss://
+        var ws_scheme = window.location.protocol == "https:" ? "wss" : "ws";
+        var ws_path = ws_scheme + '://' + window.location.host + "/chat/";
+        console.log("Connecting to " + ws_path);
+        var chatSocket = new WebSocket(ws_path);
 
 
         chatSocket.onmessage = function(e) {
@@ -126,7 +128,7 @@
             $messageInputDom.val('');
         });
 
-
+        var room_pk = 1;
         call_history_api(room_pk)
         .done(function(data) {
             console.log(data);

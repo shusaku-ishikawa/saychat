@@ -9,7 +9,7 @@ app_name = 'chatapp'
 urlpatterns = [
     path('', views.Login.as_view(), name = "login"),
     path('logout', views.LogoutView.as_view(), name = "logout"),
-    path('history/<int:room_pk>', views.history, name = "history"),
+    path('history', views.history, name = "history"),
     url(r'^top$', views.Top.as_view(), name='top'),
     url(r'^(?P<room_pk>[^/]+)/$', views.Room.as_view(), name='room'),
 ]
