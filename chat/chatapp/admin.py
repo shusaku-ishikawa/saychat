@@ -17,7 +17,12 @@ class ChatRoomMemberAdmin(admin.ModelAdmin):
 class ChatMessageAdmin(admin.ModelAdmin):
     list_display = ('room', 'speaker', 'message')
 
+class AttachmentAdmin(admin.ModelAdmin):
+    list_display = ('file', 'parent_message')
+
 admin.site.register(ChatRoom, ChatRoomAdmin)
 admin.site.register(ChatRoomMember, ChatRoomMemberAdmin)
 admin.site.register(ChatMessage, ChatMessageAdmin)
+admin.site.register(Attachment, AttachmentAdmin)
+
 

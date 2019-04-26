@@ -137,6 +137,10 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'chatapp/static'),
 ]
 
+MEDIA_ROOT = os.path.join(BASE_DIR,'media') # 追加
+MEDIA_URL = '/media/' # 追加
+
+
 NOTIFY_USERS_ON_ENTER_OR_LEAVE_ROOMS = True
 
 MSG_TYPE_MESSAGE = 0  # For standard messages

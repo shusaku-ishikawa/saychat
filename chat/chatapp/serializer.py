@@ -19,15 +19,22 @@ class ChatRoomMemberSerializer(serializers.ModelSerializer):
     class Meta:
         model = ChatRoomMember
         fields = ('room', 'user')
+    
+class AttachmentSerializer(serializers.ModelSerializer):
 
+    class Meta:
+        model = Attachment
+        fields = ('file','file_url', 'file_name')
 
+    
 class ChatMessageSerializer(serializers.ModelSerializer):
     speaker = UserSerializer(many = False, read_only = True)
     room = ChatRoomSerializer(many = False, read_only = True)
     sent_at = serializers.DateTimeField(format="%m/%d %H:%M")
+    attachments = AttachmentSerializer(many = True, read_only = True)
     class Meta:
         model = ChatMessage
-        fields = ('pk', 'speaker', 'room', 'message', 'sent_at')
+        fields = ('pk', 'speaker', 'room', 'message', 'attachments', 'sent_at')
   
 
 # class HistorySerializer(serializers.ModelSerializer):

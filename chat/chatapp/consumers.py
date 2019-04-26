@@ -46,7 +46,7 @@ class ChatConsumer(AsyncJsonWebsocketConsumer):
             await self.leave_room(content["room"])
         elif command == "send":
             print('commend send')
-            await self.send_room(content["room"], content["message"])
+            await self.send_room(content["room"], content["message"], content['attachment'])
 
 
     async def join_room(self, room_id):
@@ -122,7 +122,7 @@ class ChatConsumer(AsyncJsonWebsocketConsumer):
             "leave": str(room.id),
         })
 
-    async def send_room(self, room_id, message):
+    async def send_room(self, room_id, message, attachment_list):
         """
         Called by receive_json when someone sends a message to a room.
         """
@@ -134,6 +134,12 @@ class ChatConsumer(AsyncJsonWebsocketConsumer):
         room = ChatRoom.objects.get(pk = room_id)
         m = ChatMessage(speaker = user , room = room, message = message)
         m.save()
+        print('attachment: ' + str(attachment_list))
+        for pk in attachment_list:
+            a = Attachment.objects.get(pk = pk)
+            a.parent_message = m
+            a.save()
+
         print('send group called')
         await self.channel_layer.group_send(
             room.group_name,

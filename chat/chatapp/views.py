@@ -66,10 +66,15 @@ def upload_file(request):
     method = request.method
 
     if method == 'POST':
-        a = Attachment()
-        a.file = request.FILES['attachment']
-        a.save()
-        return JsonResponse({'success': True, 'pk': a.pk, 'url': a.file.url})
+        if request.POST.get('method') == 'DELETE':
+            pk = request.POST.get('pk')
+            Attachment.objects.filter(pk=pk).delete()
+            return JsonResponse({'success': True})
+        else:
+            a = Attachment()
+            a.file = request.FILES['attachment']
+            a.save()
+            return JsonResponse({'success': True, 'pk': a.pk, 'url': a.file.url})
 
 class Login(LoginView): # 追加
     """ログインページ"""

@@ -6,7 +6,7 @@ from django.core.validators import MaxValueValidator, MinValueValidator
 from django.db import models
 from django.utils import timezone
 from django.utils.translation import ugettext_lazy as _
-
+import os
 
 # Create your models here.
 class MyUserManager(BaseUserManager):
@@ -162,7 +162,7 @@ class Attachment(models.Model):
     )
     file = models.FileField(
         verbose_name = 'ファイル',
-        upload_to = 'attachments',
+        upload_to = 'upload',
         null = False,
         blank = False,
     )
@@ -170,4 +170,9 @@ class Attachment(models.Model):
         verbose_name = 'アップロード日時',
         auto_now_add = True,
     )
-    
+    @property
+    def file_name(self):
+        return os.path.basename(self.file.name)
+    @property
+    def file_url(self):
+        return self.file.url
