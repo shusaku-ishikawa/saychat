@@ -2,72 +2,71 @@
 {% block content %}
 {% load static %}
 <link rel="stylesheet" type="text/css" href="{% static 'css/top.css' %}">
-<div class="container">
-  <h3 class=" text-center">Messaging</h3>
-  <div class="messaging">
-        <div class="inbox_msg">
-          <div class="inbox_people">
-            <div class="headind_srch">
-              <div class="recent_heading">
-                <h4>Recent</h4>
-              </div>
-              <div class="srch_bar">
-                <div class="stylish-input-group">
-                  <input type="text" class="search-bar"  placeholder="Search" >
-                  <span class="input-group-addon">
-                  <button type="button"> <i class="fa fa-search" aria-hidden="true"></i> </button>
-                  </span> </div>
-              </div>
-            </div>
-            <div class="inbox_chat">
-              {% for room in my_rooms %}
-              <div class="chat_list active_chat">
-                <div class="chat_people">
-                  <div class="chat_img">
-                    <img src="https://ptetutorials.com/images/user-profile.png" alt="sunil">
-                  </div>
-                  <div class="chat_ib">
-                    <h5><button room_id="{{ room.room.pk }}" type="button" class="btn btn-primary" id="room_btn">{{ room.room.title }}</button><span class="chat_date">{{ room.room.get_latest_message.sent_at }}</span></h5>
-                    <p>{{ room.room.get_latest_message.message }}</p>
-                  </div>
-                </div>
-              </div>
-              {% endfor %}
-            </div>
+<div id="mySidebar" class="sidebar">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+    {% for room in my_rooms %}
+      <div class="chat_list active_chat">
+        <div class="chat_people">
+          <div class="chat_img">
+            <img src="https://ptetutorials.com/images/user-profile.png" alt="sunil">
           </div>
-          <div class="mesgs">
-            <div class="msg_history">
-              
-            </div>
-            <div id="message_form" class="type_msg" style="display:none">
-                <div  class="input-group">
-                  <textarea id="chat-message-input" class="form-control" placeholder="message here.."></textarea>
-                  <div class="input-group-btn">
-                    <button id="send_msg_button" class="btn btn-default" type="submit">
-                      <i class="far fa-comment-alt"></i>
-                    </button>
-                  </div>
-                  <form name="file_upload">
-                    <div class="input-group-btn">
-                      <button name="fileupload" class="btn btn-default" type="button">
-                        <i class="fas fa-paperclip"></i>
-                      </button>
-                    </div>
-                    
-                    <input id="fileupload" type="file" name="attachment" multiple style="display:none"
-                                data-url="{% url 'chatapp:upload' %}"
-                                data-form-data='{"csrfmiddlewaretoken": "{{ csrf_token }}"}'>
-                  </form>    
-                </div>
-                <div id="preview_zone"></div>
-            </div>
+          <div class="chat_ib">
+            <h5>{{ room.room.title }}</h5><span class="chat_date">{{ room.room.get_latest_message.sent_at }}</span><br>
+            <p>{{ room.room.get_latest_message.message }}</p>
+            <button room_id="{{ room.room.pk }}" type="button" class="btn btn-default" id="room_btn">JOIN</button>
           </div>
         </div>
+      </div>
+      {% endfor %}
+    
+  </div>
+<div class="container">
+  <button class="openbtn btn btn-primary" onclick="openNav()">&#9776; Rooms</button> 
         
-        
-        <p class="text-center top_spac"> Design by <a target="_blank" href="#">Sunil Rajput</a></p>
-        
-      </div></div>
+  <div id="main" class="messaging">
+      <div class="inbox_msg">
+        <div class="mesgs">
+          <div class="msg_history">
+              <div class="incoming_msg">
+                  <div class="incoming_msg_img"> <img src="https://ptetutorials.com/images/user-profile.png" alt="sunil"> </div>
+                  <div class="received_msg">
+                    <div class="received_withd_msg">
+                      <p>We work directly with our designers and suppliers,
+                        and sell direct to you, which means quality, exclusive
+                        products, at a price anyone can afford.</p>
+                      <span class="time_date"> 11:01 AM    |    Today</span></div>
+                  </div>
+                </div>
+          </div>
+          <div id="message_form" class="type_msg" style="">
+              <div  class="input-group">
+                <textarea rows="1" id="chat-message-input" class="form-control" placeholder="message here.."></textarea>
+                <div class="input-group-btn">
+                  <button id="send_msg_button" class="btn btn-default" type="submit">
+                    <i class="far fa-comment-alt"></i>
+                  </button>
+                </div>
+                <form name="file_upload">
+                  <div class="input-group-btn">
+                    <button name="fileupload" class="btn btn-default" type="button">
+                      <i class="fas fa-paperclip"></i>
+                    </button>
+                  </div>
+                  
+                  <input id="fileupload" type="file" name="attachment" multiple style="display:none"
+                              data-url="{% url 'chatapp:upload' %}"
+                              data-form-data='{"csrfmiddlewaretoken": "{{ csrf_token }}"}'>
+                </form>    
+              </div>
+              <div id="preview_zone"></div>
+          </div>
+        </div>
+      </div>
+  </div>     
+</div>
+
+      <!-- Dark Overlay element -->
+   
 {% endblock %}
 {% block extra_js %}
 
@@ -76,6 +75,17 @@
     var login_url = "{% url 'chatapp:login' %}"
     var attachment_url = "{% url 'chatapp:upload' %}";
     var user_pk = '{{ user.pk }}';
+
+    function openNav() {
+      document.getElementById("mySidebar").style.width = "250px";
+      document.getElementById("main").style.marginLeft = "250px";
+    }
+
+    /* Set the width of the sidebar to 0 and the left margin of the page content to 0 */
+    function closeNav() {
+      document.getElementById("mySidebar").style.width = "0";
+      document.getElementById("main").style.marginLeft = "0";
+    }
     
 </script>
 <script src="{% static 'js/top.js' %}"></script>

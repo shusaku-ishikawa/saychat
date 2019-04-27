@@ -7,7 +7,7 @@ from django.db import models
 from django.utils import timezone
 from django.utils.translation import ugettext_lazy as _
 import os
-
+from django.db.models import Q
 # Create your models here.
 class MyUserManager(BaseUserManager):
     """ユーザーマネージャー."""
@@ -50,7 +50,16 @@ class User(AbstractBaseUser, PermissionsMixin):
     """カスタムユーザーモデル."""
     email = models.EmailField('メールアドレス', max_length=150, null = False, blank=False, unique = True)
     name = models.CharField('名前', max_length=150, null = False, blank=False)
-    
+    furigana = models.CharField('フリガナ', max_length = 150, null = False, blank = False)
+    birthday = models.DateField(
+        verbose_name = _('生年月日'), 
+        null = True,
+    ) 
+    address = models.CharField('住所', max_length = 150, null = True)
+    phone = models.CharField('連絡先電話番号', max_length = 50, null = True)
+    clinic_name = models.CharField('歯科医院名', max_length = 100, null = True)
+    thumbnail = models.ImageField('サムネイル', upload_to = 'profile_thumbnail', null = True)
+
     is_staff = models.BooleanField(
         '管理者',
         default=False,
@@ -107,7 +116,7 @@ class ChatRoom(models.Model):
         if len(my_messages) > 0:
             return my_messages[0]
         return '会話がありません'
-
+    
     def is_member(self, user_id):
         user = User.objects.get(pk = user_id)
         return len(self.members.filter(user = user)) > 0

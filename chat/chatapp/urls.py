@@ -8,6 +8,8 @@ app_name = 'chatapp'
 
 urlpatterns = [
     path('', views.Login.as_view(), name = "login"),
+    path('sign_up/', views.SignUp.as_view(), name='sign_up'),
+    path('sign_up/done/<token>', views.SignUpDone.as_view(), name='sign_up_done'),
     path('logout', views.LogoutView.as_view(), name = "logout"),
     path('history', views.history, name = "history"),
     path('upload', views.upload_file, name = "upload"),

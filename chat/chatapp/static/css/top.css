@@ -1,49 +1,20 @@
-.container{max-width:1170px; margin:auto;}
+
+
+.container{max-width:1170px; margin:0.1em;}
 img{ max-width:100%;}
-.inbox_people {
-  height: 100%;
-  background: lightseagreen none repeat scroll 0 0;
-  float: left;
-  overflow: hidden;
-  width: 40%; border-right:1px solid #c4c4c4;
-}
+
 .inbox_msg {
   border: 1px solid #c4c4c4;
   clear: both;
   overflow: hidden;
 }
-.top_spac{ margin: 20px 0 0;}
-
-
-.recent_heading {float: left; width:40%;}
-.srch_bar {
-  display: inline-block;
-  text-align: right;
-  width: 60%; padding:
-}
-.headind_srch{ padding:10px 29px 10px 20px; overflow:hidden; border-bottom:1px solid #c4c4c4;}
-
-.recent_heading h4 {
-  color: #05728f;
-  font-size: 21px;
-  margin: auto;
-}
-.srch_bar input{ border:1px solid #cdcdcd; border-width:0 0 1px 0; width:80%; padding:2px 0 4px 6px; background:none;}
-.srch_bar .input-group-addon button {
-  background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
-  border: medium none;
-  padding: 0;
-  color: #707070;
-  font-size: 18px;
-}
-.srch_bar .input-group-addon { margin: 0 0 0 -27px;}
 
 .chat_ib h5{ font-size:15px; color:#464646; margin:0 0 8px 0;}
-.chat_ib h5 span{ font-size:13px; float:right;}
-.chat_ib p{ font-size:14px; color:#989898; margin:auto}
+.chat_ib span{ font-size:13px; float:right;}
+.chat_ib p{ font-size:12px; color:#989898; margin:none}
 .chat_img {
   float: left;
-  width: 11%;
+  width: 12%;
 }
 .chat_ib {
   float: left;
@@ -87,10 +58,16 @@ img{ max-width:100%;}
   margin: 8px 0 0;
 }
 .received_withd_msg { width: 57%;}
-.mesgs {
+
+@media screen and (max-height: 450px) {
   float: left;
   padding: 10px 15px 0 25px;
-  width: 60%;
+  width: 100%;
+}
+
+.mesgs {
+  padding: 10px;
+  width: 100%;
 }
 
  .sent_msg p {
@@ -129,7 +106,7 @@ img{ max-width:100%;}
   top: 11px;
   width: 33px;
 }
-.messaging { padding: 0 0 50px 0;}
+.messaging { padding: 0 0 10px 0;}
 .msg_history {
   max-height: 516px;
   overflow-y: scroll;
@@ -137,7 +114,7 @@ img{ max-width:100%;}
 
 #preview_zone {
   height: 50px;
-  background: lightgray;
+  background: white;
   padding: 10px;
   overflow: scroll; 
 }
@@ -148,6 +125,68 @@ img{ max-width:100%;}
   padding-right: 5px;
   padding-left:5px;
 }
-#preview_zone div.row.prev_row p {
 
+
+
+.sidebar {
+  height: 100%; /* 100% Full-height */
+  width: 0; /* 0 width - change this with JavaScript */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Stay on top */
+  top: 0;
+  left: 0;
+  background-color:teal; /* Black*/
+  overflow-x: hidden; /* Disable horizontal scroll */
+  padding-top: 60px; /* Place content 60px from the top */
+  transition: 0.5s; /* 0.5 second transition effect to slide in the sidebar */
+}
+
+/* The sidebar links */
+.sidebar a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+/* When you mouse over the navigation links, change their color */
+.sidebar a:hover {
+  color: #f1f1f1;
+}
+
+/* Position and style the close button (top right corner) */
+.sidebar .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+/* The button used to open the sidebar */
+.openbtn {
+  font-size: 16px;
+  cursor: pointer;
+  background-color:teal;
+  color: white;
+  padding: 0.5rem;
+  border: none;
+}
+
+.openbtn:hover {
+  background-color: #444;
+}
+
+/* Style page content - use this if you want to push the page content to the right when you open the side navigation */
+#main {
+  transition: margin-left .5s; /* If you want a transition effect */
+  padding-top: 20px;
+}
+
+/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+@media screen and (max-height: 450px) {
+  .sidebar {padding-top: 15px;}
+  .sidebar a {font-size: 18px;}
 }

@@ -75,7 +75,16 @@
 
         return $outer;
     }
-
+    // function openNav() {
+    //     document.getElementById("mySidebar").style.width = "60%";
+    //     document.getElementById("main").style.marginLeft = "60%";
+    //   }
+      
+    //   /* Set the width of the sidebar to 0 and the left margin of the page content to 0 */
+    //   function closeNav() {
+    //     document.getElementById("mySidebar").style.width = "0";
+    //     document.getElementById("main").style.marginLeft = "0";
+    //   }
     $(function() {
 
          // Correctly decide between ws:// and wss://
