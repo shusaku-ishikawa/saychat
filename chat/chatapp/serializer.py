@@ -6,7 +6,7 @@ from django.core.exceptions import ObjectDoesNotExist
 class UserSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
-        fields = ('pk', 'name', 'email')
+        fields = ('pk', 'name', 'email', 'thumbnail_url')
 
 class ChatRoomSerializer(serializers.ModelSerializer):
     class Meta:

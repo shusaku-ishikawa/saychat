@@ -27,7 +27,7 @@ class SignUpForm(UserCreationForm):
         widgets = {
             'birthday': forms.SelectDateWidget(years = range(2022, 1930, -1), months=MONTHS)
         }
-        fields = ('email', 'name', 'furigana', 'birthday')
+        fields = ('email', 'name', 'furigana', 'birthday', 'address', 'phone', 'clinic_name', 'thumbnail')
         
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)

@@ -1,0 +1,156 @@
+[
+  {
+    "model": "chatapp.user", 
+    "pk": 1, 
+    "fields": {
+      "password": "pbkdf2_sha256$120000$0eKXJVI8wLJ1$+qTm6GW88vGB4IsosdC3kIXPiT4OXhBiam6VQFKhYQM=",
+      "last_login": "2019-04-27T10:37:25.327Z", 
+      "is_superuser": true, 
+      "email": "hoge@hoge.com",
+      "name": "非管理者_1", 
+      "furigana": "test", 
+      "birthday": null,
+      "address": "test", 
+      "phone": "08058956869", 
+      "clinic_name": "a", 
+      "thumbnail": "profile_thumbnail/user_1.jpeg",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2019-04-27T04:31:39Z", 
+      "groups": [],
+      "user_permissions": []
+      }
+    },
+    {
+      "model": "chatapp.user", 
+      "pk": 2, 
+      "fields": {
+        "password": "pbkdf2_sha256$120000$0eKXJVI8wLJ1$+qTm6GW88vGB4IsosdC3kIXPiT4OXhBiam6VQFKhYQM=",
+        "last_login": "2019-04-27T10:37:25.327Z", 
+        "is_superuser": true, 
+        "email": "hoge2@hoge.com",
+        "name": "非管理者_2", 
+        "furigana": "test", 
+        "birthday": null,
+        "address": "test", 
+        "phone": "08058956869", 
+        "clinic_name": "a", 
+        "thumbnail": "profile_thumbnail/user_2.jpeg",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2019-04-27T04:31:39Z", 
+        "groups": [],
+        "user_permissions": []
+        }
+      },
+      {
+        "model": "chatapp.user", 
+        "pk": 3, 
+        "fields": {
+          "password": "pbkdf2_sha256$120000$0eKXJVI8wLJ1$+qTm6GW88vGB4IsosdC3kIXPiT4OXhBiam6VQFKhYQM=",
+          "last_login": "2019-04-27T10:37:25.327Z", 
+          "is_superuser": true, 
+          "email": "hoge3@hoge.com",
+          "name": "非管理者_3", 
+          "furigana": "test", 
+          "birthday": null,
+          "address": "test", 
+          "phone": "08058956869", 
+          "clinic_name": "a", 
+          "thumbnail": "profile_thumbnail/user_3.jpeg",
+          "is_staff": false,
+          "is_active": true,
+          "date_joined": "2019-04-27T04:31:39Z", 
+          "groups": [],
+          "user_permissions": []
+          }
+        },
+        {
+          "model": "chatapp.user", 
+          "pk": 4, 
+          "fields": {
+            "password": "pbkdf2_sha256$120000$0eKXJVI8wLJ1$+qTm6GW88vGB4IsosdC3kIXPiT4OXhBiam6VQFKhYQM=",
+            "last_login": "2019-04-27T10:37:25.327Z", 
+            "is_superuser": true, 
+            "email": "hoge4@hoge.com",
+            "name": "管理者_4", 
+            "furigana": "test", 
+            "birthday": null,
+            "address": "test", 
+            "phone": "08058956869", 
+            "clinic_name": "a", 
+            "thumbnail": "profile_thumbnail/user_4.jpeg",
+            "is_staff": true,
+            "is_active": true,
+            "date_joined": "2019-04-27T04:31:39Z", 
+            "groups": [],
+            "user_permissions": []
+            }
+          },
+          {
+            "model": "chatapp.user", 
+            "pk": 5, 
+            "fields": {
+              "password": "pbkdf2_sha256$120000$0eKXJVI8wLJ1$+qTm6GW88vGB4IsosdC3kIXPiT4OXhBiam6VQFKhYQM=",
+              "last_login": "2019-04-27T10:37:25.327Z", 
+              "is_superuser": true, 
+              "email": "hoge5@hoge.com",
+              "name": "管理者_1", 
+              "furigana": "test", 
+              "birthday": null,
+              "address": "test", 
+              "phone": "08058956869", 
+              "clinic_name": "a", 
+              "thumbnail": "profile_thumbnail/user_5.jpeg",
+              "is_staff": true,
+              "is_active": true,
+              "date_joined": "2019-04-27T04:31:39Z", 
+              "groups": [],
+              "user_permissions": []
+              }
+            },
+            {
+              "model": "chatapp.user", 
+              "pk": 6, 
+              "fields": {
+                "password": "pbkdf2_sha256$120000$0eKXJVI8wLJ1$+qTm6GW88vGB4IsosdC3kIXPiT4OXhBiam6VQFKhYQM=",
+                "last_login": "2019-04-27T10:37:25.327Z", 
+                "is_superuser": true, 
+                "email": "hoge6@hoge.com",
+                "name": "管理者_6", 
+                "furigana": "test", 
+                "birthday": null,
+                "address": "test", 
+                "phone": "08058956869", 
+                "clinic_name": "a", 
+                "thumbnail": "profile_thumbnail/user_6.jpeg",
+                "is_staff": true,
+                "is_active": true,
+                "date_joined": "2019-04-27T04:31:39Z", 
+                "groups": [],
+                "user_permissions": []
+                }
+              },
+              {
+                "model": "chatapp.user", 
+                "pk": 7, 
+                "fields": {
+                  "password": "pbkdf2_sha256$120000$0eKXJVI8wLJ1$+qTm6GW88vGB4IsosdC3kIXPiT4OXhBiam6VQFKhYQM=",
+                  "last_login": "2019-04-27T10:37:25.327Z", 
+                  "is_superuser": true, 
+                  "email": "hoge7@hoge.com",
+                  "name": "管理者_7", 
+                  "furigana": "test", 
+                  "birthday": null,
+                  "address": "test", 
+                  "phone": "08058956869", 
+                  "clinic_name": "a", 
+                  "thumbnail": "profile_thumbnail/user_7.jpeg",
+                  "is_staff": true,
+                  "is_active": true,
+                  "date_joined": "2019-04-27T04:31:39Z", 
+                  "groups": [],
+                  "user_permissions": []
+                  }
+                }
+]

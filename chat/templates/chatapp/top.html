@@ -4,27 +4,86 @@
 <link rel="stylesheet" type="text/css" href="{% static 'css/top.css' %}">
 <div id="mySidebar" class="sidebar">
     <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+    <div class="row room_group_name">
+      <div class="col-12">
+          <p>参加しているルーム</p>
+      </div>
+    </div>
+   {% if my_rooms %}
     {% for room in my_rooms %}
       <div class="chat_list active_chat">
-        <div class="chat_people">
-          <div class="chat_img">
-            <img src="https://ptetutorials.com/images/user-profile.png" alt="sunil">
+        <div class="row chat_people">
+          <div class="col-3 chat_img">
+            <img class="img img-thumbnail" src="{{ room.opponent.user.thumbnail_url }}" alt="sunil">
           </div>
-          <div class="chat_ib">
-            <h5>{{ room.room.title }}</h5><span class="chat_date">{{ room.room.get_latest_message.sent_at }}</span><br>
-            <p>{{ room.room.get_latest_message.message }}</p>
-            <button room_id="{{ room.room.pk }}" type="button" class="btn btn-default" id="room_btn">JOIN</button>
+          <div class="col-9 chat_ib">
+            <div class="row">
+              <div class="col-6">
+                  <p>{{ room.room.title }}</p>
+              </div>
+              <div class="col-6">
+                  <p class="chat_date">{{ room.room.get_latest_message.sent_at }}</p>
+              </div>        
+            </div>
+            <div class="row">
+              <div class="col-8">
+                  <p>{{ room.room.get_latest_message.message }}</p>
+              </div>
+              <div class="col-4">
+                  <button room_id="{{ room.room.pk }}" type="button" class="btn btn-primary btn-sm btn-block" name="room_btn"><i class="fas fa-comments"></i> Chat</button>
+              </div>
+            </div>
           </div>
         </div>
       </div>
       {% endfor %}
+      {% else %}
+        <p>参加中のルームはありません</p>
+      {% endif %}
+      <div class="row invitable_users_title">
+        <div class="col-12">
+            <p>招待できるユーザ</p>
+        </div>
+      </div>
+      {% if users %}
+      {% for user in users %}
+      <div class="chat_list active_chat">
+        <div class="row chat_people">
+          <div class="col-3">
+            <img class="img img-thumbnail" src="{{ user.thumbnail_url }}" alt="sunil">
+          </div>
+          <div class="col-9 chat_ib">
+            <div class="row">
+              <div class="col-6">
+                  <p>{{ user.name }}</p>
+              </div>
+              <div class="col-6">
+                  <p class="chat_date">{{ room.room.get_latest_message.sent_at }}</p>
+              </div>        
+            </div>
+            <div class="row">
+              <div class="col-8">
+                  <p>{{ room.room.get_latest_message.message }}</p>
+              </div>
+              <div class="col-4">
+                  <button user_id="{{ user.pk }}" type="button" class="btn btn-success btn-sm btn-block" name="invite_btn">Roomを作成</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+      {% else %}
+      <p>招待できるユーザがいません</p>
+      {% endif %}
+      
     
   </div>
 <div class="container">
   <button class="openbtn btn btn-primary" onclick="openNav()">&#9776; Rooms</button> 
         
   <div id="main" class="messaging">
-      <div class="inbox_msg">
+      <div class="inbox_msg" style="display: none">
         <div class="mesgs">
           <div class="msg_history">
               <div class="incoming_msg">
@@ -38,17 +97,17 @@
                   </div>
                 </div>
           </div>
-          <div id="message_form" class="type_msg" style="">
-              <div  class="input-group">
+          <div id="message_form" class="type_msg">
+              <div class="input-group">
                 <textarea rows="1" id="chat-message-input" class="form-control" placeholder="message here.."></textarea>
-                <div class="input-group-btn">
-                  <button id="send_msg_button" class="btn btn-default" type="submit">
+                <div class="input-group-append">
+                  <button id="send_msg_button" class="btn message_btn" type="submit">
                     <i class="far fa-comment-alt"></i>
                   </button>
                 </div>
                 <form name="file_upload">
-                  <div class="input-group-btn">
-                    <button name="fileupload" class="btn btn-default" type="button">
+                  <div class="input-group-append">
+                    <button name="fileupload" class="btn file_attach_btn" type="button">
                       <i class="fas fa-paperclip"></i>
                     </button>
                   </div>
@@ -58,27 +117,27 @@
                               data-form-data='{"csrfmiddlewaretoken": "{{ csrf_token }}"}'>
                 </form>    
               </div>
-              <div id="preview_zone"></div>
+              <div id="preview_zone" class="row">
+
+              </div>
           </div>
         </div>
       </div>
   </div>     
 </div>
-
-      <!-- Dark Overlay element -->
-   
 {% endblock %}
 {% block extra_js %}
 
 <script>
     var history_url = "{% url 'chatapp:history' %}";
-    var login_url = "{% url 'chatapp:login' %}"
+    var invite_url = "{% url 'chatapp:invite' %}";
+    var login_url = "{% url 'chatapp:login' %}";
     var attachment_url = "{% url 'chatapp:upload' %}";
     var user_pk = '{{ user.pk }}';
 
     function openNav() {
-      document.getElementById("mySidebar").style.width = "250px";
-      document.getElementById("main").style.marginLeft = "250px";
+      document.getElementById("mySidebar").style.width = "375px";
+      document.getElementById("main").style.marginLeft = "375px";
     }
 
     /* Set the width of the sidebar to 0 and the left margin of the page content to 0 */

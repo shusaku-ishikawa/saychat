@@ -22,33 +22,26 @@ class Top(LoginRequiredMixin, generic.TemplateView):
     template_name = 'chatapp/top.html'
     def get_context_data(self, **kwargs):
         context = super(Top, self).get_context_data(**kwargs)
-        users = User.objects.all()
-        all_rooms = ChatRoom.objects.all()
+
+        if self.request.user.is_staff:
+            users = User.objects.filter(is_active = True).filter(is_staff = False)
+        else:
+            users = User.objects.filter(is_active = True).filter(is_staff = True)
+        users_not_spoken_with = []
+        for user in users:
+            if user != self.request.user:
+                if ChatRoom.get_room_of_us(user, self.request.user) == None:
+                    users_not_spoken_with.append(user)
+                    print('our room not found ' + str(user) + ': ' + str(self.request.user))
+                else:
+                    print('our room found' + str(user) + ': ' + str(self.request.user))
+        
+        print(users_not_spoken_with)
         my_rooms = self.request.user.rooms.all()
-        context['users'] = users
+        context['users'] = users_not_spoken_with
         context['my_rooms'] = my_rooms
        
         return context
-
-
-class Room(LoginRequiredMixin, generic.TemplateView):
-    template_name = 'chatapp/room.html'
-    def get_context_data(self, **kwargs):
-        context = super(Room, self).get_context_data(**kwargs)
-        room_pk = kwargs['room_pk']
-        room = ChatRoom.objects.get(pk = room_pk)
-
-        
-        all_messages = ChatMessage.objects.all()
-        
-        context['room'] = room
-        context['messages'] = all_messages
-        return context
-
-def room(request, room_pk):
-    return render(request, 'chatapp/room.html', {
-        'room_pk': room_pk
-    })
 
 def history(request):
     room_pk = request.GET.get('room_pk')
@@ -61,6 +54,24 @@ def history(request):
 
     serializer = ChatMessageSerializer(all_messages, many = True)
     return JsonResponse(serializer.data, status = 200, safe = False)
+
+def create_room(request):
+    if request.user.is_anonymous:
+        return JsonResponse({'error': 'please authenticate first'})
+
+    if request.method == 'POST':
+        user_id = request.POST.get('user_id')
+        user_to_invite = User.objects.get(pk = user_id)
+        our_room = ChatRoom.get_room_of_us(request.user, user_to_invite)
+        if our_room == None:
+            our_room = ChatRoom(title = request.user.name + '×' + user_to_invite.name)
+            our_room.save()
+            me = ChatRoomMember(user = request.user, room = our_room)
+            you = ChatRoomMember(user = user_to_invite, room = our_room)
+            me.save()
+            you.save()
+        return JsonResponse({'success': True, 'room_id': our_room.pk})
+    
 
 def upload_file(request):
     method = request.method
@@ -104,10 +115,10 @@ class SignUp(generic.CreateView):
             'user': user,
         }
 
-        subject_template = get_template('amazon/mail_template/sign_up/subject.txt')
+        subject_template = get_template('chatapp/mail_template/sign_up/subject.txt')
         subject = subject_template.render(context)
 
-        message_template = get_template('amazon/mail_template/sign_up/message.txt')
+        message_template = get_template('chatapp/mail_template/sign_up/message.txt')
         message = message_template.render(context)
 
         user.email_user(subject, message)
@@ -145,9 +156,6 @@ class SignUpDone(generic.TemplateView):
                     user.is_active = True
                     user.save()
                     # カートも作成する
-                    his_cart = ShoppingCart()
-                    his_cart.user = user
-                    his_cart.save()
 
                     return super().get(request, **kwargs)
 

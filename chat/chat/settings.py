@@ -140,6 +140,15 @@ STATICFILES_DIRS = [
 MEDIA_ROOT = os.path.join(BASE_DIR,'media') # 追加
 MEDIA_URL = '/media/' # 追加
 
+#EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+DEFAULT_FROM_EMAIL = 'ishikawasyuusaku@gmail.com'
+DEFAULT_CHARSET = 'utf-8'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_HOST_USER = 'ishikawasyuusaku@gmail.com'
+EMAIL_HOST_PASSWORD = '332191-Aa'
+EMAIL_USE_TLS = True
+
 
 NOTIFY_USERS_ON_ENTER_OR_LEAVE_ROOMS = True
 

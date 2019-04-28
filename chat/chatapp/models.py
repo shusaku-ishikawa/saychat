@@ -94,6 +94,11 @@ class User(AbstractBaseUser, PermissionsMixin):
         メールアドレスを返す
         """
         return self.email
+    @property
+    def thumbnail_url(self):
+        if self.thumbnail and hasattr(self.thumbnail, 'url'):
+            return self.thumbnail.url
+
 class ChatRoom(models.Model):
     def __str__(self):
         return self.title
@@ -121,6 +126,15 @@ class ChatRoom(models.Model):
         user = User.objects.get(pk = user_id)
         return len(self.members.filter(user = user)) > 0
 
+    @staticmethod
+    def get_room_of_us(user_1, user_2):
+        for room in ChatRoom.objects.all():
+            user_1_mem = ChatRoomMember.objects.filter(user = user_1).filter(room = room)
+            user_2_mem = ChatRoomMember.objects.filter(user = user_2).filter(room = room)
+            if len(user_1_mem) != 0 and len(user_2_mem) != 0:
+                return room
+        return None
+            
 class ChatRoomMember(models.Model):
     def __str__(self):
         return self.room.title + '_' + self.user.name
@@ -134,6 +148,12 @@ class ChatRoomMember(models.Model):
         on_delete = models.CASCADE,
         related_name = 'rooms'
     )
+    
+    @property
+    def opponent(self):
+        other_members = ChatRoomMember.objects.filter(room = self.room).filter(~Q(user = self.user))
+        if len(other_members) > 0:
+            return other_members[0]
 
 class ChatMessage(models.Model):
     def __str__(self):

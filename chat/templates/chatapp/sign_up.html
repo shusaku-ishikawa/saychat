@@ -8,7 +8,20 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" >
     <title>title here</title>
-
+    <style>
+        select#id_birthday_year {
+            width: 30%;
+        }
+        select#id_birthday_month {
+            width: 15%;
+        }
+        
+        select#id_birthday_dayy {
+            width: 15%;
+        }
+        
+    
+    </style>
 </head>
 <body style="background: #81D8D0">
     <div class="container" style="padding: 2rem">
@@ -16,7 +29,7 @@
             <div class="col-md-6 offset-md-3 col-12">
                 <div class="card bg-light">
                     <div class="card-body mx-auto">
-                        <form method="POST" action="">
+                        <form method="POST" action="" enctype="multipart/form-data">
                             {{ form.non_field_errors }}
                             <ul class="messages">
                             {% for message in messages %}
@@ -24,6 +37,14 @@
                             {% endfor %}
                             </ul>
                             {% csrf_token %}
+                            <div class="form-group input-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text"><i class="far fa-image"></i> </span>
+                                    </div>
+                                    {{ form.thumbnail }}
+                                    
+                            </div> <!-- form-group// -->
+                            {{ form.thumbnail.errors }}
                             <div class="form-group input-group">
                                 <div class="input-group-prepend">
                                     <span class="input-group-text"> <i class="fa fa-envelope"></i> </span>
@@ -41,7 +62,7 @@
                             {{ form.name.errors }}
                             <div class="form-group input-group">
                                 <div class="input-group-prepend">
-                                    <span class="input-group-text"> <i class="fa fa-envelope"></i> </span>
+                                    <span class="input-group-text"> <i class="fa fa-user"></i>  </span>
                                     </div>
                                     {{ form.furigana }}
                                     
@@ -49,7 +70,7 @@
                             {{ form.furigana.errors }}
                             <div class="form-group input-group">
                                 <div class="input-group-prepend">
-                                    <span class="input-group-text"> <i class="fa fa-envelope"></i> </span>
+                                    <span class="input-group-text"> <i class="fas fa-birthday-cake"></i> </span>
                                     </div>
                                     {{ form.birthday }}
                                     
@@ -57,7 +78,7 @@
                             {{ form.birthday.errors }}
                             <div class="form-group input-group">
                                 <div class="input-group-prepend">
-                                    <span class="input-group-text"> <i class="fa fa-envelope"></i> </span>
+                                    <span class="input-group-text"> <i class="fas fa-map-marker-alt"></i> </span>
                                     </div>
                                     {{ form.address }}
                                     
@@ -66,7 +87,7 @@
                             
                             <div class="form-group input-group">
                                 <div class="input-group-prepend">
-                                    <span class="input-group-text"> <i class="fa fa-envelope"></i> </span>
+                                    <span class="input-group-text"><i class="fas fa-phone"></i></span>
                                     </div>
                                     {{ form.phone }}
                                     
@@ -74,7 +95,7 @@
                             {{ form.phone.errors }}
                             <div class="form-group input-group">
                                 <div class="input-group-prepend">
-                                    <span class="input-group-text"> <i class="fa fa-envelope"></i> </span>
+                                    <span class="input-group-text"> <i class="fas fa-home"></i></span>
                                     </div>
                                     {{ form.clinic_name }}
                                     

@@ -9,17 +9,31 @@ img{ max-width:100%;}
   overflow: hidden;
 }
 
-.chat_ib h5{ font-size:15px; color:#464646; margin:0 0 8px 0;}
-.chat_ib span{ font-size:13px; float:right;}
-.chat_ib p{ font-size:12px; color:#989898; margin:none}
-.chat_img {
-  float: left;
-  width: 12%;
+.room_group_name {
+  background: lightcoral;
+  text-align: center;
+  height: 20px
 }
-.chat_ib {
-  float: left;
-  padding: 0 0 0 15px;
-  width: 88%;
+.room_group_name p {
+  color:white;
+  font-weight: bold;
+  margin: none
+}
+
+.invitable_users_title {
+  background: blue;
+  text-align:center;
+  height: 20px
+}
+.invitable_users_title p {
+  color: white;
+  font-weight: bold;
+  margin: none
+}
+
+.chat_ib p{ font-size:12px; color:#989898; margin:none}
+.chat_ib button {
+  font-size: 10px
 }
 
 .chat_people{ overflow:hidden; clear:both;}
@@ -68,6 +82,7 @@ img{ max-width:100%;}
 .mesgs {
   padding: 10px;
   width: 100%;
+  min-height: 500px
 }
 
  .sent_msg p {
@@ -79,10 +94,16 @@ img{ max-width:100%;}
   width:100%;
 }
 .outgoing_msg{ overflow:hidden; margin:26px 0 26px;}
+
 .sent_msg {
   float: right;
   width: 46%;
 }
+
+.attachment_file {
+  font-size: 12px;
+}
+
 .input_msg_write input {
   background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
   border: medium none;
@@ -92,40 +113,50 @@ img{ max-width:100%;}
   width: 100%;
 }
 
-.type_msg {border-top: 1px solid #c4c4c4;position: relative;}
-.msg_send_btn {
-  background: #05728f none repeat scroll 0 0;
-  border: medium none;
-  border-radius: 50%;
-  color: #fff;
-  cursor: pointer;
-  font-size: 17px;
-  height: 33px;
-  position: absolute;
-  right: 0;
-  top: 11px;
-  width: 33px;
+.type_msg {
+  border-top: 1px solid #c4c4c4;
+  position: relative;
 }
+.type_msg .input-group {
+  margin-top: 5px
+}
+
 .messaging { padding: 0 0 10px 0;}
 .msg_history {
-  max-height: 516px;
+  min-height: 400px;
+  max-height: 400px;  
   overflow-y: scroll;
+}
+
+.message_btn {
+  background: teal;
+  border-radius: 0;
+  border: 1px solid gray;
+}
+.file_attach_btn {
+  background: orange;
+  border-radius: 0;
+  border: 1px solic gray
 }
 
 #preview_zone {
   height: 50px;
   background: white;
-  padding: 10px;
+  padding: 3px;
   overflow: scroll; 
 }
-#preview_zone div.row.prev_row {
+#preview_zone .prev_col {
   padding-left: 20px
 }
-#preview_zone div.row.prev_row i {
+#preview_zone .prev_col i {
   padding-right: 5px;
   padding-left:5px;
 }
 
+#preview_zone .prev_col .attachment_name {
+  font-size: 14px;
+  color: gray
+}
 
 
 .sidebar {
