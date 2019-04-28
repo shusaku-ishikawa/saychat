@@ -1,0 +1,223 @@
+
+
+.container{max-width:1170px; margin:0.1em;}
+img{ max-width:100%;}
+
+.inbox_msg {
+  border: 1px solid #c4c4c4;
+  clear: both;
+  overflow: hidden;
+}
+
+.room_group_name {
+  background: lightcoral;
+  text-align: center;
+  height: 20px
+}
+.room_group_name p {
+  color:white;
+  font-weight: bold;
+  margin: none
+}
+
+.invitable_users_title {
+  background: blue;
+  text-align:center;
+  height: 20px
+}
+.invitable_users_title p {
+  color: white;
+  font-weight: bold;
+  margin: none
+}
+
+.chat_ib p{ font-size:12px; color:#989898; margin:none}
+.chat_ib button {
+  font-size: 10px
+}
+
+.chat_people{ overflow:hidden; clear:both;}
+.chat_list {
+  border-bottom: 1px solid #c4c4c4;
+  margin: 0;
+  padding: 18px 16px 10px;
+}
+.inbox_chat { min-height: 600px; overflow-y: scroll;}
+
+.active_chat{ background:#ebebeb;}
+
+.incoming_msg_img {
+  display: inline-block;
+  width: 6%;
+}
+.received_msg {
+  display: inline-block;
+  padding: 0 0 0 10px;
+  vertical-align: top;
+  width: 92%;
+ }
+ .received_withd_msg p {
+  background: #ebebeb none repeat scroll 0 0;
+  border-radius: 3px;
+  color: #646464;
+  font-size: 14px;
+  margin: 0;
+  padding: 5px 10px 5px 12px;
+  width: 100%;
+}
+.time_date {
+  color: #747474;
+  display: block;
+  font-size: 12px;
+  margin: 8px 0 0;
+}
+.received_withd_msg { width: 57%;}
+
+@media screen and (max-height: 450px) {
+  float: left;
+  padding: 10px 15px 0 25px;
+  width: 100%;
+}
+
+.mesgs {
+  padding: 10px;
+  width: 100%;
+  min-height: 500px
+}
+
+ .sent_msg p {
+  background: #05728f none repeat scroll 0 0;
+  border-radius: 3px;
+  font-size: 14px;
+  margin: 0; color:#fff;
+  padding: 5px 10px 5px 12px;
+  width:100%;
+}
+.outgoing_msg{ overflow:hidden; margin:26px 0 26px;}
+
+.sent_msg {
+  float: right;
+  width: 46%;
+}
+
+.attachment_file {
+  font-size: 12px;
+}
+
+.input_msg_write input {
+  background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
+  border: medium none;
+  color: #4c4c4c;
+  font-size: 15px;
+  min-height: 48px;
+  width: 100%;
+}
+
+.type_msg {
+  border-top: 1px solid #c4c4c4;
+  position: relative;
+}
+.type_msg .input-group {
+  margin-top: 5px
+}
+
+.messaging { padding: 0 0 10px 0;}
+.msg_history {
+  min-height: 400px;
+  max-height: 400px;  
+  overflow-y: scroll;
+}
+
+.message_btn {
+  background: teal;
+  border-radius: 0;
+  border: 1px solid gray;
+}
+.file_attach_btn {
+  background: orange;
+  border-radius: 0;
+  border: 1px solic gray
+}
+
+#preview_zone {
+  height: 50px;
+  background: white;
+  padding: 3px;
+  overflow: scroll; 
+}
+#preview_zone .prev_col {
+  padding-left: 20px
+}
+#preview_zone .prev_col i {
+  padding-right: 5px;
+  padding-left:5px;
+}
+
+#preview_zone .prev_col .attachment_name {
+  font-size: 14px;
+  color: gray
+}
+
+
+.sidebar {
+  height: 100%; /* 100% Full-height */
+  width: 0; /* 0 width - change this with JavaScript */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Stay on top */
+  top: 0;
+  left: 0;
+  background-color:teal; /* Black*/
+  overflow-x: hidden; /* Disable horizontal scroll */
+  padding-top: 60px; /* Place content 60px from the top */
+  transition: 0.5s; /* 0.5 second transition effect to slide in the sidebar */
+}
+
+/* The sidebar links */
+.sidebar a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+/* When you mouse over the navigation links, change their color */
+.sidebar a:hover {
+  color: #f1f1f1;
+}
+
+/* Position and style the close button (top right corner) */
+.sidebar .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+/* The button used to open the sidebar */
+.openbtn {
+  font-size: 16px;
+  cursor: pointer;
+  background-color:teal;
+  color: white;
+  padding: 0.5rem;
+  border: none;
+}
+
+.openbtn:hover {
+  background-color: #444;
+}
+
+/* Style page content - use this if you want to push the page content to the right when you open the side navigation */
+#main {
+  transition: margin-left .5s; /* If you want a transition effect */
+  padding-top: 20px;
+}
+
+/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+@media screen and (max-height: 450px) {
+  .sidebar {padding-top: 15px;}
+  .sidebar a {font-size: 18px;}
+}

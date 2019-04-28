@@ -1,0 +1,191 @@
+[2019-03-17 09:59:12 +0900] [15675] [DEBUG] Current configuration:
+  config: gunicorn/conf.py
+  bind: ['127.0.0.1:8002']
+  backlog: 2048
+  workers: 1
+  worker_class: sync
+  threads: 1
+  worker_connections: 1000
+  max_requests: 0
+  max_requests_jitter: 0
+  timeout: 600
+  graceful_timeout: 30
+  keepalive: 2
+  limit_request_line: 4094
+  limit_request_fields: 100
+  limit_request_field_size: 8190
+  reload: False
+  reload_engine: auto
+  reload_extra_files: []
+  spew: False
+  check_config: False
+  preload_app: False
+  sendfile: None
+  reuse_port: False
+  chdir: /var/www/python_projects/webinvoice.git/webinvoice
+  daemon: True
+  raw_env: []
+  pidfile: None
+  worker_tmp_dir: None
+  user: 503
+  group: 504
+  umask: 0
+  initgroups: False
+  tmp_upload_dir: None
+  secure_scheme_headers: {'X-FORWARDED-PROTOCOL': 'ssl', 'X-FORWARDED-PROTO': 'https', 'X-FORWARDED-SSL': 'on'}
+  forwarded_allow_ips: ['127.0.0.1']
+  accesslog: gunicorn/access.log
+  disable_redirect_access_to_syslog: False
+  access_log_format: %(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"
+  errorlog: gunicorn/error.log
+  loglevel: debug
+  capture_output: False
+  logger_class: gunicorn.glogging.Logger
+  logconfig: None
+  logconfig_dict: {}
+  syslog_addr: udp://localhost:514
+  syslog: False
+  syslog_prefix: None
+  syslog_facility: user
+  enable_stdio_inheritance: False
+  statsd_host: None
+  statsd_prefix: 
+  proc_name: None
+  default_proc_name: webinvoice.wsgi:application
+  pythonpath: None
+  paste: None
+  on_starting: <function OnStarting.on_starting at 0x7f68dbc7e400>
+  on_reload: <function OnReload.on_reload at 0x7f68dbc7e510>
+  when_ready: <function when_ready at 0x7f68dbc98f28>
+  pre_fork: <function pre_fork at 0x7f68dbc98e18>
+  post_fork: <function post_fork at 0x7f68dbc98d90>
+  post_worker_init: <function PostWorkerInit.post_worker_init at 0x7f68dbc7e950>
+  worker_int: <function worker_int at 0x7f68dbcaf048>
+  worker_abort: <function worker_abort at 0x7f68dbcaf0d0>
+  pre_exec: <function pre_exec at 0x7f68dbc98ea0>
+  pre_request: <function PreRequest.pre_request at 0x7f68dbc7ed90>
+  post_request: <function PostRequest.post_request at 0x7f68dbc7ee18>
+  child_exit: <function ChildExit.child_exit at 0x7f68dbc7ef28>
+  worker_exit: <function WorkerExit.worker_exit at 0x7f68dbc980d0>
+  nworkers_changed: <function NumWorkersChanged.nworkers_changed at 0x7f68dbc981e0>
+  on_exit: <function OnExit.on_exit at 0x7f68dbc982f0>
+  proxy_protocol: False
+  proxy_allow_ips: ['127.0.0.1']
+  keyfile: None
+  certfile: None
+  ssl_version: 2
+  cert_reqs: 0
+  ca_certs: None
+  suppress_ragged_eofs: True
+  do_handshake_on_connect: False
+  ciphers: TLSv1
+  raw_paste_global_conf: []
+[2019-03-17 09:59:12 +0900] [15675] [INFO] Starting gunicorn 19.9.0
+[2019-03-17 09:59:12 +0900] [15675] [DEBUG] Arbiter booted
+[2019-03-17 09:59:12 +0900] [15675] [INFO] Listening at: http://127.0.0.1:8002 (15675)
+[2019-03-17 09:59:12 +0900] [15675] [INFO] Using worker: sync
+[2019-03-17 09:59:12 +0900] [15675] [INFO] Server is ready. Spawning workers
+[2019-03-17 09:59:12 +0900] [15678] [INFO] Booting worker with pid: 15678
+[2019-03-17 09:59:12 +0900] [15678] [INFO] Worker spawned (pid: 15678)
+[2019-03-17 09:59:12 +0900] [15675] [DEBUG] 1 workers
+[2019-03-17 10:01:47 +0900] [15675] [INFO] Handling signal: term
+[2019-03-17 10:01:47 +0900] [15678] [INFO] Worker exiting (pid: 15678)
+[2019-03-17 10:01:47 +0900] [15675] [INFO] Shutting down: Master
+[2019-03-17 10:02:18 +0900] [15722] [DEBUG] Current configuration:
+  config: gunicorn/conf.py
+  bind: ['127.0.0.1:8001']
+  backlog: 2048
+  workers: 1
+  worker_class: sync
+  threads: 1
+  worker_connections: 1000
+  max_requests: 0
+  max_requests_jitter: 0
+  timeout: 600
+  graceful_timeout: 30
+  keepalive: 2
+  limit_request_line: 4094
+  limit_request_fields: 100
+  limit_request_field_size: 8190
+  reload: False
+  reload_engine: auto
+  reload_extra_files: []
+  spew: False
+  check_config: False
+  preload_app: False
+  sendfile: None
+  reuse_port: False
+  chdir: /var/www/python_projects/webinvoice.git/webinvoice
+  daemon: True
+  raw_env: []
+  pidfile: None
+  worker_tmp_dir: None
+  user: 503
+  group: 504
+  umask: 0
+  initgroups: False
+  tmp_upload_dir: None
+  secure_scheme_headers: {'X-FORWARDED-PROTOCOL': 'ssl', 'X-FORWARDED-PROTO': 'https', 'X-FORWARDED-SSL': 'on'}
+  forwarded_allow_ips: ['127.0.0.1']
+  accesslog: gunicorn/access.log
+  disable_redirect_access_to_syslog: False
+  access_log_format: %(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"
+  errorlog: gunicorn/error.log
+  loglevel: debug
+  capture_output: False
+  logger_class: gunicorn.glogging.Logger
+  logconfig: None
+  logconfig_dict: {}
+  syslog_addr: udp://localhost:514
+  syslog: False
+  syslog_prefix: None
+  syslog_facility: user
+  enable_stdio_inheritance: False
+  statsd_host: None
+  statsd_prefix: 
+  proc_name: None
+  default_proc_name: webinvoice.wsgi:application
+  pythonpath: None
+  paste: None
+  on_starting: <function OnStarting.on_starting at 0x7fcb97164400>
+  on_reload: <function OnReload.on_reload at 0x7fcb97164510>
+  when_ready: <function when_ready at 0x7fcb9717ef28>
+  pre_fork: <function pre_fork at 0x7fcb9717ee18>
+  post_fork: <function post_fork at 0x7fcb9717ed90>
+  post_worker_init: <function PostWorkerInit.post_worker_init at 0x7fcb97164950>
+  worker_int: <function worker_int at 0x7fcb97195048>
+  worker_abort: <function worker_abort at 0x7fcb971950d0>
+  pre_exec: <function pre_exec at 0x7fcb9717eea0>
+  pre_request: <function PreRequest.pre_request at 0x7fcb97164d90>
+  post_request: <function PostRequest.post_request at 0x7fcb97164e18>
+  child_exit: <function ChildExit.child_exit at 0x7fcb97164f28>
+  worker_exit: <function WorkerExit.worker_exit at 0x7fcb9717e0d0>
+  nworkers_changed: <function NumWorkersChanged.nworkers_changed at 0x7fcb9717e1e0>
+  on_exit: <function OnExit.on_exit at 0x7fcb9717e2f0>
+  proxy_protocol: False
+  proxy_allow_ips: ['127.0.0.1']
+  keyfile: None
+  certfile: None
+  ssl_version: 2
+  cert_reqs: 0
+  ca_certs: None
+  suppress_ragged_eofs: True
+  do_handshake_on_connect: False
+  ciphers: TLSv1
+  raw_paste_global_conf: []
+[2019-03-17 10:02:18 +0900] [15722] [INFO] Starting gunicorn 19.9.0
+[2019-03-17 10:02:18 +0900] [15722] [DEBUG] Arbiter booted
+[2019-03-17 10:02:18 +0900] [15722] [INFO] Listening at: http://127.0.0.1:8001 (15722)
+[2019-03-17 10:02:18 +0900] [15722] [INFO] Using worker: sync
+[2019-03-17 10:02:18 +0900] [15722] [INFO] Server is ready. Spawning workers
+[2019-03-17 10:02:18 +0900] [15725] [INFO] Booting worker with pid: 15725
+[2019-03-17 10:02:18 +0900] [15725] [INFO] Worker spawned (pid: 15725)
+[2019-03-17 10:02:18 +0900] [15722] [DEBUG] 1 workers
+[2019-03-17 10:02:38 +0900] [15725] [DEBUG] GET /invoice/
+[2019-03-17 10:02:44 +0900] [15725] [DEBUG] GET /invoice/mypage/
+[2019-03-17 10:02:50 +0900] [15725] [DEBUG] POST /invoice/mypage/
+[2019-03-17 10:02:50 +0900] [15725] [DEBUG] GET /invoice/mypage/top/
+[2019-03-17 10:02:52 +0900] [15725] [DEBUG] GET /invoice/mypage/list_customer/
+[2019-03-17 10:02:55 +0900] [15725] [DEBUG] GET /invoice/mypage/list_product/
+[2019-03-17 10:02:56 +0900] [15725] [DEBUG] GET /invoice/mypage/list_invoice/
+[2019-03-17 10:03:13 +0900] [15725] [DEBUG] GET /invoice/mypage/my-pdf/
