@@ -1,6 +1,7 @@
 
     var active_room_id;
 
+    var COOKIE_LAST_ROOM_ID = 'last_visited_room_id';
 
     var $input_message = $('#chat-message-input');
     var $btn_message_send = $('#send_msg_button');
@@ -58,11 +59,32 @@
             }
         })
     }
+    function trim_date_str(original) {
+        var date = original.split(' ')[0];
+        var time = original.split(' ')[1];
+
+        month = date.split('/')[0].replace(/^0/, '');
+        day = date.split('/')[1].replace(/^0/, '');
+        
+        hour = time.split(':')[0].replace(/^0/, '');
+        minute = time.split(':')[1];
+
+        return month + '/' + day + ' ' + hour + ':' + minute
+    }
+    function get_message_caption(message) {
+        var char_num = 10;
+        if (message.length < 10) {
+            return message;
+        } else {
+            return message.slice(0, char_num) + '....';
+        }
+        
+    }
     function create_outgoing_message_dom(sent_at, message, attachments) {
 
         var $outer = $('<div>', { class: 'outgoing_msg' });
         var $inner = $('<div>', { class: 'sent_msg' }).appendTo($outer);
-        $('<p>', { text: message }).appendTo($inner);
+        $('<p>', { html: message.replace(/\r?\n/g, '<br />') }).appendTo($inner);
         attachments.forEach(elem => {
           $('<a>', { 
             href: elem.file_url,
@@ -71,7 +93,7 @@
             class: 'attachment_file '
           }).appendTo($inner).append($('<br>'));
         });
-        var $sent_at = $('<span>', { class : 'time_date', text: sent_at }).appendTo($inner);
+        var $sent_at = $('<span>', { class : 'time_date', text: trim_date_str(sent_at) }).appendTo($inner);
         return $outer
     }
     
@@ -82,7 +104,7 @@
         
         var $msg_outer = $('<div>', { class: 'received_msg' }).appendTo($outer);
         var $msg_inner = $('<div>', { class: 'received_withd_msg' }).appendTo($msg_outer);
-        $('<p>', { text: message }).appendTo($msg_inner);
+        $('<p>', { html: message.replace(/\r?\n/g, '<br />') }).appendTo($msg_inner);
         attachments.forEach(elem => {
           $('<a>', { 
             href: elem.file_url,
@@ -91,11 +113,11 @@
             download: elem.file_name
           }).appendTo($msg_inner).append($('<br>'));
         });
-        var $sent_at = $('<span>', { class : 'time_date', text: sent_at }).appendTo($msg_inner);
+        var $sent_at = $('<span>', { class : 'time_date', text: trim_date_str(sent_at) }).appendTo($msg_inner);
 
         return $outer;
     }
-  
+    
     $(function() {
 
          // Correctly decide between ws:// and wss://
@@ -131,13 +153,74 @@
                     console.log('someone leaved')
                     break;
                 case MSG_TYPE_MESSAGE:
-                    console.log('message');
+                    
                     messageJson = JSON.parse(data.message);
-
-                    if (user_pk == messageJson.speaker.pk) {
-                        var $msg = create_outgoing_message_dom(messageJson.sent_at, messageJson.message, messageJson.attachments);
+                    console.log(messageJson);
+                    // 開いているチャットルームの場合は画面更新
+                    if (messageJson.room.pk == active_room_id) {
+                        if (user_pk == messageJson.speaker.pk) {
+                            var $msg = create_outgoing_message_dom(messageJson.sent_at, messageJson.message, messageJson.attachments);
+                        } else {
+                            var $msg = create_incomming_message_dom(messageJson.speaker.thumbnail_url, messageJson.sent_at, messageJson.message, messageJson.attachments);
+                        }
                     } else {
-                        var $msg = create_incomming_message_dom(messageJson.speaker.thumbnail_url, messageJson.sent_at, messageJson.message, messageJson.attachments);
+                        // ルーム一覧を更新
+                        var $target_div = $('div[room_id="' + messageJson.room.pk + '"]');
+                        if ($target_div.length != 0) {
+                            var $obj = $($target_div[0]);
+                            $obj.find('.room_latest_message').html(get_message_caption(messageJson.message));
+                            $obj.find('.chat_date').html(trim_date_str(messageJson.sent_at));
+                            if ($obj.find('.has_new_message').length == 0) {
+                                var $title = $obj.find('.room_title');
+                                $($title[0]).append($('<span>', { text: "●", class: 'has_new_message' }));
+                                alert('append');
+                            }
+                            
+                        } else {
+                            // if invited to new room
+                            $('<div>', {
+                                class: 'chat_list active_chat',
+                                room_id: messageJson.room.pk
+                            }).append($('<div>', {
+                                class: 'row chat_people'
+                            }).append($('<div>', {
+                                class: 'col-3 chat_img'
+                            }).append($('<img>', {
+                                class: 'img img-thumbnail',
+                                src: messageJson.speaker.thumbnail_url
+                            })).append($('<div>', {
+                                class: 'col-9 chat_ib'
+                            }).append($('<div>', {
+                                class: 'row'
+                            }).append($('<div>', {
+                                class: 'col-7'
+                            }).append($('<p>', {
+                                text: messageJson.room.title,
+                                class: 'room_title'
+                            }).append($('<span>', {
+                                text: '●',
+                                class: 'has_new_message'
+                            }))).append($('<div>', {
+                                class: 'col-5',
+                                style: 'text-align: right'
+                            }).append($('<p>', {
+                                text: trim_date_str(messageJson.sent_at)
+                            })))).append($('<div>', {
+                                class: 'row'
+                            }).append($('<div>', {
+                                class: 'col-8'
+                            }).append($('<p>', {
+                                class: 'room_latest_message',
+                                text: get_message_caption(messageJson.message)
+                            })).append($('<div>', {
+                                class: 'col-4'
+                            }).append($('<button>', {
+                                room_id : messageJson.room.pk,
+                                type: 'button',
+                                class: 'btn btn-primary btn-sm btn-block',
+                                name: 'room_btn'
+                            })))))))));
+                        }
                     }
                     
                     $div_history.append($msg);
@@ -158,6 +241,7 @@
 
             var message = $input_message.val();
             if (message == '' && attachment_pk_list.length == 0) {
+                alert('メッセージを入力してください')
                 return;
             }
 
@@ -169,9 +253,16 @@
             }));
             $input_message.val('');
             attachment_pk_list.splice(0, attachment_pk_list.length);
+            $preview_zone.html('');
         });
         
         $room_buttons.on('click' , function() {
+            $new_message_flag = $(this).parent().parent().parent().find('.has_new_message');
+            if ($new_message_flag.length > 0) {
+                $($new_message_flag[0]).remove();
+            }
+
+            $.cookie(COOKIE_LAST_ROOM_ID, $(this).attr('room_id'), { expires: 7 });
             closeNav();
             $main_panel.show();
           
@@ -199,23 +290,6 @@
                 alert('hello');
             });
           }
-        });
-
-        $invite_buttons.on('click', function() {
-            var user_to_invite = $(this).attr('user_id');
-            call_invite_api(user_to_invite)
-            .done(function(data) {
-                if (data.error) {
-                    alert('error');
-                    return;
-                } else if (data.success) {
-                    var room_id = data.room_id;
-                    location.reload();
-                }  
-            })
-            .fail(function(e) {
-                alert('error');
-            })
         });
 
          /* 2. INITIALIZE THE FILE UPLOAD COMPONENT */
@@ -253,7 +327,8 @@
 
                 $del_span = $('<span>', {  
                 }).append($('<i>', {
-                  class : "fa fa-trash"
+                  class : "fa fa-trash",
+                  style: 'color:red'
                 }))
                 .appendTo($prev_col)
                 .on('click', function() {
@@ -282,4 +357,9 @@
                 return;
             }
         });
+        
+        var last_room_id = $.cookie(COOKIE_LAST_ROOM_ID);
+        if (last_room_id !== null) {
+            $('button[room_id="' + last_room_id + '"]').click();
+        }
     });

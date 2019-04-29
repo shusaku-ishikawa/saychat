@@ -7,12 +7,12 @@
       "last_login": "2019-04-27T10:37:25.327Z", 
       "is_superuser": true, 
       "email": "hoge@hoge.com",
-      "name": "非管理者_1", 
-      "furigana": "test", 
+      "name": "鈴木大地", 
+      "furigana": "スズキダイチ", 
       "birthday": null,
-      "address": "test", 
+      "address": "東京都日野市1-1-1", 
       "phone": "08058956869", 
-      "clinic_name": "a", 
+      "clinic_name": "スズキクリニック", 
       "thumbnail": "profile_thumbnail/user_1.jpeg",
       "is_staff": false,
       "is_active": true,
@@ -29,12 +29,12 @@
         "last_login": "2019-04-27T10:37:25.327Z", 
         "is_superuser": true, 
         "email": "hoge2@hoge.com",
-        "name": "非管理者_2", 
-        "furigana": "test", 
+        "name": "木村たくや", 
+        "furigana": "キムラタクヤ", 
         "birthday": null,
-        "address": "test", 
+        "address": "北海道釧路市2-2-2", 
         "phone": "08058956869", 
-        "clinic_name": "a", 
+        "clinic_name": "KIMURA 歯科", 
         "thumbnail": "profile_thumbnail/user_2.jpeg",
         "is_staff": false,
         "is_active": true,
@@ -51,12 +51,12 @@
           "last_login": "2019-04-27T10:37:25.327Z", 
           "is_superuser": true, 
           "email": "hoge3@hoge.com",
-          "name": "非管理者_3", 
-          "furigana": "test", 
+          "name": "青木雄介", 
+          "furigana": "アオキユウスケ", 
           "birthday": null,
-          "address": "test", 
+          "address": "沖縄県", 
           "phone": "08058956869", 
-          "clinic_name": "a", 
+          "clinic_name": "青木歯科クリニック", 
           "thumbnail": "profile_thumbnail/user_3.jpeg",
           "is_staff": false,
           "is_active": true,
@@ -73,7 +73,7 @@
             "last_login": "2019-04-27T10:37:25.327Z", 
             "is_superuser": true, 
             "email": "hoge4@hoge.com",
-            "name": "管理者_4", 
+            "name": "サポートユーザ1", 
             "furigana": "test", 
             "birthday": null,
             "address": "test", 
@@ -95,7 +95,7 @@
               "last_login": "2019-04-27T10:37:25.327Z", 
               "is_superuser": true, 
               "email": "hoge5@hoge.com",
-              "name": "管理者_1", 
+              "name": "サポートユーザ2", 
               "furigana": "test", 
               "birthday": null,
               "address": "test", 
@@ -110,47 +110,142 @@
               }
             },
             {
-              "model": "chatapp.user", 
+              "model": "chatapp.chatroom", 
+              "pk": 1, 
+              "fields": {
+                  "title": "鈴木大地×サポートユーザ1"
+              }
+            },
+            {
+              "model": "chatapp.chatroom", 
+              "pk": 2, 
+              "fields": {
+                  "title": "鈴木大地×サポートユーザ2"
+              }
+            },
+            {
+              "model": "chatapp.chatroom", 
+              "pk": 3, 
+              "fields": {
+                  "title": "木村たくや×サポートユーザ1"
+              }
+            },
+            {
+              "model": "chatapp.chatroom", 
+              "pk": 4, 
+              "fields": {
+                  "title": "木村たくや×サポートユーザ2"
+              }
+            },
+            {
+              "model": "chatapp.chatroom", 
+              "pk": 5, 
+              "fields": {
+                  "title": "青木雄介×サポートユーザ1"
+              }
+            },
+            {
+              "model": "chatapp.chatroom", 
               "pk": 6, 
               "fields": {
-                "password": "pbkdf2_sha256$120000$0eKXJVI8wLJ1$+qTm6GW88vGB4IsosdC3kIXPiT4OXhBiam6VQFKhYQM=",
-                "last_login": "2019-04-27T10:37:25.327Z", 
-                "is_superuser": true, 
-                "email": "hoge6@hoge.com",
-                "name": "管理者_6", 
-                "furigana": "test", 
-                "birthday": null,
-                "address": "test", 
-                "phone": "08058956869", 
-                "clinic_name": "a", 
-                "thumbnail": "profile_thumbnail/user_6.jpeg",
-                "is_staff": true,
-                "is_active": true,
-                "date_joined": "2019-04-27T04:31:39Z", 
-                "groups": [],
-                "user_permissions": []
-                }
-              },
-              {
-                "model": "chatapp.user", 
-                "pk": 7, 
-                "fields": {
-                  "password": "pbkdf2_sha256$120000$0eKXJVI8wLJ1$+qTm6GW88vGB4IsosdC3kIXPiT4OXhBiam6VQFKhYQM=",
-                  "last_login": "2019-04-27T10:37:25.327Z", 
-                  "is_superuser": true, 
-                  "email": "hoge7@hoge.com",
-                  "name": "管理者_7", 
-                  "furigana": "test", 
-                  "birthday": null,
-                  "address": "test", 
-                  "phone": "08058956869", 
-                  "clinic_name": "a", 
-                  "thumbnail": "profile_thumbnail/user_7.jpeg",
-                  "is_staff": true,
-                  "is_active": true,
-                  "date_joined": "2019-04-27T04:31:39Z", 
-                  "groups": [],
-                  "user_permissions": []
-                  }
-                }
+                  "title": "青木雄介×サポートユーザ2"
+              }
+            },
+            {
+              "model": "chatapp.chatroommember", 
+              "pk": 1, 
+              "fields": {
+                  "room": 1,
+                  "user": 1
+              }
+            },
+            {
+              "model": "chatapp.chatroommember", 
+              "pk": 2, 
+              "fields": {
+                  "room": 1,
+                  "user": 4
+              }
+            },
+            {
+              "model": "chatapp.chatroommember", 
+              "pk": 3, 
+              "fields": {
+                  "room": 2,
+                  "user": 1
+              }
+            },
+            {
+              "model": "chatapp.chatroommember", 
+              "pk": 4, 
+              "fields": {
+                  "room": 2,
+                  "user": 5
+              }
+            },
+            {
+              "model": "chatapp.chatroommember", 
+              "pk": 5, 
+              "fields": {
+                  "room": 3,
+                  "user": 2
+              }
+            },
+            {
+              "model": "chatapp.chatroommember", 
+              "pk": 6, 
+              "fields": {
+                  "room": 3,
+                  "user": 4
+              }
+            },
+            {
+              "model": "chatapp.chatroommember", 
+              "pk": 7, 
+              "fields": {
+                  "room": 4,
+                  "user": 2
+              }
+            },
+            {
+              "model": "chatapp.chatroommember", 
+              "pk": 8, 
+              "fields": {
+                  "room": 4,
+                  "user": 5
+              }
+            },
+            {
+              "model": "chatapp.chatroommember", 
+              "pk": 9, 
+              "fields": {
+                  "room": 5,
+                  "user": 3
+              }
+            },
+            {
+              "model": "chatapp.chatroommember", 
+              "pk": 10, 
+              "fields": {
+                  "room": 5,
+                  "user": 4
+              }
+            },
+            {
+              "model": "chatapp.chatroommember", 
+              "pk": 11, 
+              "fields": {
+                  "room": 6,
+                  "user": 3
+              }
+            },
+            {
+              "model": "chatapp.chatroommember", 
+              "pk": 12, 
+              "fields": {
+                  "room": 6,
+                  "user": 5
+              }
+            }
+           
 ]

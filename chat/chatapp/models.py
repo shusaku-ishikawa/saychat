@@ -174,6 +174,12 @@ class ChatMessage(models.Model):
     sent_at = models.DateTimeField(
         auto_now_add = True
     )
+    @property
+    def caption(self):
+        if len(self.message) < 10:
+            return self.message
+        else:
+            return self.message[:10] + '...'
 
 class Attachment(models.Model):
     def __str__(self):

@@ -4,11 +4,23 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+ 
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
+    
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" >
     <title>title here</title>
     <style>
+        .alert-success {
+            padding:0!important;
+            vertical-align: middle!important;
+        }
+        .alert-success .row {
+            font-size: 14px;
+            padding: none;
+            margin: 10px;
+        }
         select#id_birthday_year {
             width: 30%;
         }
@@ -16,12 +28,77 @@
             width: 15%;
         }
         
-        select#id_birthday_dayy {
+        select#id_birthday_day {
             width: 15%;
         }
+        .vertical-align {
+            display: flex;
+            align-items: center;
+        }
+        .preview {
+            text-align: center;
+            border: 1px dotted teal;
+            min-height: 100px;
+            margin: 5px;
+            border-radius: 3%
+        }
         
+        .preview img {
+            min-width: 100px;
+            min-height: 100px;
+            max-height: 100px;
+            max-width: 100px;
+            margin: 2px;
+        }
+        
+        .preview span {
+            margin:5px
+        }
+        input#id_thumbnail {
+            display: none;
+        }
+    
+
     
     </style>
+    <script>
+     //画像ファイルプレビュー表示のイベント追加 fileを選択時に発火するイベントを登録
+     $(function() {
+        var $file_input = $('#id_thumbnail');
+        var $choose_file = $('.preview span');
+        var $preview_img = $('.preview img');
+        $choose_file.on('click', function() {
+            $file_input.click();
+        });
+
+
+
+        $file_input.on('change', function(e) {
+            var file = e.target.files[0],
+                reader = new FileReader(),
+                $preview = $(".preview");
+                t = this;
+
+            // 画像ファイル以外の場合は何もしない
+            if(file.type.indexOf("image") < 0){
+            return false;
+            }
+
+            // ファイル読み込みが完了した際のイベント登録
+            reader.onload = (function(file) {
+            return function(e) {
+                //既存のプレビューを削除
+                
+                // .prevewの領域の中にロードした画像を表示するimageタグを追加
+                $preview_img.attr('src', e.target.result);
+            };
+            })(file);
+
+            reader.readAsDataURL(file);
+        });
+     });
+     
+    </script>
 </head>
 <body style="background: #81D8D0">
     <div class="container" style="padding: 2rem">
@@ -31,20 +108,35 @@
                     <div class="card-body mx-auto">
                         <form method="POST" action="" enctype="multipart/form-data">
                             {{ form.non_field_errors }}
-                            <ul class="messages">
                             {% for message in messages %}
-                                <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
-                            {% endfor %}
-                            </ul>
-                            {% csrf_token %}
-                            <div class="form-group input-group">
-                                <div class="input-group-prepend">
-                                    <span class="input-group-text"><i class="far fa-image"></i> </span>
+                                {% if message.tags == 'success' %} 
+                                <div class="row">
+                                    <div class="col-12">
+                                        <div class="alert alert-success" role="alert">
+                                        <div class="row">
+                                            <div class="col-1">
+                                            <i class="fa fa-check"></i> 
+                                            </div>
+                                            <div class="col-10">
+                                             {{ message }}
+                                            </div>
+                                        </div>
+                                        </div>      
                                     </div>
-                                    {{ form.thumbnail }}
-                                    
-                            </div> <!-- form-group// -->
+                                </div> 
+                                {% endif %}
+                            {% endfor %}
+                           
+                            {% csrf_token %}
+
+                            
+                            {{ form.thumbnail }}
+                           <!-- form-group// -->
                             {{ form.thumbnail.errors }}
+                            <div class="container preview">
+                                <img class="img img-thumbnail preview-img" src="" alt="プレビュー"/><br>
+                                <span class="btn btn-sm btn-success"> <i class="far fa-image"></i> Choose file</span>
+                            </div>
                             <div class="form-group input-group">
                                 <div class="input-group-prepend">
                                     <span class="input-group-text"> <i class="fa fa-envelope"></i> </span>

@@ -8,13 +8,13 @@ from .models import *
 from django.contrib.auth.views import *
 from .forms import *
 from django.contrib.auth.mixins import LoginRequiredMixin
-
 from django.http import HttpResponseRedirect, JsonResponse, HttpResponseBadRequest
 from django.core.signing import BadSignature, SignatureExpired, dumps, loads
 from django.urls import reverse
 from django.contrib.sites.shortcuts import get_current_site
 from django.template.loader import get_template
 from django.contrib import messages
+from django.contrib.messages.views import SuccessMessageMixin
 from django.views.generic.edit import ModelFormMixin
 from .serializer import *
 
@@ -55,23 +55,7 @@ def history(request):
     serializer = ChatMessageSerializer(all_messages, many = True)
     return JsonResponse(serializer.data, status = 200, safe = False)
 
-def create_room(request):
-    if request.user.is_anonymous:
-        return JsonResponse({'error': 'please authenticate first'})
 
-    if request.method == 'POST':
-        user_id = request.POST.get('user_id')
-        user_to_invite = User.objects.get(pk = user_id)
-        our_room = ChatRoom.get_room_of_us(request.user, user_to_invite)
-        if our_room == None:
-            our_room = ChatRoom(title = request.user.name + '×' + user_to_invite.name)
-            our_room.save()
-            me = ChatRoomMember(user = request.user, room = our_room)
-            you = ChatRoomMember(user = user_to_invite, room = our_room)
-            me.save()
-            you.save()
-        return JsonResponse({'success': True, 'room_id': our_room.pk})
-    
 
 def upload_file(request):
     method = request.method
@@ -155,8 +139,36 @@ class SignUpDone(generic.TemplateView):
                     # 問題なければ本登録とする
                     user.is_active = True
                     user.save()
-                    # カートも作成する
+                    # トークルームも作成する
+                    if user.is_staff:
+                        normal_users = User.objects.filter(is_active = True).filter(is_staff = False)
+                        for normal_user in normal_users:
+                            new_room = ChatRoom(title = normal_user.name + '×' + user.name)
+                            new_room.save()
+
+                            me = ChatRoomMember(room = new_room, user = user)
+                            you = ChatRoomMember(room = new_room, user = normal_user)
+                            me.save()
+                            you.save()
+                    else:
+                        staffs = User.objects.filter(is_active = True).filetr(is_staff = True)
+                        for staff in staffs:
+                            new_room = ChatRoom(title = user.name + '×' + staff.name)
+                            new_room.save()
+
+                            me = ChatRoomMember(room = new_room, user = user)
+                            you = ChatRoomMember(room = new_room, user = staff)
+                            me.save()
+                            you.save()
 
                     return super().get(request, **kwargs)
 
         return HttpResponseBadRequest()
+
+class UserUpdate(SuccessMessageMixin, LoginRequiredMixin, generic.UpdateView):
+    model = User
+    form_class = UserUpdateForm
+    template_name = 'chatapp/user_update.html'
+    success_message = '登録情報を更新しました'
+    def get_success_url(self):
+        return resolve_url('chatapp:user_update', pk=self.kwargs['pk'])

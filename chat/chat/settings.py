@@ -132,14 +132,14 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
 
-STATIC_URL = '/static/'
+STATIC_URL = '/static_chat/'
 STATIC_ROOT = os.path.join(BASE_DIR,'static') # 追加
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'chatapp/static'),
 ]
 
 MEDIA_ROOT = os.path.join(BASE_DIR,'media') # 追加
-MEDIA_URL = '/media/' # 追加
+MEDIA_URL = '/media_chat/' # 追加
 
 #EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 DEFAULT_FROM_EMAIL = 'ishikawasyuusaku@gmail.com'

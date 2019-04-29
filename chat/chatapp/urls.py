@@ -13,6 +13,6 @@ urlpatterns = [
     path('logout', views.LogoutView.as_view(), name = "logout"),
     path('history', views.history, name = "history"),
     path('upload', views.upload_file, name = "upload"),
-    path('invite', views.create_room, name = "invite"),
+    path('user_update/<int:pk>/', views.UserUpdate.as_view(), name='user_update'),
     url(r'^top$', views.Top.as_view(), name='top'),
 ]

@@ -20,7 +20,7 @@ from django.conf import settings
 from django.conf.urls.static import static # 追加
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
+    path('chat/admin/', admin.site.urls),
     url(r'^chat/', include('chatapp.urls')),   
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT) # 追加
 

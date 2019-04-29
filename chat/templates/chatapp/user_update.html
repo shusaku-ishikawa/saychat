@@ -1,0 +1,145 @@
+{% extends "chatapp/base.html" %}
+{% block content %}
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/user_update.css' %}">
+
+<div class="row">
+    <div class="col-md-6 offset-md-3 col-12">
+        <div class="card bg-light">
+            <div class="card-body mx-auto">
+                <form method="POST" action="" enctype="multipart/form-data">
+                    {{ form.non_field_errors }}
+                    {% for message in messages %}
+                        {% if message.tags == 'success' %} 
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="alert alert-success" role="alert">
+                                <div class="row">
+                                    <div class="col-1">
+                                    <i class="fa fa-check"></i> 
+                                    </div>
+                                    <div class="col-10">
+                                        {{ message }}
+                                    </div>
+                                </div>
+                                </div>      
+                            </div>
+                        </div> 
+                        {% endif %}
+                    {% endfor %}
+                    
+                    {% csrf_token %}
+                    <input type="file" name="thumbnail" accept="image/*" class="form-control" placeholder="サムネイル" id="id_thumbnail">
+                    <!-- form-group// -->
+                    {{ form.thumbnail.errors }}
+                    <div class="container preview">
+                        <img class="img img-thumbnail preview-img" src="{{ user.thumbnail_url }}" alt="プレビュー" /><br>
+                        <span class="btn btn-sm btn-success"> <i class="far fa-image"></i> Choose file</span>
+                    </div>
+                    <div class="form-group input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"> <i class="fa fa-envelope"></i> </span>
+                            </div>
+                            {{ form.email }}
+                            
+                    </div> <!-- form-group// -->
+                    {{ form.email.errors }}
+                    <div class="form-group input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"> <i class="fa fa-user"></i> </span>
+                            </div>
+                            {{ form.name }}
+                    </div> <!-- form-group// -->
+                    {{ form.name.errors }}
+                    <div class="form-group input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"> <i class="fa fa-user"></i>  </span>
+                            </div>
+                            {{ form.furigana }}
+                            
+                    </div> <!-- form-group// -->
+                    {{ form.furigana.errors }}
+                    <div class="form-group input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"> <i class="fas fa-birthday-cake"></i> </span>
+                            </div>
+                            {{ form.birthday }}
+                            
+                    </div> <!-- form-group// -->
+                    {{ form.birthday.errors }}
+                    <div class="form-group input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"> <i class="fas fa-map-marker-alt"></i> </span>
+                            </div>
+                            {{ form.address }}
+                            
+                    </div> <!-- form-group// -->
+                    {{ form.address.errors }}
+                    
+                    <div class="form-group input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="fas fa-phone"></i></span>
+                            </div>
+                            {{ form.phone }}
+                            
+                    </div> <!-- form-group// -->
+                    {{ form.phone.errors }}
+                    <div class="form-group input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"> <i class="fas fa-home"></i></span>
+                            </div>
+                            {{ form.clinic_name }}
+                            
+                    </div> <!-- form-group// -->
+                    {{ form.clinic_name.errors }}
+                    <div class="form-group">
+                            <button type="submit" class="btn btn-primary btn-block"> UPDATE  </button>
+                        </div> <!-- form-group// --> 
+                </form>
+            </div>
+        </div> <!-- card.// -->
+    </div>
+</div>
+
+{% endblock %}
+{% block extra_js %}
+<script>
+    
+//画像ファイルプレビュー表示のイベント追加 fileを選択時に発火するイベントを登録
+$(function() {
+    
+    var $file_input = $('#id_thumbnail');
+    var $choose_file = $('.preview span');
+    var $preview_img = $('.preview img');
+    
+    $choose_file.on('click', function() {
+        $file_input.click();
+    });
+
+    $file_input.on('change', function(e) {
+        var file = e.target.files[0],
+            reader = new FileReader(),
+            $preview = $(".preview");
+            t = this;
+
+        // 画像ファイル以外の場合は何もしない
+        if(file.type.indexOf("image") < 0){
+        return false;
+        }
+
+        // ファイル読み込みが完了した際のイベント登録
+        reader.onload = (function(file) {
+        return function(e) {
+            //既存のプレビューを削除
+            
+            // .prevewの領域の中にロードした画像を表示するimageタグを追加
+            $preview_img.attr('src', e.target.result);
+        };
+        })(file);
+
+        reader.readAsDataURL(file);
+    });
+});
+
+</script>
+{% endblock %}
