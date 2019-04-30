@@ -39,32 +39,81 @@ img{ max-width:100%;}
 
 .active_chat{ background:#ebebeb;}
 
-.incoming_msg_img {
-  display: inline-block;
-  width: 6%;
+.row .outgoing_msg,
+.row .incoming_msg_img {
+  margin-bottom: 2rem
 }
-.received_msg {
+
+.outgoing_msg{
+  overflow:hidden; 
+  margin:26px 0 26px;
+}
+
+.sent_msg {
   display: inline-block;
-  padding: 0 0 0 10px;
-  vertical-align: top;
   width: 92%;
- }
- .received_withd_msg p {
-  background: #ebebeb none repeat scroll 0 0;
+}
+
+.outgoing_msg_img {
+  vertical-align: top;
+  padding: 5px;
+}
+
+.sent_msg_speaker_name {
+  text-align: right;
+  display:block;
+  color: #747474;
+  font-size: 12px ;
+}
+
+.incomming_msg_speaker_name {
+  text-align: left;
+  display:block;
+  color: #747474;
+  font-size: 12px ;
+}
+
+
+ .sent_msg p {
+  background:  #f9ccac none repeat scroll 0 0;
   border-radius: 3px;
-  color: #646464;
+  font-size: 14px;
+  margin: 0;
+  color:black;
+  padding: 5px 10px 5px 12px;
+  width:100%;
+}
+
+.incoming_msg_img {
+  padding:5px
+}
+.received_withd_msg p {
+  background: #cfe0e8 none repeat scroll 0 0;
+  border-radius: 3px;
+  color: black;
   font-size: 14px;
   margin: 0;
   padding: 5px 10px 5px 12px;
   width: 100%;
 }
+.outgoing_time_date {
+  color: #747474;
+  text-align: right;
+  display: block;
+  font-size: 12px;
+  margin: 3px 0 0;
+}
+
 .time_date {
   color: #747474;
   display: block;
   font-size: 12px;
-  margin: 8px 0 0;
+  margin: 3px 0 0;
 }
-.received_withd_msg { width: 57%;}
+
+.received_withd_msg {
+  width: 100%;
+}
 
 
 
@@ -74,20 +123,7 @@ img{ max-width:100%;}
   min-height: 500px
 }
 
- .sent_msg p {
-  background: #05728f none repeat scroll 0 0;
-  border-radius: 3px;
-  font-size: 14px;
-  margin: 0; color:#fff;
-  padding: 5px 10px 5px 12px;
-  width:100%;
-}
-.outgoing_msg{ overflow:hidden; margin:26px 0 26px;}
 
-.sent_msg {
-  float: right;
-  width: 46%;
-}
 
 .attachment_file {
   font-size: 12px;
@@ -118,14 +154,13 @@ img{ max-width:100%;}
 }
 
 .message_btn {
-  background: teal;
-  border-radius: 0;
-  border: 1px solid gray;
-}
+  color:white;
+  background: lightgray;
+  border-radius: 0;}
 .file_attach_btn {
+  color:white;
   background: orange;
   border-radius: 0;
-  border: 1px solic gray
 }
 
 #preview_zone {

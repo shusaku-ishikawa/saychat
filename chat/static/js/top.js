@@ -80,10 +80,12 @@
         }
         
     }
-    function create_outgoing_message_dom(sent_at, message, attachments) {
 
-        var $outer = $('<div>', { class: 'outgoing_msg' });
-        var $inner = $('<div>', { class: 'sent_msg' }).appendTo($outer);
+    function create_outgoing_message_dom(sent_by, thumbnail_url, sent_at, message, attachments) {
+
+        var $outer = $('<div>', { class: 'row outgoing_msg' });
+        var $inner = $('<div>', { class: 'col-md-10 col-10 offset-md-1 sent_msg' }).appendTo($outer);
+        $('<span>', { text: sent_by, class: 'sent_msg_speaker_name' }).appendTo($inner);
         $('<p>', { html: message.replace(/\r?\n/g, '<br />') }).appendTo($inner);
         attachments.forEach(elem => {
           $('<a>', { 
@@ -93,16 +95,18 @@
             class: 'attachment_file '
           }).appendTo($inner).append($('<br>'));
         });
-        var $sent_at = $('<span>', { class : 'time_date', text: trim_date_str(sent_at) }).appendTo($inner);
+        $('<span>', { class : 'outgoing_time_date', text: trim_date_str(sent_at) }).appendTo($inner);
+        $('<div>', { class: 'col-md-1 col-2 outgoing_msg_img' }).append($('<img>', { src: thumbnail_url })).appendTo($outer);
         return $outer
     }
     
-    function create_incomming_message_dom(thumbnail_url, sent_at, message, attachments) {
-        var $outer = $('<div>', { class: 'incoming_msg' });
-        var $img_wrapper = $('<div>', { class: 'incoming_msg_img' }).appendTo($outer);
+    function create_incomming_message_dom(sent_by, thumbnail_url, sent_at, message, attachments) {
+        var $outer = $('<div>', { class: 'row incoming_msg' });
+        var $img_wrapper = $('<div>', { class: 'col-md-1 col-2 incoming_msg_img' }).appendTo($outer);
         $('<img>', { src: thumbnail_url, alt: '' }).appendTo($img_wrapper);
         
-        var $msg_outer = $('<div>', { class: 'received_msg' }).appendTo($outer);
+        var $msg_outer = $('<div>', { class: 'col-md-10 col-10 received_msg' }).appendTo($outer);
+        $('<span>', { text: sent_by, class: 'incomming_msg_speaker_name' }).appendTo($msg_outer);
         var $msg_inner = $('<div>', { class: 'received_withd_msg' }).appendTo($msg_outer);
         $('<p>', { html: message.replace(/\r?\n/g, '<br />') }).appendTo($msg_inner);
         attachments.forEach(elem => {
@@ -159,9 +163,9 @@
                     // 開いているチャットルームの場合は画面更新
                     if (messageJson.room.pk == active_room_id) {
                         if (user_pk == messageJson.speaker.pk) {
-                            var $msg = create_outgoing_message_dom(messageJson.sent_at, messageJson.message, messageJson.attachments);
+                            var $msg = create_outgoing_message_dom(messageJson.speaker.name, messageJson.speaker.thumbnail_url, messageJson.sent_at, messageJson.message, messageJson.attachments);
                         } else {
-                            var $msg = create_incomming_message_dom(messageJson.speaker.thumbnail_url, messageJson.sent_at, messageJson.message, messageJson.attachments);
+                            var $msg = create_incomming_message_dom(messageJson.speaker.name, messageJson.speaker.thumbnail_url, messageJson.sent_at, messageJson.message, messageJson.attachments);
                         }
                     } else {
                         // ルーム一覧を更新
@@ -173,7 +177,6 @@
                             if ($obj.find('.has_new_message').length == 0) {
                                 var $title = $obj.find('.room_title');
                                 $($title[0]).append($('<span>', { text: "●", class: 'has_new_message' }));
-                                alert('append');
                             }
                             
                         } else {
@@ -277,9 +280,9 @@
                 reversed.forEach(obj => {
    
                   if (user_pk == obj.speaker.pk) {
-                    var $msg = create_outgoing_message_dom(obj.sent_at, obj.message, obj.attachments);
+                    var $msg = create_outgoing_message_dom(obj.speaker.name, obj.speaker.thumbnail_url,  obj.sent_at, obj.message, obj.attachments);
                   } else {
-                    var $msg = create_incomming_message_dom(obj.speaker.thumbnail_url, obj.sent_at, obj.message, obj.attachments);
+                    var $msg = create_incomming_message_dom(obj.speaker.name, obj.speaker.thumbnail_url, obj.sent_at, obj.message, obj.attachments);
                   }
                   
                   $div_history.append($msg);
@@ -360,6 +363,6 @@
         
         var last_room_id = $.cookie(COOKIE_LAST_ROOM_ID);
         if (last_room_id !== null) {
-            $('button[room_id="' + last_room_id + '"]').click();
+            //$('button[room_id="' + last_room_id + '"]').click();
         }
     });

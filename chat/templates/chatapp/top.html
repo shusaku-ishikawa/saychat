@@ -19,7 +19,7 @@
           <div class="col-9 chat_ib">
             <div class="row">
               <div class="col-7">
-                  <p class="room_title">{{ room.room.title }}</p>
+                  <p class="room_title">{{ room.opponent.user.name }}</p>
               </div>
               <div class="col-5" style="text-align: right">
                   <p class="chat_date">{{ room.room.get_latest_message.sent_at|date:"n/j G:i" }}</p>
@@ -46,29 +46,29 @@
   <div id="main" class="messaging">
       <div class="inbox_msg" style="display: none">
         <div class="mesgs">
-          <div class="msg_history">
+          <div class="msg_history container">
             <!-- MESSAGE TO BE ADDED HERE -->
+            
           </div>
           <div id="message_form" class="type_msg">
               <div class="input-group">
-                <textarea rows="1" id="chat-message-input" class="form-control" placeholder="message here.."></textarea>
-                <form name="file_upload">
-                  <div class="input-group-append">
-                    <button name="fileupload" class="btn file_attach_btn" type="button">
-                      <i class="fas fa-paperclip white-icon"></i>
-                    </button>
-                  </div>
-                  
-                  <input id="fileupload" type="file" name="attachment" multiple style="display:none"
-                              data-url="{% url 'chatapp:upload' %}"
-                              data-form-data='{"csrfmiddlewaretoken": "{{ csrf_token }}"}'>
-                </form>
-                <div class="input-group-append">
-                  <button id="send_msg_button" class="btn message_btn" type="submit">
-                    <i class="fab fa-telegram-plane white-icon"></i>
+                <textarea rows="5" id="chat-message-input" class="form-control" placeholder="message here.."></textarea>
+              </div>
+              <form name="file_upload">
+                <div class="input-group">
+                  <button name="fileupload" class="btn-block file_attach_btn" type="button">
+                    <i class="fas fa-paperclip white-icon"></i> ファイルを添付する
                   </button>
                 </div>
                 
+                <input id="fileupload" type="file" name="attachment" multiple style="display:none"
+                            data-url="{% url 'chatapp:upload' %}"
+                            data-form-data='{"csrfmiddlewaretoken": "{{ csrf_token }}"}'>
+              </form>
+              <div class="input-group">
+                <button id="send_msg_button" class="btn-block message_btn" type="submit">
+                  <i class="fab fa-telegram-plane white-icon"></i> コメントする
+                </button>
               </div>
               <div id="preview_zone" class="row">
 
