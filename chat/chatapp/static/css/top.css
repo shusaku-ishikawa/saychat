@@ -12,7 +12,7 @@ img{ max-width:100%;}
 }
 
 .room_group_name {
-  background: lightcoral;
+  background: red;
   text-align: center;
   height: 20px
 }
@@ -190,7 +190,7 @@ img{ max-width:100%;}
   z-index: 1; /* Stay on top */
   top: 50px;
   left: 0;
-  background-color:#e0e2e4; /* Black*/
+  background-color:#e0e2e4; /* red*/
   overflow-x: hidden; /* Disable horizontal scroll */
   padding-top: 60px; /* Place content 60px from the top */
   transition: 0.5s; /* 0.5 second transition effect to slide in the sidebar */
@@ -224,7 +224,7 @@ img{ max-width:100%;}
 .openbtn {
   font-size: 14px;
   cursor: pointer;
-  background-color:teal;
+  background-color:red;
   color: white;
   padding: 0.5rem;
   margin:0.5rem;

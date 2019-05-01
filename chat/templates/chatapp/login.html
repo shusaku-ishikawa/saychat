@@ -8,9 +8,16 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
-    <title>title here</title>
+    <title>ログイン</title>
+    <style>
+        .login-btn {
+            background-color: red;
+            color:white;
+        }
+    
+    </style>
 </head>
-<body style="background: teal"">
+<body style="background: red"">
     <div class="container" style="padding: 2rem">
         <div class="row">
             <div class="col-md-6 offset-md-3 col-12">
@@ -35,7 +42,7 @@
                             {{ form.password.error }}
                             {% csrf_token %}
                             <div class="form-group">
-                                <button type="submit" name="btn" value="Login" class="btn btn-primary btn-block">Login</button>
+                                <button type="submit" name="btn" value="Login" class="login-btn btn btn-block">Login</button>
                             </div>
                             <p class="text-center">アカウントをお持ち出ないですか? <a href="{% url 'chatapp:sign_up' %}">Sign up</a> </p>                                                                
                         </form>

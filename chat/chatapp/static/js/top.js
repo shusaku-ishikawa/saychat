@@ -142,7 +142,7 @@
 
         chatSocket.onmessage = function(e) {
             $div_history.animate({ scrollTop: $div_history.prop("scrollHeight")}, 1000);
-            console.log(e);
+            
             if (e == undefined) {
                 return;
             }

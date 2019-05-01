@@ -5,6 +5,9 @@ import json
 from .models import * 
 from .serializer import *
 from django.conf import settings
+from channels.db import database_sync_to_async
+
+
 
 class ChatConsumer(AsyncJsonWebsocketConsumer):
 
@@ -56,14 +59,12 @@ class ChatConsumer(AsyncJsonWebsocketConsumer):
         # The logged-in user is in our scope thanks to the authentication ASGI middleware
         print('join_room called')
         
-        room = ChatRoom.objects.get(pk = room_id)
+        room = await self._get_room_by_pk(room_id)
         user = self.scope['user']
 
         if not room.is_member(user.pk):
-            new_mem = ChatRoomMember()
-            new_mem.room = room
-            new_mem.user = self.scope["user"]
-            new_mem.save()
+            await self._create_member_instance(room, self.scope['user'])
+            
 
         # Send a join message if it's turned on
         if True:
@@ -93,10 +94,8 @@ class ChatConsumer(AsyncJsonWebsocketConsumer):
         Called by receive_json when someone sent a leave command.
         """
         # The logged-in user is in our scope thanks to the authentication ASGI middleware
-        room = ChatRoom.objects.get(pk = room_id)
+        room = await self._get_room_by_pk(room_id)
         user = self.scope['user']
-        leaving_member = ChatRoomMember.objects.get(room = room, user = user)
-        leaving_member.delete()
 
         # Send a leave message if it's turned on
         if settings.NOTIFY_USERS_ON_ENTER_OR_LEAVE_ROOMS:
@@ -131,14 +130,13 @@ class ChatConsumer(AsyncJsonWebsocketConsumer):
             raise Exception
         # Get the room and send to the group about 
         user = self.scope['user']
-        room = ChatRoom.objects.get(pk = room_id)
-        m = ChatMessage(speaker = user , room = room, message = message)
-        m.save()
+        room = await self._get_room_by_pk(room_id)
+        m = await self._create_new_message(user, room, message)
+        
         print('attachment: ' + str(attachment_list))
         for pk in attachment_list:
-            a = Attachment.objects.get(pk = pk)
-            a.parent_message = m
-            a.save()
+            a = await self._get_attachment_by_pk(pk)
+            await self._set_attachment_to_message(a, m)
 
         print('send group called')
         await self.channel_layer.group_send(
@@ -185,7 +183,7 @@ class ChatConsumer(AsyncJsonWebsocketConsumer):
         """
         # Send a message down to the client
 
-        message = ChatMessage.objects.get(pk = event['message_id'])
+        message = await self._get_message_by_pk(event['message_id'])
         serialized = ChatMessageSerializer(message, many = False)
         print('chat message called')
         await self.send_json(
@@ -194,3 +192,28 @@ class ChatConsumer(AsyncJsonWebsocketConsumer):
                 "message": json.dumps(serialized.data),
             },
         )
+    @database_sync_to_async
+    def _get_room_by_pk(self, room_id):
+        return ChatRoom.objects.get(pk = room_id)
+
+    @database_sync_to_async
+    def _create_member_instance(self, room, user):
+        new_mem = ChatRoomMember()
+        new_mem.room = room
+        new_mem.user = user
+        new_mem.save()
+    @database_sync_to_async
+    def _create_new_message(self, user, room, message):
+        m = ChatMessage(speaker = user , room = room, message = message)
+        m.save()
+        return m
+    @database_sync_to_async
+    def _get_message_by_pk(self, pk):
+        return ChatMessage.objects.get(pk = pk)
+    @database_sync_to_async
+    def _get_attachment_by_pk(self, pk):
+        return Attachment.objects.get(pk = pk)
+    @database_sync_to_async
+    def _set_attachment_to_message(self, attachment, message):
+        attachment.parent_message = message
+        attachment.save()

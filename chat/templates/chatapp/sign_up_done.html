@@ -10,12 +10,18 @@
     <title>title here</title>
 
 </head>
+<style>
+    .login-btn {
+        background-color: red;
+        color:red;
+    }
+</style>
 <body>
         <div class="jumbotron text-xs-center">
             <h1 class="display-3">Thank You!</h1>
                 <p class="lead"><strong>Enjoy shopping!</strong> </p>
             <hr>
-            <a class="btn btn-success" href="{% url 'chatapp:login' %}">login</a>
+            <a class="btn login-btn" href="{% url 'chatapp:login' %}">login</a>
         </div>
             
 </body>

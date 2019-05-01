@@ -22,7 +22,7 @@
                   <p class="room_title">{{ room.opponent.user.name }}</p>
               </div>
               <div class="col-5" style="text-align: right">
-                  <p class="chat_date">{{ room.room.get_latest_message.sent_at|date:"n/j G:i" }}</p>
+                  <p class="chat_date">{{ room.room.get_latest_message.sent_at }}</p>
               </div>        
             </div>
             <div class="row">
@@ -42,7 +42,7 @@
       {% endif %}
   </div>
 <div class="container">
-  <button class="openbtn btn btn-primary" onclick="openNav()">&#9776; チャットルームを表示</button>  
+  <button class="openbtn btn" onclick="openNav()">&#9776; チャットルームを表示</button>  
   <div id="main" class="messaging">
       <div class="inbox_msg" style="display: none">
         <div class="mesgs">
@@ -52,7 +52,7 @@
           </div>
           <div id="message_form" class="type_msg">
               <div class="input-group">
-                <textarea rows="5" id="chat-message-input" class="form-control" placeholder="message here.."></textarea>
+                <textarea rows="5" id="chat-message-input" class="form-control" placeholder="メッセージを入力してください"></textarea>
               </div>
               <form name="file_upload">
                 <div class="input-group">
