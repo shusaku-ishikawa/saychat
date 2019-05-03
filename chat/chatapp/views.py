@@ -151,7 +151,7 @@ class SignUpDone(generic.TemplateView):
                             me.save()
                             you.save()
                     else:
-                        staffs = User.objects.filter(is_active = True).filetr(is_staff = True)
+                        staffs = User.objects.filter(is_active = True).filter(is_staff = True)
                         for staff in staffs:
                             new_room = ChatRoom(title = user.name + '×' + staff.name)
                             new_room.save()
