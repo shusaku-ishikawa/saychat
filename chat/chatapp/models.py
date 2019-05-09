@@ -11,6 +11,7 @@ from django.db.models import Q
 # Create your models here.
 import unicodedata
 from django.core.files.storage import FileSystemStorage
+from django.utils.safestring import mark_safe 
 
 class MyFileSystemStorage(FileSystemStorage):
     """
@@ -195,7 +196,9 @@ class ChatMessage(models.Model):
             return self.message
         else:
             return self.message[:10] + '...'
-
+    @property
+    def message_safe(self): 
+        return mark_safe(self.my_textfield)
 class Attachment(models.Model):
     def __str__(self):
         return self.file.name

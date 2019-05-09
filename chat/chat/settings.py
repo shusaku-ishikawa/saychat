@@ -157,7 +157,7 @@ EMAIL_HOST = 'smtp.lolipop.jp'
 EMAIL_PORT = 465
 EMAIL_HOST_USER = 'opthok-navi@optech-hokkaido.com'
 EMAIL_HOST_PASSWORD = '-Opthok-navi-Optech-4618-'
-EMAIL_USE_TLS = True
+EMAIL_USE_SSL = True
 
 
 NOTIFY_USERS_ON_ENTER_OR_LEAVE_ROOMS = True
