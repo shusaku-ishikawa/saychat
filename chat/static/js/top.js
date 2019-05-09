@@ -80,13 +80,30 @@
         }
         
     }
-
+    var entityMap = {
+        '&': '&amp;',
+        '<': '&lt;',
+        '>': '&gt;',
+        '"': '&quot;',
+        "'": '&#39;',
+        '/': '&#x2F;',
+        '`': '&#x60;',
+        '=': '&#x3D;'
+      };
+      
+    function escapeHtml (string) {
+        return String(string).replace(/[&<>"'`=\/]/g, function (s) {
+            return entityMap[s];
+        });
+    }
     function create_outgoing_message_dom(sent_by, thumbnail_url, sent_at, message, attachments) {
 
         var $outer = $('<div>', { class: 'row outgoing_msg' });
         var $inner = $('<div>', { class: 'col-md-10 col-10 offset-md-1 sent_msg' }).appendTo($outer);
         $('<span>', { text: sent_by, class: 'sent_msg_speaker_name' }).appendTo($inner);
-        $('<p>', { html: message.replace(/\r?\n/g, '<br />') }).appendTo($inner);
+        $p = $('<p>', { html: escapeHtml(message).replace(/\r?\n/g, '<br />') });
+        $p.appendTo($inner);
+        $p.linkify();
         attachments.forEach(elem => {
           $('<a>', { 
             href: elem.file_url,
@@ -108,7 +125,9 @@
         var $msg_outer = $('<div>', { class: 'col-md-10 col-10 received_msg' }).appendTo($outer);
         $('<span>', { text: sent_by, class: 'incomming_msg_speaker_name' }).appendTo($msg_outer);
         var $msg_inner = $('<div>', { class: 'received_withd_msg' }).appendTo($msg_outer);
-        $('<p>', { html: message.replace(/\r?\n/g, '<br />') }).appendTo($msg_inner);
+        $p = $('<p>', { html:  escapeHtml(message).replace(/\r?\n/g, '<br />') });
+        $p.appendTo($msg_inner);
+        $p.linkify();
         attachments.forEach(elem => {
           $('<a>', { 
             href: elem.file_url,
