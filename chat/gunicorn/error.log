@@ -376,3 +376,1508 @@
 [2019-04-30 11:40:34 +0900] [29757] [INFO] Worker exiting (pid: 29757)
 [2019-04-30 11:40:34 +0900] [29692] [INFO] Shutting down: Master
 [2019-04-30 11:40:34 +0900] [29754] [INFO] Shutting down: Master
+[2019-05-08 09:52:05 +0900] [26684] [DEBUG] Current configuration:
+  config: gunicorn/conf.py
+  bind: ['127.0.0.1:8004']
+  backlog: 2048
+  workers: 1
+  worker_class: sync
+  threads: 1
+  worker_connections: 1000
+  max_requests: 0
+  max_requests_jitter: 0
+  timeout: 600
+  graceful_timeout: 30
+  keepalive: 2
+  limit_request_line: 4094
+  limit_request_fields: 100
+  limit_request_field_size: 8190
+  reload: False
+  reload_engine: auto
+  reload_extra_files: []
+  spew: False
+  check_config: False
+  preload_app: False
+  sendfile: None
+  reuse_port: False
+  chdir: /var/www/projects/chat.git/chat
+  daemon: True
+  raw_env: []
+  pidfile: None
+  worker_tmp_dir: None
+  user: 501
+  group: 501
+  umask: 0
+  initgroups: False
+  tmp_upload_dir: None
+  secure_scheme_headers: {'X-FORWARDED-PROTOCOL': 'ssl', 'X-FORWARDED-PROTO': 'https', 'X-FORWARDED-SSL': 'on'}
+  forwarded_allow_ips: ['127.0.0.1']
+  accesslog: gunicorn/access.log
+  disable_redirect_access_to_syslog: False
+  access_log_format: %(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"
+  errorlog: gunicorn/error.log
+  loglevel: debug
+  capture_output: False
+  logger_class: gunicorn.glogging.Logger
+  logconfig: None
+  logconfig_dict: {}
+  syslog_addr: udp://localhost:514
+  syslog: False
+  syslog_prefix: None
+  syslog_facility: user
+  enable_stdio_inheritance: False
+  statsd_host: None
+  statsd_prefix: 
+  proc_name: None
+  default_proc_name: chat.wsgi:application
+  pythonpath: None
+  paste: None
+  on_starting: <function OnStarting.on_starting at 0x7f191b31ebf8>
+  on_reload: <function OnReload.on_reload at 0x7f191b31ed08>
+  when_ready: <function when_ready at 0x7f191b3137b8>
+  pre_fork: <function pre_fork at 0x7f191b3136a8>
+  post_fork: <function post_fork at 0x7f191b313620>
+  post_worker_init: <function PostWorkerInit.post_worker_init at 0x7f191b32b1e0>
+  worker_int: <function worker_int at 0x7f191b313840>
+  worker_abort: <function worker_abort at 0x7f191b3138c8>
+  pre_exec: <function pre_exec at 0x7f191b313730>
+  pre_request: <function PreRequest.pre_request at 0x7f191b32b620>
+  post_request: <function PostRequest.post_request at 0x7f191b32b6a8>
+  child_exit: <function ChildExit.child_exit at 0x7f191b32b7b8>
+  worker_exit: <function WorkerExit.worker_exit at 0x7f191b32b8c8>
+  nworkers_changed: <function NumWorkersChanged.nworkers_changed at 0x7f191b32b9d8>
+  on_exit: <function OnExit.on_exit at 0x7f191b32bae8>
+  proxy_protocol: False
+  proxy_allow_ips: ['127.0.0.1']
+  keyfile: None
+  certfile: None
+  ssl_version: 2
+  cert_reqs: 0
+  ca_certs: None
+  suppress_ragged_eofs: True
+  do_handshake_on_connect: False
+  ciphers: TLSv1
+  raw_paste_global_conf: []
+[2019-05-08 09:52:05 +0900] [26684] [INFO] Starting gunicorn 19.9.0
+[2019-05-08 09:52:05 +0900] [26684] [DEBUG] Arbiter booted
+[2019-05-08 09:52:05 +0900] [26684] [INFO] Listening at: http://127.0.0.1:8004 (26684)
+[2019-05-08 09:52:05 +0900] [26684] [INFO] Using worker: sync
+[2019-05-08 09:52:05 +0900] [26684] [INFO] Server is ready. Spawning workers
+[2019-05-08 09:52:05 +0900] [26687] [INFO] Booting worker with pid: 26687
+[2019-05-08 09:52:05 +0900] [26687] [INFO] Worker spawned (pid: 26687)
+[2019-05-08 09:52:05 +0900] [26684] [DEBUG] 1 workers
+[2019-05-08 09:53:05 +0900] [26696] [DEBUG] Current configuration:
+  config: gunicorn/conf.py
+  bind: ['127.0.0.1:8001']
+  backlog: 2048
+  workers: 1
+  worker_class: sync
+  threads: 1
+  worker_connections: 1000
+  max_requests: 0
+  max_requests_jitter: 0
+  timeout: 600
+  graceful_timeout: 30
+  keepalive: 2
+  limit_request_line: 4094
+  limit_request_fields: 100
+  limit_request_field_size: 8190
+  reload: False
+  reload_engine: auto
+  reload_extra_files: []
+  spew: False
+  check_config: False
+  preload_app: False
+  sendfile: None
+  reuse_port: False
+  chdir: /var/www/projects/chat.git/chat
+  daemon: False
+  raw_env: []
+  pidfile: None
+  worker_tmp_dir: None
+  user: 501
+  group: 501
+  umask: 0
+  initgroups: False
+  tmp_upload_dir: None
+  secure_scheme_headers: {'X-FORWARDED-PROTOCOL': 'ssl', 'X-FORWARDED-PROTO': 'https', 'X-FORWARDED-SSL': 'on'}
+  forwarded_allow_ips: ['127.0.0.1']
+  accesslog: gunicorn/access.log
+  disable_redirect_access_to_syslog: False
+  access_log_format: %(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"
+  errorlog: gunicorn/error.log
+  loglevel: debug
+  capture_output: False
+  logger_class: gunicorn.glogging.Logger
+  logconfig: None
+  logconfig_dict: {}
+  syslog_addr: udp://localhost:514
+  syslog: False
+  syslog_prefix: None
+  syslog_facility: user
+  enable_stdio_inheritance: False
+  statsd_host: None
+  statsd_prefix: 
+  proc_name: None
+  default_proc_name: chat.wsgi:application
+  pythonpath: None
+  paste: None
+  on_starting: <function OnStarting.on_starting at 0x7f0441c25bf8>
+  on_reload: <function OnReload.on_reload at 0x7f0441c25d08>
+  when_ready: <function when_ready at 0x7f0441c1a7b8>
+  pre_fork: <function pre_fork at 0x7f0441c1a6a8>
+  post_fork: <function post_fork at 0x7f0441c1a620>
+  post_worker_init: <function PostWorkerInit.post_worker_init at 0x7f0441c321e0>
+  worker_int: <function worker_int at 0x7f0441c1a840>
+  worker_abort: <function worker_abort at 0x7f0441c1a8c8>
+  pre_exec: <function pre_exec at 0x7f0441c1a730>
+  pre_request: <function PreRequest.pre_request at 0x7f0441c32620>
+  post_request: <function PostRequest.post_request at 0x7f0441c326a8>
+  child_exit: <function ChildExit.child_exit at 0x7f0441c327b8>
+  worker_exit: <function WorkerExit.worker_exit at 0x7f0441c328c8>
+  nworkers_changed: <function NumWorkersChanged.nworkers_changed at 0x7f0441c329d8>
+  on_exit: <function OnExit.on_exit at 0x7f0441c32ae8>
+  proxy_protocol: False
+  proxy_allow_ips: ['127.0.0.1']
+  keyfile: None
+  certfile: None
+  ssl_version: 2
+  cert_reqs: 0
+  ca_certs: None
+  suppress_ragged_eofs: True
+  do_handshake_on_connect: False
+  ciphers: TLSv1
+  raw_paste_global_conf: []
+[2019-05-08 09:53:05 +0900] [26696] [INFO] Starting gunicorn 19.9.0
+[2019-05-08 09:53:05 +0900] [26696] [DEBUG] Arbiter booted
+[2019-05-08 09:53:05 +0900] [26696] [INFO] Listening at: http://127.0.0.1:8001 (26696)
+[2019-05-08 09:53:05 +0900] [26696] [INFO] Using worker: sync
+[2019-05-08 09:53:05 +0900] [26696] [INFO] Server is ready. Spawning workers
+[2019-05-08 09:53:05 +0900] [26699] [INFO] Booting worker with pid: 26699
+[2019-05-08 09:53:05 +0900] [26699] [INFO] Worker spawned (pid: 26699)
+[2019-05-08 09:53:05 +0900] [26696] [DEBUG] 1 workers
+[2019-05-08 09:53:29 +0900] [26699] [INFO] worker received INT or QUIT signal
+[2019-05-08 09:53:29 +0900] [26696] [INFO] Handling signal: int
+[2019-05-08 09:53:29 +0900] [26699] [INFO] worker received INT or QUIT signal
+[2019-05-08 09:53:29 +0900] [26699] [DEBUG] 
+# Thread: MainThread(139656314398464)
+File: "/var/www/projects/myenv/bin/gunicorn", line 11, in <module>
+  sys.exit(run())
+File: "/var/www/projects/myenv/lib64/python3.6/site-packages/gunicorn/app/wsgiapp.py", line 61, in run
+  WSGIApplication("%(prog)s [OPTIONS] [APP_MODULE]").run()
+File: "/var/www/projects/myenv/lib64/python3.6/site-packages/gunicorn/app/base.py", line 223, in run
+  super(Application, self).run()
+File: "/var/www/projects/myenv/lib64/python3.6/site-packages/gunicorn/app/base.py", line 72, in run
+  Arbiter(self).run()
+File: "/var/www/projects/myenv/lib64/python3.6/site-packages/gunicorn/arbiter.py", line 203, in run
+  self.manage_workers()
+File: "/var/www/projects/myenv/lib64/python3.6/site-packages/gunicorn/arbiter.py", line 545, in manage_workers
+  self.spawn_workers()
+File: "/var/www/projects/myenv/lib64/python3.6/site-packages/gunicorn/arbiter.py", line 616, in spawn_workers
+  self.spawn_worker()
+File: "/var/www/projects/myenv/lib64/python3.6/site-packages/gunicorn/arbiter.py", line 583, in spawn_worker
+  worker.init_process()
+File: "/var/www/projects/myenv/lib64/python3.6/site-packages/gunicorn/workers/base.py", line 134, in init_process
+  self.run()
+File: "/var/www/projects/myenv/lib64/python3.6/site-packages/gunicorn/workers/sync.py", line 124, in run
+  self.run_for_one(timeout)
+File: "/var/www/projects/myenv/lib64/python3.6/site-packages/gunicorn/workers/sync.py", line 83, in run_for_one
+  self.wait(timeout)
+File: "/var/www/projects/myenv/lib64/python3.6/site-packages/gunicorn/workers/sync.py", line 35, in wait
+  ret = select.select(self.wait_fds, [], [], timeout)
+File: "/var/www/projects/myenv/lib64/python3.6/site-packages/gunicorn/workers/base.py", line 189, in handle_quit
+  self.cfg.worker_int(self)
+File: "gunicorn/conf.py", line 60, in worker_int
+  for filename, lineno, name, line in traceback.extract_stack(stack):
+File: "/usr/lib64/python3.6/traceback.py", line 211, in extract_stack
+  stack = StackSummary.extract(walk_stack(f), limit=limit)
+File: "/usr/lib64/python3.6/traceback.py", line 364, in extract
+  f.line
+File: "/usr/lib64/python3.6/traceback.py", line 286, in line
+  self._line = linecache.getline(self.filename, self.lineno).strip()
+File: "/usr/lib64/python3.6/linecache.py", line 16, in getline
+  lines = getlines(filename, module_globals)
+File: "/usr/lib64/python3.6/linecache.py", line 47, in getlines
+  return updatecache(filename, module_globals)
+File: "/usr/lib64/python3.6/linecache.py", line 136, in updatecache
+  with tokenize.open(fullname) as fp:
+File: "/usr/lib64/python3.6/tokenize.py", line 454, in open
+  encoding, lines = detect_encoding(buffer.readline)
+File: "/usr/lib64/python3.6/tokenize.py", line 423, in detect_encoding
+  first = read_or_stop()
+File: "/usr/lib64/python3.6/tokenize.py", line 381, in read_or_stop
+  return readline()
+File: "/var/www/projects/myenv/lib64/python3.6/site-packages/gunicorn/workers/base.py", line 189, in handle_quit
+  self.cfg.worker_int(self)
+File: "gunicorn/conf.py", line 60, in worker_int
+  for filename, lineno, name, line in traceback.extract_stack(stack):
+[2019-05-08 09:53:30 +0900] [26699] [INFO] Worker exiting (pid: 26699)
+[2019-05-08 09:53:30 +0900] [26696] [INFO] Shutting down: Master
+[2019-05-08 09:55:08 +0900] [26710] [DEBUG] Current configuration:
+  config: gunicorn/conf.py
+  bind: ['127.0.0.1:8001']
+  backlog: 2048
+  workers: 1
+  worker_class: sync
+  threads: 1
+  worker_connections: 1000
+  max_requests: 0
+  max_requests_jitter: 0
+  timeout: 600
+  graceful_timeout: 30
+  keepalive: 2
+  limit_request_line: 4094
+  limit_request_fields: 100
+  limit_request_field_size: 8190
+  reload: False
+  reload_engine: auto
+  reload_extra_files: []
+  spew: False
+  check_config: False
+  preload_app: False
+  sendfile: None
+  reuse_port: False
+  chdir: /var/www/projects/chat.git/chat
+  daemon: False
+  raw_env: []
+  pidfile: None
+  worker_tmp_dir: None
+  user: 501
+  group: 501
+  umask: 0
+  initgroups: False
+  tmp_upload_dir: None
+  secure_scheme_headers: {'X-FORWARDED-PROTOCOL': 'ssl', 'X-FORWARDED-PROTO': 'https', 'X-FORWARDED-SSL': 'on'}
+  forwarded_allow_ips: ['127.0.0.1']
+  accesslog: gunicorn/access.log
+  disable_redirect_access_to_syslog: False
+  access_log_format: %(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"
+  errorlog: gunicorn/error.log
+  loglevel: debug
+  capture_output: False
+  logger_class: gunicorn.glogging.Logger
+  logconfig: None
+  logconfig_dict: {}
+  syslog_addr: udp://localhost:514
+  syslog: False
+  syslog_prefix: None
+  syslog_facility: user
+  enable_stdio_inheritance: False
+  statsd_host: None
+  statsd_prefix: 
+  proc_name: None
+  default_proc_name: chat.wsgi:application
+  pythonpath: None
+  paste: None
+  on_starting: <function OnStarting.on_starting at 0x7f3b32f11b70>
+  on_reload: <function OnReload.on_reload at 0x7f3b32f11c80>
+  when_ready: <function when_ready at 0x7f3b32f16730>
+  pre_fork: <function pre_fork at 0x7f3b32f16620>
+  post_fork: <function post_fork at 0x7f3b32f16598>
+  post_worker_init: <function PostWorkerInit.post_worker_init at 0x7f3b32f2e158>
+  worker_int: <function worker_int at 0x7f3b32f167b8>
+  worker_abort: <function worker_abort at 0x7f3b32f16840>
+  pre_exec: <function pre_exec at 0x7f3b32f166a8>
+  pre_request: <function PreRequest.pre_request at 0x7f3b32f2e598>
+  post_request: <function PostRequest.post_request at 0x7f3b32f2e620>
+  child_exit: <function ChildExit.child_exit at 0x7f3b32f2e730>
+  worker_exit: <function WorkerExit.worker_exit at 0x7f3b32f2e840>
+  nworkers_changed: <function NumWorkersChanged.nworkers_changed at 0x7f3b32f2e950>
+  on_exit: <function OnExit.on_exit at 0x7f3b32f2ea60>
+  proxy_protocol: False
+  proxy_allow_ips: ['127.0.0.1']
+  keyfile: None
+  certfile: None
+  ssl_version: 2
+  cert_reqs: 0
+  ca_certs: None
+  suppress_ragged_eofs: True
+  do_handshake_on_connect: False
+  ciphers: TLSv1
+  raw_paste_global_conf: []
+[2019-05-08 09:55:08 +0900] [26710] [INFO] Starting gunicorn 19.9.0
+[2019-05-08 09:55:08 +0900] [26710] [DEBUG] Arbiter booted
+[2019-05-08 09:55:08 +0900] [26710] [INFO] Listening at: http://127.0.0.1:8001 (26710)
+[2019-05-08 09:55:08 +0900] [26710] [INFO] Using worker: sync
+[2019-05-08 09:55:08 +0900] [26710] [INFO] Server is ready. Spawning workers
+[2019-05-08 09:55:08 +0900] [26713] [INFO] Booting worker with pid: 26713
+[2019-05-08 09:55:08 +0900] [26713] [INFO] Worker spawned (pid: 26713)
+[2019-05-08 09:55:08 +0900] [26710] [DEBUG] 1 workers
+[2019-05-08 10:11:56 +0900] [26713] [DEBUG] GET /chat
+[2019-05-08 10:11:56 +0900] [26713] [DEBUG] GET /chat/
+[2019-05-08 10:12:14 +0900] [26713] [DEBUG] GET /chat/admin
+[2019-05-08 10:12:14 +0900] [26713] [DEBUG] GET /chat/admin/
+[2019-05-08 10:12:14 +0900] [26713] [DEBUG] GET /chat/admin/login/
+[2019-05-08 10:27:14 +0900] [26710] [INFO] Handling signal: term
+[2019-05-08 10:27:14 +0900] [26713] [INFO] Worker exiting (pid: 26713)
+[2019-05-08 10:27:14 +0900] [26710] [INFO] Shutting down: Master
+[2019-05-08 10:27:19 +0900] [26684] [INFO] Handling signal: term
+[2019-05-08 10:27:19 +0900] [26687] [INFO] Worker exiting (pid: 26687)
+[2019-05-08 10:27:19 +0900] [26684] [INFO] Shutting down: Master
+[2019-05-08 10:27:39 +0900] [853] [DEBUG] Current configuration:
+  config: gunicorn/conf.py
+  bind: ['127.0.0.1:8001']
+  backlog: 2048
+  workers: 1
+  worker_class: sync
+  threads: 1
+  worker_connections: 1000
+  max_requests: 0
+  max_requests_jitter: 0
+  timeout: 600
+  graceful_timeout: 30
+  keepalive: 2
+  limit_request_line: 4094
+  limit_request_fields: 100
+  limit_request_field_size: 8190
+  reload: False
+  reload_engine: auto
+  reload_extra_files: []
+  spew: False
+  check_config: False
+  preload_app: False
+  sendfile: None
+  reuse_port: False
+  chdir: /var/www/projects/chat.git/chat
+  daemon: False
+  raw_env: []
+  pidfile: None
+  worker_tmp_dir: None
+  user: 501
+  group: 501
+  umask: 0
+  initgroups: False
+  tmp_upload_dir: None
+  secure_scheme_headers: {'X-FORWARDED-PROTOCOL': 'ssl', 'X-FORWARDED-PROTO': 'https', 'X-FORWARDED-SSL': 'on'}
+  forwarded_allow_ips: ['127.0.0.1']
+  accesslog: gunicorn/access.log
+  disable_redirect_access_to_syslog: False
+  access_log_format: %(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"
+  errorlog: gunicorn/error.log
+  loglevel: debug
+  capture_output: False
+  logger_class: gunicorn.glogging.Logger
+  logconfig: None
+  logconfig_dict: {}
+  syslog_addr: udp://localhost:514
+  syslog: False
+  syslog_prefix: None
+  syslog_facility: user
+  enable_stdio_inheritance: False
+  statsd_host: None
+  statsd_prefix: 
+  proc_name: None
+  default_proc_name: chat.wsgi:application
+  pythonpath: None
+  paste: None
+  on_starting: <function OnStarting.on_starting at 0x7f121dee2b70>
+  on_reload: <function OnReload.on_reload at 0x7f121dee2c80>
+  when_ready: <function when_ready at 0x7f121deeb730>
+  pre_fork: <function pre_fork at 0x7f121deeb620>
+  post_fork: <function post_fork at 0x7f121deeb598>
+  post_worker_init: <function PostWorkerInit.post_worker_init at 0x7f121df01158>
+  worker_int: <function worker_int at 0x7f121deeb7b8>
+  worker_abort: <function worker_abort at 0x7f121deeb840>
+  pre_exec: <function pre_exec at 0x7f121deeb6a8>
+  pre_request: <function PreRequest.pre_request at 0x7f121df01598>
+  post_request: <function PostRequest.post_request at 0x7f121df01620>
+  child_exit: <function ChildExit.child_exit at 0x7f121df01730>
+  worker_exit: <function WorkerExit.worker_exit at 0x7f121df01840>
+  nworkers_changed: <function NumWorkersChanged.nworkers_changed at 0x7f121df01950>
+  on_exit: <function OnExit.on_exit at 0x7f121df01a60>
+  proxy_protocol: False
+  proxy_allow_ips: ['127.0.0.1']
+  keyfile: None
+  certfile: None
+  ssl_version: 2
+  cert_reqs: 0
+  ca_certs: None
+  suppress_ragged_eofs: True
+  do_handshake_on_connect: False
+  ciphers: TLSv1
+  raw_paste_global_conf: []
+[2019-05-08 10:27:39 +0900] [853] [INFO] Starting gunicorn 19.9.0
+[2019-05-08 10:27:39 +0900] [853] [DEBUG] Arbiter booted
+[2019-05-08 10:27:39 +0900] [853] [INFO] Listening at: http://127.0.0.1:8001 (853)
+[2019-05-08 10:27:39 +0900] [853] [INFO] Using worker: sync
+[2019-05-08 10:27:39 +0900] [853] [INFO] Server is ready. Spawning workers
+[2019-05-08 10:27:39 +0900] [966] [INFO] Booting worker with pid: 966
+[2019-05-08 10:27:39 +0900] [966] [INFO] Worker spawned (pid: 966)
+[2019-05-08 10:27:39 +0900] [853] [DEBUG] 1 workers
+[2019-05-08 10:34:18 +0900] [966] [DEBUG] GET /chat/
+[2019-05-08 10:34:19 +0900] [966] [DEBUG] GET /chat/admin/
+[2019-05-08 10:34:19 +0900] [966] [DEBUG] GET /chat/admin/login/
+[2019-05-08 10:34:27 +0900] [966] [DEBUG] POST /chat/admin/login/
+[2019-05-08 10:34:27 +0900] [966] [DEBUG] GET /chat/admin/
+[2019-05-08 10:34:46 +0900] [966] [DEBUG] GET /chat/admin/chatapp/user/
+[2019-05-08 10:34:47 +0900] [966] [DEBUG] GET /chat/admin/jsi18n/
+[2019-05-08 10:34:51 +0900] [966] [DEBUG] GET /chat/admin/chatapp/user/add/
+[2019-05-08 10:37:04 +0900] [966] [DEBUG] GET /chat/admin/chatapp/user/add/
+[2019-05-08 10:37:25 +0900] [966] [INFO] Worker exiting (pid: 966)
+[2019-05-08 10:37:25 +0900] [853] [INFO] Handling signal: term
+[2019-05-08 10:37:26 +0900] [853] [INFO] Shutting down: Master
+[2019-05-08 10:37:26 +0900] [1853] [DEBUG] Current configuration:
+  config: gunicorn/conf.py
+  bind: ['127.0.0.1:8001']
+  backlog: 2048
+  workers: 1
+  worker_class: sync
+  threads: 1
+  worker_connections: 1000
+  max_requests: 0
+  max_requests_jitter: 0
+  timeout: 600
+  graceful_timeout: 30
+  keepalive: 2
+  limit_request_line: 4094
+  limit_request_fields: 100
+  limit_request_field_size: 8190
+  reload: False
+  reload_engine: auto
+  reload_extra_files: []
+  spew: False
+  check_config: False
+  preload_app: False
+  sendfile: None
+  reuse_port: False
+  chdir: /var/www/projects/chat.git/chat
+  daemon: False
+  raw_env: []
+  pidfile: None
+  worker_tmp_dir: None
+  user: 501
+  group: 501
+  umask: 0
+  initgroups: False
+  tmp_upload_dir: None
+  secure_scheme_headers: {'X-FORWARDED-PROTOCOL': 'ssl', 'X-FORWARDED-PROTO': 'https', 'X-FORWARDED-SSL': 'on'}
+  forwarded_allow_ips: ['127.0.0.1']
+  accesslog: gunicorn/access.log
+  disable_redirect_access_to_syslog: False
+  access_log_format: %(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"
+  errorlog: gunicorn/error.log
+  loglevel: debug
+  capture_output: False
+  logger_class: gunicorn.glogging.Logger
+  logconfig: None
+  logconfig_dict: {}
+  syslog_addr: udp://localhost:514
+  syslog: False
+  syslog_prefix: None
+  syslog_facility: user
+  enable_stdio_inheritance: False
+  statsd_host: None
+  statsd_prefix: 
+  proc_name: None
+  default_proc_name: chat.wsgi:application
+  pythonpath: None
+  paste: None
+  on_starting: <function OnStarting.on_starting at 0x7f626b7fdb70>
+  on_reload: <function OnReload.on_reload at 0x7f626b7fdc80>
+  when_ready: <function when_ready at 0x7f626b806730>
+  pre_fork: <function pre_fork at 0x7f626b806620>
+  post_fork: <function post_fork at 0x7f626b806598>
+  post_worker_init: <function PostWorkerInit.post_worker_init at 0x7f626b81c158>
+  worker_int: <function worker_int at 0x7f626b8067b8>
+  worker_abort: <function worker_abort at 0x7f626b806840>
+  pre_exec: <function pre_exec at 0x7f626b8066a8>
+  pre_request: <function PreRequest.pre_request at 0x7f626b81c598>
+  post_request: <function PostRequest.post_request at 0x7f626b81c620>
+  child_exit: <function ChildExit.child_exit at 0x7f626b81c730>
+  worker_exit: <function WorkerExit.worker_exit at 0x7f626b81c840>
+  nworkers_changed: <function NumWorkersChanged.nworkers_changed at 0x7f626b81c950>
+  on_exit: <function OnExit.on_exit at 0x7f626b81ca60>
+  proxy_protocol: False
+  proxy_allow_ips: ['127.0.0.1']
+  keyfile: None
+  certfile: None
+  ssl_version: 2
+  cert_reqs: 0
+  ca_certs: None
+  suppress_ragged_eofs: True
+  do_handshake_on_connect: False
+  ciphers: TLSv1
+  raw_paste_global_conf: []
+[2019-05-08 10:37:26 +0900] [1853] [INFO] Starting gunicorn 19.9.0
+[2019-05-08 10:37:26 +0900] [1853] [DEBUG] Arbiter booted
+[2019-05-08 10:37:26 +0900] [1853] [INFO] Listening at: http://127.0.0.1:8001 (1853)
+[2019-05-08 10:37:26 +0900] [1853] [INFO] Using worker: sync
+[2019-05-08 10:37:26 +0900] [1853] [INFO] Server is ready. Spawning workers
+[2019-05-08 10:37:26 +0900] [1856] [INFO] Booting worker with pid: 1856
+[2019-05-08 10:37:26 +0900] [1856] [INFO] Worker spawned (pid: 1856)
+[2019-05-08 10:37:26 +0900] [1853] [DEBUG] 1 workers
+[2019-05-08 10:37:29 +0900] [1856] [DEBUG] GET /chat/admin/chatapp/user/add/
+[2019-05-08 10:37:30 +0900] [1856] [DEBUG] GET /chat/admin/jsi18n/
+[2019-05-08 10:38:24 +0900] [1856] [DEBUG] POST /chat/admin/chatapp/user/add/
+[2019-05-08 10:38:25 +0900] [1856] [DEBUG] GET /chat/admin/jsi18n/
+[2019-05-08 10:39:15 +0900] [1856] [DEBUG] POST /chat/admin/chatapp/user/add/
+[2019-05-08 10:39:16 +0900] [1856] [DEBUG] GET /chat/admin/chatapp/user/2/change/
+[2019-05-08 10:39:16 +0900] [1856] [DEBUG] GET /chat/admin/jsi18n/
+[2019-05-08 10:39:27 +0900] [1856] [DEBUG] POST /chat/admin/chatapp/user/2/change/
+[2019-05-08 10:39:27 +0900] [1856] [DEBUG] GET /chat/admin/jsi18n/
+[2019-05-08 10:40:49 +0900] [1856] [DEBUG] POST /chat/admin/chatapp/user/2/change/
+[2019-05-08 10:40:49 +0900] [1856] [DEBUG] GET /chat/admin/chatapp/user/
+[2019-05-08 10:40:49 +0900] [1856] [DEBUG] GET /chat/admin/jsi18n/
+[2019-05-08 10:40:55 +0900] [1856] [DEBUG] GET /chat/admin/chatapp/user/1/change/
+[2019-05-08 10:40:55 +0900] [1856] [DEBUG] GET /chat/admin/jsi18n/
+[2019-05-08 10:42:20 +0900] [1856] [DEBUG] POST /chat/admin/chatapp/user/1/change/
+[2019-05-08 10:42:20 +0900] [1856] [DEBUG] GET /chat/admin/chatapp/user/
+[2019-05-08 10:42:20 +0900] [1856] [DEBUG] GET /chat/admin/jsi18n/
+[2019-05-08 10:42:37 +0900] [1856] [DEBUG] GET /chat/admin/
+[2019-05-08 10:42:39 +0900] [1856] [DEBUG] GET /chat/
+[2019-05-08 10:42:45 +0900] [1856] [DEBUG] POST /chat/
+[2019-05-08 10:42:46 +0900] [1856] [DEBUG] GET /chat/top
+[2019-05-08 10:42:52 +0900] [1856] [DEBUG] GET /chat/user_update/1/
+[2019-05-08 10:42:56 +0900] [1856] [DEBUG] GET /chat/top
+[2019-05-08 10:43:03 +0900] [1856] [DEBUG] GET /chat/admin/chatapp/
+[2019-05-08 10:43:07 +0900] [1856] [DEBUG] GET /chat/admin/chatapp/chatroom/
+[2019-05-08 10:43:07 +0900] [1856] [DEBUG] GET /chat/admin/jsi18n/
+[2019-05-08 10:43:08 +0900] [1856] [DEBUG] GET /chat/admin/chatapp/chatroom/add/
+[2019-05-08 10:43:08 +0900] [1856] [DEBUG] GET /chat/admin/jsi18n/
+[2019-05-08 10:43:25 +0900] [1856] [DEBUG] POST /chat/admin/chatapp/chatroom/add/
+[2019-05-08 10:43:25 +0900] [1856] [DEBUG] GET /chat/admin/chatapp/chatroom/
+[2019-05-08 10:43:25 +0900] [1856] [DEBUG] GET /chat/admin/jsi18n/
+[2019-05-08 10:43:28 +0900] [1856] [DEBUG] GET /chat/admin/chatapp/
+[2019-05-08 10:43:29 +0900] [1856] [DEBUG] GET /chat/admin/chatapp/chatroommember/
+[2019-05-08 10:43:30 +0900] [1856] [DEBUG] GET /chat/admin/jsi18n/
+[2019-05-08 10:43:31 +0900] [1856] [DEBUG] GET /chat/admin/chatapp/chatroommember/add/
+[2019-05-08 10:43:32 +0900] [1856] [DEBUG] GET /chat/admin/jsi18n/
+[2019-05-08 10:43:36 +0900] [1856] [DEBUG] POST /chat/admin/chatapp/chatroommember/add/
+[2019-05-08 10:43:36 +0900] [1856] [DEBUG] GET /chat/admin/chatapp/chatroommember/
+[2019-05-08 10:43:37 +0900] [1856] [DEBUG] GET /chat/admin/jsi18n/
+[2019-05-08 10:43:39 +0900] [1856] [DEBUG] GET /chat/admin/chatapp/chatroommember/add/
+[2019-05-08 10:43:39 +0900] [1856] [DEBUG] GET /chat/admin/jsi18n/
+[2019-05-08 10:43:43 +0900] [1856] [DEBUG] POST /chat/admin/chatapp/chatroommember/add/
+[2019-05-08 10:43:43 +0900] [1856] [DEBUG] GET /chat/admin/chatapp/chatroommember/
+[2019-05-08 10:43:43 +0900] [1856] [DEBUG] GET /chat/admin/jsi18n/
+[2019-05-08 10:43:49 +0900] [1856] [DEBUG] GET /chat/top
+[2019-05-08 10:43:52 +0900] [1856] [DEBUG] GET /chat/history
+[2019-05-08 10:47:13 +0900] [1856] [DEBUG] GET /chat/admin/logout/
+[2019-05-08 10:47:13 +0900] [1856] [DEBUG] GET /chat/
+[2019-05-08 10:47:23 +0900] [1856] [DEBUG] POST /chat/
+[2019-05-08 10:47:24 +0900] [1856] [DEBUG] GET /chat/top
+[2019-05-08 10:47:28 +0900] [1856] [DEBUG] GET /chat/history
+[2019-05-08 10:47:36 +0900] [1856] [DEBUG] GET /chat/user_update/2/
+[2019-05-08 10:47:41 +0900] [1856] [DEBUG] GET /chat/logout
+[2019-05-08 10:47:41 +0900] [1856] [DEBUG] GET /chat/
+[2019-05-08 11:00:37 +0900] [1856] [DEBUG] GET /chat/
+[2019-05-08 11:00:45 +0900] [1856] [DEBUG] POST /chat/
+[2019-05-08 11:00:46 +0900] [1856] [DEBUG] GET /chat/top
+[2019-05-08 11:00:49 +0900] [1856] [DEBUG] GET /chat/history
+[2019-05-08 11:02:30 +0900] [1856] [DEBUG] GET /chat
+[2019-05-08 11:02:30 +0900] [1856] [DEBUG] GET /chat/
+[2019-05-08 11:02:57 +0900] [1856] [DEBUG] POST /chat/
+[2019-05-08 11:03:09 +0900] [1856] [DEBUG] POST /chat/
+[2019-05-08 11:03:11 +0900] [1856] [DEBUG] GET /chat/sign_up/
+[2019-05-08 11:04:40 +0900] [1856] [DEBUG] POST /chat/sign_up/
+[2019-05-08 11:05:05 +0900] [1856] [DEBUG] GET /chat/
+[2019-05-08 11:05:27 +0900] [1856] [DEBUG] POST /chat/
+[2019-05-08 11:06:13 +0900] [1856] [DEBUG] POST /chat/
+[2019-05-08 11:06:13 +0900] [1856] [DEBUG] GET /chat/top
+[2019-05-08 11:06:21 +0900] [1856] [DEBUG] GET /chat/history
+[2019-05-08 11:06:25 +0900] [1856] [DEBUG] GET /chat/user_update/2/
+[2019-05-08 11:06:37 +0900] [1856] [DEBUG] POST /chat/user_update/2/
+[2019-05-08 11:06:38 +0900] [1856] [DEBUG] GET /chat/user_update/2/
+[2019-05-08 11:07:23 +0900] [1856] [DEBUG] POST /chat/user_update/2/
+[2019-05-08 11:07:23 +0900] [1856] [DEBUG] GET /chat/user_update/2/
+[2019-05-08 11:07:26 +0900] [1856] [DEBUG] POST /chat/user_update/2/
+[2019-05-08 11:07:26 +0900] [1856] [DEBUG] GET /chat/user_update/2/
+[2019-05-08 11:07:29 +0900] [1856] [DEBUG] GET /chat/top
+[2019-05-08 11:07:31 +0900] [1856] [DEBUG] GET /chat/history
+[2019-05-08 11:21:31 +0900] [1856] [DEBUG] POST /chat/upload
+[2019-05-08 11:21:39 +0900] [1856] [DEBUG] POST /chat/upload
+[2019-05-08 11:21:46 +0900] [1856] [DEBUG] POST /chat/upload
+[2019-05-08 11:22:24 +0900] [1856] [DEBUG] POST /chat/upload
+[2019-05-08 11:22:53 +0900] [1856] [DEBUG] POST /chat/upload
+[2019-05-08 11:22:58 +0900] [1856] [DEBUG] POST /chat/upload
+[2019-05-08 11:23:33 +0900] [1856] [DEBUG] POST /chat/upload
+[2019-05-08 11:23:53 +0900] [1856] [DEBUG] POST /chat/upload
+[2019-05-08 11:34:19 +0900] [1856] [DEBUG] POST /chat/upload
+[2019-05-08 11:35:56 +0900] [1856] [DEBUG] POST /chat/upload
+[2019-05-08 11:39:23 +0900] [1856] [DEBUG] GET /chat/top
+[2019-05-08 11:39:49 +0900] [1856] [DEBUG] GET /chat/admin/
+[2019-05-08 11:39:53 +0900] [1856] [DEBUG] GET /chat/admin/chatapp/user/
+[2019-05-08 11:39:53 +0900] [1856] [DEBUG] GET /chat/admin/jsi18n/
+[2019-05-08 11:39:53 +0900] [1856] [DEBUG] GET /chat/admin/jsi18n/
+[2019-05-08 11:40:01 +0900] [1856] [DEBUG] GET /chat/history
+[2019-05-08 11:43:43 +0900] [1856] [DEBUG] GET /chat/user_update/1/
+[2019-05-08 13:35:16 +0900] [1856] [DEBUG] GET /chat/top
+[2019-05-08 13:35:21 +0900] [1856] [DEBUG] GET /chat/history
+[2019-05-08 13:45:14 +0900] [1856] [DEBUG] GET /chat/admin
+[2019-05-08 13:45:14 +0900] [1856] [DEBUG] GET /chat/admin/
+[2019-05-08 13:45:29 +0900] [1856] [DEBUG] GET /chat/admin/chatapp/chatmessage/
+[2019-05-08 13:45:29 +0900] [1856] [DEBUG] GET /chat/admin/jsi18n/
+[2019-05-08 13:46:02 +0900] [1856] [DEBUG] GET /chat/admin/chatapp/chatmessage/add/
+[2019-05-08 13:46:02 +0900] [1856] [DEBUG] GET /chat/admin/jsi18n/
+[2019-05-08 13:46:31 +0900] [1856] [DEBUG] POST /chat/admin/chatapp/chatmessage/add/
+[2019-05-08 13:46:31 +0900] [1856] [DEBUG] GET /chat/admin/chatapp/chatmessage/add/
+[2019-05-08 13:46:31 +0900] [1856] [DEBUG] GET /chat/admin/jsi18n/
+[2019-05-08 13:46:38 +0900] [1856] [DEBUG] GET /chat/top
+[2019-05-08 13:46:44 +0900] [1856] [DEBUG] GET /chat/history
+[2019-05-08 13:46:51 +0900] [1856] [DEBUG] GET /chat/admin/chatapp/chatmessage/add/
+[2019-05-08 13:46:53 +0900] [1856] [DEBUG] GET /chat/admin/chatapp/chatmessage/
+[2019-05-08 13:46:54 +0900] [1856] [DEBUG] GET /chat/admin/
+[2019-05-08 13:47:08 +0900] [1856] [DEBUG] GET /chat/admin/chatapp/user/
+[2019-05-08 13:47:08 +0900] [1856] [DEBUG] GET /chat/admin/jsi18n/
+[2019-05-08 13:47:17 +0900] [1856] [DEBUG] GET /chat/admin/chatapp/user/add/
+[2019-05-08 13:47:17 +0900] [1856] [DEBUG] GET /chat/admin/jsi18n/
+[2019-05-08 13:48:08 +0900] [1856] [DEBUG] GET /chat/admin/chatapp/user/
+[2019-05-08 13:48:13 +0900] [1856] [DEBUG] GET /chat/admin/
+[2019-05-08 13:48:16 +0900] [1856] [DEBUG] GET /chat/admin/chatapp/chatroom/add/
+[2019-05-08 13:48:16 +0900] [1856] [DEBUG] GET /chat/admin/jsi18n/
+[2019-05-08 13:48:46 +0900] [1856] [DEBUG] POST /chat/admin/chatapp/chatroom/add/
+[2019-05-08 13:48:46 +0900] [1856] [DEBUG] GET /chat/admin/chatapp/chatroom/
+[2019-05-08 13:48:46 +0900] [1856] [DEBUG] GET /chat/admin/jsi18n/
+[2019-05-08 13:48:51 +0900] [1856] [DEBUG] GET /chat/admin/chatapp/chatroom/2/change/
+[2019-05-08 13:48:51 +0900] [1856] [DEBUG] GET /chat/admin/jsi18n/
+[2019-05-08 13:48:55 +0900] [1856] [DEBUG] GET /chat/admin/chatapp/chatroom/
+[2019-05-08 13:48:56 +0900] [1856] [DEBUG] GET /chat/admin/chatapp/chatroom/add/
+[2019-05-08 13:48:57 +0900] [1856] [DEBUG] GET /chat/admin/
+[2019-05-08 13:49:06 +0900] [1856] [DEBUG] GET /chat/admin/chatapp/attachment/
+[2019-05-08 13:49:06 +0900] [1856] [DEBUG] GET /chat/admin/jsi18n/
+[2019-05-08 13:49:10 +0900] [1856] [DEBUG] GET /chat/admin/
+[2019-05-08 13:49:15 +0900] [1856] [DEBUG] GET /chat/admin/auth/group/
+[2019-05-08 13:49:16 +0900] [1856] [DEBUG] GET /chat/admin/jsi18n/
+[2019-05-08 13:49:19 +0900] [1856] [DEBUG] GET /chat/admin/auth/group/add/
+[2019-05-08 13:49:19 +0900] [1856] [DEBUG] GET /chat/admin/jsi18n/
+[2019-05-08 13:50:09 +0900] [1856] [DEBUG] POST /chat/admin/auth/group/add/
+[2019-05-08 13:50:09 +0900] [1856] [DEBUG] GET /chat/admin/auth/group/
+[2019-05-08 13:50:09 +0900] [1856] [DEBUG] GET /chat/admin/jsi18n/
+[2019-05-08 13:50:13 +0900] [1856] [DEBUG] GET /chat/admin/auth/group/add/
+[2019-05-08 13:50:14 +0900] [1856] [DEBUG] GET /chat/admin/auth/group/
+[2019-05-08 13:50:17 +0900] [1856] [DEBUG] GET /chat/admin/
+[2019-05-08 13:52:29 +0900] [1856] [DEBUG] GET /chat/top
+[2019-05-08 13:52:32 +0900] [1856] [DEBUG] GET /chat/top
+[2019-05-08 13:52:33 +0900] [1856] [DEBUG] GET /chat/top
+[2019-05-08 13:52:34 +0900] [1856] [DEBUG] GET /chat/top
+[2019-05-08 13:52:35 +0900] [1856] [DEBUG] GET /chat/top
+[2019-05-08 13:52:41 +0900] [1856] [DEBUG] GET /chat/history
+[2019-05-08 13:53:53 +0900] [1856] [DEBUG] GET /chat/admin/
+[2019-05-08 13:53:56 +0900] [1856] [DEBUG] GET /chat/admin/chatapp/chatroommember/
+[2019-05-08 13:53:56 +0900] [1856] [DEBUG] GET /chat/admin/jsi18n/
+[2019-05-08 13:54:01 +0900] [1856] [DEBUG] GET /chat/admin/chatapp/chatroommember/add/
+[2019-05-08 13:54:02 +0900] [1856] [DEBUG] GET /chat/admin/jsi18n/
+[2019-05-08 13:54:09 +0900] [1856] [DEBUG] POST /chat/admin/chatapp/chatroommember/add/
+[2019-05-08 13:54:09 +0900] [1856] [DEBUG] GET /chat/admin/chatapp/chatroommember/3/change/
+[2019-05-08 13:54:09 +0900] [1856] [DEBUG] GET /chat/admin/jsi18n/
+[2019-05-08 13:54:15 +0900] [1856] [DEBUG] GET /chat/admin/logout/
+[2019-05-08 13:54:15 +0900] [1856] [DEBUG] GET /chat/
+[2019-05-08 13:54:17 +0900] [1856] [DEBUG] GET /chat/sign_up/
+[2019-05-08 13:55:27 +0900] [1856] [DEBUG] POST /chat/sign_up/
+[2019-05-08 13:55:56 +0900] [1856] [DEBUG] POST /chat/sign_up/
+[2019-05-08 13:56:09 +0900] [1856] [DEBUG] GET /chat/logout
+[2019-05-08 13:56:09 +0900] [1856] [DEBUG] GET /chat/
+[2019-05-08 13:56:10 +0900] [1856] [DEBUG] POST /chat/
+[2019-05-08 13:56:11 +0900] [1856] [DEBUG] GET /chat/top
+[2019-05-08 13:56:15 +0900] [1856] [DEBUG] GET /chat/history
+[2019-05-08 13:59:22 +0900] [1856] [DEBUG] GET /chat/logout
+[2019-05-08 13:59:22 +0900] [1856] [DEBUG] GET /chat/
+[2019-05-08 13:59:25 +0900] [1856] [DEBUG] GET /chat/sign_up/
+[2019-05-08 13:59:29 +0900] [1856] [DEBUG] GET /chat/
+[2019-05-08 13:59:31 +0900] [1856] [DEBUG] POST /chat/
+[2019-05-08 13:59:32 +0900] [1856] [DEBUG] GET /chat/top
+[2019-05-08 13:59:35 +0900] [1856] [DEBUG] GET /chat/history
+[2019-05-08 14:00:16 +0900] [1856] [DEBUG] GET /chat/logout
+[2019-05-08 14:00:16 +0900] [1856] [DEBUG] GET /chat/
+[2019-05-08 14:00:17 +0900] [1856] [DEBUG] GET /chat/sign_up/
+[2019-05-08 14:00:56 +0900] [1856] [DEBUG] POST /chat/sign_up/
+[2019-05-08 14:01:12 +0900] [1856] [DEBUG] GET /chat/
+[2019-05-08 14:01:14 +0900] [1856] [DEBUG] POST /chat/
+[2019-05-08 14:01:14 +0900] [1856] [DEBUG] GET /chat/top
+[2019-05-08 14:01:17 +0900] [1856] [DEBUG] GET /chat/history
+[2019-05-08 14:01:37 +0900] [1856] [DEBUG] GET /chat/user_update/2/
+[2019-05-08 14:02:35 +0900] [1856] [DEBUG] GET /chat/top
+[2019-05-08 14:02:38 +0900] [1856] [DEBUG] GET /chat/history
+[2019-05-08 14:03:10 +0900] [1856] [DEBUG] GET /chat/
+[2019-05-08 14:03:17 +0900] [1856] [DEBUG] POST /chat/
+[2019-05-08 14:03:17 +0900] [1856] [DEBUG] GET /chat/top
+[2019-05-08 14:03:20 +0900] [1856] [DEBUG] GET /chat/history
+[2019-05-08 14:04:08 +0900] [1856] [DEBUG] GET /chat
+[2019-05-08 14:04:08 +0900] [1856] [DEBUG] GET /chat/
+[2019-05-08 14:04:36 +0900] [1856] [DEBUG] GET /chat
+[2019-05-08 14:04:36 +0900] [1856] [DEBUG] GET /chat/
+[2019-05-08 14:04:37 +0900] [1856] [DEBUG] GET /chat
+[2019-05-08 14:04:37 +0900] [1856] [DEBUG] GET /chat/
+[2019-05-08 14:08:02 +0900] [1856] [DEBUG] GET /chat/top
+[2019-05-08 14:08:02 +0900] [1856] [DEBUG] GET /chat/user_update/1/
+[2019-05-08 14:08:06 +0900] [1856] [DEBUG] GET /chat/top
+[2019-05-08 14:08:42 +0900] [1856] [DEBUG] GET /chat/history
+[2019-05-08 14:20:30 +0900] [1856] [DEBUG] GET /chat/history
+[2019-05-08 14:26:43 +0900] [1856] [DEBUG] GET /chat/user_update/2/
+[2019-05-08 14:27:23 +0900] [1856] [DEBUG] POST /chat/user_update/2/
+[2019-05-08 14:27:23 +0900] [1856] [DEBUG] GET /chat/user_update/2/
+[2019-05-08 14:27:27 +0900] [1856] [DEBUG] GET /chat/top
+[2019-05-08 14:27:30 +0900] [1856] [DEBUG] GET /chat/history
+[2019-05-08 15:40:48 +0900] [1856] [DEBUG] GET /chat/top
+[2019-05-08 15:40:52 +0900] [1856] [DEBUG] GET /chat/history
+[2019-05-08 16:23:08 +0900] [1856] [DEBUG] GET /chat/top
+[2019-05-08 17:38:53 +0900] [1856] [DEBUG] GET /chat/top
+[2019-05-08 17:40:56 +0900] [1856] [DEBUG] GET /chat/history
+[2019-05-08 17:55:28 +0900] [1856] [DEBUG] GET /chat/user_update/2/
+[2019-05-08 18:30:59 +0900] [1856] [DEBUG] GET /chat/
+[2019-05-08 18:31:05 +0900] [1856] [DEBUG] POST /chat/
+[2019-05-08 18:31:05 +0900] [1856] [DEBUG] GET /chat/top
+[2019-05-08 18:31:12 +0900] [1856] [DEBUG] GET /chat/history
+[2019-05-08 19:43:45 +0900] [1856] [DEBUG] GET /chat/top
+[2019-05-08 19:44:11 +0900] [1856] [DEBUG] GET /chat/
+[2019-05-08 19:44:27 +0900] [1856] [DEBUG] POST /chat/
+[2019-05-08 19:44:27 +0900] [1856] [DEBUG] GET /chat/top
+[2019-05-08 19:44:30 +0900] [1856] [DEBUG] GET /chat/history
+[2019-05-08 19:45:58 +0900] [1856] [DEBUG] GET /chat/history
+[2019-05-08 19:46:02 +0900] [1856] [DEBUG] GET /chat/history
+[2019-05-08 20:07:43 +0900] [1856] [DEBUG] GET /chat/top
+[2019-05-08 20:07:49 +0900] [1856] [DEBUG] GET /chat/history
+[2019-05-08 20:18:39 +0900] [1856] [DEBUG] GET /chat
+[2019-05-08 20:18:39 +0900] [1856] [DEBUG] GET /chat/
+[2019-05-08 20:18:47 +0900] [1856] [DEBUG] POST /chat/
+[2019-05-08 20:18:47 +0900] [1856] [DEBUG] GET /chat/top
+[2019-05-08 20:18:52 +0900] [1856] [DEBUG] GET /chat/history
+[2019-05-08 20:26:07 +0900] [1856] [DEBUG] GET /chat/logout
+[2019-05-08 20:26:07 +0900] [1856] [DEBUG] GET /chat/
+[2019-05-08 20:26:13 +0900] [1856] [DEBUG] GET /chat/sign_up/
+[2019-05-08 20:27:01 +0900] [1856] [DEBUG] POST /chat/sign_up/
+[2019-05-08 20:33:15 +0900] [1856] [DEBUG] POST /chat/sign_up/
+[2019-05-08 20:33:28 +0900] [1856] [DEBUG] POST /chat/sign_up/
+[2019-05-08 20:34:13 +0900] [1856] [INFO] Worker exiting (pid: 1856)
+[2019-05-08 20:34:13 +0900] [1853] [INFO] Handling signal: term
+[2019-05-08 20:34:13 +0900] [1853] [INFO] Shutting down: Master
+[2019-05-08 20:34:14 +0900] [2300] [DEBUG] Current configuration:
+  config: gunicorn/conf.py
+  bind: ['127.0.0.1:8001']
+  backlog: 2048
+  workers: 1
+  worker_class: sync
+  threads: 1
+  worker_connections: 1000
+  max_requests: 0
+  max_requests_jitter: 0
+  timeout: 600
+  graceful_timeout: 30
+  keepalive: 2
+  limit_request_line: 4094
+  limit_request_fields: 100
+  limit_request_field_size: 8190
+  reload: False
+  reload_engine: auto
+  reload_extra_files: []
+  spew: False
+  check_config: False
+  preload_app: False
+  sendfile: None
+  reuse_port: False
+  chdir: /var/www/projects/chat.git/chat
+  daemon: False
+  raw_env: []
+  pidfile: None
+  worker_tmp_dir: None
+  user: 501
+  group: 501
+  umask: 0
+  initgroups: False
+  tmp_upload_dir: None
+  secure_scheme_headers: {'X-FORWARDED-PROTOCOL': 'ssl', 'X-FORWARDED-PROTO': 'https', 'X-FORWARDED-SSL': 'on'}
+  forwarded_allow_ips: ['127.0.0.1']
+  accesslog: gunicorn/access.log
+  disable_redirect_access_to_syslog: False
+  access_log_format: %(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"
+  errorlog: gunicorn/error.log
+  loglevel: debug
+  capture_output: False
+  logger_class: gunicorn.glogging.Logger
+  logconfig: None
+  logconfig_dict: {}
+  syslog_addr: udp://localhost:514
+  syslog: False
+  syslog_prefix: None
+  syslog_facility: user
+  enable_stdio_inheritance: False
+  statsd_host: None
+  statsd_prefix: 
+  proc_name: None
+  default_proc_name: chat.wsgi:application
+  pythonpath: None
+  paste: None
+  on_starting: <function OnStarting.on_starting at 0x7fe4a578eb70>
+  on_reload: <function OnReload.on_reload at 0x7fe4a578ec80>
+  when_ready: <function when_ready at 0x7fe4a5797730>
+  pre_fork: <function pre_fork at 0x7fe4a5797620>
+  post_fork: <function post_fork at 0x7fe4a5797598>
+  post_worker_init: <function PostWorkerInit.post_worker_init at 0x7fe4a57ad158>
+  worker_int: <function worker_int at 0x7fe4a57977b8>
+  worker_abort: <function worker_abort at 0x7fe4a5797840>
+  pre_exec: <function pre_exec at 0x7fe4a57976a8>
+  pre_request: <function PreRequest.pre_request at 0x7fe4a57ad598>
+  post_request: <function PostRequest.post_request at 0x7fe4a57ad620>
+  child_exit: <function ChildExit.child_exit at 0x7fe4a57ad730>
+  worker_exit: <function WorkerExit.worker_exit at 0x7fe4a57ad840>
+  nworkers_changed: <function NumWorkersChanged.nworkers_changed at 0x7fe4a57ad950>
+  on_exit: <function OnExit.on_exit at 0x7fe4a57ada60>
+  proxy_protocol: False
+  proxy_allow_ips: ['127.0.0.1']
+  keyfile: None
+  certfile: None
+  ssl_version: 2
+  cert_reqs: 0
+  ca_certs: None
+  suppress_ragged_eofs: True
+  do_handshake_on_connect: False
+  ciphers: TLSv1
+  raw_paste_global_conf: []
+[2019-05-08 20:34:14 +0900] [2300] [INFO] Starting gunicorn 19.9.0
+[2019-05-08 20:34:14 +0900] [2300] [DEBUG] Arbiter booted
+[2019-05-08 20:34:14 +0900] [2300] [INFO] Listening at: http://127.0.0.1:8001 (2300)
+[2019-05-08 20:34:14 +0900] [2300] [INFO] Using worker: sync
+[2019-05-08 20:34:14 +0900] [2300] [INFO] Server is ready. Spawning workers
+[2019-05-08 20:34:14 +0900] [2303] [INFO] Booting worker with pid: 2303
+[2019-05-08 20:34:14 +0900] [2303] [INFO] Worker spawned (pid: 2303)
+[2019-05-08 20:34:14 +0900] [2300] [DEBUG] 1 workers
+[2019-05-08 20:34:19 +0900] [2303] [DEBUG] POST /chat/sign_up/
+[2019-05-08 20:45:06 +0900] [2303] [INFO] Worker exiting (pid: 2303)
+[2019-05-08 20:45:06 +0900] [2300] [INFO] Handling signal: term
+[2019-05-08 20:45:07 +0900] [2300] [INFO] Shutting down: Master
+[2019-05-08 20:45:07 +0900] [2342] [DEBUG] Current configuration:
+  config: gunicorn/conf.py
+  bind: ['127.0.0.1:8001']
+  backlog: 2048
+  workers: 1
+  worker_class: sync
+  threads: 1
+  worker_connections: 1000
+  max_requests: 0
+  max_requests_jitter: 0
+  timeout: 600
+  graceful_timeout: 30
+  keepalive: 2
+  limit_request_line: 4094
+  limit_request_fields: 100
+  limit_request_field_size: 8190
+  reload: False
+  reload_engine: auto
+  reload_extra_files: []
+  spew: False
+  check_config: False
+  preload_app: False
+  sendfile: None
+  reuse_port: False
+  chdir: /var/www/projects/chat.git/chat
+  daemon: False
+  raw_env: []
+  pidfile: None
+  worker_tmp_dir: None
+  user: 501
+  group: 501
+  umask: 0
+  initgroups: False
+  tmp_upload_dir: None
+  secure_scheme_headers: {'X-FORWARDED-PROTOCOL': 'ssl', 'X-FORWARDED-PROTO': 'https', 'X-FORWARDED-SSL': 'on'}
+  forwarded_allow_ips: ['127.0.0.1']
+  accesslog: gunicorn/access.log
+  disable_redirect_access_to_syslog: False
+  access_log_format: %(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"
+  errorlog: gunicorn/error.log
+  loglevel: debug
+  capture_output: False
+  logger_class: gunicorn.glogging.Logger
+  logconfig: None
+  logconfig_dict: {}
+  syslog_addr: udp://localhost:514
+  syslog: False
+  syslog_prefix: None
+  syslog_facility: user
+  enable_stdio_inheritance: False
+  statsd_host: None
+  statsd_prefix: 
+  proc_name: None
+  default_proc_name: chat.wsgi:application
+  pythonpath: None
+  paste: None
+  on_starting: <function OnStarting.on_starting at 0x7f418def4b70>
+  on_reload: <function OnReload.on_reload at 0x7f418def4c80>
+  when_ready: <function when_ready at 0x7f418defd730>
+  pre_fork: <function pre_fork at 0x7f418defd620>
+  post_fork: <function post_fork at 0x7f418defd598>
+  post_worker_init: <function PostWorkerInit.post_worker_init at 0x7f418df13158>
+  worker_int: <function worker_int at 0x7f418defd7b8>
+  worker_abort: <function worker_abort at 0x7f418defd840>
+  pre_exec: <function pre_exec at 0x7f418defd6a8>
+  pre_request: <function PreRequest.pre_request at 0x7f418df13598>
+  post_request: <function PostRequest.post_request at 0x7f418df13620>
+  child_exit: <function ChildExit.child_exit at 0x7f418df13730>
+  worker_exit: <function WorkerExit.worker_exit at 0x7f418df13840>
+  nworkers_changed: <function NumWorkersChanged.nworkers_changed at 0x7f418df13950>
+  on_exit: <function OnExit.on_exit at 0x7f418df13a60>
+  proxy_protocol: False
+  proxy_allow_ips: ['127.0.0.1']
+  keyfile: None
+  certfile: None
+  ssl_version: 2
+  cert_reqs: 0
+  ca_certs: None
+  suppress_ragged_eofs: True
+  do_handshake_on_connect: False
+  ciphers: TLSv1
+  raw_paste_global_conf: []
+[2019-05-08 20:45:07 +0900] [2342] [INFO] Starting gunicorn 19.9.0
+[2019-05-08 20:45:07 +0900] [2342] [DEBUG] Arbiter booted
+[2019-05-08 20:45:07 +0900] [2342] [INFO] Listening at: http://127.0.0.1:8001 (2342)
+[2019-05-08 20:45:07 +0900] [2342] [INFO] Using worker: sync
+[2019-05-08 20:45:07 +0900] [2342] [INFO] Server is ready. Spawning workers
+[2019-05-08 20:45:07 +0900] [2345] [INFO] Booting worker with pid: 2345
+[2019-05-08 20:45:07 +0900] [2345] [INFO] Worker spawned (pid: 2345)
+[2019-05-08 20:45:07 +0900] [2342] [DEBUG] 1 workers
+[2019-05-08 20:45:13 +0900] [2345] [DEBUG] POST /chat/sign_up/
+[2019-05-08 20:45:38 +0900] [2345] [DEBUG] GET /chat/sign_up/
+[2019-05-08 20:46:02 +0900] [2345] [DEBUG] POST /chat/sign_up/
+[2019-05-08 20:49:17 +0900] [2345] [DEBUG] POST /chat/sign_up/
+[2019-05-08 20:53:12 +0900] [2345] [DEBUG] POST /chat/sign_up/
+[2019-05-08 20:54:31 +0900] [2345] [INFO] Worker exiting (pid: 2345)
+[2019-05-08 20:54:31 +0900] [2342] [INFO] Handling signal: term
+[2019-05-08 20:54:32 +0900] [2342] [INFO] Shutting down: Master
+[2019-05-08 20:54:32 +0900] [2422] [DEBUG] Current configuration:
+  config: gunicorn/conf.py
+  bind: ['127.0.0.1:8001']
+  backlog: 2048
+  workers: 1
+  worker_class: sync
+  threads: 1
+  worker_connections: 1000
+  max_requests: 0
+  max_requests_jitter: 0
+  timeout: 600
+  graceful_timeout: 30
+  keepalive: 2
+  limit_request_line: 4094
+  limit_request_fields: 100
+  limit_request_field_size: 8190
+  reload: False
+  reload_engine: auto
+  reload_extra_files: []
+  spew: False
+  check_config: False
+  preload_app: False
+  sendfile: None
+  reuse_port: False
+  chdir: /var/www/projects/chat.git/chat
+  daemon: False
+  raw_env: []
+  pidfile: None
+  worker_tmp_dir: None
+  user: 501
+  group: 501
+  umask: 0
+  initgroups: False
+  tmp_upload_dir: None
+  secure_scheme_headers: {'X-FORWARDED-PROTOCOL': 'ssl', 'X-FORWARDED-PROTO': 'https', 'X-FORWARDED-SSL': 'on'}
+  forwarded_allow_ips: ['127.0.0.1']
+  accesslog: gunicorn/access.log
+  disable_redirect_access_to_syslog: False
+  access_log_format: %(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"
+  errorlog: gunicorn/error.log
+  loglevel: debug
+  capture_output: False
+  logger_class: gunicorn.glogging.Logger
+  logconfig: None
+  logconfig_dict: {}
+  syslog_addr: udp://localhost:514
+  syslog: False
+  syslog_prefix: None
+  syslog_facility: user
+  enable_stdio_inheritance: False
+  statsd_host: None
+  statsd_prefix: 
+  proc_name: None
+  default_proc_name: chat.wsgi:application
+  pythonpath: None
+  paste: None
+  on_starting: <function OnStarting.on_starting at 0x7fa67a344b70>
+  on_reload: <function OnReload.on_reload at 0x7fa67a344c80>
+  when_ready: <function when_ready at 0x7fa67a34d730>
+  pre_fork: <function pre_fork at 0x7fa67a34d620>
+  post_fork: <function post_fork at 0x7fa67a34d598>
+  post_worker_init: <function PostWorkerInit.post_worker_init at 0x7fa67a363158>
+  worker_int: <function worker_int at 0x7fa67a34d7b8>
+  worker_abort: <function worker_abort at 0x7fa67a34d840>
+  pre_exec: <function pre_exec at 0x7fa67a34d6a8>
+  pre_request: <function PreRequest.pre_request at 0x7fa67a363598>
+  post_request: <function PostRequest.post_request at 0x7fa67a363620>
+  child_exit: <function ChildExit.child_exit at 0x7fa67a363730>
+  worker_exit: <function WorkerExit.worker_exit at 0x7fa67a363840>
+  nworkers_changed: <function NumWorkersChanged.nworkers_changed at 0x7fa67a363950>
+  on_exit: <function OnExit.on_exit at 0x7fa67a363a60>
+  proxy_protocol: False
+  proxy_allow_ips: ['127.0.0.1']
+  keyfile: None
+  certfile: None
+  ssl_version: 2
+  cert_reqs: 0
+  ca_certs: None
+  suppress_ragged_eofs: True
+  do_handshake_on_connect: False
+  ciphers: TLSv1
+  raw_paste_global_conf: []
+[2019-05-08 20:54:32 +0900] [2422] [INFO] Starting gunicorn 19.9.0
+[2019-05-08 20:54:32 +0900] [2422] [DEBUG] Arbiter booted
+[2019-05-08 20:54:32 +0900] [2422] [INFO] Listening at: http://127.0.0.1:8001 (2422)
+[2019-05-08 20:54:32 +0900] [2422] [INFO] Using worker: sync
+[2019-05-08 20:54:32 +0900] [2422] [INFO] Server is ready. Spawning workers
+[2019-05-08 20:54:32 +0900] [2425] [INFO] Booting worker with pid: 2425
+[2019-05-08 20:54:32 +0900] [2425] [INFO] Worker spawned (pid: 2425)
+[2019-05-08 20:54:32 +0900] [2422] [DEBUG] 1 workers
+[2019-05-08 20:54:38 +0900] [2425] [DEBUG] POST /chat/sign_up/
+[2019-05-08 20:58:09 +0900] [2425] [DEBUG] POST /chat/sign_up/
+[2019-05-08 21:01:35 +0900] [2425] [DEBUG] POST /chat/sign_up/
+[2019-05-08 21:07:49 +0900] [2425] [DEBUG] POST /chat/sign_up/
+[2019-05-08 21:08:14 +0900] [2425] [INFO] Worker exiting (pid: 2425)
+[2019-05-08 21:08:14 +0900] [2422] [INFO] Handling signal: term
+[2019-05-08 21:08:14 +0900] [2422] [INFO] Shutting down: Master
+[2019-05-08 21:08:21 +0900] [2504] [DEBUG] Current configuration:
+  config: gunicorn/conf.py
+  bind: ['127.0.0.1:8001']
+  backlog: 2048
+  workers: 1
+  worker_class: sync
+  threads: 1
+  worker_connections: 1000
+  max_requests: 0
+  max_requests_jitter: 0
+  timeout: 600
+  graceful_timeout: 30
+  keepalive: 2
+  limit_request_line: 4094
+  limit_request_fields: 100
+  limit_request_field_size: 8190
+  reload: False
+  reload_engine: auto
+  reload_extra_files: []
+  spew: False
+  check_config: False
+  preload_app: False
+  sendfile: None
+  reuse_port: False
+  chdir: /var/www/projects/chat.git/chat
+  daemon: False
+  raw_env: []
+  pidfile: None
+  worker_tmp_dir: None
+  user: 501
+  group: 501
+  umask: 0
+  initgroups: False
+  tmp_upload_dir: None
+  secure_scheme_headers: {'X-FORWARDED-PROTOCOL': 'ssl', 'X-FORWARDED-PROTO': 'https', 'X-FORWARDED-SSL': 'on'}
+  forwarded_allow_ips: ['127.0.0.1']
+  accesslog: gunicorn/access.log
+  disable_redirect_access_to_syslog: False
+  access_log_format: %(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"
+  errorlog: gunicorn/error.log
+  loglevel: debug
+  capture_output: False
+  logger_class: gunicorn.glogging.Logger
+  logconfig: None
+  logconfig_dict: {}
+  syslog_addr: udp://localhost:514
+  syslog: False
+  syslog_prefix: None
+  syslog_facility: user
+  enable_stdio_inheritance: False
+  statsd_host: None
+  statsd_prefix: 
+  proc_name: None
+  default_proc_name: chat.wsgi:application
+  pythonpath: None
+  paste: None
+  on_starting: <function OnStarting.on_starting at 0x7f181ba9a9d8>
+  on_reload: <function OnReload.on_reload at 0x7f181ba9aae8>
+  when_ready: <function when_ready at 0x7f181ba9c598>
+  pre_fork: <function pre_fork at 0x7f181ba9c488>
+  post_fork: <function post_fork at 0x7f181ba9c400>
+  post_worker_init: <function PostWorkerInit.post_worker_init at 0x7f181ba9af28>
+  worker_int: <function worker_int at 0x7f181ba9c620>
+  worker_abort: <function worker_abort at 0x7f181ba9c6a8>
+  pre_exec: <function pre_exec at 0x7f181ba9c510>
+  pre_request: <function PreRequest.pre_request at 0x7f181bab3400>
+  post_request: <function PostRequest.post_request at 0x7f181bab3488>
+  child_exit: <function ChildExit.child_exit at 0x7f181bab3598>
+  worker_exit: <function WorkerExit.worker_exit at 0x7f181bab36a8>
+  nworkers_changed: <function NumWorkersChanged.nworkers_changed at 0x7f181bab37b8>
+  on_exit: <function OnExit.on_exit at 0x7f181bab38c8>
+  proxy_protocol: False
+  proxy_allow_ips: ['127.0.0.1']
+  keyfile: None
+  certfile: None
+  ssl_version: 2
+  cert_reqs: 0
+  ca_certs: None
+  suppress_ragged_eofs: True
+  do_handshake_on_connect: False
+  ciphers: TLSv1
+  raw_paste_global_conf: []
+[2019-05-08 21:08:21 +0900] [2504] [INFO] Starting gunicorn 19.9.0
+[2019-05-08 21:08:21 +0900] [2504] [DEBUG] Arbiter booted
+[2019-05-08 21:08:21 +0900] [2504] [INFO] Listening at: http://127.0.0.1:8001 (2504)
+[2019-05-08 21:08:21 +0900] [2504] [INFO] Using worker: sync
+[2019-05-08 21:08:21 +0900] [2504] [INFO] Server is ready. Spawning workers
+[2019-05-08 21:08:21 +0900] [2507] [INFO] Booting worker with pid: 2507
+[2019-05-08 21:08:21 +0900] [2507] [INFO] Worker spawned (pid: 2507)
+[2019-05-08 21:08:21 +0900] [2504] [DEBUG] 1 workers
+[2019-05-08 21:08:29 +0900] [2507] [DEBUG] POST /chat/sign_up/
+[2019-05-08 21:09:57 +0900] [2507] [DEBUG] GET /chat/sign_up/
+[2019-05-08 21:10:19 +0900] [2507] [DEBUG] POST /chat/sign_up/
+[2019-05-08 21:14:14 +0900] [2507] [DEBUG] POST /chat/sign_up/
+[2019-05-08 21:14:49 +0900] [2507] [DEBUG] POST /chat/sign_up/
+[2019-05-08 21:18:03 +0900] [2507] [DEBUG] POST /chat/sign_up/
+[2019-05-08 21:18:23 +0900] [2507] [DEBUG] POST /chat/sign_up/
+[2019-05-08 21:18:48 +0900] [2507] [DEBUG] GET /chat/sign_up/
+[2019-05-08 21:18:53 +0900] [2507] [DEBUG] GET /chat/sign_up/
+[2019-05-08 21:19:16 +0900] [2507] [DEBUG] POST /chat/sign_up/
+[2019-05-08 21:20:07 +0900] [2507] [DEBUG] POST /chat/sign_up/
+[2019-05-08 21:20:26 +0900] [2507] [DEBUG] POST /chat/sign_up/
+[2019-05-08 21:20:29 +0900] [2507] [DEBUG] GET /chat/sign_up/
+[2019-05-08 21:21:39 +0900] [2507] [DEBUG] GET /chat/admin
+[2019-05-08 21:21:39 +0900] [2507] [DEBUG] GET /chat/admin/
+[2019-05-08 21:21:39 +0900] [2507] [DEBUG] GET /chat/admin/login/
+[2019-05-08 21:21:41 +0900] [2507] [DEBUG] POST /chat/admin/login/
+[2019-05-08 21:21:41 +0900] [2507] [DEBUG] GET /chat/admin/
+[2019-05-08 21:21:43 +0900] [2507] [DEBUG] GET /chat/admin/chatapp/user/
+[2019-05-08 21:21:43 +0900] [2507] [DEBUG] GET /chat/admin/jsi18n/
+[2019-05-08 21:21:59 +0900] [2507] [DEBUG] POST /chat/admin/chatapp/user/
+[2019-05-08 21:22:01 +0900] [2507] [DEBUG] POST /chat/admin/chatapp/user/
+[2019-05-08 21:22:01 +0900] [2507] [DEBUG] GET /chat/admin/chatapp/user/
+[2019-05-08 21:22:01 +0900] [2507] [DEBUG] GET /chat/admin/jsi18n/
+[2019-05-08 21:22:17 +0900] [2507] [DEBUG] GET /chat/admin/chatapp/
+[2019-05-08 21:22:25 +0900] [2507] [DEBUG] GET /chat/
+[2019-05-08 21:22:27 +0900] [2507] [DEBUG] POST /chat/
+[2019-05-08 21:22:28 +0900] [2507] [DEBUG] GET /chat/top
+[2019-05-08 21:22:31 +0900] [2507] [DEBUG] GET /chat/history
+[2019-05-08 21:24:54 +0900] [2507] [DEBUG] GET /chat/top
+[2019-05-08 21:24:57 +0900] [2507] [DEBUG] GET /chat/history
+[2019-05-08 21:25:13 +0900] [2507] [DEBUG] POST /chat/upload
+[2019-05-08 21:26:53 +0900] [2507] [INFO] Worker exiting (pid: 2507)
+[2019-05-08 21:26:53 +0900] [2504] [INFO] Handling signal: term
+[2019-05-08 21:26:54 +0900] [2504] [INFO] Shutting down: Master
+[2019-05-08 21:26:59 +0900] [2583] [DEBUG] Current configuration:
+  config: gunicorn/conf.py
+  bind: ['127.0.0.1:8001']
+  backlog: 2048
+  workers: 1
+  worker_class: sync
+  threads: 1
+  worker_connections: 1000
+  max_requests: 0
+  max_requests_jitter: 0
+  timeout: 600
+  graceful_timeout: 30
+  keepalive: 2
+  limit_request_line: 4094
+  limit_request_fields: 100
+  limit_request_field_size: 8190
+  reload: False
+  reload_engine: auto
+  reload_extra_files: []
+  spew: False
+  check_config: False
+  preload_app: False
+  sendfile: None
+  reuse_port: False
+  chdir: /var/www/projects/chat.git/chat
+  daemon: False
+  raw_env: []
+  pidfile: None
+  worker_tmp_dir: None
+  user: 501
+  group: 501
+  umask: 0
+  initgroups: False
+  tmp_upload_dir: None
+  secure_scheme_headers: {'X-FORWARDED-PROTOCOL': 'ssl', 'X-FORWARDED-PROTO': 'https', 'X-FORWARDED-SSL': 'on'}
+  forwarded_allow_ips: ['127.0.0.1']
+  accesslog: gunicorn/access.log
+  disable_redirect_access_to_syslog: False
+  access_log_format: %(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"
+  errorlog: gunicorn/error.log
+  loglevel: debug
+  capture_output: False
+  logger_class: gunicorn.glogging.Logger
+  logconfig: None
+  logconfig_dict: {}
+  syslog_addr: udp://localhost:514
+  syslog: False
+  syslog_prefix: None
+  syslog_facility: user
+  enable_stdio_inheritance: False
+  statsd_host: None
+  statsd_prefix: 
+  proc_name: None
+  default_proc_name: chat.wsgi:application
+  pythonpath: None
+  paste: None
+  on_starting: <function OnStarting.on_starting at 0x7f630904c9d8>
+  on_reload: <function OnReload.on_reload at 0x7f630904cae8>
+  when_ready: <function when_ready at 0x7f630904e598>
+  pre_fork: <function pre_fork at 0x7f630904e488>
+  post_fork: <function post_fork at 0x7f630904e400>
+  post_worker_init: <function PostWorkerInit.post_worker_init at 0x7f630904cf28>
+  worker_int: <function worker_int at 0x7f630904e620>
+  worker_abort: <function worker_abort at 0x7f630904e6a8>
+  pre_exec: <function pre_exec at 0x7f630904e510>
+  pre_request: <function PreRequest.pre_request at 0x7f6309065400>
+  post_request: <function PostRequest.post_request at 0x7f6309065488>
+  child_exit: <function ChildExit.child_exit at 0x7f6309065598>
+  worker_exit: <function WorkerExit.worker_exit at 0x7f63090656a8>
+  nworkers_changed: <function NumWorkersChanged.nworkers_changed at 0x7f63090657b8>
+  on_exit: <function OnExit.on_exit at 0x7f63090658c8>
+  proxy_protocol: False
+  proxy_allow_ips: ['127.0.0.1']
+  keyfile: None
+  certfile: None
+  ssl_version: 2
+  cert_reqs: 0
+  ca_certs: None
+  suppress_ragged_eofs: True
+  do_handshake_on_connect: False
+  ciphers: TLSv1
+  raw_paste_global_conf: []
+[2019-05-08 21:26:59 +0900] [2583] [INFO] Starting gunicorn 19.9.0
+[2019-05-08 21:26:59 +0900] [2583] [DEBUG] Arbiter booted
+[2019-05-08 21:26:59 +0900] [2583] [INFO] Listening at: http://127.0.0.1:8001 (2583)
+[2019-05-08 21:26:59 +0900] [2583] [INFO] Using worker: sync
+[2019-05-08 21:26:59 +0900] [2583] [INFO] Server is ready. Spawning workers
+[2019-05-08 21:26:59 +0900] [2586] [INFO] Booting worker with pid: 2586
+[2019-05-08 21:26:59 +0900] [2586] [INFO] Worker spawned (pid: 2586)
+[2019-05-08 21:26:59 +0900] [2583] [DEBUG] 1 workers
+[2019-05-08 21:27:02 +0900] [2586] [DEBUG] GET /chat/top
+[2019-05-08 21:27:05 +0900] [2586] [DEBUG] GET /chat/history
+[2019-05-08 21:27:16 +0900] [2586] [DEBUG] POST /chat/upload
+[2019-05-08 21:27:46 +0900] [2586] [DEBUG] GET /chat/admin/
+[2019-05-08 21:27:48 +0900] [2586] [DEBUG] GET /chat/admin/chatapp/attachment/
+[2019-05-08 21:27:48 +0900] [2586] [DEBUG] GET /chat/admin/jsi18n/
+[2019-05-08 21:41:48 +0900] [2586] [INFO] Worker exiting (pid: 2586)
+[2019-05-08 21:41:48 +0900] [2583] [INFO] Handling signal: term
+[2019-05-08 21:41:48 +0900] [2583] [INFO] Shutting down: Master
+[2019-05-08 21:41:48 +0900] [2655] [DEBUG] Current configuration:
+  config: gunicorn/conf.py
+  bind: ['127.0.0.1:8001']
+  backlog: 2048
+  workers: 1
+  worker_class: sync
+  threads: 1
+  worker_connections: 1000
+  max_requests: 0
+  max_requests_jitter: 0
+  timeout: 600
+  graceful_timeout: 30
+  keepalive: 2
+  limit_request_line: 4094
+  limit_request_fields: 100
+  limit_request_field_size: 8190
+  reload: False
+  reload_engine: auto
+  reload_extra_files: []
+  spew: False
+  check_config: False
+  preload_app: False
+  sendfile: None
+  reuse_port: False
+  chdir: /var/www/projects/chat.git/chat
+  daemon: False
+  raw_env: []
+  pidfile: None
+  worker_tmp_dir: None
+  user: 501
+  group: 501
+  umask: 0
+  initgroups: False
+  tmp_upload_dir: None
+  secure_scheme_headers: {'X-FORWARDED-PROTOCOL': 'ssl', 'X-FORWARDED-PROTO': 'https', 'X-FORWARDED-SSL': 'on'}
+  forwarded_allow_ips: ['127.0.0.1']
+  accesslog: gunicorn/access.log
+  disable_redirect_access_to_syslog: False
+  access_log_format: %(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"
+  errorlog: gunicorn/error.log
+  loglevel: debug
+  capture_output: False
+  logger_class: gunicorn.glogging.Logger
+  logconfig: None
+  logconfig_dict: {}
+  syslog_addr: udp://localhost:514
+  syslog: False
+  syslog_prefix: None
+  syslog_facility: user
+  enable_stdio_inheritance: False
+  statsd_host: None
+  statsd_prefix: 
+  proc_name: None
+  default_proc_name: chat.wsgi:application
+  pythonpath: None
+  paste: None
+  on_starting: <function OnStarting.on_starting at 0x7f8b627a79d8>
+  on_reload: <function OnReload.on_reload at 0x7f8b627a7ae8>
+  when_ready: <function when_ready at 0x7f8b627a9598>
+  pre_fork: <function pre_fork at 0x7f8b627a9488>
+  post_fork: <function post_fork at 0x7f8b627a9400>
+  post_worker_init: <function PostWorkerInit.post_worker_init at 0x7f8b627a7f28>
+  worker_int: <function worker_int at 0x7f8b627a9620>
+  worker_abort: <function worker_abort at 0x7f8b627a96a8>
+  pre_exec: <function pre_exec at 0x7f8b627a9510>
+  pre_request: <function PreRequest.pre_request at 0x7f8b627c0400>
+  post_request: <function PostRequest.post_request at 0x7f8b627c0488>
+  child_exit: <function ChildExit.child_exit at 0x7f8b627c0598>
+  worker_exit: <function WorkerExit.worker_exit at 0x7f8b627c06a8>
+  nworkers_changed: <function NumWorkersChanged.nworkers_changed at 0x7f8b627c07b8>
+  on_exit: <function OnExit.on_exit at 0x7f8b627c08c8>
+  proxy_protocol: False
+  proxy_allow_ips: ['127.0.0.1']
+  keyfile: None
+  certfile: None
+  ssl_version: 2
+  cert_reqs: 0
+  ca_certs: None
+  suppress_ragged_eofs: True
+  do_handshake_on_connect: False
+  ciphers: TLSv1
+  raw_paste_global_conf: []
+[2019-05-08 21:41:48 +0900] [2655] [INFO] Starting gunicorn 19.9.0
+[2019-05-08 21:41:48 +0900] [2655] [DEBUG] Arbiter booted
+[2019-05-08 21:41:48 +0900] [2655] [INFO] Listening at: http://127.0.0.1:8001 (2655)
+[2019-05-08 21:41:48 +0900] [2655] [INFO] Using worker: sync
+[2019-05-08 21:41:48 +0900] [2655] [INFO] Server is ready. Spawning workers
+[2019-05-08 21:41:48 +0900] [2658] [INFO] Booting worker with pid: 2658
+[2019-05-08 21:41:48 +0900] [2658] [INFO] Worker spawned (pid: 2658)
+[2019-05-08 21:41:48 +0900] [2655] [DEBUG] 1 workers
+[2019-05-08 21:41:57 +0900] [2658] [DEBUG] GET /chat/
+[2019-05-08 21:41:59 +0900] [2658] [DEBUG] POST /chat/
+[2019-05-08 21:41:59 +0900] [2658] [DEBUG] GET /chat/top
+[2019-05-08 21:42:02 +0900] [2658] [DEBUG] GET /chat/history
+[2019-05-08 21:42:18 +0900] [2658] [DEBUG] POST /chat/upload
+[2019-05-08 21:46:15 +0900] [2658] [DEBUG] GET /chat/logout
+[2019-05-08 21:46:15 +0900] [2658] [DEBUG] GET /chat/
+[2019-05-08 21:46:17 +0900] [2658] [DEBUG] GET /chat/sign_up/
+[2019-05-08 21:46:53 +0900] [2658] [DEBUG] POST /chat/sign_up/
+[2019-05-08 21:46:57 +0900] [2658] [DEBUG] GET /chat/sign_up/
+[2019-05-08 21:50:57 +0900] [2658] [DEBUG] GET /chat/
+[2019-05-08 21:50:59 +0900] [2658] [DEBUG] POST /chat/
+[2019-05-08 21:50:59 +0900] [2658] [DEBUG] GET /chat/top
+[2019-05-08 21:51:02 +0900] [2658] [DEBUG] GET /chat/history
+[2019-05-08 21:57:49 +0900] [2658] [DEBUG] POST /chat/upload
+[2019-05-08 21:58:06 +0900] [2658] [DEBUG] POST /chat/upload
+[2019-05-08 21:58:14 +0900] [2658] [DEBUG] POST /chat/upload
+[2019-05-08 21:58:23 +0900] [2658] [DEBUG] POST /chat/upload
+[2019-05-08 21:58:48 +0900] [2658] [DEBUG] POST /chat/upload
+[2019-05-08 22:00:24 +0900] [2658] [DEBUG] POST /chat/upload
+[2019-05-08 22:08:00 +0900] [2658] [DEBUG] GET /chat/
+[2019-05-08 22:09:27 +0900] [2658] [DEBUG] GET /chat/logout
+[2019-05-08 22:09:27 +0900] [2658] [DEBUG] GET /chat/
+[2019-05-08 22:09:30 +0900] [2658] [DEBUG] GET /chat/sign_up/
+[2019-05-08 22:10:07 +0900] [2658] [DEBUG] POST /chat/sign_up/
+[2019-05-08 22:10:11 +0900] [2658] [DEBUG] GET /chat/sign_up/
+[2019-05-08 22:11:28 +0900] [2658] [DEBUG] GET /chat/sign_up/done/MTA:1hOMKl:4AyzwKHBJN8dmy-TJwvYzqGgqzY
+[2019-05-08 22:11:42 +0900] [2658] [DEBUG] GET /chat/
+[2019-05-08 22:12:02 +0900] [2658] [DEBUG] POST /chat/
+[2019-05-08 22:12:03 +0900] [2658] [DEBUG] GET /chat/top
+[2019-05-08 22:12:15 +0900] [2658] [DEBUG] GET /chat/history
+[2019-05-08 22:12:22 +0900] [2658] [DEBUG] GET /chat/history
+[2019-05-08 22:12:30 +0900] [2658] [DEBUG] GET /chat/history
+[2019-05-08 22:13:00 +0900] [2658] [DEBUG] GET /chat/history
+[2019-05-08 22:14:23 +0900] [2658] [DEBUG] GET /chat/
+[2019-05-08 22:14:26 +0900] [2658] [DEBUG] POST /chat/
+[2019-05-08 22:14:31 +0900] [2658] [DEBUG] POST /chat/
+[2019-05-08 22:14:33 +0900] [2658] [DEBUG] POST /chat/
+[2019-05-08 22:14:55 +0900] [2658] [DEBUG] POST /chat/
+[2019-05-08 22:14:55 +0900] [2658] [DEBUG] GET /chat/top
+[2019-05-08 22:15:00 +0900] [2658] [DEBUG] GET /chat/history
+[2019-05-08 22:15:24 +0900] [2658] [DEBUG] GET /chat/history
+[2019-05-08 22:16:28 +0900] [2658] [DEBUG] GET /chat/sign_up/done/MTA:1hOMKl:4AyzwKHBJN8dmy-TJwvYzqGgqzY
+[2019-05-08 22:41:34 +0900] [2658] [DEBUG] GET /chat/
+[2019-05-08 22:45:19 +0900] [2658] [DEBUG] POST /chat/
+[2019-05-08 22:45:37 +0900] [2658] [DEBUG] POST /chat/
+[2019-05-08 22:45:40 +0900] [2658] [DEBUG] POST /chat/
+[2019-05-08 22:46:08 +0900] [2658] [DEBUG] POST /chat/
+[2019-05-08 22:46:08 +0900] [2658] [DEBUG] GET /chat/top
+[2019-05-08 22:46:11 +0900] [2658] [DEBUG] GET /chat/history
+[2019-05-08 23:02:21 +0900] [2658] [DEBUG] GET /chat/top
+[2019-05-08 23:02:27 +0900] [2658] [DEBUG] GET /chat/history
+[2019-05-08 23:05:27 +0900] [2658] [DEBUG] GET /chat/
+[2019-05-08 23:05:37 +0900] [2658] [DEBUG] POST /chat/
+[2019-05-08 23:05:37 +0900] [2658] [DEBUG] GET /chat/top
+[2019-05-08 23:05:42 +0900] [2658] [DEBUG] GET /chat/history
+[2019-05-08 23:06:51 +0900] [2658] [DEBUG] GET /chat
+[2019-05-08 23:06:51 +0900] [2658] [DEBUG] GET /chat/
+[2019-05-08 23:06:52 +0900] [2658] [DEBUG] POST /chat/
+[2019-05-08 23:06:53 +0900] [2658] [DEBUG] GET /chat/top
+[2019-05-08 23:06:56 +0900] [2658] [DEBUG] GET /chat/history
+[2019-05-09 09:19:37 +0900] [2658] [DEBUG] GET /chat
+[2019-05-09 09:19:37 +0900] [2658] [DEBUG] GET /chat/
+[2019-05-09 09:19:45 +0900] [2658] [DEBUG] POST /chat/
+[2019-05-09 09:19:45 +0900] [2658] [DEBUG] GET /chat/top
+[2019-05-09 09:19:51 +0900] [2658] [DEBUG] GET /chat/history
+[2019-05-09 09:19:56 +0900] [2658] [DEBUG] GET /chat/history
+[2019-05-09 09:20:10 +0900] [2658] [DEBUG] GET /chat/admin
+[2019-05-09 09:20:11 +0900] [2658] [DEBUG] GET /chat/admin/
+[2019-05-09 09:20:15 +0900] [2658] [DEBUG] GET /chat/admin/chatapp/user/
+[2019-05-09 09:20:15 +0900] [2658] [DEBUG] GET /chat/admin/jsi18n/
+[2019-05-09 09:20:41 +0900] [2658] [DEBUG] GET /chat/admin/
+[2019-05-09 09:20:42 +0900] [2658] [DEBUG] GET /chat/top
+[2019-05-09 09:20:49 +0900] [2658] [DEBUG] GET /chat/history
+[2019-05-09 09:21:46 +0900] [2658] [DEBUG] GET /chat/user_update/1/
+[2019-05-09 09:24:16 +0900] [2658] [DEBUG] GET /chat/
+[2019-05-09 10:53:15 +0900] [2658] [DEBUG] GET /chat
+[2019-05-09 10:53:16 +0900] [2658] [DEBUG] GET /chat/
+[2019-05-09 10:54:03 +0900] [2658] [DEBUG] POST /chat/
+[2019-05-09 10:54:24 +0900] [2658] [DEBUG] POST /chat/
+[2019-05-09 10:54:24 +0900] [2658] [DEBUG] GET /chat/top
+[2019-05-09 10:54:29 +0900] [2658] [DEBUG] GET /chat/history
+[2019-05-09 11:54:43 +0900] [2658] [DEBUG] GET /chat/top
+[2019-05-09 11:54:45 +0900] [2658] [DEBUG] GET /chat/history
+[2019-05-09 11:54:52 +0900] [2658] [DEBUG] GET /chat/logout
+[2019-05-09 11:54:53 +0900] [2658] [DEBUG] GET /chat/
+[2019-05-09 11:54:54 +0900] [2658] [DEBUG] POST /chat/
+[2019-05-09 11:54:54 +0900] [2658] [DEBUG] GET /chat/top
+[2019-05-09 11:54:59 +0900] [2658] [DEBUG] GET /chat/history
+[2019-05-09 11:55:21 +0900] [2658] [DEBUG] GET /chat/history
+[2019-05-09 11:55:32 +0900] [2658] [DEBUG] GET /chat/history
+[2019-05-09 11:55:51 +0900] [2658] [DEBUG] GET /chat/admin
+[2019-05-09 11:55:51 +0900] [2658] [DEBUG] GET /chat/admin/
+[2019-05-09 11:55:53 +0900] [2658] [DEBUG] GET /chat/admin/chatapp/chatmessage/add/
+[2019-05-09 11:55:53 +0900] [2658] [DEBUG] GET /chat/admin/jsi18n/
+[2019-05-09 11:56:06 +0900] [2658] [DEBUG] POST /chat/admin/chatapp/chatmessage/add/
+[2019-05-09 11:56:06 +0900] [2658] [DEBUG] GET /chat/admin/chatapp/chatmessage/add/
+[2019-05-09 11:56:07 +0900] [2658] [DEBUG] GET /chat/admin/jsi18n/
+[2019-05-09 11:56:17 +0900] [2658] [DEBUG] GET /chat/admin/
+[2019-05-09 11:56:24 +0900] [2658] [DEBUG] GET /chat/
+[2019-05-09 11:56:26 +0900] [2658] [DEBUG] POST /chat/
+[2019-05-09 11:56:26 +0900] [2658] [DEBUG] GET /chat/top
+[2019-05-09 11:56:29 +0900] [2658] [DEBUG] GET /chat/history
+[2019-05-09 11:56:47 +0900] [2658] [DEBUG] GET /chat/admin/
+[2019-05-09 11:56:49 +0900] [2658] [DEBUG] GET /chat/admin/chatapp/chatmessage/
+[2019-05-09 11:56:49 +0900] [2658] [DEBUG] GET /chat/admin/jsi18n/
+[2019-05-09 11:56:51 +0900] [2658] [DEBUG] GET /chat/admin/
+[2019-05-09 11:56:52 +0900] [2658] [DEBUG] GET /chat/admin/chatapp/chatmessage/add/
+[2019-05-09 11:56:52 +0900] [2658] [DEBUG] GET /chat/admin/jsi18n/
+[2019-05-09 11:57:27 +0900] [2658] [DEBUG] POST /chat/admin/chatapp/chatmessage/add/
+[2019-05-09 11:57:27 +0900] [2658] [DEBUG] GET /chat/admin/chatapp/chatmessage/add/
+[2019-05-09 11:57:28 +0900] [2658] [DEBUG] GET /chat/admin/jsi18n/
+[2019-05-09 11:58:04 +0900] [2658] [DEBUG] GET /chat/
+[2019-05-09 11:58:05 +0900] [2658] [DEBUG] POST /chat/
+[2019-05-09 11:58:06 +0900] [2658] [DEBUG] GET /chat/top
+[2019-05-09 11:58:09 +0900] [2658] [DEBUG] GET /chat/history
+[2019-05-09 11:58:14 +0900] [2658] [DEBUG] POST /chat/upload
+[2019-05-09 12:00:08 +0900] [2658] [DEBUG] GET /chat/admin/
+[2019-05-09 12:00:10 +0900] [2658] [DEBUG] GET /chat/admin/chatapp/chatmessage/add/
+[2019-05-09 12:00:10 +0900] [2658] [DEBUG] GET /chat/admin/jsi18n/
+[2019-05-09 12:00:35 +0900] [2658] [DEBUG] POST /chat/admin/chatapp/chatmessage/add/
+[2019-05-09 12:00:35 +0900] [2658] [DEBUG] GET /chat/admin/chatapp/chatmessage/add/
+[2019-05-09 12:00:35 +0900] [2658] [DEBUG] GET /chat/admin/jsi18n/
+[2019-05-09 12:16:01 +0900] [2658] [DEBUG] GET /chat/
+[2019-05-09 12:16:02 +0900] [2658] [DEBUG] POST /chat/
+[2019-05-09 12:16:02 +0900] [2658] [DEBUG] GET /chat/top
+[2019-05-09 12:16:05 +0900] [2658] [DEBUG] GET /chat/history
+[2019-05-09 12:45:33 +0900] [2658] [DEBUG] GET /chat/
+[2019-05-09 12:45:39 +0900] [2658] [DEBUG] POST /chat/
+[2019-05-09 12:45:40 +0900] [2658] [DEBUG] GET /chat/top
+[2019-05-09 12:45:43 +0900] [2658] [DEBUG] GET /chat/history
+[2019-05-09 12:48:44 +0900] [2658] [DEBUG] GET /chat/top
+[2019-05-09 12:48:47 +0900] [2658] [DEBUG] GET /chat/history
+[2019-05-09 12:48:51 +0900] [2658] [DEBUG] GET /chat/top
+[2019-05-09 12:51:09 +0900] [2658] [DEBUG] GET /chat/top
+[2019-05-09 12:51:45 +0900] [2658] [DEBUG] GET /chat/top
+[2019-05-09 12:51:56 +0900] [2658] [DEBUG] GET /chat/history

@@ -14,7 +14,7 @@
 #       range.
 #
 
-bind = '127.0.0.1:8004'
+bind = '127.0.0.1:8001'
 backlog = 2048
 workers = 1
 worker_class = 'sync'
@@ -23,7 +23,7 @@ timeout = 600
 keepalive = 2
 
 spew = False
-daemon = True
+daemon = False
 user = "chatuser"
 group = "chatuser"
 

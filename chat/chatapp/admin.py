@@ -28,7 +28,7 @@ class MyUserAdmin(UserAdmin):
     add_fieldsets = (
         (None, {
             'classes': ('wide',),
-            'fields': ('full_name', 'email', 'password1', 'password2'),
+            'fields': ('name','furigana','address','phone', 'email', 'password1', 'password2'),
         }),
     )
     form = MyUserChangeForm
