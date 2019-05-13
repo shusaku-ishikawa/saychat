@@ -2662,3 +2662,7 @@ File: "gunicorn/conf.py", line 60, in worker_int
 [2019-05-14 07:09:27 +0900] [8101] [DEBUG] GET /chat/top
 [2019-05-14 07:09:30 +0900] [8101] [DEBUG] GET /chat/history
 [2019-05-14 07:25:59 +0900] [8101] [DEBUG] GET /chat/admin/
+[2019-05-14 08:57:04 +0900] [8101] [DEBUG] GET /chat/
+[2019-05-14 08:57:06 +0900] [8101] [DEBUG] POST /chat/
+[2019-05-14 08:57:06 +0900] [8101] [DEBUG] GET /chat/top
+[2019-05-14 08:57:10 +0900] [8101] [DEBUG] GET /chat/history

@@ -25,10 +25,7 @@ class ChatConsumer(AsyncJsonWebsocketConsumer):
     async def disconnect(self, close_code):
         # Leave room group
         for room_id in list(self.rooms):
-            try:
-                await self.leave_room(room_id)
-            except Exception:
-                pass
+            await self.leave_room(room_id)
 
     # Receive message from WebSocket
     async def receive_json(self, content):
