@@ -26,7 +26,7 @@ class ChatConsumer(AsyncJsonWebsocketConsumer):
         # Leave room group
         for room_id in list(self.rooms):
             try:
-                self.leave_room(room_id)
+                await self.leave_room(room_id)
             except Exception:
                 pass
 
