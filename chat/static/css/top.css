@@ -177,6 +177,11 @@ img{ max-width:100%;}
   padding-left:5px;
 }
 
+
+.mySidebar {
+  overflow: scroll
+}
+
 #preview_zone .prev_col .attachment_name {
   font-size: 14px;
   color: gray
@@ -184,14 +189,14 @@ img{ max-width:100%;}
 
 
 .sidebar {
-  height: 100%; /* 100% Full-height */
+  overflow: scroll;
+  height: calc(100% - 50px);
   width: 0; /* 0 width - change this with JavaScript */
   position: fixed; /* Stay in place */
   z-index: 1; /* Stay on top */
   top: 50px;
   left: 0;
   background-color:#e0e2e4; /* red*/
-  overflow-x: hidden; /* Disable horizontal scroll */
   padding-top: 60px; /* Place content 60px from the top */
   transition: 0.5s; /* 0.5 second transition effect to slide in the sidebar */
 }

@@ -2900,3 +2900,476 @@ File: "gunicorn/conf.py", line 60, in worker_int
 [2019-05-15 22:05:01 +0900] [8101] [DEBUG] POST /chat/
 [2019-05-15 22:05:01 +0900] [8101] [DEBUG] GET /chat/top
 [2019-05-15 22:05:06 +0900] [8101] [DEBUG] GET /chat/history
+[2019-05-15 22:28:34 +0900] [8098] [INFO] Handling signal: term
+[2019-05-15 22:28:34 +0900] [8101] [INFO] Worker exiting (pid: 8101)
+[2019-05-15 22:28:34 +0900] [8098] [INFO] Shutting down: Master
+[2019-05-15 22:28:34 +0900] [20743] [DEBUG] Current configuration:
+  config: gunicorn/conf.py
+  bind: ['127.0.0.1:8001']
+  backlog: 2048
+  workers: 1
+  worker_class: sync
+  threads: 1
+  worker_connections: 1000
+  max_requests: 0
+  max_requests_jitter: 0
+  timeout: 600
+  graceful_timeout: 30
+  keepalive: 2
+  limit_request_line: 4094
+  limit_request_fields: 100
+  limit_request_field_size: 8190
+  reload: False
+  reload_engine: auto
+  reload_extra_files: []
+  spew: False
+  check_config: False
+  preload_app: False
+  sendfile: None
+  reuse_port: False
+  chdir: /var/www/projects/chat.git/chat
+  daemon: False
+  raw_env: []
+  pidfile: None
+  worker_tmp_dir: None
+  user: 501
+  group: 501
+  umask: 0
+  initgroups: False
+  tmp_upload_dir: None
+  secure_scheme_headers: {'X-FORWARDED-PROTOCOL': 'ssl', 'X-FORWARDED-PROTO': 'https', 'X-FORWARDED-SSL': 'on'}
+  forwarded_allow_ips: ['127.0.0.1']
+  accesslog: gunicorn/access.log
+  disable_redirect_access_to_syslog: False
+  access_log_format: %(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"
+  errorlog: gunicorn/error.log
+  loglevel: debug
+  capture_output: False
+  logger_class: gunicorn.glogging.Logger
+  logconfig: None
+  logconfig_dict: {}
+  syslog_addr: udp://localhost:514
+  syslog: False
+  syslog_prefix: None
+  syslog_facility: user
+  enable_stdio_inheritance: False
+  statsd_host: None
+  statsd_prefix: 
+  proc_name: None
+  default_proc_name: chat.wsgi:application
+  pythonpath: None
+  paste: None
+  on_starting: <function OnStarting.on_starting at 0x7fdb082f89d8>
+  on_reload: <function OnReload.on_reload at 0x7fdb082f8ae8>
+  when_ready: <function when_ready at 0x7fdb082fa598>
+  pre_fork: <function pre_fork at 0x7fdb082fa488>
+  post_fork: <function post_fork at 0x7fdb082fa400>
+  post_worker_init: <function PostWorkerInit.post_worker_init at 0x7fdb082f8f28>
+  worker_int: <function worker_int at 0x7fdb082fa620>
+  worker_abort: <function worker_abort at 0x7fdb082fa6a8>
+  pre_exec: <function pre_exec at 0x7fdb082fa510>
+  pre_request: <function PreRequest.pre_request at 0x7fdb08311400>
+  post_request: <function PostRequest.post_request at 0x7fdb08311488>
+  child_exit: <function ChildExit.child_exit at 0x7fdb08311598>
+  worker_exit: <function WorkerExit.worker_exit at 0x7fdb083116a8>
+  nworkers_changed: <function NumWorkersChanged.nworkers_changed at 0x7fdb083117b8>
+  on_exit: <function OnExit.on_exit at 0x7fdb083118c8>
+  proxy_protocol: False
+  proxy_allow_ips: ['127.0.0.1']
+  keyfile: None
+  certfile: None
+  ssl_version: 2
+  cert_reqs: 0
+  ca_certs: None
+  suppress_ragged_eofs: True
+  do_handshake_on_connect: False
+  ciphers: TLSv1
+  raw_paste_global_conf: []
+[2019-05-15 22:28:34 +0900] [20743] [INFO] Starting gunicorn 19.9.0
+[2019-05-15 22:28:34 +0900] [20743] [DEBUG] Arbiter booted
+[2019-05-15 22:28:34 +0900] [20743] [INFO] Listening at: http://127.0.0.1:8001 (20743)
+[2019-05-15 22:28:34 +0900] [20743] [INFO] Using worker: sync
+[2019-05-15 22:28:34 +0900] [20743] [INFO] Server is ready. Spawning workers
+[2019-05-15 22:28:34 +0900] [20746] [INFO] Booting worker with pid: 20746
+[2019-05-15 22:28:34 +0900] [20746] [INFO] Worker spawned (pid: 20746)
+[2019-05-15 22:28:34 +0900] [20743] [DEBUG] 1 workers
+[2019-05-15 22:29:00 +0900] [20746] [DEBUG] GET /chat/top
+[2019-05-15 22:31:58 +0900] [20743] [INFO] Handling signal: term
+[2019-05-15 22:31:58 +0900] [20746] [INFO] Worker exiting (pid: 20746)
+[2019-05-15 22:31:58 +0900] [20743] [INFO] Shutting down: Master
+[2019-05-15 22:31:58 +0900] [20828] [DEBUG] Current configuration:
+  config: gunicorn/conf.py
+  bind: ['127.0.0.1:8001']
+  backlog: 2048
+  workers: 1
+  worker_class: sync
+  threads: 1
+  worker_connections: 1000
+  max_requests: 0
+  max_requests_jitter: 0
+  timeout: 600
+  graceful_timeout: 30
+  keepalive: 2
+  limit_request_line: 4094
+  limit_request_fields: 100
+  limit_request_field_size: 8190
+  reload: False
+  reload_engine: auto
+  reload_extra_files: []
+  spew: False
+  check_config: False
+  preload_app: False
+  sendfile: None
+  reuse_port: False
+  chdir: /var/www/projects/chat.git/chat
+  daemon: False
+  raw_env: []
+  pidfile: None
+  worker_tmp_dir: None
+  user: 501
+  group: 501
+  umask: 0
+  initgroups: False
+  tmp_upload_dir: None
+  secure_scheme_headers: {'X-FORWARDED-PROTOCOL': 'ssl', 'X-FORWARDED-PROTO': 'https', 'X-FORWARDED-SSL': 'on'}
+  forwarded_allow_ips: ['127.0.0.1']
+  accesslog: gunicorn/access.log
+  disable_redirect_access_to_syslog: False
+  access_log_format: %(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"
+  errorlog: gunicorn/error.log
+  loglevel: debug
+  capture_output: False
+  logger_class: gunicorn.glogging.Logger
+  logconfig: None
+  logconfig_dict: {}
+  syslog_addr: udp://localhost:514
+  syslog: False
+  syslog_prefix: None
+  syslog_facility: user
+  enable_stdio_inheritance: False
+  statsd_host: None
+  statsd_prefix: 
+  proc_name: None
+  default_proc_name: chat.wsgi:application
+  pythonpath: None
+  paste: None
+  on_starting: <function OnStarting.on_starting at 0x7fcde7ec89d8>
+  on_reload: <function OnReload.on_reload at 0x7fcde7ec8ae8>
+  when_ready: <function when_ready at 0x7fcde7eca598>
+  pre_fork: <function pre_fork at 0x7fcde7eca488>
+  post_fork: <function post_fork at 0x7fcde7eca400>
+  post_worker_init: <function PostWorkerInit.post_worker_init at 0x7fcde7ec8f28>
+  worker_int: <function worker_int at 0x7fcde7eca620>
+  worker_abort: <function worker_abort at 0x7fcde7eca6a8>
+  pre_exec: <function pre_exec at 0x7fcde7eca510>
+  pre_request: <function PreRequest.pre_request at 0x7fcde7ee1400>
+  post_request: <function PostRequest.post_request at 0x7fcde7ee1488>
+  child_exit: <function ChildExit.child_exit at 0x7fcde7ee1598>
+  worker_exit: <function WorkerExit.worker_exit at 0x7fcde7ee16a8>
+  nworkers_changed: <function NumWorkersChanged.nworkers_changed at 0x7fcde7ee17b8>
+  on_exit: <function OnExit.on_exit at 0x7fcde7ee18c8>
+  proxy_protocol: False
+  proxy_allow_ips: ['127.0.0.1']
+  keyfile: None
+  certfile: None
+  ssl_version: 2
+  cert_reqs: 0
+  ca_certs: None
+  suppress_ragged_eofs: True
+  do_handshake_on_connect: False
+  ciphers: TLSv1
+  raw_paste_global_conf: []
+[2019-05-15 22:31:58 +0900] [20828] [INFO] Starting gunicorn 19.9.0
+[2019-05-15 22:31:58 +0900] [20828] [DEBUG] Arbiter booted
+[2019-05-15 22:31:58 +0900] [20828] [INFO] Listening at: http://127.0.0.1:8001 (20828)
+[2019-05-15 22:31:58 +0900] [20828] [INFO] Using worker: sync
+[2019-05-15 22:31:58 +0900] [20828] [INFO] Server is ready. Spawning workers
+[2019-05-15 22:31:58 +0900] [20831] [INFO] Booting worker with pid: 20831
+[2019-05-15 22:31:58 +0900] [20831] [INFO] Worker spawned (pid: 20831)
+[2019-05-15 22:31:58 +0900] [20828] [DEBUG] 1 workers
+[2019-05-15 22:32:04 +0900] [20831] [DEBUG] GET /chat/top
+[2019-05-15 22:33:37 +0900] [20831] [DEBUG] GET /chat/
+[2019-05-15 22:33:39 +0900] [20831] [DEBUG] POST /chat/
+[2019-05-15 22:33:40 +0900] [20831] [DEBUG] GET /chat/top
+[2019-05-15 22:42:54 +0900] [20828] [INFO] Handling signal: term
+[2019-05-15 22:42:54 +0900] [20831] [INFO] Worker exiting (pid: 20831)
+[2019-05-15 22:42:54 +0900] [20828] [INFO] Shutting down: Master
+[2019-05-15 22:42:55 +0900] [20897] [DEBUG] Current configuration:
+  config: gunicorn/conf.py
+  bind: ['127.0.0.1:8001']
+  backlog: 2048
+  workers: 1
+  worker_class: sync
+  threads: 1
+  worker_connections: 1000
+  max_requests: 0
+  max_requests_jitter: 0
+  timeout: 600
+  graceful_timeout: 30
+  keepalive: 2
+  limit_request_line: 4094
+  limit_request_fields: 100
+  limit_request_field_size: 8190
+  reload: False
+  reload_engine: auto
+  reload_extra_files: []
+  spew: False
+  check_config: False
+  preload_app: False
+  sendfile: None
+  reuse_port: False
+  chdir: /var/www/projects/chat.git/chat
+  daemon: False
+  raw_env: []
+  pidfile: None
+  worker_tmp_dir: None
+  user: 501
+  group: 501
+  umask: 0
+  initgroups: False
+  tmp_upload_dir: None
+  secure_scheme_headers: {'X-FORWARDED-PROTOCOL': 'ssl', 'X-FORWARDED-PROTO': 'https', 'X-FORWARDED-SSL': 'on'}
+  forwarded_allow_ips: ['127.0.0.1']
+  accesslog: gunicorn/access.log
+  disable_redirect_access_to_syslog: False
+  access_log_format: %(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"
+  errorlog: gunicorn/error.log
+  loglevel: debug
+  capture_output: False
+  logger_class: gunicorn.glogging.Logger
+  logconfig: None
+  logconfig_dict: {}
+  syslog_addr: udp://localhost:514
+  syslog: False
+  syslog_prefix: None
+  syslog_facility: user
+  enable_stdio_inheritance: False
+  statsd_host: None
+  statsd_prefix: 
+  proc_name: None
+  default_proc_name: chat.wsgi:application
+  pythonpath: None
+  paste: None
+  on_starting: <function OnStarting.on_starting at 0x7fdc6d9d19d8>
+  on_reload: <function OnReload.on_reload at 0x7fdc6d9d1ae8>
+  when_ready: <function when_ready at 0x7fdc6d9d3598>
+  pre_fork: <function pre_fork at 0x7fdc6d9d3488>
+  post_fork: <function post_fork at 0x7fdc6d9d3400>
+  post_worker_init: <function PostWorkerInit.post_worker_init at 0x7fdc6d9d1f28>
+  worker_int: <function worker_int at 0x7fdc6d9d3620>
+  worker_abort: <function worker_abort at 0x7fdc6d9d36a8>
+  pre_exec: <function pre_exec at 0x7fdc6d9d3510>
+  pre_request: <function PreRequest.pre_request at 0x7fdc6d9ea400>
+  post_request: <function PostRequest.post_request at 0x7fdc6d9ea488>
+  child_exit: <function ChildExit.child_exit at 0x7fdc6d9ea598>
+  worker_exit: <function WorkerExit.worker_exit at 0x7fdc6d9ea6a8>
+  nworkers_changed: <function NumWorkersChanged.nworkers_changed at 0x7fdc6d9ea7b8>
+  on_exit: <function OnExit.on_exit at 0x7fdc6d9ea8c8>
+  proxy_protocol: False
+  proxy_allow_ips: ['127.0.0.1']
+  keyfile: None
+  certfile: None
+  ssl_version: 2
+  cert_reqs: 0
+  ca_certs: None
+  suppress_ragged_eofs: True
+  do_handshake_on_connect: False
+  ciphers: TLSv1
+  raw_paste_global_conf: []
+[2019-05-15 22:42:55 +0900] [20897] [INFO] Starting gunicorn 19.9.0
+[2019-05-15 22:42:55 +0900] [20897] [DEBUG] Arbiter booted
+[2019-05-15 22:42:55 +0900] [20897] [INFO] Listening at: http://127.0.0.1:8001 (20897)
+[2019-05-15 22:42:55 +0900] [20897] [INFO] Using worker: sync
+[2019-05-15 22:42:55 +0900] [20897] [INFO] Server is ready. Spawning workers
+[2019-05-15 22:42:55 +0900] [20900] [INFO] Booting worker with pid: 20900
+[2019-05-15 22:42:55 +0900] [20900] [INFO] Worker spawned (pid: 20900)
+[2019-05-15 22:42:55 +0900] [20897] [DEBUG] 1 workers
+[2019-05-15 22:42:59 +0900] [20900] [DEBUG] GET /chat/top
+[2019-05-15 22:44:50 +0900] [20897] [INFO] Handling signal: term
+[2019-05-15 22:44:50 +0900] [20900] [INFO] Worker exiting (pid: 20900)
+[2019-05-15 22:44:50 +0900] [20897] [INFO] Shutting down: Master
+[2019-05-15 22:44:50 +0900] [20911] [DEBUG] Current configuration:
+  config: gunicorn/conf.py
+  bind: ['127.0.0.1:8001']
+  backlog: 2048
+  workers: 1
+  worker_class: sync
+  threads: 1
+  worker_connections: 1000
+  max_requests: 0
+  max_requests_jitter: 0
+  timeout: 600
+  graceful_timeout: 30
+  keepalive: 2
+  limit_request_line: 4094
+  limit_request_fields: 100
+  limit_request_field_size: 8190
+  reload: False
+  reload_engine: auto
+  reload_extra_files: []
+  spew: False
+  check_config: False
+  preload_app: False
+  sendfile: None
+  reuse_port: False
+  chdir: /var/www/projects/chat.git/chat
+  daemon: False
+  raw_env: []
+  pidfile: None
+  worker_tmp_dir: None
+  user: 501
+  group: 501
+  umask: 0
+  initgroups: False
+  tmp_upload_dir: None
+  secure_scheme_headers: {'X-FORWARDED-PROTOCOL': 'ssl', 'X-FORWARDED-PROTO': 'https', 'X-FORWARDED-SSL': 'on'}
+  forwarded_allow_ips: ['127.0.0.1']
+  accesslog: gunicorn/access.log
+  disable_redirect_access_to_syslog: False
+  access_log_format: %(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"
+  errorlog: gunicorn/error.log
+  loglevel: debug
+  capture_output: False
+  logger_class: gunicorn.glogging.Logger
+  logconfig: None
+  logconfig_dict: {}
+  syslog_addr: udp://localhost:514
+  syslog: False
+  syslog_prefix: None
+  syslog_facility: user
+  enable_stdio_inheritance: False
+  statsd_host: None
+  statsd_prefix: 
+  proc_name: None
+  default_proc_name: chat.wsgi:application
+  pythonpath: None
+  paste: None
+  on_starting: <function OnStarting.on_starting at 0x7f85ddec09d8>
+  on_reload: <function OnReload.on_reload at 0x7f85ddec0ae8>
+  when_ready: <function when_ready at 0x7f85ddec2598>
+  pre_fork: <function pre_fork at 0x7f85ddec2488>
+  post_fork: <function post_fork at 0x7f85ddec2400>
+  post_worker_init: <function PostWorkerInit.post_worker_init at 0x7f85ddec0f28>
+  worker_int: <function worker_int at 0x7f85ddec2620>
+  worker_abort: <function worker_abort at 0x7f85ddec26a8>
+  pre_exec: <function pre_exec at 0x7f85ddec2510>
+  pre_request: <function PreRequest.pre_request at 0x7f85dded9400>
+  post_request: <function PostRequest.post_request at 0x7f85dded9488>
+  child_exit: <function ChildExit.child_exit at 0x7f85dded9598>
+  worker_exit: <function WorkerExit.worker_exit at 0x7f85dded96a8>
+  nworkers_changed: <function NumWorkersChanged.nworkers_changed at 0x7f85dded97b8>
+  on_exit: <function OnExit.on_exit at 0x7f85dded98c8>
+  proxy_protocol: False
+  proxy_allow_ips: ['127.0.0.1']
+  keyfile: None
+  certfile: None
+  ssl_version: 2
+  cert_reqs: 0
+  ca_certs: None
+  suppress_ragged_eofs: True
+  do_handshake_on_connect: False
+  ciphers: TLSv1
+  raw_paste_global_conf: []
+[2019-05-15 22:44:50 +0900] [20911] [INFO] Starting gunicorn 19.9.0
+[2019-05-15 22:44:50 +0900] [20911] [DEBUG] Arbiter booted
+[2019-05-15 22:44:50 +0900] [20911] [INFO] Listening at: http://127.0.0.1:8001 (20911)
+[2019-05-15 22:44:50 +0900] [20911] [INFO] Using worker: sync
+[2019-05-15 22:44:50 +0900] [20911] [INFO] Server is ready. Spawning workers
+[2019-05-15 22:44:50 +0900] [20914] [INFO] Booting worker with pid: 20914
+[2019-05-15 22:44:50 +0900] [20914] [INFO] Worker spawned (pid: 20914)
+[2019-05-15 22:44:50 +0900] [20911] [DEBUG] 1 workers
+[2019-05-15 22:44:54 +0900] [20914] [DEBUG] GET /chat/top
+[2019-05-15 22:45:22 +0900] [20911] [INFO] Handling signal: term
+[2019-05-15 22:45:22 +0900] [20914] [INFO] Worker exiting (pid: 20914)
+[2019-05-15 22:45:22 +0900] [20911] [INFO] Shutting down: Master
+[2019-05-15 22:45:23 +0900] [20918] [DEBUG] Current configuration:
+  config: gunicorn/conf.py
+  bind: ['127.0.0.1:8001']
+  backlog: 2048
+  workers: 1
+  worker_class: sync
+  threads: 1
+  worker_connections: 1000
+  max_requests: 0
+  max_requests_jitter: 0
+  timeout: 600
+  graceful_timeout: 30
+  keepalive: 2
+  limit_request_line: 4094
+  limit_request_fields: 100
+  limit_request_field_size: 8190
+  reload: False
+  reload_engine: auto
+  reload_extra_files: []
+  spew: False
+  check_config: False
+  preload_app: False
+  sendfile: None
+  reuse_port: False
+  chdir: /var/www/projects/chat.git/chat
+  daemon: False
+  raw_env: []
+  pidfile: None
+  worker_tmp_dir: None
+  user: 501
+  group: 501
+  umask: 0
+  initgroups: False
+  tmp_upload_dir: None
+  secure_scheme_headers: {'X-FORWARDED-PROTOCOL': 'ssl', 'X-FORWARDED-PROTO': 'https', 'X-FORWARDED-SSL': 'on'}
+  forwarded_allow_ips: ['127.0.0.1']
+  accesslog: gunicorn/access.log
+  disable_redirect_access_to_syslog: False
+  access_log_format: %(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"
+  errorlog: gunicorn/error.log
+  loglevel: debug
+  capture_output: False
+  logger_class: gunicorn.glogging.Logger
+  logconfig: None
+  logconfig_dict: {}
+  syslog_addr: udp://localhost:514
+  syslog: False
+  syslog_prefix: None
+  syslog_facility: user
+  enable_stdio_inheritance: False
+  statsd_host: None
+  statsd_prefix: 
+  proc_name: None
+  default_proc_name: chat.wsgi:application
+  pythonpath: None
+  paste: None
+  on_starting: <function OnStarting.on_starting at 0x7fca21dfc9d8>
+  on_reload: <function OnReload.on_reload at 0x7fca21dfcae8>
+  when_ready: <function when_ready at 0x7fca21dfe598>
+  pre_fork: <function pre_fork at 0x7fca21dfe488>
+  post_fork: <function post_fork at 0x7fca21dfe400>
+  post_worker_init: <function PostWorkerInit.post_worker_init at 0x7fca21dfcf28>
+  worker_int: <function worker_int at 0x7fca21dfe620>
+  worker_abort: <function worker_abort at 0x7fca21dfe6a8>
+  pre_exec: <function pre_exec at 0x7fca21dfe510>
+  pre_request: <function PreRequest.pre_request at 0x7fca21e15400>
+  post_request: <function PostRequest.post_request at 0x7fca21e15488>
+  child_exit: <function ChildExit.child_exit at 0x7fca21e15598>
+  worker_exit: <function WorkerExit.worker_exit at 0x7fca21e156a8>
+  nworkers_changed: <function NumWorkersChanged.nworkers_changed at 0x7fca21e157b8>
+  on_exit: <function OnExit.on_exit at 0x7fca21e158c8>
+  proxy_protocol: False
+  proxy_allow_ips: ['127.0.0.1']
+  keyfile: None
+  certfile: None
+  ssl_version: 2
+  cert_reqs: 0
+  ca_certs: None
+  suppress_ragged_eofs: True
+  do_handshake_on_connect: False
+  ciphers: TLSv1
+  raw_paste_global_conf: []
+[2019-05-15 22:45:23 +0900] [20918] [INFO] Starting gunicorn 19.9.0
+[2019-05-15 22:45:23 +0900] [20918] [DEBUG] Arbiter booted
+[2019-05-15 22:45:23 +0900] [20918] [INFO] Listening at: http://127.0.0.1:8001 (20918)
+[2019-05-15 22:45:23 +0900] [20918] [INFO] Using worker: sync
+[2019-05-15 22:45:23 +0900] [20918] [INFO] Server is ready. Spawning workers
+[2019-05-15 22:45:23 +0900] [20921] [INFO] Booting worker with pid: 20921
+[2019-05-15 22:45:23 +0900] [20921] [INFO] Worker spawned (pid: 20921)
+[2019-05-15 22:45:23 +0900] [20918] [DEBUG] 1 workers
+[2019-05-15 22:45:24 +0900] [20921] [DEBUG] GET /chat/top
