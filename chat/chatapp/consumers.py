@@ -81,7 +81,7 @@ class ChatConsumer(AsyncJsonWebsocketConsumer):
             self.channel_name,
         )
         # Instruct their client to finish opening the room
-        self.send_json({
+        await self.send_json({
             "join": str(room.pk),
             "title": room.title,
         })

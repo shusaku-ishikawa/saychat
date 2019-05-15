@@ -151,6 +151,7 @@
         var chatSocket = new ReconnectingWebSocket(ws_path);
         
         chatSocket.onopen = function(e) {
+          console.log(e);
           $room_buttons.each(function(index, btn) {
             chatSocket.send(JSON.stringify({
                   'command': 'join',
@@ -253,7 +254,8 @@
         };
 
         chatSocket.onclose = function(e) {
-            console.error('Chat socket closed unexpectedly');
+             console.log(e);
+             console.error('Chat socket closed unexpectedly');
         };
 
         $input_message.focus();
