@@ -109,6 +109,8 @@ class SignUp(generic.CreateView):
         messages.success(self.request, '本登録用リンクを送付しました')
         return  HttpResponseRedirect(reverse('chatapp:sign_up'))
 
+class TestView(generic.TemplateView):
+    template_name = 'chatapp/sign_up_done.html'
 class SignUpDone(generic.TemplateView):
     """メール内URLアクセス後のユーザー本登録"""
     template_name = 'chatapp/sign_up_done.html'

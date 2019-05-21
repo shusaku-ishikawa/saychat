@@ -15,4 +15,5 @@ urlpatterns = [
     path('upload', views.upload_file, name = "upload"),
     path('user_update/<int:pk>/', views.UserUpdate.as_view(), name='user_update'),
     url(r'^top$', views.Top.as_view(), name='top'),
+    path('test/', views.TestView.as_view(), name="hoge")
 ]

@@ -1,28 +1,28 @@
+{% extends 'chatapp/toppage-base.html' %}
 {% load static %}
-<!doctype html>
-<html lang="ja">
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" ></script>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
-    <title>title here</title>
-
-</head>
-<style>
-    .login-btn {
-        background-color: red;
-        color:red;
-    }
-</style>
-<body>
-        <div class="jumbotron text-xs-center">
-            <h1 class="display-3">Thank You!</h1>
-                <p class="lead"><strong>Enjoy shopping!</strong> </p>
-            <hr>
-            <a class="btn login-btn" href="{% url 'chatapp:login' %}">login</a>
-        </div>
-            
-</body>
-</html>
+{% block style %}
+    <style>
+      h2 {
+          margin-top: 3rem;
+          margin-bottom: 1rem
+      }
+      .to-mypage {
+          background-color: red;
+          color: white;
+          margin: 3rem 0
+      }
+      .to-mypage:hover {
+          color: white
+      }
+      .my-text {
+          font-size: 0.8rem;
+          font-weight: bold
+      }
+       
+    </style>
+{% endblock %}
+{% block content %}
+   <h2 class="text-center">ようこそ！</h2>
+   <div class="my-text text-center">おぷきた連絡ナビで快適なコミュニケーションを</div>
+   <a href="{% url 'chatapp:login' %}" class="btn btn-block to-mypage">マイページへすすむ</a>
+{% endblock %}
