@@ -340,7 +340,7 @@
                   <p class="room_latest_message">{{ room.room.get_latest_message.caption }}</p>
               </div>
               <div class="col-4">
-                  <button room_id="{{ room.room.pk }}" opponent_last_logout="{{ room.opponent.last_logout }}" opponent_is_online="{{ room.opponent.is_online }}" room_title="{{ room.room.title }}" type="button" class="btn btn-block open-room-btn" name="room_btn">開く</button>
+                  <button room_id="{{ room.room.pk }}" opponent_last_logout="{{ room.opponent.last_logout| date:"m/d f" }}" opponent_is_online="{{ room.opponent.is_online }}" room_title="{{ room.room.title }}" type="button" class="btn btn-block open-room-btn" name="room_btn">開く</button>
               </div>
             </div>
           </div>
