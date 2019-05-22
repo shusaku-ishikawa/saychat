@@ -72,7 +72,7 @@
             color:white;
         }
         .to-password-change {
-            font-weight: bold;
+            font-size: 14px;
             margin: 1rem 0;
         }
     
@@ -139,11 +139,11 @@
                     {{ form.email.errors }}
                     
                     <label for="id_thumbnail">アイコン画像</label><span class="badge badge-danger">必須</span><br>
-                    <input type="image" id="id_thumbnail" name="thumbnail" style="display:none" value="{{ user.thumbnail.url }}">
+                    <input type="file" id="id_thumbnail" name="thumbnail" style="display:none" value="{% if user.thumbnail %}{{ user.thumbnail.url }}{% endif %}">
                     <!-- form-group// -->
                     {{ form.thumbnail.errors }}
                     <div class="container preview">
-                        <img class="rounded-circle preview-img" src="{{ user.thumbnail.url }}" alt=""/><br>
+                        <img class="rounded-circle preview-img" src="{% if user.thumbnail %}{{ user.thumbnail.url }}{% endif %}" alt=""/><br>
                         <button type="button" class="btn btn-primary select-img-button">画像選択</button>
                     </div>
                     
@@ -177,7 +177,7 @@
 </div>
 
 {% endblock %}
-{% block extra_js %}
+{% block script %}
 <script>
     function init_birthday_year() {
         var $dom = $('#id_birthday_year');
@@ -202,10 +202,11 @@
     $(function() {
         
         var $file_input = $('#id_thumbnail');
-        var $choose_file = $('.preview span');
+        var $choose_file = $('.preview button');
         var $preview_img = $('.preview img');
         
-        $choose_file.on('click', function() {
+        $choose_file.on('click', function(e) {
+           
             $file_input.click();
         });
 

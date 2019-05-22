@@ -100,15 +100,27 @@
     color: #747474;
     text-align: right;
     display: block;
+    float: right;
     font-size: 12px;
-    margin: 3px 0 0;
+    
+  }
+  .outgoing_is_read {
+    color: #747474;
+    text-align: right;
+    display: block;
+    float: right;
+    font-size: 12px;
+    margin-right: 10px;
+  }
+  .outgoing_is_read i {
+    margin:1px;
   }
 
   .time_date {
     color: #747474;
     display: block;
     font-size: 12px;
-    margin: 3px 0 0;
+    float: left
   }
 
   .received_withd_msg {
@@ -261,7 +273,9 @@
     margin: 3px
   }
   .small-text {
-    font-size: 10px;
+    font-size: 14px;
+    font-weight: bold;
+    text-align: center
   }
   .open-room-btn {
     background-color : red;
@@ -297,8 +311,7 @@
 
 {% block content %}
 {% load static %}
-<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-<script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+
 <div id="mySidebar" class="sidebar hidden-md-down">
     <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
     <div class="row room_group_name">
@@ -308,10 +321,10 @@
     </div>
    {% if my_rooms %}
     {% for room in my_rooms %}
-      <div class="chat_list active_chat" room_id="{{ room.room.pk }}">
+      <div class="chat_list active_chat" room_id="{{ room.room.pk }}" >
         <div class="row chat_people">
           <div class="col-3 chat_img">
-            <img class="rounded-circle" src="{{ room.opponent.user.thumbnail_url }}" alt="sunil">
+            <img class="rounded-circle" src="{{ room.opponent.user.thumbnail_url }}" alt="">
           </div>
           <div class="col-9 chat_ib">
             <div class="row">
@@ -327,7 +340,7 @@
                   <p class="room_latest_message">{{ room.room.get_latest_message.caption }}</p>
               </div>
               <div class="col-4">
-                  <button room_id="{{ room.room.pk }}" room_title="{{ room.room.title }}" type="button" class="btn btn-block open-room-btn" name="room_btn">開く</button>
+                  <button room_id="{{ room.room.pk }}" opponent_last_logout="{{ room.opponent.last_logout }}" opponent_is_online="{{ room.opponent.is_online }}" room_title="{{ room.room.title }}" type="button" class="btn btn-block open-room-btn" name="room_btn">開く</button>
               </div>
             </div>
           </div>
@@ -378,10 +391,12 @@
       </div>
   </div>     
 </div>
+
 {% endblock %}
-{% block extra_js %}
+{% block script %}
 
 <script>
+  
     var history_url = "{% url 'chatapp:history' %}";
     var login_url = "{% url 'chatapp:login' %}";
     var attachment_url = "{% url 'chatapp:upload' %}";
@@ -402,4 +417,5 @@
     
 </script>
 <script src="{% static 'js/top.js' %}"></script>
+
 {% endblock %}

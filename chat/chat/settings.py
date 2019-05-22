@@ -151,7 +151,7 @@ MEDIA_ROOT = os.path.join(BASE_DIR,'media') # 追加
 MEDIA_URL = '/media_chat/' # 追加
 
 #EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
-DEFAULT_FROM_EMAIL = 'opthok-navi@optech-hokkaido.com'
+DEFAULT_FROM_EMAIL = 'おぷきた連絡ナビ <opthok-navi@optech-hokkaido.com>'
 DEFAULT_CHARSET = 'utf-8'
 EMAIL_HOST = 'smtp.lolipop.jp'
 EMAIL_PORT = 465

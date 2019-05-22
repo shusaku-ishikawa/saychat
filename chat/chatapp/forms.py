@@ -60,7 +60,13 @@ class UserUpdateForm(forms.ModelForm):
         super().__init__(*args, **kwargs)
         for field in self.fields.values():
             field.widget.attrs['class'] = 'form-control'
-            field.widget.attrs['placeholder'] = field.label  # placeholderにフィールドのラベルを入れる
+            
+        self.fields['name'].widget.attrs['placeholder'] = "例) オプト　太郎"
+        self.fields['furigana'].widget.attrs['placeholder'] = "例) オプト　タロウ"
+        self.fields['email'].widget.attrs['placeholder'] = "パソコン、携帯どちらも可"
+        self.fields['clinic_name'].widget.attrs['placeholder'] = "例) オプテック歯科医院"
+        self.fields['address'].widget.attrs['placeholder'] = "例) 北海道札幌市厚別区厚別西２条3-7-15"
+        self.fields['phone'].widget.attrs['placeholder'] = "固定電話、携帯どちらも可"
 
 class MyPasswordChangeForm(PasswordChangeForm):
     """パスワード変更フォーム"""

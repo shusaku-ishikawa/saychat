@@ -133,6 +133,10 @@ class User(AbstractBaseUser, PermissionsMixin):
 class ChatRoom(models.Model):
     def __str__(self):
         return self.title
+    class Meta:
+        verbose_name = 'トークルーム'
+        verbose_name_plural = 'トークルーム'
+    
 
     title = models.CharField(
         max_length = 50,
@@ -169,6 +173,10 @@ class ChatRoom(models.Model):
 class ChatRoomMember(models.Model):
     def __str__(self):
         return self.room.title + '_' + self.user.name
+    class Meta:
+        verbose_name = 'トークルームメンバ'
+        verbose_name_plural = 'トークルームメンバ'
+        
     room = models.ForeignKey(
         to = ChatRoom,
         on_delete = models.CASCADE,
@@ -182,7 +190,7 @@ class ChatRoomMember(models.Model):
     last_logout = models.DateTimeField(
         verbose_name = '最終ログアウト時間',
         null = True,
-        default = timezone.now()
+        default = timezone.now
     )
     is_online = models.BooleanField(
         verbose_name = 'オンライン',
@@ -194,11 +202,15 @@ class ChatRoomMember(models.Model):
         other_members = ChatRoomMember.objects.filter(room = self.room).filter(~Q(user = self.user))
         if len(other_members) > 0:
             return other_members[0]
+    
 
 class ChatMessage(models.Model):
     def __str__(self):
         return self.message[:5] + '...'
-
+    class Meta:
+        verbose_name = 'トークルームメッセージ'
+        verbose_name_plural = 'トークルームメッセージ'
+    
     room = models.ForeignKey(
         to = ChatRoom,
         on_delete = models.CASCADE,
@@ -223,6 +235,18 @@ class ChatMessage(models.Model):
     @property
     def message_safe(self): 
         return mark_safe(self.my_textfield)
+    
+    @property
+    def is_read(self):
+        rm = ChatRoomMember.objects.get(room = self.room, user = self.user)
+        opponent = rm.opponent
+        if opponent.is_online:
+            return True
+        else:
+            if opponent.last_logout > self.sent_at:
+                return True
+        return False
+    
 class Attachment(models.Model):
     def __str__(self):
         return self.file.name

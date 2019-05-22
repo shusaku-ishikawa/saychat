@@ -68,8 +68,8 @@
             color:white
         }
     
-        span {
-            font-weight: bold
+        p {
+            font-size: 14px;
         }
 
     
@@ -206,7 +206,7 @@
         
         $(function() {
             var $file_input = $('#id_thumbnail');
-            var $choose_file = $('.preview span');
+            var $choose_file = $('.preview button');
             var $preview_img = $('.preview img');
             
 
@@ -242,6 +242,7 @@
             init_birthday_year();
             init_birthday_month();
             init_birthday_day();
+            $('#id_name').focus();
         });
     
     </script>

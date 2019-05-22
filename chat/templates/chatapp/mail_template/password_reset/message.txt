@@ -5,4 +5,4 @@
 再設定用URL
 {{ protocol}}://{{ domain }}{% url 'chatapp:password_reset_confirm' uid token %}
 
-管理者
+おぷきた連絡ナビ管理者

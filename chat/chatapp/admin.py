@@ -20,7 +20,7 @@ class MyUserCreationForm(UserCreationForm):
 
 class MyUserAdmin(UserAdmin):
     fieldsets = (
-        (None, {'fields': ('name','furigana', 'address', 'email',  'thumbnail', 'phone', 'password')}),
+        (None, {'fields': ('name','furigana', 'birthday', 'thumbnail', 'address', 'email',  'phone', 'password')}),
         (_('Personal info'), {'fields': ('clinic_name',)}),
         (_('Permissions'), {'fields': ('is_active', 'is_staff', 'is_superuser')}),
         (_('Important dates'), {'fields': ('last_login', 'date_joined')}),
@@ -28,7 +28,7 @@ class MyUserAdmin(UserAdmin):
     add_fieldsets = (
         (None, {
             'classes': ('wide',),
-            'fields': ('name','furigana','address','phone', 'email', 'password1', 'password2'),
+            'fields': ('name','furigana',  'birthday', 'thumbnail', 'clinic_name', 'address','phone', 'email', 'password1', 'password2'),
         }),
     )
     form = MyUserChangeForm
@@ -41,7 +41,7 @@ class ChatRoomAdmin(admin.ModelAdmin):
     list_display = ('title',)
 
 class ChatRoomMemberAdmin(admin.ModelAdmin):
-    list_display = ('room', 'user')
+    list_display = ('room', 'user', 'last_logout', 'is_online')
 
 class ChatMessageAdmin(admin.ModelAdmin):
     list_display = ('room', 'speaker', 'message')
