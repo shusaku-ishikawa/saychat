@@ -26,7 +26,21 @@
         }
 
         .my-card-body {
-            padding: 2rem 3.5rem
+            padding: 2rem 3rem
+        }
+        a:hover {
+            color: white;
+        }
+        .submit-btn {
+            background-color: red;
+            color:white;
+
+        }
+        .submit-btn:hover {
+            color: white
+        }
+        h3.title {
+            font-weight: bold
         }
     </style>
     {% block style %}{% endblock %}
@@ -40,10 +54,13 @@
                 </div>
                 <div class="card">
                     <div class="card-body my-card-body">
+                        <h3 class="text-center title">{% block title %}{% endblock %}</h3><hr>
                         {% block content %}{% endblock %}
                     </div> <!-- card body -->
                 </div> <!-- card  -->
             </div>
         </div>
     </div>
+    {% block script %}{% endblock %}
 </body>
+</html>

@@ -10,7 +10,7 @@ from .forms import *
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.http import HttpResponseRedirect, JsonResponse, HttpResponseBadRequest
 from django.core.signing import BadSignature, SignatureExpired, dumps, loads
-from django.urls import reverse
+from django.urls import reverse, reverse_lazy
 from django.contrib.sites.shortcuts import get_current_site
 from django.template.loader import get_template
 from django.contrib import messages
@@ -174,3 +174,34 @@ class UserUpdate(SuccessMessageMixin, LoginRequiredMixin, generic.UpdateView):
     success_message = '登録情報を更新しました'
     def get_success_url(self):
         return resolve_url('chatapp:user_update', pk=self.kwargs['pk'])
+
+class PasswordChange(SuccessMessageMixin, LoginRequiredMixin, PasswordChangeView):
+    """パスワード変更ビュー"""
+    form_class = MyPasswordChangeForm
+    success_message = 'パスワードを更新しました'
+    success_url = reverse_lazy('chatapp:password_change')
+    template_name = 'chatapp/password_change.html'
+
+
+class PasswordReset(SuccessMessageMixin, PasswordResetView):
+    """パスワード変更用URLの送付ページ"""
+    subject_template_name = 'chatapp/mail_template/password_reset/subject.txt'
+    email_template_name = 'chatapp/mail_template/password_reset/message.txt'
+    template_name = 'chatapp/password_reset.html'
+    form_class = MyPasswordResetForm
+    success_message = "再設定用リンクを送付しました"
+    success_url = reverse_lazy('chatapp:password_reset')
+
+
+
+class PasswordResetConfirm(PasswordResetConfirmView):
+    """新パスワード入力ページ"""
+    form_class = MySetPasswordForm
+    success_url = reverse_lazy('chatapp:password_reset_complete')
+    template_name = 'chatapp/password_reset_confirm.html'
+
+
+class PasswordResetComplete(PasswordResetCompleteView):
+    """新パスワード設定しましたページ"""
+    template_name = 'chatapp/password_reset_complete.html'
+

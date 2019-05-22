@@ -316,6 +316,15 @@
           }
         });
 
+        $input_message.keydown(function(e){
+            if(event.shiftKey){
+              if(e.keyCode === 13){
+                 $btn_message_send.click();
+                 return false;
+              }
+            }
+        });
+
          /* 2. INITIALIZE THE FILE UPLOAD COMPONENT */
          $file_select_btn.on('click', function() {
            $file_uploader.click();
@@ -343,11 +352,16 @@
                 }).appendTo(preview_zone);
 
                 extension = /[^.]+$/.exec(data.files[0].name);
-
+                
                 $('<span>', {
                     text: data.files[0].name,
                     class:"attachment_name"
                 }).appendTo($prev_col);
+
+                $('<img>', {
+                    src: data.result.url,
+                    calss: 'img img-thumbnail'
+                }).appendTo($prev_col)
 
                 $del_span = $('<span>', {  
                 }).append($('<i>', {

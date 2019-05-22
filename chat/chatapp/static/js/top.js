@@ -101,41 +101,107 @@
         var $outer = $('<div>', { class: 'row outgoing_msg' });
         var $inner = $('<div>', { class: 'col-md-10 col-10 offset-md-1 sent_msg' }).appendTo($outer);
         $('<span>', { text: sent_by, class: 'sent_msg_speaker_name' }).appendTo($inner);
-        $p = $('<p>', { html: escapeHtml(message).replace(/\r?\n/g, '<br />') });
+        $p = $('<p>', { html: escapeHtml(message).replace(/\r?\n/g, '<br />'), class:'text-wrap' });
         $p.appendTo($inner);
         $p.linkify();
+
+        
+        // $p.find('a').each(async function(index, elem) {
+        //     $link_area = $('<div>').appendTo($inner);
+        //     var link = $(elem).attr('href');
+
+        //     const response = await axios({
+        //         method:'get',
+        //         url:'/cors?url=' + link,
+        //     });
+
+        //     // キャプチャ対象のhtmlをレンダリングするiframeを作る(hiddenにしてabsoluteにして不可視にしておく)
+        //     const renderAreaId = 'render-area' + index;
+        //     const renderArea = '<iframe id="' + renderAreaId + '" sandbox="allow-scripts allow-same-origin" width="1000" height="1000" scrolling="no" frameborder="no" style="position: absolute;"></iframe>'
+        //     $link_area.append($(renderArea));
+
+        //     const iframe = document.querySelector('#' + renderAreaId);
+        //     iframe.contentDocument.open();
+        //     iframe.contentDocument.write(response.data);
+        //     iframe.contentDocument.close();
+
+        //     iframe.onload = async () => {
+        //         // キャプチャを取得
+        //         const canvas = await html2canvas(iframe.contentDocument.querySelector('body'),{
+        //             logging: false,
+        //             allowTaint: true,
+        //             useCORS: true,
+        //             width: 100,
+        //             height: 100,
+        //         });
+
+        //     canvas.style.width = parseInt(canvas.width / 4, 10) + 'px';
+        //     canvas.style.height = parseInt(canvas.height / 4, 10) + 'px';
+        //     $(canvas).appendTo($link_area);
+        //     iframe.remove();// レンダリング用iframe削除
+        //     }
+        // });
+
+        var $attchment_area = $('<div>', { class: "row" }).appendTo($inner);
         attachments.forEach(elem => {
-          $('<a>', { 
+          $('<div>', { class: 'col-md-3 col-6' })
+          .append($('<a>', { 
             href: elem.file_url,
             text: elem.file_name,
             download: elem.file_name,
             class: 'attachment_file '
-          }).appendTo($inner).append($('<br>'));
+          }))
+          .append($('<img>', {
+              src: elem.file_url,
+              class: 'img img-thumbnail'
+          }))
+          .appendTo($attchment_area).append($('<br>'));
         });
         $('<span>', { class : 'outgoing_time_date', text: trim_date_str(sent_at) }).appendTo($inner);
-        $('<div>', { class: 'col-md-1 col-2 outgoing_msg_img' }).append($('<img>', { src: thumbnail_url })).appendTo($outer);
+        $('<div>', { class: 'col-md-1 col-2 outgoing_msg_img' }).append($('<img>', { src: thumbnail_url, class:'rounded-circle' })).appendTo($outer);
         return $outer
     }
     
     function create_incomming_message_dom(sent_by, thumbnail_url, sent_at, message, attachments) {
         var $outer = $('<div>', { class: 'row incoming_msg' });
         var $img_wrapper = $('<div>', { class: 'col-md-1 col-2 incoming_msg_img' }).appendTo($outer);
-        $('<img>', { src: thumbnail_url, alt: '' }).appendTo($img_wrapper);
+        $('<img>', { src: thumbnail_url, class: 'rounded-circle' }).appendTo($img_wrapper);
         
         var $msg_outer = $('<div>', { class: 'col-md-10 col-10 received_msg' }).appendTo($outer);
         $('<span>', { text: sent_by, class: 'incomming_msg_speaker_name' }).appendTo($msg_outer);
         var $msg_inner = $('<div>', { class: 'received_withd_msg' }).appendTo($msg_outer);
-        $p = $('<p>', { html:  escapeHtml(message).replace(/\r?\n/g, '<br />') });
+        $p = $('<p>', { html:  escapeHtml(message).replace(/\r?\n/g, '<br />'),class:'text-wrap' });
         $p.appendTo($msg_inner);
         $p.linkify();
+
+        $p.find('a').each(function(index, elem) {
+            alert($(elem).attr('href'))
+        });
+
+
+        var $attchment_area = $('<div>', { class: "row" }).appendTo($msg_inner);
         attachments.forEach(elem => {
-          $('<a>', { 
+          $('<div>', { class: 'col-md-3 col-6' })
+          .append($('<a>', { 
             href: elem.file_url,
             text: elem.file_name,
-            class: 'attachment_file',
-            download: elem.file_name
-          }).appendTo($msg_inner).append($('<br>'));
+            download: elem.file_name,
+            class: 'attachment_file '
+          }))
+          .append($('<img>', {
+              src: elem.file_url,
+              class: 'img img-thumbnail'
+          }))
+          .appendTo($attachment_area).append($('<br>'));
         });
+        // attachments.forEach(elem => {
+        //   $('<a>', { 
+        //     href: elem.file_url,
+        //     text: elem.file_name,
+        //     class: 'attachment_file',
+        //     download: elem.file_name
+        //   }).appendTo($msg_inner).append($('<br>'));
+        // });
         var $sent_at = $('<span>', { class : 'time_date', text: trim_date_str(sent_at) }).appendTo($msg_inner);
 
         return $outer;
@@ -209,7 +275,7 @@
                             }).append($('<div>', {
                                 class: 'col-3 chat_img'
                             }).append($('<img>', {
-                                class: 'img img-thumbnail',
+                                class: 'rounded-circle',
                                 src: messageJson.speaker.thumbnail_url
                             })).append($('<div>', {
                                 class: 'col-9 chat_ib'
@@ -289,7 +355,8 @@
             $.cookie(COOKIE_LAST_ROOM_ID, $(this).attr('room_id'), { expires: 7 });
             closeNav();
             $main_panel.show();
-          
+            
+            $('.room-title').html($(this).attr('room_title'));
           if ($(this).attr('room_id') != active_room_id) {
             active_room_id = $(this).attr('room_id');
 
@@ -315,6 +382,14 @@
             });
           }
         });
+        
+        $(document).on("keydown", "#chat-message-input", function(e){   
+            if(e.shiftKey) {
+                if (e.keyCode === 13){
+                    $btn_message_send.click();
+               } 
+            } 
+        });
 
          /* 2. INITIALIZE THE FILE UPLOAD COMPONENT */
          $file_select_btn.on('click', function() {
@@ -339,21 +414,24 @@
                 attachment_pk_list.push(data.result.pk + '');
                 
                 $prev_col = $('<div>', {
-                    class: "col-md-2 col-4 prev_col",
+                    class: "col-md-4 col-4 prev_col",
                 }).appendTo(preview_zone);
 
                 extension = /[^.]+$/.exec(data.files[0].name);
-
+               
                 $('<span>', {
                     text: data.files[0].name,
                     class:"attachment_name"
                 }).appendTo($prev_col);
-
-                $del_span = $('<span>', {  
-                }).append($('<i>', {
-                  class : "fa fa-trash",
-                  style: 'color:red'
-                }))
+                //alert("png" == extension)
+                
+                    //alert('image');
+                    $('<img>', {
+                        src: data.result.url,
+                        class: 'img img-thumbnail'
+                    }).appendTo($prev_col);
+                
+                $del_btn = $('<button>', { text:'削除', class:'btn del-img-btn'})
                 .appendTo($prev_col)
                 .on('click', function() {
                     var i = attachment_pk_list.indexOf($(this).attr('pk'));
@@ -386,4 +464,5 @@
         if (last_room_id !== null) {
             //$('button[room_id="' + last_room_id + '"]').click();
         }
+        openNav();
     });

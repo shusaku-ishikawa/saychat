@@ -1,12 +1,92 @@
 {% extends "chatapp/base.html" %}
+
+{% block style %}
+    <style>
+        .alert-success {
+            padding:0!important;
+            vertical-align: middle!important;
+        }
+        .alert-success .row {
+            font-size: 14px;
+            padding: none;
+            margin: 10px;
+        }
+        label {
+            font-weight: bold
+        }
+        select#id_birthday_year {
+            width: 30%;
+            display: inline-block!important
+        }
+        select#id_birthday_month {
+            width: 20%;
+            display: inline-block!important
+        }
+        
+        select#id_birthday_day {
+            width: 20%;
+            display: inline-block!important
+        }
+        .vertical-align {
+            display: flex;
+            align-items: center;
+        }
+        .preview {
+            text-align: center;
+            border: 1px solid lightgray;
+            min-height: 100px;
+            margin-bottom: 5px;
+            border-radius: 3%
+        }
+        
+        .preview img {
+            min-width: 100px;
+            min-height: 100px;
+            max-height: 100px;
+            max-width: 100px;
+            margin: 2px;
+        }
+        
+        .select-img-button{
+            margin:5px;
+            padding: 3px;
+            font-size:10px;
+        }
+        input#id_thumbnail {
+            display: none;
+        }
+
+    
+    
+        h3.title {
+            font-weight: bold
+        }
+        .card {
+            margin-top: 1rem;
+        }
+        .my-card-body {
+            padding: 2rem 3rem;
+        }
+        .update-btn {
+            background-color: red;
+            color:white;
+        }
+        .to-password-change {
+            font-weight: bold;
+            margin: 1rem 0;
+        }
+    
+    </style>
+{% endblock %}
+
 {% block content %}
 {% load static %}
-<link rel="stylesheet" type="text/css" href="{% static 'css/user_update.css' %}">
-
 <div class="row">
     <div class="col-md-6 offset-md-3 col-12">
-        <div class="card bg-light">
-            <div class="card-body mx-auto">
+        <div class="card">
+            <div class="card-body my-card-body">
+                <h3 class="text-center title">ユーザ情報更新</h2>
+                <hr>
                 <form method="POST" action="" enctype="multipart/form-data">
                     {{ form.non_field_errors }}
                     {% for message in messages %}
@@ -29,72 +109,67 @@
                     {% endfor %}
                     
                     {% csrf_token %}
-                    <input type="file" name="thumbnail" accept="image/*" class="form-control" placeholder="サムネイル" id="id_thumbnail">
+                    <div class="form-group">
+                        <label for="id_name" class="control-label">名前</label><span class="badge badge-danger">必須</span>
+                        {{ form.name }}
+                    </div> <!-- form-group// -->
+                    {{ form.name.errors }}
+            
+                    <div class="form-group">
+                        <label for="id_name" class="control-label">名前(カナ)</label><span class="badge badge-danger">必須</span>
+                        {{ form.furigana }}        
+                    </div> <!-- form-group// -->
+                    {{ form.furigana.errors }}
+
+                    <div class="form-group">
+                        <label for="id_email" class="control-label">生年月日</label><span class="badge badge-danger">必須</span><br>
+                        <select class="form-control" id="id_birthday_year" name="birthday_year"></select>
+                        年
+                        <select class="form-control" id="id_birthday_month" name="birthday_month"></select>
+                        月
+                        <select class="form-control" id="id_birthday_day" name="birthday_day"></select>
+                        日
+                    </div> <!-- form-group// -->
+                    {{ form.birthday.errors }}
+            
+                    <div class="form-group">
+                        <label for="id_email" class="control-label">メールアドレス</label><span class="badge badge-danger">必須</span>
+                        {{ form.email }}
+                    </div> <!-- form-group// -->
+                    {{ form.email.errors }}
+                    
+                    <label for="id_thumbnail">アイコン画像</label><span class="badge badge-danger">必須</span><br>
+                    <input type="image" id="id_thumbnail" name="thumbnail" style="display:none" value="{{ user.thumbnail.url }}">
                     <!-- form-group// -->
                     {{ form.thumbnail.errors }}
                     <div class="container preview">
-                        <img class="img img-thumbnail preview-img" src="{{ user.thumbnail_url }}" alt="プレビュー" /><br>
-                        <span class="btn btn-sm btn-success"> <i class="far fa-image"></i> Choose file</span>
+                        <img class="rounded-circle preview-img" src="{{ user.thumbnail.url }}" alt=""/><br>
+                        <button type="button" class="btn btn-primary select-img-button">画像選択</button>
                     </div>
-                    <div class="form-group input-group">
-                        <div class="input-group-prepend">
-                            <span class="input-group-text"> <i class="fa fa-envelope"></i> </span>
-                            </div>
-                            {{ form.email }}
-                            
+                    
+                    <div class="form-group">
+                        <label for="id_clinic_name">医院名</label><span class="badge badge-danger">必須</span>
+                        {{ form.clinic_name }}            
                     </div> <!-- form-group// -->
-                    {{ form.email.errors }}
-                    <div class="form-group input-group">
-                        <div class="input-group-prepend">
-                            <span class="input-group-text"> <i class="fa fa-user"></i> </span>
-                            </div>
-                            {{ form.name }}
-                    </div> <!-- form-group// -->
-                    {{ form.name.errors }}
-                    <div class="form-group input-group">
-                        <div class="input-group-prepend">
-                            <span class="input-group-text"> <i class="fa fa-user"></i>  </span>
-                            </div>
-                            {{ form.furigana }}
-                            
-                    </div> <!-- form-group// -->
-                    {{ form.furigana.errors }}
-                    <div class="form-group input-group">
-                        <div class="input-group-prepend">
-                            <span class="input-group-text"> <i class="fas fa-birthday-cake"></i> </span>
-                            </div>
-                            {{ form.birthday }}
-                            
-                    </div> <!-- form-group// -->
-                    {{ form.birthday.errors }}
-                    <div class="form-group input-group">
-                        <div class="input-group-prepend">
-                            <span class="input-group-text"> <i class="fas fa-map-marker-alt"></i> </span>
-                            </div>
-                            {{ form.address }}
-                            
+                    {{ form.clinic_name.errors }}
+            
+                    <div class="form-group">
+                        <label for="id_address">医院住所</label><span class="badge badge-danger">必須</span>
+                        {{ form.address }}    
                     </div> <!-- form-group// -->
                     {{ form.address.errors }}
                     
-                    <div class="form-group input-group">
-                        <div class="input-group-prepend">
-                            <span class="input-group-text"><i class="fas fa-phone"></i></span>
-                            </div>
-                            {{ form.phone }}
-                            
+                    <div class="form-group">
+                        <label for="id_phone">連絡先電話番号</label><span class="badge badge-danger">必須</span>
+                        {{ form.phone }}        
                     </div> <!-- form-group// -->
                     {{ form.phone.errors }}
-                    <div class="form-group input-group">
-                        <div class="input-group-prepend">
-                            <span class="input-group-text"> <i class="fas fa-home"></i></span>
-                            </div>
-                            {{ form.clinic_name }}
-                            
-                    </div> <!-- form-group// -->
-                    {{ form.clinic_name.errors }}
-                    <div class="form-group">
-                            <button type="submit" class="btn btn-block"> UPDATE  </button>
-                        </div> <!-- form-group// --> 
+
+                    <p class="to-password-change">パスワードの変更は<a href="{% url 'chatapp:password_change' %}">こちら</a> </p>
+
+                    <button type="submit" class="btn btn-block update-btn">更新</button>
+
+                   
                 </form>
             </div>
         </div> <!-- card.// -->
@@ -104,42 +179,64 @@
 {% endblock %}
 {% block extra_js %}
 <script>
-    
-//画像ファイルプレビュー表示のイベント追加 fileを選択時に発火するイベントを登録
-$(function() {
-    
-    var $file_input = $('#id_thumbnail');
-    var $choose_file = $('.preview span');
-    var $preview_img = $('.preview img');
-    
-    $choose_file.on('click', function() {
-        $file_input.click();
-    });
-
-    $file_input.on('change', function(e) {
-        var file = e.target.files[0],
-            reader = new FileReader(),
-            $preview = $(".preview");
-            t = this;
-
-        // 画像ファイル以外の場合は何もしない
-        if(file.type.indexOf("image") < 0){
-        return false;
+    function init_birthday_year() {
+        var $dom = $('#id_birthday_year');
+        for (let i = 1920; i < 2020; i++) {
+            $('<option>', { value: i, text: i }).appendTo($dom)
         }
+    }
+    function init_birthday_month() {
+        var $dom = $('#id_birthday_month');
+        for (let i = 1; i < 13; i++) {
+            $('<option>', { value: i, text: i }).appendTo($dom)
+        }
+    }
+    function init_birthday_day() {
+        var $dom = $('#id_birthday_day');
+        for (let i = 1; i < 32; i++) {
+            $('<option>', { value: i, text: i }).appendTo($dom)
+        }
+    }
 
-        // ファイル読み込みが完了した際のイベント登録
-        reader.onload = (function(file) {
-        return function(e) {
-            //既存のプレビューを削除
-            
-            // .prevewの領域の中にロードした画像を表示するimageタグを追加
-            $preview_img.attr('src', e.target.result);
-        };
-        })(file);
+    //画像ファイルプレビュー表示のイベント追加 fileを選択時に発火するイベントを登録
+    $(function() {
+        
+        var $file_input = $('#id_thumbnail');
+        var $choose_file = $('.preview span');
+        var $preview_img = $('.preview img');
+        
+        $choose_file.on('click', function() {
+            $file_input.click();
+        });
 
-        reader.readAsDataURL(file);
+        $file_input.on('change', function(e) {
+            var file = e.target.files[0],
+                reader = new FileReader(),
+                $preview = $(".preview");
+                t = this;
+
+            // 画像ファイル以外の場合は何もしない
+            if(file.type.indexOf("image") < 0){
+            return false;
+            }
+
+            // ファイル読み込みが完了した際のイベント登録
+            reader.onload = (function(file) {
+            return function(e) {
+                //既存のプレビューを削除
+                
+                // .prevewの領域の中にロードした画像を表示するimageタグを追加
+                $preview_img.attr('src', e.target.result);
+            };
+            })(file);
+
+            reader.readAsDataURL(file);
+        });
+        init_birthday_year();
+        init_birthday_month();
+        init_birthday_day();
+        
     });
-});
 
 </script>
 {% endblock %}

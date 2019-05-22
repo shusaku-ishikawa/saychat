@@ -37,7 +37,7 @@
         {% csrf_token %}
         <button type="submit" name="btn" value="Login" class="login-btn btn btn-block">ログイン</button>
         <div class="pwd-forget small-text">
-            <a href="#">パスワードをお忘れの方</a>
+            <a href="{% url 'chatapp:password_reset' %}">パスワードをお忘れの方</a>
         </div>
         <div class="no-account text-center small-text">アカウントをお持ち出ない方はこちら</div>
         <a class="btn btn-primary btn-block" href="{% url 'chatapp:sign_up' %}">新規会員登録</a>                                                           

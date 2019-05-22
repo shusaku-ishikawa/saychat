@@ -22,9 +22,6 @@ class MyFileSystemStorage(FileSystemStorage):
         return super(MyFileSystemStorage, self).get_valid_name(name)
 
 
-
-
-
 class MyUserManager(BaseUserManager):
     """ユーザーマネージャー."""
 
@@ -75,6 +72,24 @@ class User(AbstractBaseUser, PermissionsMixin):
     phone = models.CharField('連絡先電話番号', max_length = 50, null = True)
     clinic_name = models.CharField('歯科医院名', max_length = 100, null = True)
     thumbnail = models.ImageField('サムネイル', upload_to = 'profile_thumbnail', null = True)
+
+    DOES_NOT_NOTIFY = 0
+    NOTIFY_EVERYTIME = 1
+    NOTIFY_ONCE_HALF_HOUR = 2
+    NOTIFY_ONCE_HOUR = 3
+    
+    
+    alert_freq = models.CharField(
+        verbose_name = '通知頻度',
+        max_length = 50,
+        default = 0,
+        choices = (
+            (DOES_NOT_NOTIFY, '通知しない'),
+            (NOTIFY_EVERYTIME, '毎回'),
+            (NOTIFY_ONCE_HALF_HOUR, '30分に1回'),
+            (NOTIFY_ONCE_HOUR, '1時間に1回'),
+        )
+    )
 
     is_staff = models.BooleanField(
         '管理者',
@@ -163,6 +178,15 @@ class ChatRoomMember(models.Model):
         to = User,
         on_delete = models.CASCADE,
         related_name = 'rooms'
+    )
+    last_logout = models.DateTimeField(
+        verbose_name = '最終ログアウト時間',
+        null = True,
+        default = timezone.now()
+    )
+    is_online = models.BooleanField(
+        verbose_name = 'オンライン',
+        default = False
     )
     
     @property

@@ -1,7 +1,7 @@
 from django import forms
-from django.contrib.auth import get_user_model
-from django.contrib.auth.forms import AuthenticationForm, UserCreationForm
 
+from django.contrib.auth import get_user_model
+from django.contrib.auth.forms import *
 from .models import *
 from django.core.exceptions import ValidationError
 
@@ -34,7 +34,15 @@ class SignUpForm(UserCreationForm):
         for field in self.fields.values():
             field.widget.attrs['class'] = 'form-control'
             field.widget.attrs['placeholder'] = field.label  # placeholderにフィールドのラベルを入れる
-
+        self.fields['name'].widget.attrs['placeholder'] = "例) オプト　太郎"
+        self.fields['furigana'].widget.attrs['placeholder'] = "例) オプト　タロウ"
+        self.fields['email'].widget.attrs['placeholder'] = "パソコン、携帯どちらも可"
+        self.fields['clinic_name'].widget.attrs['placeholder'] = "例) オプテック歯科医院"
+        self.fields['address'].widget.attrs['placeholder'] = "例) 北海道札幌市厚別区厚別西２条3-7-15"
+        self.fields['phone'].widget.attrs['placeholder'] = "固定電話、携帯どちらも可"
+        self.fields['password1'].widget.attrs['placeholder'] = "8文字以上"
+        self.fields['password2'].widget.attrs['placeholder'] = "8文字以上"
+ 
 class UserUpdateForm(forms.ModelForm):
     class Meta:
         model = User
@@ -53,3 +61,32 @@ class UserUpdateForm(forms.ModelForm):
         for field in self.fields.values():
             field.widget.attrs['class'] = 'form-control'
             field.widget.attrs['placeholder'] = field.label  # placeholderにフィールドのラベルを入れる
+
+class MyPasswordChangeForm(PasswordChangeForm):
+    """パスワード変更フォーム"""
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        for field in self.fields.values():
+            field.widget.attrs['class'] = 'form-control'
+            field.widget.attrs['placeholder'] = field.label  # placeholderにフィールドのラベルを入れる
+
+class MyPasswordResetForm(PasswordResetForm):
+    """パスワード忘れたときのフォーム"""
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        for field in self.fields.values():
+            field.widget.attrs['class'] = 'form-control'
+            field.widget.attrs['placeholder'] = field.label  # placeholderにフィールドのラベルを入れる
+
+
+class MySetPasswordForm(SetPasswordForm):
+    """パスワード再設定用フォーム(パスワード忘れて再設定)"""
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        for field in self.fields.values():
+            field.widget.attrs['class'] = 'form-control'
+            field.widget.attrs['placeholder'] = field.label  # placeholderにフィールドのラベルを入れる
+

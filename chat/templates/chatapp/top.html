@@ -1,12 +1,309 @@
 {% extends "chatapp/base.html" %}
+
+{% block style %}
+<style>
+
+  img{ max-width:100%;}
+
+  .inbox_msg {
+    
+    clear: both;
+    overflow: hidden;
+  }
+
+  .room_group_name {
+    background: red;
+    text-align: center;
+    height: 20px
+  }
+  .room_group_name p {
+    color:white;
+    vertical-align: middle;
+    font-weight: normal;
+    margin: none
+  }
+
+
+  .chat_ib p{ font-size:12px; color:#989898; margin:none}
+  .chat_ib button {
+    font-size: 10px
+  }
+
+  .chat_people{ overflow:hidden; clear:both;}
+  .chat_list {
+    border-bottom: 1px solid #c4c4c4;
+    margin: 0;
+    padding: 18px 16px 10px;
+  }
+  /* .inbox_chat { min-height: 600px; overflow-y: scroll;} */
+
+  .active_chat{ background:#ebebeb;}
+
+  .row .outgoing_msg,
+  .row .incoming_msg_img {
+    margin-bottom: 2rem
+  }
+
+  .outgoing_msg{
+    overflow:hidden; 
+    margin:26px 0 26px;
+  }
+
+  .sent_msg {
+    display: inline-block;
+    width: 92%;
+  }
+
+  .outgoing_msg_img {
+    vertical-align: top;
+    padding: 5px;
+  }
+
+  .sent_msg_speaker_name {
+    text-align: right;
+    display:block;
+    color: #747474;
+    font-size: 12px ;
+  }
+
+  .incomming_msg_speaker_name {
+    text-align: left;
+    display:block;
+    color: #747474;
+    font-size: 12px ;
+  }
+
+
+  .sent_msg p {
+    background:  #f9ccac none repeat scroll 0 0;
+    border-radius: 3px;
+    font-size: 14px;
+    margin: 0;
+    color:black;
+    padding: 5px 10px 5px 12px;
+    width:100%;
+  }
+
+  .incoming_msg_img {
+    padding:5px
+  }
+  .received_withd_msg p {
+    background: #cfe0e8 none repeat scroll 0 0;
+    border-radius: 3px;
+    color: black;
+    font-size: 14px;
+    margin: 0;
+    padding: 5px 10px 5px 12px;
+    width: 100%;
+  }
+  .outgoing_time_date {
+    color: #747474;
+    text-align: right;
+    display: block;
+    font-size: 12px;
+    margin: 3px 0 0;
+  }
+
+  .time_date {
+    color: #747474;
+    display: block;
+    font-size: 12px;
+    margin: 3px 0 0;
+  }
+
+  .received_withd_msg {
+    width: 100%;
+  }
+
+
+
+  .mesgs {
+    padding: 10px;
+    width: 100%;
+   
+    min-height: 600px;
+    border: 1px solid #c4c4c4;
+  }
+
+
+
+  .attachment_file {
+    font-size: 12px;
+  }
+
+  .input_msg_write input {
+    background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
+    border: medium none;
+    color: #4c4c4c;
+    font-size: 15px;
+    min-height: 48px;
+    width: 100%;
+  }
+
+  .type_msg {
+    border-top: 1px solid #c4c4c4;
+    position: relative;
+  }
+  .type_msg .input-group {
+    margin-top: 5px
+  }
+
+  .messaging { padding: 0 0 10px 0;}
+  .msg_history {
+    min-height: 500px;
+    max-height: 500px;  
+  
+    overflow-y: scroll;
+  }
+
+  .message_btn {
+    color:white;
+    background: lightgray;
+    border-radius: 0;}
+  .file_attach_btn {
+    color:white;
+    background: orange;
+    border-radius: 0;
+  }
+
+  #preview_zone {
+    background: white;
+    padding: 3px;
+    margin:0!important
+    /* overflow: scroll;  */
+  }
+
+  #preview_zone .prev_col {
+    padding-left: 20px
+  }
+  #preview_zone .prev_col i {
+    padding-right: 5px;
+    padding-left:5px;
+  }
+
+
+  .mySidebar {
+    overflow: scroll
+  }
+
+  #preview_zone .prev_col .attachment_name {
+    font-size: 14px;
+    color: gray
+  }
+
+
+  .sidebar {
+    overflow: scroll;
+    height: calc(100% - 50px); /* 100% Full-height */
+    width: 0; /* 0 width - change this with JavaScript */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Stay on top */
+    top: 50px;
+    left: 0;
+    background-color:#e0e2e4; /* red*/
+    padding-top: 60px; /* Place content 60px from the top */
+    transition: 0.5s; /* 0.5 second transition effect to slide in the sidebar */
+  }
+
+  /* The sidebar links */
+  .sidebar a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+  }
+
+
+
+  /* Position and style the close button (top right corner) */
+  .sidebar .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+  }
+
+  /* The button used to open the sidebar */
+  .openbtn {
+    font-size: 12px;
+    cursor: pointer;
+    background-color:red;
+    color: white;
+    padding: 0.2rem;
+    margin:0.2rem;
+    border: none;
+    display:none;
+  }
+
+  
+
+  /* Style page content - use this if you want to push the page content to the right when you open the side navigation */
+  #main {
+    transition: margin-left .5s; /* If you want a transition effect */
+    padding-top: 10px;
+  }
+
+  /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+  @media screen and (max-height: 450px) {
+    .sidebar {padding-top: 15px;}
+    .sidebar a {font-size: 18px;}
+  }
+
+  i.white-icon {
+    color: white;
+  }
+
+  .has_new_message {
+    color:red!important;
+    margin: 3px
+  }
+  .small-text {
+    font-size: 10px;
+  }
+  .open-room-btn {
+    background-color : red;
+    color:white;
+    padding: 3px;
+    margin-top : 1rem;
+    
+  }
+  button:hover {
+    color:white!important
+  }
+  .room-title {
+    font-weight: bold
+  }
+  @media (min-width: 1200px) {
+    .container {
+        max-width: 1200px;
+    }
+  }
+  .del-img-btn {
+    background-color: red;
+    color:white;
+    padding: 3px;
+    font-size: 10px;
+  }
+  a {
+    word-wrap: break-word;
+  }
+
+</style>
+
+{% endblock %}
+
 {% block content %}
 {% load static %}
-<link rel="stylesheet" type="text/css" href="{% static 'css/top.css' %}">
-<div id="mySidebar" class="sidebar">
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+<div id="mySidebar" class="sidebar hidden-md-down">
     <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
     <div class="row room_group_name">
       <div class="col-12">
-          <p>トークルーム一覧</p>
+          <p class="small-text">トークルーム一覧</p>
       </div>
     </div>
    {% if my_rooms %}
@@ -14,7 +311,7 @@
       <div class="chat_list active_chat" room_id="{{ room.room.pk }}">
         <div class="row chat_people">
           <div class="col-3 chat_img">
-            <img class="img img-thumbnail" src="{{ room.opponent.user.thumbnail_url }}" alt="sunil">
+            <img class="rounded-circle" src="{{ room.opponent.user.thumbnail_url }}" alt="sunil">
           </div>
           <div class="col-9 chat_ib">
             <div class="row">
@@ -22,7 +319,7 @@
                   <p class="room_title">{{ room.opponent.user.name }}</p>
               </div>
               <div class="col-5" style="text-align: right">
-                  <p class="chat_date">{{ room.room.get_latest_message.sent_at }}</p>
+                  <p class="chat_date">{{ room.room.get_latest_message.sent_at| date:"n/j f" }}</p>
               </div>        
             </div>
             <div class="row">
@@ -30,7 +327,7 @@
                   <p class="room_latest_message">{{ room.room.get_latest_message.caption }}</p>
               </div>
               <div class="col-4">
-                  <button room_id="{{ room.room.pk }}" type="button" class="btn btn-primary btn-sm btn-block" name="room_btn"><i class="fas fa-comments"></i> Chat</button>
+                  <button room_id="{{ room.room.pk }}" room_title="{{ room.room.title }}" type="button" class="btn btn-block open-room-btn" name="room_btn">開く</button>
               </div>
             </div>
           </div>
@@ -38,13 +335,15 @@
       </div>
       {% endfor %}
       {% else %}
-        <p>参加中のルームはありません</p>
+        <p class="small-text">参加中のルームはありません</p>
       {% endif %}
   </div>
-<div class="container">
-  <button class="openbtn btn" onclick="openNav()">&#9776; チャットルームを表示</button>  
+<div class="outer">
+   
   <div id="main" class="messaging">
+      <button class="openbtn btn" onclick="openNav()">&#9776; チャットルームを表示</button>
       <div class="inbox_msg" style="display: none">
+        <h3 class="text-center room-title">タイトル</h3>
         <div class="mesgs">
           <div class="msg_history container">
             <!-- MESSAGE TO BE ADDED HERE -->
@@ -53,6 +352,9 @@
           <div id="message_form" class="type_msg">
               <div class="input-group">
                 <textarea rows="5" id="chat-message-input" class="form-control" placeholder="メッセージを入力してください"></textarea>
+              </div>
+              <div id="preview_zone" class="row">
+
               </div>
               <form name="file_upload">
                 <div class="input-group">
@@ -70,9 +372,7 @@
                   <i class="fab fa-telegram-plane white-icon"></i> コメントする
                 </button>
               </div>
-              <div id="preview_zone" class="row">
-
-              </div>
+              
           </div>
         </div>
       </div>
@@ -88,12 +388,14 @@
     var user_pk = '{{ user.pk }}';
 
     function openNav() {
+      $('.openbtn').hide();
       document.getElementById("mySidebar").style.width = "375px";
       document.getElementById("main").style.marginLeft = "375px";
     }
 
     /* Set the width of the sidebar to 0 and the left margin of the page content to 0 */
     function closeNav() {
+      $('.openbtn').show();
       document.getElementById("mySidebar").style.width = "0";
       document.getElementById("main").style.marginLeft = "0";
     }

@@ -6,8 +6,7 @@ from .models import *
 from .serializer import *
 from django.conf import settings
 from channels.db import database_sync_to_async
-
-
+from django.utils import timezone
 
 class ChatConsumer(AsyncJsonWebsocketConsumer):
 
@@ -61,7 +60,7 @@ class ChatConsumer(AsyncJsonWebsocketConsumer):
 
         if not room.is_member(user.pk):
             await self._create_member_instance(room, self.scope['user'])
-            
+        await self._user_join_room(room, user)
 
         # Send a join message if it's turned on
         if True:
@@ -112,6 +111,7 @@ class ChatConsumer(AsyncJsonWebsocketConsumer):
             room.group_name,
             self.channel_name,
         )
+        await self._user_leave_room(room, user)
 
         # Instruct their client to finish closing the room
         await self.send_json({
@@ -214,3 +214,14 @@ class ChatConsumer(AsyncJsonWebsocketConsumer):
     def _set_attachment_to_message(self, attachment, message):
         attachment.parent_message = message
         attachment.save()
+    @database_sync_to_async
+    def _user_join_room(self, room, user):
+        room_member = ChatRoomMember.objects.get(room = room, user = user)
+        room_member.is_online = True
+        room_member.save()
+    @database_sync_to_async
+    def _user_leave_room(self, room, user):
+        room_member = ChatRoomMember.objects.get(room = room, user = user)
+        room_member.last_logout = timezone.now()
+        room_member.is_online = False
+        room_member.save()
