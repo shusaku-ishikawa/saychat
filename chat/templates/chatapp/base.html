@@ -18,6 +18,15 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jQuery-linkify/2.1.8/linkify.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jQuery-linkify/2.1.8/linkify-jquery.js"></script>
     <style>
+      :root {
+        --red: #db362e;
+        --blue: #1f8ecf;
+        --fullwidth: 100%;
+      }
+
+      .btn {
+        color: white!important;
+      }
       a.navbar-brand img {
         width: 15rem;
       }
@@ -29,7 +38,7 @@
         background-color: white;
       }
       .logout-btn {
-        background-color: red;
+        background-color: var(--red);
         color:white!important;
         vertical-align: middle;
         font-size: 12px;

@@ -152,7 +152,7 @@
           }))
           .append($('<img>', {
               src: elem.file_url,
-              class: 'img img-thumbnail'
+              class: 'img-thumbnail attachment-preview'
           }))
           .appendTo($attchment_area).append($('<br>'));
         });
@@ -180,12 +180,10 @@
         $p.appendTo($msg_inner);
         $p.linkify();
 
-        $p.find('a').each(function(index, elem) {
-            alert($(elem).attr('href'))
-        });
+     
 
 
-        var $attchment_area = $('<div>', { class: "row" }).appendTo($msg_inner);
+        var $attachment_area = $('<div>', { class: "row" }).appendTo($msg_inner);
         attachments.forEach(elem => {
           $('<div>', { class: 'col-md-3 col-6' })
           .append($('<a>', { 
@@ -196,7 +194,7 @@
           }))
           .append($('<img>', {
               src: elem.file_url,
-              class: 'img img-thumbnail'
+              class: 'img-thumbnail attachment-preview'
           }))
           .appendTo($attachment_area).append($('<br>'));
         });
@@ -243,7 +241,7 @@
         }
 
         chatSocket.onmessage = function(e) {
-            $div_history.animate({ scrollTop: $div_history.prop("scrollHeight")}, 1000);
+            $div_history.animate({ scrollTop: $div_history.prop("scrollHeight")}, 100);
             
             if (e == undefined) {
                 return;
@@ -271,7 +269,7 @@
                     $room_btn = $('button[room_id="' + data.room + '"]');
                     $room_btn.attr('opponent_is_online', 'False');
                     $room_btn.attr('opponent_last_logout', getCurrentTime());
-                    //alert(getCurrentTime());
+                    
                     break;
                 case MSG_TYPE_MESSAGE:
                     
@@ -420,7 +418,7 @@
                     
                     $div_history.append($msg);
                 });
-                $div_history.animate({ scrollTop: $div_history.prop("scrollHeight")}, 1000);
+                $div_history.animate({ scrollTop: $div_history.prop("scrollHeight")}, 100);
             })
             .fail(function() {
                 alert('hello');
@@ -464,20 +462,23 @@
 
                 extension = /[^.]+$/.exec(data.files[0].name);
                
+                
+                //alert("png" == extension)
+                
+                //alert('image');
+                $wrapper = $('<div>', { class: 'img-wrapper'} );
                 $('<span>', {
                     text: data.files[0].name,
                     class:"attachment_name"
-                }).appendTo($prev_col);
-                //alert("png" == extension)
+                }).appendTo($wrapper);
+
+                $('<img>', {
+                    src: data.result.url,
+                    class: 'img-thumbnail attachment-preview'
+                }).appendTo($wrapper);
                 
-                    //alert('image');
-                    $('<img>', {
-                        src: data.result.url,
-                        class: 'img img-thumbnail'
-                    }).appendTo($prev_col);
-                
-                $del_btn = $('<button>', { text:'削除', class:'btn del-img-btn'})
-                .appendTo($prev_col)
+                $del_btn = $('<button>', { text:'×', class:'btn del-img-btn'})
+                .appendTo($wrapper)
                 .on('click', function() {
                     var i = attachment_pk_list.indexOf($(this).attr('pk'));
                     attachment_pk_list.splice(i, 1);
@@ -487,7 +488,8 @@
                             alert(data.error);
                             return;
                         }
-                        $(this).parent().remove();
+                        $file_uploader.val("");
+                        $(this).parent().parent().remove();
                     })
                     .fail(function(data, textStatus, xhr) {
                         if (data.status == 401) {
@@ -496,6 +498,8 @@
                         alert(xhr);
                     });
                 });
+                console.log('before last');
+                $wrapper.appendTo($prev_col);
 
                 
             },

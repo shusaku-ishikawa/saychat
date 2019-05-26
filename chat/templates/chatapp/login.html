@@ -4,10 +4,13 @@
     <style>
       
         .login-btn {
-            background-color: red;
+            background-color: var(--red);
             color:white;
         }
-       
+        .sign-up-btn {
+            background-color: var(--blue)!important;
+            
+        }
         .small-text {
             font-size: 0.8rem;
         }
@@ -18,6 +21,9 @@
         }
         .no-account {
             margin-bottom: 0.5rem
+        }
+        hr {
+            display: none;
         }
     </style>
 {% endblock %}
@@ -40,6 +46,6 @@
             <a href="{% url 'chatapp:password_reset' %}">パスワードをお忘れの方</a>
         </div>
         <div class="no-account text-center small-text">アカウントをお持ち出ない方はこちら</div>
-        <a class="btn btn-primary btn-block" href="{% url 'chatapp:sign_up' %}">新規会員登録</a>                                                           
+        <a class="btn btn-primary btn-block sign-up-btn" href="{% url 'chatapp:sign_up' %}">新規会員登録</a>                                                           
     </form>
 {% endblock %}

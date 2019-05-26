@@ -3,7 +3,8 @@
 {% block style %}
 <style>
 
-  img{ max-width:100%;}
+  img{ 
+    max-width:100%;}
 
   .inbox_msg {
     
@@ -12,7 +13,7 @@
   }
 
   .room_group_name {
-    background: red;
+    background: var(--red);
     text-align: center;
     height: 20px
   }
@@ -133,7 +134,7 @@
     padding: 10px;
     width: 100%;
    
-    min-height: 600px;
+    min-height: 60vh;
     border: 1px solid #c4c4c4;
   }
 
@@ -162,9 +163,8 @@
 
   .messaging { padding: 0 0 10px 0;}
   .msg_history {
-    min-height: 500px;
-    max-height: 500px;  
-  
+    min-height: 45vh;
+    max-height: 45vh;  
     overflow-y: scroll;
   }
 
@@ -174,7 +174,7 @@
     border-radius: 0;}
   .file_attach_btn {
     color:white;
-    background: orange;
+    background: var(--red);
     border-radius: 0;
   }
 
@@ -269,7 +269,7 @@
   }
 
   .has_new_message {
-    color:red!important;
+    color:var(--red)!important;
     margin: 3px
   }
   .small-text {
@@ -278,7 +278,7 @@
     text-align: center
   }
   .open-room-btn {
-    background-color : red;
+    background-color : var(--red);
     color:white;
     padding: 3px;
     margin-top : 1rem;
@@ -295,14 +295,32 @@
         max-width: 1200px;
     }
   }
+  .img-wrapper {
+    border: lightgray solid 1px;
+    text-align: center;
+  }
   .del-img-btn {
-    background-color: red;
+    text-align: center;
+    vertical-align: middle;
+    color: white;
+    position: absolute;
+    right: 0px;
+    top: -15px;
+    background-color: var(--red);
     color:white;
-    padding: 3px;
-    font-size: 10px;
+    height: 40px;
+    width: 40px;
+    border-radius: 20px;
+    font-size: 20px;
+    line-height: 20px;;
+    padding-left: 13px;
   }
   a {
     word-wrap: break-word;
+  }
+  img.attachment-preview {
+    width: 100%;
+    height: auto;
   }
 
 </style>
@@ -332,7 +350,7 @@
                   <p class="room_title">{{ room.opponent.user.name }}</p>
               </div>
               <div class="col-5" style="text-align: right">
-                  <p class="chat_date">{{ room.room.get_latest_message.sent_at| date:"n/j f" }}</p>
+                  <p class="chat_date">{{ room.room.get_latest_message.sent_at| date:"n/j G:i" }}</p>
               </div>        
             </div>
             <div class="row">
