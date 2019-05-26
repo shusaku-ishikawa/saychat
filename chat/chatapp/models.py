@@ -72,7 +72,11 @@ class User(AbstractBaseUser, PermissionsMixin):
     phone = models.CharField('連絡先電話番号', max_length = 50, null = True)
     clinic_name = models.CharField('歯科医院名', max_length = 100, null = True)
     thumbnail = models.ImageField('サムネイル', upload_to = 'profile_thumbnail', null = True)
-
+    is_online = models.BooleanField(
+        verbose_name = 'オンライン',
+        default = False
+    )
+    
     DOES_NOT_NOTIFY = 0
     NOTIFY_EVERYTIME = 1
     NOTIFY_ONCE_HALF_HOUR = 2
@@ -192,11 +196,10 @@ class ChatRoomMember(models.Model):
         null = True,
         default = timezone.now
     )
-    is_online = models.BooleanField(
-        verbose_name = 'オンライン',
+    is_reading = models.BooleanField(
+        verbose_name = '入室中',
         default = False
     )
-    
     @property
     def opponent(self):
         other_members = ChatRoomMember.objects.filter(room = self.room).filter(~Q(user = self.user))

@@ -9,13 +9,13 @@ from channels.db import database_sync_to_async
 from django.utils import timezone
 
 class ChatConsumer(AsyncJsonWebsocketConsumer):
-
     async def connect(self):
         # Are they logged in?
         if self.scope["user"].is_anonymous:
             # Reject the connection
             await self.close()
         else:
+            await self._user_online(self.scope['user'])
             await self.accept()
         self.rooms = set()
             
@@ -25,6 +25,7 @@ class ChatConsumer(AsyncJsonWebsocketConsumer):
         # Leave room group
         for room_id in list(self.rooms):
             await self.leave_room(room_id)
+        await self._user_offline(self.scope['user'])
 
     # Receive message from WebSocket
     async def receive_json(self, content):
@@ -40,9 +41,16 @@ class ChatConsumer(AsyncJsonWebsocketConsumer):
             # Make them join the room
             print('join')
             await self.join_room(content["room"])
+
+        elif command == 'enter_room':
+            await self.enter_room(content['room'])
+            
         elif command == "leave":
             # Leave the room
             await self.leave_room(content["room"])
+        elif command == 'exit_room':
+            await self.exit_room(content['room'])
+
         elif command == "send":
             print('commend send')
             await self.send_room(content["room"], content["message"], content['attachment'])
@@ -54,13 +62,9 @@ class ChatConsumer(AsyncJsonWebsocketConsumer):
         """
         # The logged-in user is in our scope thanks to the authentication ASGI middleware
         print('join_room called')
-        
+        print(room_id)
         room = await self._get_room_by_pk(room_id)
         user = self.scope['user']
-
-        if not room.is_member(user.pk):
-            await self._create_member_instance(room, self.scope['user'])
-        await self._user_join_room(room, user)
 
         # Send a join message if it's turned on
         if True:
@@ -69,7 +73,7 @@ class ChatConsumer(AsyncJsonWebsocketConsumer):
                 {
                     "type": "chat.join",
                     "room_id": room_id,
-                    "username": self.scope["user"].username,
+                    "user_id": self.scope["user"].pk,
                 }
             )
         # Store that we're in the room
@@ -85,6 +89,20 @@ class ChatConsumer(AsyncJsonWebsocketConsumer):
             "title": room.title,
         })
 
+    async def enter_room(self, room_id):
+        room = await self._get_room_by_pk(room_id)
+        user = self.scope['user']
+        await self._user_enter_room(room, user)
+
+        await self.channel_layer.group_send(
+            room.group_name,
+            {
+                "type": "chat.enter_room",
+                "room_id": room_id,
+                "user_id": self.scope["user"].pk,
+            }
+        )
+
     async def leave_room(self, room_id):
         """
         Called by receive_json when someone sent a leave command.
@@ -93,6 +111,7 @@ class ChatConsumer(AsyncJsonWebsocketConsumer):
         room = await self._get_room_by_pk(room_id)
         user = self.scope['user']
 
+        await self._user_exit_room(room, user)
         # Send a leave message if it's turned on
         if settings.NOTIFY_USERS_ON_ENTER_OR_LEAVE_ROOMS:
             await self.channel_layer.group_send(
@@ -100,7 +119,7 @@ class ChatConsumer(AsyncJsonWebsocketConsumer):
                 {
                     "type": "chat.leave",
                     "room_id": room_id,
-                    "username": self.scope["user"].username,
+                    "user_id": self.scope["user"].pk,
                 }
             )
         # Remove that we're in the room
@@ -111,12 +130,24 @@ class ChatConsumer(AsyncJsonWebsocketConsumer):
             room.group_name,
             self.channel_name,
         )
-        await self._user_leave_room(room, user)
-
+       
         # Instruct their client to finish closing the room
         await self.send_json({
             "leave": str(room.id),
         })
+    
+    async def exit_room(self, room_id):
+        room = await self._get_room_by_pk(room_id)
+        user = self.scope['user']
+        await self._user_exit_room(room, user)
+        await self.channel_layer.group_send(
+            room.group_name,
+            {
+                "type": "chat.exit_room",
+                "room_id": room_id,
+                "user_id": self.scope["user"].pk,
+            }
+        )
 
     async def send_room(self, room_id, message, attachment_list):
         """
@@ -157,10 +188,18 @@ class ChatConsumer(AsyncJsonWebsocketConsumer):
             {
                 "msg_type": settings.MSG_TYPE_ENTER,
                 "room": event["room_id"],
-                "username": event["username"],
+                "user": event["user_id"],
             },
         )
-
+    async def chat_enter_room(self, event):
+        print('enter read called')
+        await self.send_json(
+            {
+                "msg_type": settings.MSG_TYPE_ENTER_ROOM,
+                "room": event["room_id"],
+                "user": event["user_id"],
+            },
+        )
     async def chat_leave(self, event):
         """
         Called when someone has left our chat.
@@ -170,7 +209,15 @@ class ChatConsumer(AsyncJsonWebsocketConsumer):
             {
                 "msg_type": settings.MSG_TYPE_LEAVE,
                 "room": event["room_id"],
-                "username": event["username"],
+                "user": event["user_id"],
+            },
+        )
+    async def chat_exit_room(self, event):
+        await self.send_json(
+            {
+                "msg_type": settings.MSG_TYPE_EXIT_ROOM,
+                "room": event["room_id"],
+                "user": event["user_id"],
             },
         )
 
@@ -189,6 +236,7 @@ class ChatConsumer(AsyncJsonWebsocketConsumer):
                 "message": json.dumps(serialized.data),
             },
         )
+    
     @database_sync_to_async
     def _get_room_by_pk(self, room_id):
         return ChatRoom.objects.get(pk = room_id)
@@ -215,13 +263,24 @@ class ChatConsumer(AsyncJsonWebsocketConsumer):
         attachment.parent_message = message
         attachment.save()
     @database_sync_to_async
-    def _user_join_room(self, room, user):
+    def _user_enter_room(self, room, user):
         room_member = ChatRoomMember.objects.get(room = room, user = user)
-        room_member.is_online = True
+        room_member.is_reading = True
         room_member.save()
+        print('user_join called')
     @database_sync_to_async
-    def _user_leave_room(self, room, user):
+    def _user_exit_room(self, room, user):
         room_member = ChatRoomMember.objects.get(room = room, user = user)
         room_member.last_logout = timezone.now()
         room_member.is_online = False
         room_member.save()
+    @database_sync_to_async
+    def _user_online(self, user):
+        user.is_online = True
+        user.save()
+    @database_sync_to_async
+    def _user_offline(self, user):
+        user.is_online = False
+        user.save()
+               
+

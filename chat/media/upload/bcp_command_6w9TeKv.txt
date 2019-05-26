@@ -1,1 +1,0 @@
-bcp DigitalCodeData.dbo.MstNam in for-bcp.csv -c -t, -S localhost\FORYOUCARD -T

@@ -33,7 +33,7 @@ class MyUserAdmin(UserAdmin):
     )
     form = MyUserChangeForm
     add_form = MyUserCreationForm
-    list_display = ('email', 'name', 'thumbnail', 'address', 'furigana', 'phone', 'clinic_name', 'is_staff', 'is_active', 'is_superuser')
+    list_display = ('email', 'name', 'thumbnail', 'address', 'furigana', 'phone', 'clinic_name', 'is_online', 'is_staff', 'is_active', 'is_superuser')
 
     ordering = ('name',)
 # Register your models here.
@@ -41,7 +41,7 @@ class ChatRoomAdmin(admin.ModelAdmin):
     list_display = ('title',)
 
 class ChatRoomMemberAdmin(admin.ModelAdmin):
-    list_display = ('room', 'user', 'last_logout', 'is_online')
+    list_display = ('room', 'user', 'last_logout', 'is_reading')
 
 class ChatMessageAdmin(admin.ModelAdmin):
     list_display = ('room', 'speaker', 'message')

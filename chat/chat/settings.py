@@ -168,4 +168,6 @@ MSG_TYPE_ALERT = 2  # For red & dangerous alerts
 MSG_TYPE_MUTED = 3  # For just OK information that doesn't bother users
 MSG_TYPE_ENTER = 4  # For just OK information that doesn't bother users
 MSG_TYPE_LEAVE = 5  # For just OK information that doesn't bother users
+MSG_TYPE_ENTER_ROOM = 6
+MSG_TYPE_EXIT_ROOM = 7
 

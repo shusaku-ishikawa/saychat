@@ -22,7 +22,9 @@
     const MSG_TYPE_MUTED = 3  // For just OK information that doesn't bother users
     const MSG_TYPE_ENTER = 4  // For just OK information that doesn't bother users
     const MSG_TYPE_LEAVE = 5  // For just OK information that doesn't bother users
-
+    const MSG_TYPE_ENTER_ROOM = 6
+    const MSG_TYPE_EXIT_ROOM = 7
+    
 
     function call_attachment(method, pk) {
         return $.ajax({
@@ -48,16 +50,7 @@
             }
         });
     }
-    function call_invite_api(user_id) {
-        return $.ajax({
-            url: invite_url,
-            type: 'POST',
-            dataType: 'json',
-            data: {
-                user_id: user_id
-            }
-        })
-    }
+
     function trim_date_str(original) {
         var date = original.split(' ')[0];
         var time = original.split(' ')[1];
@@ -105,42 +98,7 @@
         $p.linkify();
 
         
-        // $p.find('a').each(async function(index, elem) {
-        //     $link_area = $('<div>').appendTo($inner);
-        //     var link = $(elem).attr('href');
-
-        //     const response = await axios({
-        //         method:'get',
-        //         url:'/cors?url=' + link,
-        //     });
-
-        //     // キャプチャ対象のhtmlをレンダリングするiframeを作る(hiddenにしてabsoluteにして不可視にしておく)
-        //     const renderAreaId = 'render-area' + index;
-        //     const renderArea = '<iframe id="' + renderAreaId + '" sandbox="allow-scripts allow-same-origin" width="1000" height="1000" scrolling="no" frameborder="no" style="position: absolute;"></iframe>'
-        //     $link_area.append($(renderArea));
-
-        //     const iframe = document.querySelector('#' + renderAreaId);
-        //     iframe.contentDocument.open();
-        //     iframe.contentDocument.write(response.data);
-        //     iframe.contentDocument.close();
-
-        //     iframe.onload = async () => {
-        //         // キャプチャを取得
-        //         const canvas = await html2canvas(iframe.contentDocument.querySelector('body'),{
-        //             logging: false,
-        //             allowTaint: true,
-        //             useCORS: true,
-        //             width: 100,
-        //             height: 100,
-        //         });
-
-        //     canvas.style.width = parseInt(canvas.width / 4, 10) + 'px';
-        //     canvas.style.height = parseInt(canvas.height / 4, 10) + 'px';
-        //     $(canvas).appendTo($link_area);
-        //     iframe.remove();// レンダリング用iframe削除
-        //     }
-        // });
-
+   
         var $attchment_area = $('<div>', { class: "row" }).appendTo($inner);
         attachments.forEach(elem => {
           $('<div>', { class: 'col-md-3 col-6' })
@@ -228,7 +186,7 @@
         var ws_path = ws_scheme + '://' + window.location.host + "/ws/";
         console.log("Connecting to " + ws_path);
         //var chatSocket = new WebSocket(ws_path);
-        var chatSocket = new ReconnectingWebSocket(ws_path);
+        var chatSocket = new WebSocket(ws_path);
         
         chatSocket.onopen = function(e) {
           console.log(e);
@@ -253,35 +211,53 @@
                 case MSG_TYPE_ENTER:
                     console.log('someone joined ');
                     $room_btn = $('button[room_id="' + data.room + '"]');
-                    $room_btn.attr('opponent_is_online', 'True');
+                    $room_btn.attr('opponent_is_online', 'True')
+                    //$room_btn.attr('opponent_is_reading', 'True');
                     
-                    if (data.room == active_room_id) {
-                        var $div = $('div[room_id="' + data.room + '"]');
-                        var $already_read = $('<div>', { class: 'outgoing_is_read' }).append($('<i>', { class : "fas fa-check" })).append($('<span>', { text: '開封済' }));
-                        $('div.msg_history .outgoing_is_read').replaceWith($already_read);
+           
+                    break;
+                case MSG_TYPE_ENTER_ROOM:
+                    console.log('he starts reading ...');
+                    $room_btn = $('button[room_id="' + data.room + '"]');
+                    if (data.user != user_id) {
+                        $room_btn.attr('opponent_is_reading', 'True')
+                        if (data.room == active_room_id) {
+                            var $div = $('div[room_id="' + data.room + '"]');
+                            var $already_read = $('<div>', { class: 'outgoing_is_read' }).append($('<i>', { class : "fas fa-check" })).append($('<span>', { text: '開封済' }));
+                            $('div.msg_history .outgoing_is_read').replaceWith($already_read);
+                        }
                     }
                     
-
-                    console.log(data)
                     break;
+
                 case MSG_TYPE_LEAVE:
-                    console.log('someone leaved')
+                    console.log('someone leaved');
                     $room_btn = $('button[room_id="' + data.room + '"]');
                     $room_btn.attr('opponent_is_online', 'False');
-                    $room_btn.attr('opponent_last_logout', getCurrentTime());
+                    break;
+
+                case MSG_TYPE_EXIT_ROOM:
+                    console.log('someone exit room');
+                    $room_btn = $('button[room_id="' + data.room + '"]');
+                    if (data.user != user_id) {
+                        $room_btn.attr('opponent_is_reading', 'False');
+                        $room_btn.attr('opponent_last_logout', getCurrentTime());    
+                    }
                     
                     break;
+                    
                 case MSG_TYPE_MESSAGE:
                     
                     messageJson = JSON.parse(data.message);
-                    var is_online = $('button[room_id="' + messageJson.room.pk + '"]').attr('opponent_is_online');
+                    var is_reading = $('button[room_id="' + messageJson.room.pk + '"]').attr('opponent_is_reading') == 'True';
                     
                   
                     console.log(messageJson);
                     // 開いているチャットルームの場合は画面更新
                     if (messageJson.room.pk == active_room_id) {
-                        if (user_pk == messageJson.speaker.pk) {
-                            var $msg = create_outgoing_message_dom(messageJson.speaker.name, messageJson.speaker.thumbnail_url, messageJson.sent_at, messageJson.message, messageJson.attachments, is_online == 'True');
+                        if (user_id == messageJson.speaker.pk) {
+                            alert(is_reading);
+                            var $msg = create_outgoing_message_dom(messageJson.speaker.name, messageJson.speaker.thumbnail_url, messageJson.sent_at, messageJson.message, messageJson.attachments, is_reading);
                         } else {
                             var $msg = create_incomming_message_dom(messageJson.speaker.name, messageJson.speaker.thumbnail_url, messageJson.sent_at, messageJson.message, messageJson.attachments);
                         }
@@ -379,6 +355,8 @@
         });
         
         $room_buttons.on('click' , function() {
+            var room_id = $(this).attr('room_id');
+
             $new_message_flag = $(this).parent().parent().parent().find('.has_new_message');
             if ($new_message_flag.length > 0) {
                 $($new_message_flag[0]).remove();
@@ -389,10 +367,27 @@
             $main_panel.show();
             
             $('.room-title').html($(this).attr('room_title'));
-          if ($(this).attr('room_id') != active_room_id) {
-            active_room_id = $(this).attr('room_id');
-            opponent_is_online = $(this).attr('opponent_is_online');
-            opponent_last_logout = $(this).attr('opponent_last_logout');
+          if (room_id != active_room_id) {
+            
+            
+            chatSocket.send(JSON.stringify({
+                'command': 'enter_room',
+                'room': room_id,
+                
+            }));
+            if(active_room_id != null) {
+                chatSocket.send(JSON.stringify({
+                    'command': 'exit_room',
+                    'room': active_room_id,
+                    
+                }));
+            }
+            
+            
+            active_room_id = room_id;
+
+            var opponent_is_reading = $(this).attr('opponent_is_reading');
+            var opponent_last_logout = $(this).attr('opponent_last_logout');
 
             $div_history.html('');
             call_history_api(active_room_id, 0, 10)
@@ -401,7 +396,7 @@
                 var reversed = data.reverse();
                 reversed.forEach(obj => {
                     var is_read = false;
-                    if (opponent_is_online == 'True') {
+                    if (opponent_is_reading == 'True') {
                         
                         is_read = true;
                     } else {
@@ -410,7 +405,7 @@
                             is_read = true;
                         }
                     }
-                    if (user_pk == obj.speaker.pk) {
+                    if (user_id == obj.speaker.pk) {
                         var $msg = create_outgoing_message_dom(obj.speaker.name, obj.speaker.thumbnail_url,  obj.sent_at, obj.message, obj.attachments, is_read);
                     } else {
                         var $msg = create_incomming_message_dom(obj.speaker.name, obj.speaker.thumbnail_url, obj.sent_at, obj.message, obj.attachments, is_read);
