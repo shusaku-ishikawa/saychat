@@ -256,7 +256,7 @@
                     // 開いているチャットルームの場合は画面更新
                     if (messageJson.room.pk == active_room_id) {
                         if (user_id == messageJson.speaker.pk) {
-                            alert(is_reading);
+                            //alert(is_reading);
                             var $msg = create_outgoing_message_dom(messageJson.speaker.name, messageJson.speaker.thumbnail_url, messageJson.sent_at, messageJson.message, messageJson.attachments, is_reading);
                         } else {
                             var $msg = create_incomming_message_dom(messageJson.speaker.name, messageJson.speaker.thumbnail_url, messageJson.sent_at, messageJson.message, messageJson.attachments);
