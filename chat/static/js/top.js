@@ -100,19 +100,26 @@
         
    
         var $attchment_area = $('<div>', { class: "row" }).appendTo($inner);
+
         attachments.forEach(function(elem, i) {
-          $('<div>', { class: 'col-md-3 col-6' })
-          .append($('<a>', { 
-            href: elem.file_url,
-            text: elem.file_name,
-            download: elem.file_name,
-            class: 'attachment_file '
-          }))
-          .append($('<img>', {
-              src: elem.file_url,
-              class: 'img-thumbnail attachment-preview'
-          }))
-          .appendTo($attchment_area).append($('<br>'));
+            var extension = /[^.]+$/.exec(elem.file_name);
+            if (['png', 'jpg', 'jpeg'].indexOf(extension) == -1) {
+                var src = file_prev_file;
+            } else {
+                var src = elem.file_name;
+            }
+            $('<div>', { class: 'col-md-3 col-6' })
+            .append($('<a>', { 
+                href: elem.file_url,
+                text: elem.file_name,
+                download: elem.file_name,
+                class: 'attachment_file '
+            }))
+            .append($('<img>', {
+                src: src,
+                class: 'img-thumbnail attachment-preview'
+            }))
+            .appendTo($attchment_area).append($('<br>'));
         });
         $('<span>', { class : 'outgoing_time_date', text: trim_date_str(sent_at) }).appendTo($inner);
         if (is_read) {
@@ -129,6 +136,8 @@
     function create_incomming_message_dom(sent_by, thumbnail_url, sent_at, message, attachments, is_read) {
         var $outer = $('<div>', { class: 'row incoming_msg' });
         var $img_wrapper = $('<div>', { class: 'col-md-1 col-2 incoming_msg_img' }).appendTo($outer);
+        
+
         $('<img>', { src: thumbnail_url, class: 'rounded-circle' }).appendTo($img_wrapper);
         
         var $msg_outer = $('<div>', { class: 'col-md-10 col-10 received_msg' }).appendTo($outer);
@@ -143,18 +152,24 @@
 
         var $attachment_area = $('<div>', { class: "row" }).appendTo($msg_inner);
         attachments.forEach(function(elem, i) {
-          $('<div>', { class: 'col-md-3 col-6' })
-          .append($('<a>', { 
-            href: elem.file_url,
-            text: elem.file_name,
-            download: elem.file_name,
-            class: 'attachment_file '
-          }))
-          .append($('<img>', {
-              src: elem.file_url,
-              class: 'img-thumbnail attachment-preview'
-          }))
-          .appendTo($attachment_area).append($('<br>'));
+            var extension = /[^.]+$/.exec(elem.file_name);
+            if (['png', 'jpg', 'jpeg'].indexOf(extension) == -1) {
+                var src = file_prev_file;
+            } else {
+                var src = elem.file_name;
+            }
+            $('<div>', { class: 'col-md-3 col-6' })
+            .append($('<a>', { 
+                href: elem.file_url,
+                text: elem.file_name,
+                download: elem.file_name,
+                class: 'attachment_file '
+            }))
+            .append($('<img>', {
+                src: src,
+                class: 'img-thumbnail attachment-preview'
+            }))
+            .appendTo($attachment_area).append($('<br>'));
         });
         var $sent_at = $('<span>', { class : 'time_date', text: trim_date_str(sent_at) }).appendTo($msg_inner);
         
@@ -458,8 +473,7 @@
                 extension = /[^.]+$/.exec(data.files[0].name);
                
                 
-                //alert("png" == extension)
-                
+
                 //alert('image');
                 $wrapper = $('<div>', { class: 'img-wrapper'} );
                 $('<span>', {
@@ -467,10 +481,17 @@
                     class:"attachment_name"
                 }).appendTo($wrapper);
 
+                //alert("png" == extension)
+                if (['png', 'jpg', 'jpeg'].indexOf(extension) == -1) {
+                    var src = file_prev_file;
+                } else {
+                    var src = data.result.url;
+                }
                 $('<img>', {
-                    src: data.result.url,
+                    src: src,
                     class: 'img-thumbnail attachment-preview'
                 }).appendTo($wrapper);
+               
                 
                 $del_btn = $('<button>', { text:'×', class:'btn del-img-btn'})
                 .appendTo($wrapper)

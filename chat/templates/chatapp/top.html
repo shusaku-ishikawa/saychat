@@ -420,7 +420,7 @@
     var login_url = "{% url 'chatapp:login' %}";
     var attachment_url = "{% url 'chatapp:upload' %}";
     var user_id = '{{ user.pk }}';
-
+    var file_prev_file = "{% static 'img/file.png' %}";
     function openNav() {
       $('.openbtn').hide();
       document.getElementById("mySidebar").style.width = "375px";
