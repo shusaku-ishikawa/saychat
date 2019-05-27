@@ -102,10 +102,10 @@
         var $attchment_area = $('<div>', { class: "row" }).appendTo($inner);
 
         attachments.forEach(function(elem, i) {
-            if (/\.(jpe?g|png|gif|bmp)$/i.test(elem.file_name)) {
+            if (!/\.(jpe?g|png|gif|bmp)$/i.test(elem.file_name)) {
                 var src = file_prev_file;
             } else {
-                var src = elem.file_name;
+                var src = elem.file_url;
             }
             $('<div>', { class: 'col-md-3 col-6' })
             .append($('<a>', { 
@@ -151,10 +151,10 @@
 
         var $attachment_area = $('<div>', { class: "row" }).appendTo($msg_inner);
         attachments.forEach(function(elem, i) {
-            if (/\.(jpe?g|png|gif|bmp)$/i.test(elem.file_name)) {
+            if (!/\.(jpe?g|png|gif|bmp)$/i.test(elem.file_name)) {
                 var src = file_prev_file;
             } else {
-                var src = elem.file_name;
+                var src = elem.file_url;
             }
             $('<div>', { class: 'col-md-3 col-6' })
             .append($('<a>', { 
@@ -480,7 +480,7 @@
                 }).appendTo($wrapper);
 
                 //alert("png" == extension)
-                if (/\.(jpe?g|png|gif|bmp)$/i.test(data.result.url)) {
+                if (!/\.(jpe?g|png|gif|bmp)$/i.test(data.result.url)) {
                     var src = file_prev_file;
                 } else {
                     var src = data.result.url;
