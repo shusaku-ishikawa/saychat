@@ -1,5 +1,7 @@
 
     var active_room_id;
+    var message_offset = 0;
+
     var COOKIE_LAST_ROOM_ID = 'last_visited_room_id';
 
     var $input_message = $('#chat-message-input');
@@ -25,6 +27,7 @@
     const MSG_TYPE_ENTER_ROOM = 6
     const MSG_TYPE_EXIT_ROOM = 7
     
+    const MSG_COUNT_PER_READ = 10;
 
     function call_attachment(method, pk) {
         return $.ajax({
@@ -192,6 +195,39 @@
         }
         return result;
     }
+    var load_messages_call_back = function (is_initial, opponent_is_reading, opponent_last_logout) {
+        var current_top_element = $div_history.children().first();
+       
+        return function (data) {
+            data.forEach(function(obj, i) {
+                message_offset = message_offset + 1;
+                var is_read = false;
+                if (opponent_is_reading == 'True') {
+                    is_read = true;
+                } else {
+                    console.log(obj.sent_at + ' ' + opponent_last_logout );
+                    if (obj.sent_at < opponent_last_logout) {
+                        
+                        is_read = true;
+                    }
+                }
+                if (user_id == obj.speaker.pk) {
+                    var $msg = create_outgoing_message_dom(obj.speaker.name, obj.speaker.thumbnail_url,  obj.sent_at, obj.message, obj.attachments, is_read);
+                } else {
+                    var $msg = create_incomming_message_dom(obj.speaker.name, obj.speaker.thumbnail_url, obj.sent_at, obj.message, obj.attachments, is_read);
+                }
+                
+                $div_history.prepend($msg);
+            });
+            if (is_initial) {
+                $div_history.animate({ scrollTop: $div_history.prop("scrollHeight")}, 100);
+            } else {
+                $div_history.scrollTop(current_top_element.offset().top);
+            }
+           
+        }
+    }
+
     $(function() {
         
          // Correctly decide between ws:// and wss://
@@ -367,6 +403,20 @@
             $preview_zone.html('');
         });
         
+        $div_history.scroll(function() {
+            var opponent_is_reading = $('button[room_id="' + active_room_id + '"]').attr('opponent_is_reading');
+            var opponent_last_logout = $('button[room_id="' + active_room_id + '"]').attr('opponent_last_logout');
+            
+            if ($(this).scrollTop() == 0) {
+                //alert('scroll hits top');
+                call_history_api(active_room_id, message_offset, MSG_COUNT_PER_READ)
+                .done(load_messages_call_back(false,  opponent_is_reading, opponent_last_logout))
+                .fail(function() {
+                    alert('hello');
+                });
+            }
+        });
+
         $room_buttons.on('click' , function() {
             var room_id = $(this).attr('room_id');
 
@@ -380,58 +430,34 @@
             $main_panel.show();
             
             $('.room-title').html($(this).attr('room_title'));
-          if (room_id != active_room_id) {
-            
-            
-            chatSocket.send(JSON.stringify({
-                'command': 'enter_room',
-                'room': room_id,
-                
-            }));
-            if(active_room_id != null) {
+
+            if (room_id != active_room_id) {
                 chatSocket.send(JSON.stringify({
-                    'command': 'exit_room',
-                    'room': active_room_id,
+                    'command': 'enter_room',
+                    'room': room_id,
                     
                 }));
-            }
-            
-            
-            active_room_id = room_id;
-
-            var opponent_is_reading = $(this).attr('opponent_is_reading');
-            var opponent_last_logout = $(this).attr('opponent_last_logout');
-
-            $div_history.html('');
-            call_history_api(active_room_id, 0, 10)
-            .done(function(data) {
-                //console.log(data);
-                var reversed = data.reverse();
-                reversed.forEach(function(obj, i) {
-                    var is_read = false;
-                    if (opponent_is_reading == 'True') {
+                if(active_room_id != null) {
+                    chatSocket.send(JSON.stringify({
+                        'command': 'exit_room',
+                        'room': active_room_id,
                         
-                        is_read = true;
-                    } else {
-                        console.log(obj.sent_at + ' ' + opponent_last_logout );
-                        if (obj.sent_at < opponent_last_logout) {
-                            is_read = true;
-                        }
-                    }
-                    if (user_id == obj.speaker.pk) {
-                        var $msg = create_outgoing_message_dom(obj.speaker.name, obj.speaker.thumbnail_url,  obj.sent_at, obj.message, obj.attachments, is_read);
-                    } else {
-                        var $msg = create_incomming_message_dom(obj.speaker.name, obj.speaker.thumbnail_url, obj.sent_at, obj.message, obj.attachments, is_read);
-                    }
-                    
-                    $div_history.append($msg);
+                    }));
+                }
+            
+                active_room_id = room_id;
+                message_offset = 0;
+
+                var opponent_is_reading = $(this).attr('opponent_is_reading');
+                var opponent_last_logout = $(this).attr('opponent_last_logout');
+
+                $div_history.html('');
+                call_history_api(active_room_id, message_offset, MSG_COUNT_PER_READ)
+                .done(load_messages_call_back(true, opponent_is_reading, opponent_last_logout))
+                .fail(function() {
+                    alert('hello');
                 });
-                $div_history.animate({ scrollTop: $div_history.prop("scrollHeight")}, 100);
-            })
-            .fail(function() {
-                alert('hello');
-            });
-          }
+            }
         });
         
         $(document).on("keydown", "#chat-message-input", function(e){   

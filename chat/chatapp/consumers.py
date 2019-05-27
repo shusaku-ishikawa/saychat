@@ -7,6 +7,7 @@ from .serializer import *
 from django.conf import settings
 from channels.db import database_sync_to_async
 from django.utils import timezone
+from django.urls import reverse, reverse_lazy
 
 class ChatConsumer(AsyncJsonWebsocketConsumer):
     async def connect(self):
@@ -162,7 +163,8 @@ class ChatConsumer(AsyncJsonWebsocketConsumer):
         user = self.scope['user']
         room = await self._get_room_by_pk(room_id)
         m = await self._create_new_message(user, room, message)
-        
+        await self._notify_others(room, user)
+
         print('attachment: ' + str(attachment_list))
         for pk in attachment_list:
             a = await self._get_attachment_by_pk(pk)
@@ -228,9 +230,10 @@ class ChatConsumer(AsyncJsonWebsocketConsumer):
         Called when someone has messaged our chat.
         """
         # Send a message down to the client
-
+    
         message = await self._get_message_by_pk(event['message_id'])
         serialized = ChatMessageSerializer(message, many = False)
+         
         print('chat message called')
         await self.send_json(
             {
@@ -285,5 +288,11 @@ class ChatConsumer(AsyncJsonWebsocketConsumer):
     def _user_offline(self, user):
         user.is_online = False
         user.save()
+    @database_sync_to_async
+    def _notify_others(self, room, me):
+        for rm in room.members.all():
+            if rm.user != me and rm.user.alert_freq == User.NOTIFY_EVERYTIME:
+                rm.user.notify_new_message()
+                print('after notify')
                
 

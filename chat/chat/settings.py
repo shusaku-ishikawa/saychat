@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django_crontab',
     'channels',
     'chatapp',
     'rest_framework'
@@ -170,4 +171,9 @@ MSG_TYPE_ENTER = 4  # For just OK information that doesn't bother users
 MSG_TYPE_LEAVE = 5  # For just OK information that doesn't bother users
 MSG_TYPE_ENTER_ROOM = 6
 MSG_TYPE_EXIT_ROOM = 7
+
+CRONJOBS = [
+    ('0 * * * *', 'django.core.management.call_command', ['notify_new_message_1-hour']),
+    ('*/30 * * * *', 'django.core.management.call_command', ['notify_new_message_30-minutes']),
+]
 

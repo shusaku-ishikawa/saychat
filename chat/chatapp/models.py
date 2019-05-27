@@ -12,6 +12,7 @@ from django.db.models import Q
 import unicodedata
 from django.core.files.storage import FileSystemStorage
 from django.utils.safestring import mark_safe 
+from django.template.loader import get_template
 
 class MyFileSystemStorage(FileSystemStorage):
     """
@@ -77,10 +78,10 @@ class User(AbstractBaseUser, PermissionsMixin):
         default = False
     )
     
-    DOES_NOT_NOTIFY = 0
-    NOTIFY_EVERYTIME = 1
-    NOTIFY_ONCE_HALF_HOUR = 2
-    NOTIFY_ONCE_HOUR = 3
+    DOES_NOT_NOTIFY = '0'
+    NOTIFY_EVERYTIME = '1'
+    NOTIFY_ONCE_HALF_HOUR = '2'
+    NOTIFY_ONCE_HOUR = '3'
     
     
     alert_freq = models.CharField(
@@ -93,6 +94,10 @@ class User(AbstractBaseUser, PermissionsMixin):
             (NOTIFY_ONCE_HALF_HOUR, '30分に1回'),
             (NOTIFY_ONCE_HOUR, '1時間に1回'),
         )
+    )
+    last_alerted = models.DateTimeField(
+        verbose_name = '最終通知時間',
+        null = True
     )
 
     is_staff = models.BooleanField(
@@ -120,6 +125,22 @@ class User(AbstractBaseUser, PermissionsMixin):
     def email_user(self, subject, message, from_email=None, **kwargs):
         """Send an email to this user."""
         send_mail(subject, message, from_email, [self.email], **kwargs)
+
+    def notify_new_message(self):
+        
+        context = {
+            'user': self,
+        }
+
+        subject_template = get_template('chatapp/mail_template/has_new_message/subject.txt')
+        subject = subject_template.render(context)
+
+        message_template = get_template('chatapp/mail_template/has_new_message/message.txt')
+        message = message_template.render(context)
+
+        self.email_user(subject, message)
+        self.last_alerted = timezone.now()
+        self.save()
 
     @property
     def username(self):
