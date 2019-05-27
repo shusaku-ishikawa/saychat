@@ -102,8 +102,7 @@
         var $attchment_area = $('<div>', { class: "row" }).appendTo($inner);
 
         attachments.forEach(function(elem, i) {
-            var extension = /[^.]+$/.exec(elem.file_name);
-            if (['png', 'jpg', 'jpeg'].indexOf(extension) == -1) {
+            if (/\.(jpe?g|png|gif|bmp)$/i.test(elem.file_name)) {
                 var src = file_prev_file;
             } else {
                 var src = elem.file_name;
@@ -152,8 +151,7 @@
 
         var $attachment_area = $('<div>', { class: "row" }).appendTo($msg_inner);
         attachments.forEach(function(elem, i) {
-            var extension = /[^.]+$/.exec(elem.file_name);
-            if (['png', 'jpg', 'jpeg'].indexOf(extension) == -1) {
+            if (/\.(jpe?g|png|gif|bmp)$/i.test(elem.file_name)) {
                 var src = file_prev_file;
             } else {
                 var src = elem.file_name;
@@ -482,7 +480,7 @@
                 }).appendTo($wrapper);
 
                 //alert("png" == extension)
-                if (['png', 'jpg', 'jpeg'].indexOf(extension) == -1) {
+                if (/\.(jpe?g|png|gif|bmp)$/i.test(data.result.url)) {
                     var src = file_prev_file;
                 } else {
                     var src = data.result.url;

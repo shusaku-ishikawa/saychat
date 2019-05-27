@@ -4120,3 +4120,271 @@ File: "gunicorn/conf.py", line 60, in worker_int
 [2019-05-27 12:58:48 +0900] [7203] [DEBUG] GET /chat/top
 [2019-05-27 12:58:57 +0900] [7203] [DEBUG] GET /chat/history
 [2019-05-27 13:03:38 +0900] [7203] [DEBUG] GET /chat/user_update/1/
+[2019-05-27 13:04:36 +0900] [7203] [DEBUG] GET /chat/
+[2019-05-27 13:04:37 +0900] [7203] [DEBUG] GET /chat/
+[2019-05-27 13:04:40 +0900] [7203] [DEBUG] POST /chat/
+[2019-05-27 13:04:41 +0900] [7203] [DEBUG] GET /chat/top
+[2019-05-27 13:04:43 +0900] [7203] [DEBUG] GET /chat/history
+[2019-05-27 13:07:24 +0900] [7203] [DEBUG] GET /chat/admin
+[2019-05-27 13:07:24 +0900] [7203] [DEBUG] GET /chat/admin/
+[2019-05-27 13:07:28 +0900] [7203] [DEBUG] GET /chat/admin/chatapp/chatroommember/
+[2019-05-27 13:07:29 +0900] [7203] [DEBUG] GET /chat/admin/jsi18n/
+[2019-05-27 13:08:14 +0900] [7203] [DEBUG] GET /chat/admin/chatapp/chatroommember/10/change/
+[2019-05-27 13:08:14 +0900] [7203] [DEBUG] GET /chat/admin/jsi18n/
+[2019-05-27 13:08:18 +0900] [7203] [DEBUG] POST /chat/admin/chatapp/chatroommember/10/change/
+[2019-05-27 13:08:18 +0900] [7203] [DEBUG] GET /chat/admin/chatapp/chatroommember/
+[2019-05-27 13:08:19 +0900] [7203] [DEBUG] GET /chat/admin/jsi18n/
+[2019-05-27 13:08:27 +0900] [7203] [DEBUG] GET /chat/admin/chatapp/chatroommember/8/change/
+[2019-05-27 13:08:27 +0900] [7203] [DEBUG] GET /chat/admin/jsi18n/
+[2019-05-27 13:08:30 +0900] [7203] [DEBUG] POST /chat/admin/chatapp/chatroommember/8/change/
+[2019-05-27 13:08:30 +0900] [7203] [DEBUG] GET /chat/admin/chatapp/chatroommember/
+[2019-05-27 13:08:31 +0900] [7203] [DEBUG] GET /chat/admin/jsi18n/
+[2019-05-27 13:08:40 +0900] [7203] [DEBUG] GET /chat/admin/chatapp/chatroommember/5/change/
+[2019-05-27 13:08:40 +0900] [7203] [DEBUG] GET /chat/admin/jsi18n/
+[2019-05-27 13:08:46 +0900] [7203] [DEBUG] POST /chat/admin/chatapp/chatroommember/5/change/
+[2019-05-27 13:08:46 +0900] [7203] [DEBUG] GET /chat/admin/chatapp/chatroommember/
+[2019-05-27 13:08:46 +0900] [7203] [DEBUG] GET /chat/admin/jsi18n/
+[2019-05-27 13:08:55 +0900] [7203] [DEBUG] GET /chat/top
+[2019-05-27 13:09:00 +0900] [7203] [DEBUG] GET /chat/admin/chatapp/chatroommember/
+[2019-05-27 13:09:01 +0900] [7203] [DEBUG] GET /chat/admin/jsi18n/
+[2019-05-27 13:09:09 +0900] [7203] [DEBUG] GET /chat/admin/chatapp/chatroommember/9/change/
+[2019-05-27 13:09:10 +0900] [7203] [DEBUG] GET /chat/admin/jsi18n/
+[2019-05-27 13:09:12 +0900] [7203] [DEBUG] POST /chat/admin/chatapp/chatroommember/9/change/
+[2019-05-27 13:09:13 +0900] [7203] [DEBUG] GET /chat/admin/chatapp/chatroommember/
+[2019-05-27 13:09:13 +0900] [7203] [DEBUG] GET /chat/admin/jsi18n/
+[2019-05-27 13:09:15 +0900] [7203] [DEBUG] GET /chat/admin/chatapp/chatroommember/
+[2019-05-27 13:09:16 +0900] [7203] [DEBUG] GET /chat/admin/jsi18n/
+[2019-05-27 13:09:20 +0900] [7203] [DEBUG] GET /chat/top
+[2019-05-27 13:09:24 +0900] [7203] [DEBUG] GET /chat/admin/chatapp/chatroommember/
+[2019-05-27 13:09:25 +0900] [7203] [DEBUG] GET /chat/admin/jsi18n/
+[2019-05-27 13:10:02 +0900] [7203] [DEBUG] GET /chat/history
+[2019-05-27 13:10:05 +0900] [7203] [DEBUG] GET /chat/admin/chatapp/chatroommember/
+[2019-05-27 13:10:05 +0900] [7203] [DEBUG] GET /chat/admin/jsi18n/
+[2019-05-27 13:10:29 +0900] [7203] [DEBUG] GET /chat/history
+[2019-05-27 13:10:32 +0900] [7203] [DEBUG] GET /chat/admin/chatapp/chatroommember/
+[2019-05-27 13:10:32 +0900] [7203] [DEBUG] GET /chat/admin/jsi18n/
+[2019-05-27 13:24:07 +0900] [7200] [INFO] Handling signal: term
+[2019-05-27 13:24:07 +0900] [7203] [INFO] Worker exiting (pid: 7203)
+[2019-05-27 13:24:07 +0900] [7200] [INFO] Shutting down: Master
+[2019-05-27 13:24:08 +0900] [8490] [DEBUG] Current configuration:
+  config: gunicorn/conf.py
+  bind: ['127.0.0.1:8001']
+  backlog: 2048
+  workers: 1
+  worker_class: sync
+  threads: 1
+  worker_connections: 1000
+  max_requests: 0
+  max_requests_jitter: 0
+  timeout: 600
+  graceful_timeout: 30
+  keepalive: 2
+  limit_request_line: 4094
+  limit_request_fields: 100
+  limit_request_field_size: 8190
+  reload: False
+  reload_engine: auto
+  reload_extra_files: []
+  spew: False
+  check_config: False
+  preload_app: False
+  sendfile: None
+  reuse_port: False
+  chdir: /var/www/projects/chat.git/chat
+  daemon: False
+  raw_env: []
+  pidfile: None
+  worker_tmp_dir: None
+  user: 501
+  group: 501
+  umask: 0
+  initgroups: False
+  tmp_upload_dir: None
+  secure_scheme_headers: {'X-FORWARDED-PROTOCOL': 'ssl', 'X-FORWARDED-PROTO': 'https', 'X-FORWARDED-SSL': 'on'}
+  forwarded_allow_ips: ['127.0.0.1']
+  accesslog: gunicorn/access.log
+  disable_redirect_access_to_syslog: False
+  access_log_format: %(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"
+  errorlog: gunicorn/error.log
+  loglevel: debug
+  capture_output: False
+  logger_class: gunicorn.glogging.Logger
+  logconfig: None
+  logconfig_dict: {}
+  syslog_addr: udp://localhost:514
+  syslog: False
+  syslog_prefix: None
+  syslog_facility: user
+  enable_stdio_inheritance: False
+  statsd_host: None
+  statsd_prefix: 
+  proc_name: None
+  default_proc_name: chat.wsgi:application
+  pythonpath: None
+  paste: None
+  on_starting: <function OnStarting.on_starting at 0x7f17118bd9d8>
+  on_reload: <function OnReload.on_reload at 0x7f17118bdae8>
+  when_ready: <function when_ready at 0x7f17118bf598>
+  pre_fork: <function pre_fork at 0x7f17118bf488>
+  post_fork: <function post_fork at 0x7f17118bf400>
+  post_worker_init: <function PostWorkerInit.post_worker_init at 0x7f17118bdf28>
+  worker_int: <function worker_int at 0x7f17118bf620>
+  worker_abort: <function worker_abort at 0x7f17118bf6a8>
+  pre_exec: <function pre_exec at 0x7f17118bf510>
+  pre_request: <function PreRequest.pre_request at 0x7f17118d6400>
+  post_request: <function PostRequest.post_request at 0x7f17118d6488>
+  child_exit: <function ChildExit.child_exit at 0x7f17118d6598>
+  worker_exit: <function WorkerExit.worker_exit at 0x7f17118d66a8>
+  nworkers_changed: <function NumWorkersChanged.nworkers_changed at 0x7f17118d67b8>
+  on_exit: <function OnExit.on_exit at 0x7f17118d68c8>
+  proxy_protocol: False
+  proxy_allow_ips: ['127.0.0.1']
+  keyfile: None
+  certfile: None
+  ssl_version: 2
+  cert_reqs: 0
+  ca_certs: None
+  suppress_ragged_eofs: True
+  do_handshake_on_connect: False
+  ciphers: TLSv1
+  raw_paste_global_conf: []
+[2019-05-27 13:24:08 +0900] [8490] [INFO] Starting gunicorn 19.9.0
+[2019-05-27 13:24:08 +0900] [8490] [DEBUG] Arbiter booted
+[2019-05-27 13:24:08 +0900] [8490] [INFO] Listening at: http://127.0.0.1:8001 (8490)
+[2019-05-27 13:24:08 +0900] [8490] [INFO] Using worker: sync
+[2019-05-27 13:24:08 +0900] [8490] [INFO] Server is ready. Spawning workers
+[2019-05-27 13:24:08 +0900] [8493] [INFO] Booting worker with pid: 8493
+[2019-05-27 13:24:08 +0900] [8493] [INFO] Worker spawned (pid: 8493)
+[2019-05-27 13:24:08 +0900] [8490] [DEBUG] 1 workers
+[2019-05-27 13:24:23 +0900] [8493] [DEBUG] GET /chat/top
+[2019-05-27 13:24:27 +0900] [8493] [DEBUG] GET /chat/history
+[2019-05-27 13:24:36 +0900] [8493] [DEBUG] GET /chat/admin/
+[2019-05-27 13:24:40 +0900] [8493] [DEBUG] GET /chat/admin/chatapp/chatroommember/
+[2019-05-27 13:24:41 +0900] [8493] [DEBUG] GET /chat/admin/jsi18n/
+[2019-05-27 13:24:45 +0900] [8493] [DEBUG] GET /chat/admin/chatapp/chatroommember/9/change/
+[2019-05-27 13:24:45 +0900] [8493] [DEBUG] GET /chat/admin/jsi18n/
+[2019-05-27 13:24:47 +0900] [8493] [DEBUG] POST /chat/admin/chatapp/chatroommember/9/change/
+[2019-05-27 13:24:48 +0900] [8493] [DEBUG] GET /chat/admin/chatapp/chatroommember/
+[2019-05-27 13:24:48 +0900] [8493] [DEBUG] GET /chat/admin/jsi18n/
+[2019-05-27 13:24:52 +0900] [8493] [DEBUG] GET /chat/admin/chatapp/chatroommember/5/change/
+[2019-05-27 13:24:52 +0900] [8493] [DEBUG] GET /chat/admin/jsi18n/
+[2019-05-27 13:24:55 +0900] [8493] [DEBUG] POST /chat/admin/chatapp/chatroommember/5/change/
+[2019-05-27 13:24:55 +0900] [8493] [DEBUG] GET /chat/admin/chatapp/chatroommember/
+[2019-05-27 13:24:56 +0900] [8493] [DEBUG] GET /chat/admin/jsi18n/
+[2019-05-27 13:25:01 +0900] [8493] [DEBUG] GET /chat/admin/chatapp/chatroommember/1/change/
+[2019-05-27 13:25:02 +0900] [8493] [DEBUG] GET /chat/admin/jsi18n/
+[2019-05-27 13:25:04 +0900] [8493] [DEBUG] POST /chat/admin/chatapp/chatroommember/1/change/
+[2019-05-27 13:25:04 +0900] [8493] [DEBUG] GET /chat/admin/chatapp/chatroommember/
+[2019-05-27 13:25:05 +0900] [8493] [DEBUG] GET /chat/admin/jsi18n/
+[2019-05-27 13:25:07 +0900] [8493] [DEBUG] GET /chat/top
+[2019-05-27 13:25:09 +0900] [8493] [DEBUG] GET /chat/history
+[2019-05-27 13:25:14 +0900] [8493] [DEBUG] GET /chat/admin/chatapp/chatroommember/
+[2019-05-27 13:25:15 +0900] [8493] [DEBUG] GET /chat/admin/jsi18n/
+[2019-05-27 13:25:19 +0900] [8493] [DEBUG] GET /chat/admin/chatapp/chatroommember/2/change/
+[2019-05-27 13:25:20 +0900] [8493] [DEBUG] GET /chat/admin/jsi18n/
+[2019-05-27 13:25:22 +0900] [8493] [DEBUG] POST /chat/admin/chatapp/chatroommember/2/change/
+[2019-05-27 13:25:22 +0900] [8493] [DEBUG] GET /chat/admin/chatapp/chatroommember/
+[2019-05-27 13:25:23 +0900] [8493] [DEBUG] GET /chat/admin/jsi18n/
+[2019-05-27 13:25:24 +0900] [8493] [DEBUG] GET /chat/top
+[2019-05-27 13:25:27 +0900] [8493] [DEBUG] GET /chat/history
+[2019-05-27 13:25:48 +0900] [8493] [DEBUG] GET /chat/admin/chatapp/
+[2019-05-27 13:25:51 +0900] [8493] [DEBUG] GET /chat/admin/chatapp/attachment/
+[2019-05-27 13:25:51 +0900] [8493] [DEBUG] GET /chat/admin/jsi18n/
+[2019-05-27 13:49:57 +0900] [8493] [DEBUG] POST /chat/
+[2019-05-27 13:49:57 +0900] [8493] [DEBUG] GET /chat/top
+[2019-05-27 13:50:52 +0900] [8490] [INFO] Handling signal: term
+[2019-05-27 13:50:52 +0900] [8493] [INFO] Worker exiting (pid: 8493)
+[2019-05-27 13:50:52 +0900] [8490] [INFO] Shutting down: Master
+[2019-05-27 13:50:53 +0900] [8625] [DEBUG] Current configuration:
+  config: gunicorn/conf.py
+  bind: ['127.0.0.1:8001']
+  backlog: 2048
+  workers: 1
+  worker_class: sync
+  threads: 1
+  worker_connections: 1000
+  max_requests: 0
+  max_requests_jitter: 0
+  timeout: 600
+  graceful_timeout: 30
+  keepalive: 2
+  limit_request_line: 4094
+  limit_request_fields: 100
+  limit_request_field_size: 8190
+  reload: False
+  reload_engine: auto
+  reload_extra_files: []
+  spew: False
+  check_config: False
+  preload_app: False
+  sendfile: None
+  reuse_port: False
+  chdir: /var/www/projects/chat.git/chat
+  daemon: False
+  raw_env: []
+  pidfile: None
+  worker_tmp_dir: None
+  user: 501
+  group: 501
+  umask: 0
+  initgroups: False
+  tmp_upload_dir: None
+  secure_scheme_headers: {'X-FORWARDED-PROTOCOL': 'ssl', 'X-FORWARDED-PROTO': 'https', 'X-FORWARDED-SSL': 'on'}
+  forwarded_allow_ips: ['127.0.0.1']
+  accesslog: gunicorn/access.log
+  disable_redirect_access_to_syslog: False
+  access_log_format: %(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"
+  errorlog: gunicorn/error.log
+  loglevel: debug
+  capture_output: False
+  logger_class: gunicorn.glogging.Logger
+  logconfig: None
+  logconfig_dict: {}
+  syslog_addr: udp://localhost:514
+  syslog: False
+  syslog_prefix: None
+  syslog_facility: user
+  enable_stdio_inheritance: False
+  statsd_host: None
+  statsd_prefix: 
+  proc_name: None
+  default_proc_name: chat.wsgi:application
+  pythonpath: None
+  paste: None
+  on_starting: <function OnStarting.on_starting at 0x7f9017ad79d8>
+  on_reload: <function OnReload.on_reload at 0x7f9017ad7ae8>
+  when_ready: <function when_ready at 0x7f9017ad9598>
+  pre_fork: <function pre_fork at 0x7f9017ad9488>
+  post_fork: <function post_fork at 0x7f9017ad9400>
+  post_worker_init: <function PostWorkerInit.post_worker_init at 0x7f9017ad7f28>
+  worker_int: <function worker_int at 0x7f9017ad9620>
+  worker_abort: <function worker_abort at 0x7f9017ad96a8>
+  pre_exec: <function pre_exec at 0x7f9017ad9510>
+  pre_request: <function PreRequest.pre_request at 0x7f9017af0400>
+  post_request: <function PostRequest.post_request at 0x7f9017af0488>
+  child_exit: <function ChildExit.child_exit at 0x7f9017af0598>
+  worker_exit: <function WorkerExit.worker_exit at 0x7f9017af06a8>
+  nworkers_changed: <function NumWorkersChanged.nworkers_changed at 0x7f9017af07b8>
+  on_exit: <function OnExit.on_exit at 0x7f9017af08c8>
+  proxy_protocol: False
+  proxy_allow_ips: ['127.0.0.1']
+  keyfile: None
+  certfile: None
+  ssl_version: 2
+  cert_reqs: 0
+  ca_certs: None
+  suppress_ragged_eofs: True
+  do_handshake_on_connect: False
+  ciphers: TLSv1
+  raw_paste_global_conf: []
+[2019-05-27 13:50:53 +0900] [8625] [INFO] Starting gunicorn 19.9.0
+[2019-05-27 13:50:53 +0900] [8625] [DEBUG] Arbiter booted
+[2019-05-27 13:50:53 +0900] [8625] [INFO] Listening at: http://127.0.0.1:8001 (8625)
+[2019-05-27 13:50:53 +0900] [8625] [INFO] Using worker: sync
+[2019-05-27 13:50:53 +0900] [8625] [INFO] Server is ready. Spawning workers
+[2019-05-27 13:50:53 +0900] [8628] [INFO] Booting worker with pid: 8628
+[2019-05-27 13:50:53 +0900] [8628] [INFO] Worker spawned (pid: 8628)
+[2019-05-27 13:50:53 +0900] [8625] [DEBUG] 1 workers
+[2019-05-27 13:50:58 +0900] [8628] [DEBUG] GET /chat/history
+[2019-05-27 13:51:23 +0900] [8628] [DEBUG] GET /chat/top
+[2019-05-27 13:51:26 +0900] [8628] [DEBUG] GET /chat/history
