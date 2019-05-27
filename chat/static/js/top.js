@@ -100,7 +100,7 @@
         
    
         var $attchment_area = $('<div>', { class: "row" }).appendTo($inner);
-        attachments.forEach(elem => {
+        attachments.forEach(function(elem, i) {
           $('<div>', { class: 'col-md-3 col-6' })
           .append($('<a>', { 
             href: elem.file_url,
@@ -142,7 +142,7 @@
 
 
         var $attachment_area = $('<div>', { class: "row" }).appendTo($msg_inner);
-        attachments.forEach(elem => {
+        attachments.forEach(function(elem, i) {
           $('<div>', { class: 'col-md-3 col-6' })
           .append($('<a>', { 
             href: elem.file_url,
@@ -394,7 +394,7 @@
             .done(function(data) {
                 //console.log(data);
                 var reversed = data.reverse();
-                reversed.forEach(obj => {
+                reversed.forEach(function(obj, i) {
                     var is_read = false;
                     if (opponent_is_reading == 'True') {
                         
@@ -478,7 +478,7 @@
                     var i = attachment_pk_list.indexOf($(this).attr('pk'));
                     attachment_pk_list.splice(i, 1);
                     call_attachment('DELETE', $(this).attr('pk'))
-                    .done((data) => {
+                    .done(function(data) {
                         if (data.error) {
                             alert(data.error);
                             return;
