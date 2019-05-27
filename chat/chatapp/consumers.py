@@ -24,6 +24,7 @@ class ChatConsumer(AsyncJsonWebsocketConsumer):
     async def disconnect(self, close_code):
         # Leave room group
         for room_id in list(self.rooms):
+            print('before leave room in disconnect')
             await self.leave_room(room_id)
         await self._user_offline(self.scope['user'])
 
@@ -138,6 +139,7 @@ class ChatConsumer(AsyncJsonWebsocketConsumer):
     
     async def exit_room(self, room_id):
         room = await self._get_room_by_pk(room_id)
+        print("exit called ")
         user = self.scope['user']
         await self._user_exit_room(room, user)
         await self.channel_layer.group_send(
@@ -270,9 +272,10 @@ class ChatConsumer(AsyncJsonWebsocketConsumer):
         print('user_join called')
     @database_sync_to_async
     def _user_exit_room(self, room, user):
+        print('user exit called')
         room_member = ChatRoomMember.objects.get(room = room, user = user)
         room_member.last_logout = timezone.now()
-        room_member.is_online = False
+        room_member.is_reading = False
         room_member.save()
     @database_sync_to_async
     def _user_online(self, user):
