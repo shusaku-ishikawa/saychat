@@ -24,8 +24,8 @@ keepalive = 2
 
 spew = False
 daemon = False
-user = "chatuser"
-group = "chatuser"
+user = "root"
+group = "root"
 
 errorlog = 'gunicorn/error.log'
 loglevel = 'debug'
