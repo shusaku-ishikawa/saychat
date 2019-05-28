@@ -169,7 +169,12 @@ class ChatConsumer(AsyncJsonWebsocketConsumer):
         user = self.scope['user']
         room = await self._get_room_by_pk(room_id)
         m = await self._create_new_message(user, room, message)
-        await self._notify_others(room, user)
+        
+        logger = logger.getLogger('myLogger')
+        try:
+            await self._notify_others(room, user)
+        except Exception as e:
+            logger.error(str(e.args))
 
         for pk in attachment_list:
             a = await self._get_attachment_by_pk(pk)
