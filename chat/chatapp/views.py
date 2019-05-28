@@ -104,9 +104,12 @@ class SignUp(generic.CreateView):
 
         message_template = get_template('chatapp/mail_template/sign_up/message.txt')
         message = message_template.render(context)
-
-        user.email_user(subject, message)
-        messages.success(self.request, '本登録用リンクを送付しました')
+        try:
+            user.email_user(subject, message)
+            messages.success(self.request, '本登録用リンクを送付しました')
+        except:
+            messages.error(self.request, 'メール送信中にエラーが発生しました')
+        
         return  HttpResponseRedirect(reverse('chatapp:sign_up'))
 
 class TestView(generic.TemplateView):
@@ -191,6 +194,12 @@ class PasswordReset(SuccessMessageMixin, PasswordResetView):
     form_class = MyPasswordResetForm
     success_message = "再設定用リンクを送付しました"
     success_url = reverse_lazy('chatapp:password_reset')
+    def form_valid(self, form):
+        try:
+            return super().form_valid(form)
+        except:
+            messages.error(self.request, 'メール送信中にエラーが発生しました')
+            return HttpResponseRedirect(reverse('chatapp:password_reset'))
 
 
 
