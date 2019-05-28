@@ -138,7 +138,7 @@ class User(AbstractBaseUser, PermissionsMixin):
         message_template = get_template('chatapp/mail_template/has_new_message/message.txt')
         message = message_template.render(context)
 
-        self.email_user(subject, message)
+        self.email_user(subject, message, fail_silently = True)
         self.last_alerted = timezone.now()
         self.save()
 

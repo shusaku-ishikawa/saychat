@@ -222,7 +222,9 @@
             if (is_initial) {
                 $div_history.animate({ scrollTop: $div_history.prop("scrollHeight")}, 100);
             } else {
-                $div_history.scrollTop(current_top_element.offset().top);
+                if(current_top_element.offset()) {
+                    $div_history.scrollTop(current_top_element.offset().top);
+                }
             }
            
         }
