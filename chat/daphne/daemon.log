@@ -1,0 +1,2500 @@
+Traceback (most recent call last):
+  File "/var/www/projects/myenv/bin/daphne", line 11, in <module>
+    sys.exit(CommandLineInterface.entrypoint())
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 191, in entrypoint
+    cls().run(sys.argv[1:])
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 252, in run
+    application = import_by_path(args.application)
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/utils.py", line 14, in import_by_path
+    target = getattr(target, bit)
+AttributeError: module 'chat.asgi' has no attribute 'channel_layer'
+Traceback (most recent call last):
+  File "/var/www/projects/myenv/bin/daphne", line 11, in <module>
+    sys.exit(CommandLineInterface.entrypoint())
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 191, in entrypoint
+    cls().run(sys.argv[1:])
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 252, in run
+    application = import_by_path(args.application)
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/utils.py", line 14, in import_by_path
+    target = getattr(target, bit)
+AttributeError: module 'chat.asgi' has no attribute 'channel_layer'
+Traceback (most recent call last):
+  File "/var/www/projects/myenv/bin/daphne", line 11, in <module>
+    sys.exit(CommandLineInterface.entrypoint())
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 191, in entrypoint
+    cls().run(sys.argv[1:])
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 252, in run
+    application = import_by_path(args.application)
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/utils.py", line 14, in import_by_path
+    target = getattr(target, bit)
+AttributeError: module 'chat.asgi' has no attribute 'channel_layer'
+Traceback (most recent call last):
+  File "/var/www/projects/myenv/bin/daphne", line 11, in <module>
+    sys.exit(CommandLineInterface.entrypoint())
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 191, in entrypoint
+    cls().run(sys.argv[1:])
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 252, in run
+    application = import_by_path(args.application)
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/utils.py", line 14, in import_by_path
+    target = getattr(target, bit)
+AttributeError: module 'chat.asgi' has no attribute 'channel_layer'
+Traceback (most recent call last):
+  File "/var/www/projects/myenv/bin/daphne", line 11, in <module>
+    sys.exit(CommandLineInterface.entrypoint())
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 191, in entrypoint
+    cls().run(sys.argv[1:])
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 252, in run
+    application = import_by_path(args.application)
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/utils.py", line 14, in import_by_path
+    target = getattr(target, bit)
+AttributeError: module 'chat.asgi' has no attribute 'channel_layer'
+Traceback (most recent call last):
+  File "/var/www/projects/myenv/bin/daphne", line 11, in <module>
+    sys.exit(CommandLineInterface.entrypoint())
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 191, in entrypoint
+    cls().run(sys.argv[1:])
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 252, in run
+    application = import_by_path(args.application)
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/utils.py", line 14, in import_by_path
+    target = getattr(target, bit)
+AttributeError: module 'chat.asgi' has no attribute 'channel_layer'
+Traceback (most recent call last):
+  File "/var/www/projects/myenv/bin/daphne", line 11, in <module>
+    sys.exit(CommandLineInterface.entrypoint())
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 191, in entrypoint
+    cls().run(sys.argv[1:])
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 252, in run
+    application = import_by_path(args.application)
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/utils.py", line 14, in import_by_path
+    target = getattr(target, bit)
+AttributeError: module 'chat.asgi' has no attribute 'channel_layer'
+Traceback (most recent call last):
+  File "/var/www/projects/myenv/bin/daphne", line 11, in <module>
+    sys.exit(CommandLineInterface.entrypoint())
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 191, in entrypoint
+    cls().run(sys.argv[1:])
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 252, in run
+    application = import_by_path(args.application)
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/utils.py", line 14, in import_by_path
+    target = getattr(target, bit)
+AttributeError: module 'chat.asgi' has no attribute 'channel_layer'
+Traceback (most recent call last):
+  File "/var/www/projects/myenv/bin/daphne", line 11, in <module>
+    sys.exit(CommandLineInterface.entrypoint())
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 191, in entrypoint
+    cls().run(sys.argv[1:])
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 252, in run
+    application = import_by_path(args.application)
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/utils.py", line 14, in import_by_path
+    target = getattr(target, bit)
+AttributeError: module 'chat.asgi' has no attribute 'channel_layer'
+Traceback (most recent call last):
+  File "/var/www/projects/myenv/bin/daphne", line 11, in <module>
+    sys.exit(CommandLineInterface.entrypoint())
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 191, in entrypoint
+    cls().run(sys.argv[1:])
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 252, in run
+    application = import_by_path(args.application)
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/utils.py", line 14, in import_by_path
+    target = getattr(target, bit)
+AttributeError: module 'chat.asgi' has no attribute 'channel_layer'
+Traceback (most recent call last):
+  File "/var/www/projects/myenv/bin/daphne", line 11, in <module>
+    sys.exit(CommandLineInterface.entrypoint())
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 191, in entrypoint
+    cls().run(sys.argv[1:])
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 252, in run
+    application = import_by_path(args.application)
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/utils.py", line 14, in import_by_path
+    target = getattr(target, bit)
+AttributeError: module 'chat.asgi' has no attribute 'channel_layer'
+Traceback (most recent call last):
+  File "/var/www/projects/myenv/bin/daphne", line 11, in <module>
+    sys.exit(CommandLineInterface.entrypoint())
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 191, in entrypoint
+    cls().run(sys.argv[1:])
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 252, in run
+    application = import_by_path(args.application)
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/utils.py", line 14, in import_by_path
+    target = getattr(target, bit)
+AttributeError: module 'chat.asgi' has no attribute 'channel_layer'
+Traceback (most recent call last):
+  File "/var/www/projects/myenv/bin/daphne", line 11, in <module>
+    sys.exit(CommandLineInterface.entrypoint())
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 191, in entrypoint
+    cls().run(sys.argv[1:])
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 252, in run
+    application = import_by_path(args.application)
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/utils.py", line 14, in import_by_path
+    target = getattr(target, bit)
+AttributeError: module 'chat.asgi' has no attribute 'channel_layer'
+Traceback (most recent call last):
+  File "/var/www/projects/myenv/bin/daphne", line 11, in <module>
+    sys.exit(CommandLineInterface.entrypoint())
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 191, in entrypoint
+    cls().run(sys.argv[1:])
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 252, in run
+    application = import_by_path(args.application)
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/utils.py", line 14, in import_by_path
+    target = getattr(target, bit)
+AttributeError: module 'chat.asgi' has no attribute 'channel_layer'
+Traceback (most recent call last):
+  File "/var/www/projects/myenv/bin/daphne", line 11, in <module>
+    sys.exit(CommandLineInterface.entrypoint())
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 191, in entrypoint
+    cls().run(sys.argv[1:])
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 252, in run
+    application = import_by_path(args.application)
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/utils.py", line 14, in import_by_path
+    target = getattr(target, bit)
+AttributeError: module 'chat.asgi' has no attribute 'channel_layer'
+Traceback (most recent call last):
+  File "/var/www/projects/myenv/bin/daphne", line 11, in <module>
+    sys.exit(CommandLineInterface.entrypoint())
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 191, in entrypoint
+    cls().run(sys.argv[1:])
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 252, in run
+    application = import_by_path(args.application)
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/utils.py", line 14, in import_by_path
+    target = getattr(target, bit)
+AttributeError: module 'chat.asgi' has no attribute 'channel_layer'
+Traceback (most recent call last):
+  File "/var/www/projects/myenv/bin/daphne", line 11, in <module>
+    sys.exit(CommandLineInterface.entrypoint())
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 191, in entrypoint
+    cls().run(sys.argv[1:])
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 252, in run
+    application = import_by_path(args.application)
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/utils.py", line 14, in import_by_path
+    target = getattr(target, bit)
+AttributeError: module 'chat.asgi' has no attribute 'channel_layer'
+Traceback (most recent call last):
+  File "/var/www/projects/myenv/bin/daphne", line 11, in <module>
+    sys.exit(CommandLineInterface.entrypoint())
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 191, in entrypoint
+    cls().run(sys.argv[1:])
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 252, in run
+    application = import_by_path(args.application)
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/utils.py", line 14, in import_by_path
+    target = getattr(target, bit)
+AttributeError: module 'chat.asgi' has no attribute 'channel_layer'
+Traceback (most recent call last):
+  File "/var/www/projects/myenv/bin/daphne", line 11, in <module>
+    sys.exit(CommandLineInterface.entrypoint())
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 191, in entrypoint
+    cls().run(sys.argv[1:])
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 252, in run
+    application = import_by_path(args.application)
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/utils.py", line 14, in import_by_path
+    target = getattr(target, bit)
+AttributeError: module 'chat.asgi' has no attribute 'channel_layer'
+Traceback (most recent call last):
+  File "/var/www/projects/myenv/bin/daphne", line 11, in <module>
+    sys.exit(CommandLineInterface.entrypoint())
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 191, in entrypoint
+    cls().run(sys.argv[1:])
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 252, in run
+    application = import_by_path(args.application)
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/utils.py", line 14, in import_by_path
+    target = getattr(target, bit)
+AttributeError: module 'chat.asgi' has no attribute 'channel_layer'
+Traceback (most recent call last):
+  File "/var/www/projects/myenv/bin/daphne", line 11, in <module>
+    sys.exit(CommandLineInterface.entrypoint())
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 191, in entrypoint
+    cls().run(sys.argv[1:])
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 252, in run
+    application = import_by_path(args.application)
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/utils.py", line 14, in import_by_path
+    target = getattr(target, bit)
+AttributeError: module 'chat.asgi' has no attribute 'channel_layer'
+Traceback (most recent call last):
+  File "/var/www/projects/myenv/bin/daphne", line 11, in <module>
+    sys.exit(CommandLineInterface.entrypoint())
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 191, in entrypoint
+    cls().run(sys.argv[1:])
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 252, in run
+    application = import_by_path(args.application)
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/utils.py", line 14, in import_by_path
+    target = getattr(target, bit)
+AttributeError: module 'chat.asgi' has no attribute 'channel_layer'
+Traceback (most recent call last):
+  File "/var/www/projects/myenv/bin/daphne", line 11, in <module>
+    sys.exit(CommandLineInterface.entrypoint())
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 191, in entrypoint
+    cls().run(sys.argv[1:])
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 252, in run
+    application = import_by_path(args.application)
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/utils.py", line 14, in import_by_path
+    target = getattr(target, bit)
+AttributeError: module 'chat.asgi' has no attribute 'channel_layer'
+Traceback (most recent call last):
+  File "/var/www/projects/myenv/bin/daphne", line 11, in <module>
+    sys.exit(CommandLineInterface.entrypoint())
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 191, in entrypoint
+    cls().run(sys.argv[1:])
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 252, in run
+    application = import_by_path(args.application)
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/utils.py", line 14, in import_by_path
+    target = getattr(target, bit)
+AttributeError: module 'chat.asgi' has no attribute 'channel_layer'
+Traceback (most recent call last):
+  File "/var/www/projects/myenv/bin/daphne", line 11, in <module>
+    sys.exit(CommandLineInterface.entrypoint())
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 191, in entrypoint
+    cls().run(sys.argv[1:])
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 252, in run
+    application = import_by_path(args.application)
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/utils.py", line 14, in import_by_path
+    target = getattr(target, bit)
+AttributeError: module 'chat.asgi' has no attribute 'channel_layer'
+Traceback (most recent call last):
+  File "/var/www/projects/myenv/bin/daphne", line 11, in <module>
+    sys.exit(CommandLineInterface.entrypoint())
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 191, in entrypoint
+    cls().run(sys.argv[1:])
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 252, in run
+    application = import_by_path(args.application)
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/utils.py", line 14, in import_by_path
+    target = getattr(target, bit)
+AttributeError: module 'chat.asgi' has no attribute 'channel_layer'
+Traceback (most recent call last):
+  File "/var/www/projects/myenv/bin/daphne", line 11, in <module>
+    sys.exit(CommandLineInterface.entrypoint())
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 191, in entrypoint
+    cls().run(sys.argv[1:])
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 252, in run
+    application = import_by_path(args.application)
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/utils.py", line 14, in import_by_path
+    target = getattr(target, bit)
+AttributeError: module 'chat.asgi' has no attribute 'channel_layer'
+Traceback (most recent call last):
+  File "/var/www/projects/myenv/bin/daphne", line 11, in <module>
+    sys.exit(CommandLineInterface.entrypoint())
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 191, in entrypoint
+    cls().run(sys.argv[1:])
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 252, in run
+    application = import_by_path(args.application)
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/utils.py", line 14, in import_by_path
+    target = getattr(target, bit)
+AttributeError: module 'chat.asgi' has no attribute 'channel_layer'
+Traceback (most recent call last):
+  File "/var/www/projects/myenv/bin/daphne", line 11, in <module>
+    sys.exit(CommandLineInterface.entrypoint())
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 191, in entrypoint
+    cls().run(sys.argv[1:])
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 252, in run
+    application = import_by_path(args.application)
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/utils.py", line 14, in import_by_path
+    target = getattr(target, bit)
+AttributeError: module 'chat.asgi' has no attribute 'channel_layer'
+Traceback (most recent call last):
+  File "/var/www/projects/myenv/bin/daphne", line 11, in <module>
+    sys.exit(CommandLineInterface.entrypoint())
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 191, in entrypoint
+    cls().run(sys.argv[1:])
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 252, in run
+    application = import_by_path(args.application)
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/utils.py", line 14, in import_by_path
+    target = getattr(target, bit)
+AttributeError: module 'chat.asgi' has no attribute 'channel_layer'
+Traceback (most recent call last):
+  File "/var/www/projects/myenv/bin/daphne", line 11, in <module>
+    sys.exit(CommandLineInterface.entrypoint())
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 191, in entrypoint
+    cls().run(sys.argv[1:])
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 252, in run
+    application = import_by_path(args.application)
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/utils.py", line 14, in import_by_path
+    target = getattr(target, bit)
+AttributeError: module 'chat.asgi' has no attribute 'channel_layer'
+Traceback (most recent call last):
+  File "/var/www/projects/myenv/bin/daphne", line 11, in <module>
+    sys.exit(CommandLineInterface.entrypoint())
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 191, in entrypoint
+    cls().run(sys.argv[1:])
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 252, in run
+    application = import_by_path(args.application)
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/utils.py", line 14, in import_by_path
+    target = getattr(target, bit)
+AttributeError: module 'chat.asgi' has no attribute 'channel_layer'
+Traceback (most recent call last):
+  File "/var/www/projects/myenv/bin/daphne", line 11, in <module>
+    sys.exit(CommandLineInterface.entrypoint())
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 191, in entrypoint
+    cls().run(sys.argv[1:])
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 252, in run
+    application = import_by_path(args.application)
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/utils.py", line 14, in import_by_path
+    target = getattr(target, bit)
+AttributeError: module 'chat.asgi' has no attribute 'channel_layer'
+Traceback (most recent call last):
+  File "/var/www/projects/myenv/bin/daphne", line 11, in <module>
+    sys.exit(CommandLineInterface.entrypoint())
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 191, in entrypoint
+    cls().run(sys.argv[1:])
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 252, in run
+    application = import_by_path(args.application)
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/utils.py", line 14, in import_by_path
+    target = getattr(target, bit)
+AttributeError: module 'chat.asgi' has no attribute 'channel_layer'
+Traceback (most recent call last):
+  File "/var/www/projects/myenv/bin/daphne", line 11, in <module>
+    sys.exit(CommandLineInterface.entrypoint())
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 191, in entrypoint
+    cls().run(sys.argv[1:])
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 252, in run
+    application = import_by_path(args.application)
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/utils.py", line 14, in import_by_path
+    target = getattr(target, bit)
+AttributeError: module 'chat.asgi' has no attribute 'channel_layer'
+Traceback (most recent call last):
+  File "/var/www/projects/myenv/bin/daphne", line 11, in <module>
+    sys.exit(CommandLineInterface.entrypoint())
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 191, in entrypoint
+    cls().run(sys.argv[1:])
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 252, in run
+    application = import_by_path(args.application)
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/utils.py", line 14, in import_by_path
+    target = getattr(target, bit)
+AttributeError: module 'chat.asgi' has no attribute 'channel_layer'
+Traceback (most recent call last):
+  File "/var/www/projects/myenv/bin/daphne", line 11, in <module>
+    sys.exit(CommandLineInterface.entrypoint())
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 191, in entrypoint
+    cls().run(sys.argv[1:])
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 252, in run
+    application = import_by_path(args.application)
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/utils.py", line 14, in import_by_path
+    target = getattr(target, bit)
+AttributeError: module 'chat.asgi' has no attribute 'channel_layer'
+Traceback (most recent call last):
+  File "/var/www/projects/myenv/bin/daphne", line 11, in <module>
+    sys.exit(CommandLineInterface.entrypoint())
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 191, in entrypoint
+    cls().run(sys.argv[1:])
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 252, in run
+    application = import_by_path(args.application)
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/utils.py", line 14, in import_by_path
+    target = getattr(target, bit)
+AttributeError: module 'chat.asgi' has no attribute 'channel_layer'
+Traceback (most recent call last):
+  File "/var/www/projects/myenv/bin/daphne", line 11, in <module>
+    sys.exit(CommandLineInterface.entrypoint())
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 191, in entrypoint
+    cls().run(sys.argv[1:])
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 252, in run
+    application = import_by_path(args.application)
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/utils.py", line 14, in import_by_path
+    target = getattr(target, bit)
+AttributeError: module 'chat.asgi' has no attribute 'channel_layer'
+Traceback (most recent call last):
+  File "/var/www/projects/myenv/bin/daphne", line 11, in <module>
+    sys.exit(CommandLineInterface.entrypoint())
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 191, in entrypoint
+    cls().run(sys.argv[1:])
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 252, in run
+    application = import_by_path(args.application)
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/utils.py", line 14, in import_by_path
+    target = getattr(target, bit)
+AttributeError: module 'chat.asgi' has no attribute 'channel_layer'
+Traceback (most recent call last):
+  File "/var/www/projects/myenv/bin/daphne", line 11, in <module>
+    sys.exit(CommandLineInterface.entrypoint())
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 191, in entrypoint
+    cls().run(sys.argv[1:])
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 252, in run
+    application = import_by_path(args.application)
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/utils.py", line 14, in import_by_path
+    target = getattr(target, bit)
+AttributeError: module 'chat.asgi' has no attribute 'channel_layer'
+Traceback (most recent call last):
+  File "/var/www/projects/myenv/bin/daphne", line 11, in <module>
+    sys.exit(CommandLineInterface.entrypoint())
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 191, in entrypoint
+    cls().run(sys.argv[1:])
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 252, in run
+    application = import_by_path(args.application)
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/utils.py", line 14, in import_by_path
+    target = getattr(target, bit)
+AttributeError: module 'chat.asgi' has no attribute 'channel_layer'
+Traceback (most recent call last):
+  File "/var/www/projects/myenv/bin/daphne", line 11, in <module>
+    sys.exit(CommandLineInterface.entrypoint())
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 191, in entrypoint
+    cls().run(sys.argv[1:])
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 252, in run
+    application = import_by_path(args.application)
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/utils.py", line 14, in import_by_path
+    target = getattr(target, bit)
+AttributeError: module 'chat.asgi' has no attribute 'channel_layer'
+Traceback (most recent call last):
+  File "/var/www/projects/myenv/bin/daphne", line 11, in <module>
+    sys.exit(CommandLineInterface.entrypoint())
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 191, in entrypoint
+    cls().run(sys.argv[1:])
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 252, in run
+    application = import_by_path(args.application)
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/utils.py", line 14, in import_by_path
+    target = getattr(target, bit)
+AttributeError: module 'chat.asgi' has no attribute 'channel_layer'
+Traceback (most recent call last):
+  File "/var/www/projects/myenv/bin/daphne", line 11, in <module>
+    sys.exit(CommandLineInterface.entrypoint())
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 191, in entrypoint
+    cls().run(sys.argv[1:])
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 252, in run
+    application = import_by_path(args.application)
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/utils.py", line 14, in import_by_path
+    target = getattr(target, bit)
+AttributeError: module 'chat.asgi' has no attribute 'channel_layer'
+Traceback (most recent call last):
+  File "/var/www/projects/myenv/bin/daphne", line 11, in <module>
+    sys.exit(CommandLineInterface.entrypoint())
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 191, in entrypoint
+    cls().run(sys.argv[1:])
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 252, in run
+    application = import_by_path(args.application)
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/utils.py", line 14, in import_by_path
+    target = getattr(target, bit)
+AttributeError: module 'chat.asgi' has no attribute 'channel_layer'
+Traceback (most recent call last):
+  File "/var/www/projects/myenv/bin/daphne", line 11, in <module>
+    sys.exit(CommandLineInterface.entrypoint())
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 191, in entrypoint
+    cls().run(sys.argv[1:])
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 252, in run
+    application = import_by_path(args.application)
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/utils.py", line 14, in import_by_path
+    target = getattr(target, bit)
+AttributeError: module 'chat.asgi' has no attribute 'channel_layer'
+Traceback (most recent call last):
+  File "/var/www/projects/myenv/bin/daphne", line 11, in <module>
+    sys.exit(CommandLineInterface.entrypoint())
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 191, in entrypoint
+    cls().run(sys.argv[1:])
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 252, in run
+    application = import_by_path(args.application)
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/utils.py", line 14, in import_by_path
+    target = getattr(target, bit)
+AttributeError: module 'chat.asgi' has no attribute 'channel_layer'
+Traceback (most recent call last):
+  File "/var/www/projects/myenv/bin/daphne", line 11, in <module>
+    sys.exit(CommandLineInterface.entrypoint())
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 191, in entrypoint
+    cls().run(sys.argv[1:])
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 252, in run
+    application = import_by_path(args.application)
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/utils.py", line 14, in import_by_path
+    target = getattr(target, bit)
+AttributeError: module 'chat.asgi' has no attribute 'channel_layer'
+Traceback (most recent call last):
+  File "/var/www/projects/myenv/bin/daphne", line 11, in <module>
+    sys.exit(CommandLineInterface.entrypoint())
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 191, in entrypoint
+    cls().run(sys.argv[1:])
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 252, in run
+    application = import_by_path(args.application)
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/utils.py", line 14, in import_by_path
+    target = getattr(target, bit)
+AttributeError: module 'chat.asgi' has no attribute 'channel_layer'
+Traceback (most recent call last):
+  File "/var/www/projects/myenv/bin/daphne", line 11, in <module>
+    sys.exit(CommandLineInterface.entrypoint())
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 191, in entrypoint
+    cls().run(sys.argv[1:])
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 252, in run
+    application = import_by_path(args.application)
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/utils.py", line 14, in import_by_path
+    target = getattr(target, bit)
+AttributeError: module 'chat.asgi' has no attribute 'channel_layer'
+Traceback (most recent call last):
+  File "/var/www/projects/myenv/bin/daphne", line 11, in <module>
+    sys.exit(CommandLineInterface.entrypoint())
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 191, in entrypoint
+    cls().run(sys.argv[1:])
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 252, in run
+    application = import_by_path(args.application)
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/utils.py", line 14, in import_by_path
+    target = getattr(target, bit)
+AttributeError: module 'chat.asgi' has no attribute 'channel_layer'
+Traceback (most recent call last):
+  File "/var/www/projects/myenv/bin/daphne", line 11, in <module>
+    sys.exit(CommandLineInterface.entrypoint())
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 191, in entrypoint
+    cls().run(sys.argv[1:])
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 252, in run
+    application = import_by_path(args.application)
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/utils.py", line 14, in import_by_path
+    target = getattr(target, bit)
+AttributeError: module 'chat.asgi' has no attribute 'channel_layer'
+Traceback (most recent call last):
+  File "/var/www/projects/myenv/bin/daphne", line 11, in <module>
+    sys.exit(CommandLineInterface.entrypoint())
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 191, in entrypoint
+    cls().run(sys.argv[1:])
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 252, in run
+    application = import_by_path(args.application)
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/utils.py", line 14, in import_by_path
+    target = getattr(target, bit)
+AttributeError: module 'chat.asgi' has no attribute 'channel_layer'
+Traceback (most recent call last):
+  File "/var/www/projects/myenv/bin/daphne", line 11, in <module>
+    sys.exit(CommandLineInterface.entrypoint())
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 191, in entrypoint
+    cls().run(sys.argv[1:])
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 252, in run
+    application = import_by_path(args.application)
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/utils.py", line 14, in import_by_path
+    target = getattr(target, bit)
+AttributeError: module 'chat.asgi' has no attribute 'channel_layer'
+Traceback (most recent call last):
+  File "/var/www/projects/myenv/bin/daphne", line 11, in <module>
+    sys.exit(CommandLineInterface.entrypoint())
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 191, in entrypoint
+    cls().run(sys.argv[1:])
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 252, in run
+    application = import_by_path(args.application)
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/utils.py", line 14, in import_by_path
+    target = getattr(target, bit)
+AttributeError: module 'chat.asgi' has no attribute 'channel_layer'
+Traceback (most recent call last):
+  File "/var/www/projects/myenv/bin/daphne", line 11, in <module>
+    sys.exit(CommandLineInterface.entrypoint())
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 191, in entrypoint
+    cls().run(sys.argv[1:])
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 252, in run
+    application = import_by_path(args.application)
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/utils.py", line 14, in import_by_path
+    target = getattr(target, bit)
+AttributeError: module 'chat.asgi' has no attribute 'channel_layer'
+Traceback (most recent call last):
+  File "/var/www/projects/myenv/bin/daphne", line 11, in <module>
+    sys.exit(CommandLineInterface.entrypoint())
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 191, in entrypoint
+    cls().run(sys.argv[1:])
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 252, in run
+    application = import_by_path(args.application)
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/utils.py", line 14, in import_by_path
+    target = getattr(target, bit)
+AttributeError: module 'chat.asgi' has no attribute 'channel_layer'
+Traceback (most recent call last):
+  File "/var/www/projects/myenv/bin/daphne", line 11, in <module>
+    sys.exit(CommandLineInterface.entrypoint())
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 191, in entrypoint
+    cls().run(sys.argv[1:])
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 252, in run
+    application = import_by_path(args.application)
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/utils.py", line 14, in import_by_path
+    target = getattr(target, bit)
+AttributeError: module 'chat.asgi' has no attribute 'channel_layer'
+Traceback (most recent call last):
+  File "/var/www/projects/myenv/bin/daphne", line 11, in <module>
+    sys.exit(CommandLineInterface.entrypoint())
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 191, in entrypoint
+    cls().run(sys.argv[1:])
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 252, in run
+    application = import_by_path(args.application)
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/utils.py", line 14, in import_by_path
+    target = getattr(target, bit)
+AttributeError: module 'chat.asgi' has no attribute 'channel_layer'
+Traceback (most recent call last):
+  File "/var/www/projects/myenv/bin/daphne", line 11, in <module>
+    sys.exit(CommandLineInterface.entrypoint())
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 191, in entrypoint
+    cls().run(sys.argv[1:])
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 252, in run
+    application = import_by_path(args.application)
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/utils.py", line 14, in import_by_path
+    target = getattr(target, bit)
+AttributeError: module 'chat.asgi' has no attribute 'channel_layer'
+Traceback (most recent call last):
+  File "/var/www/projects/myenv/bin/daphne", line 11, in <module>
+    sys.exit(CommandLineInterface.entrypoint())
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 191, in entrypoint
+    cls().run(sys.argv[1:])
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 252, in run
+    application = import_by_path(args.application)
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/utils.py", line 14, in import_by_path
+    target = getattr(target, bit)
+AttributeError: module 'chat.asgi' has no attribute 'channel_layer'
+Traceback (most recent call last):
+  File "/var/www/projects/myenv/bin/daphne", line 11, in <module>
+    sys.exit(CommandLineInterface.entrypoint())
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 191, in entrypoint
+    cls().run(sys.argv[1:])
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 252, in run
+    application = import_by_path(args.application)
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/utils.py", line 14, in import_by_path
+    target = getattr(target, bit)
+AttributeError: module 'chat.asgi' has no attribute 'channel_layer'
+Traceback (most recent call last):
+  File "/var/www/projects/myenv/bin/daphne", line 11, in <module>
+    sys.exit(CommandLineInterface.entrypoint())
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 191, in entrypoint
+    cls().run(sys.argv[1:])
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 252, in run
+    application = import_by_path(args.application)
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/utils.py", line 14, in import_by_path
+    target = getattr(target, bit)
+AttributeError: module 'chat.asgi' has no attribute 'channel_layer'
+Traceback (most recent call last):
+  File "/var/www/projects/myenv/bin/daphne", line 11, in <module>
+    sys.exit(CommandLineInterface.entrypoint())
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 191, in entrypoint
+    cls().run(sys.argv[1:])
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 252, in run
+    application = import_by_path(args.application)
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/utils.py", line 14, in import_by_path
+    target = getattr(target, bit)
+AttributeError: module 'chat.asgi' has no attribute 'channel_layer'
+Traceback (most recent call last):
+  File "/var/www/projects/myenv/bin/daphne", line 11, in <module>
+    sys.exit(CommandLineInterface.entrypoint())
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 191, in entrypoint
+    cls().run(sys.argv[1:])
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 252, in run
+    application = import_by_path(args.application)
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/utils.py", line 14, in import_by_path
+    target = getattr(target, bit)
+AttributeError: module 'chat.asgi' has no attribute 'channel_layer'
+Traceback (most recent call last):
+  File "/var/www/projects/myenv/bin/daphne", line 11, in <module>
+    sys.exit(CommandLineInterface.entrypoint())
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 191, in entrypoint
+    cls().run(sys.argv[1:])
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 252, in run
+    application = import_by_path(args.application)
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/utils.py", line 14, in import_by_path
+    target = getattr(target, bit)
+AttributeError: module 'chat.asgi' has no attribute 'channel_layer'
+Traceback (most recent call last):
+  File "/var/www/projects/myenv/bin/daphne", line 11, in <module>
+    sys.exit(CommandLineInterface.entrypoint())
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 191, in entrypoint
+    cls().run(sys.argv[1:])
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 252, in run
+    application = import_by_path(args.application)
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/utils.py", line 14, in import_by_path
+    target = getattr(target, bit)
+AttributeError: module 'chat.asgi' has no attribute 'channel_layer'
+Traceback (most recent call last):
+  File "/var/www/projects/myenv/bin/daphne", line 11, in <module>
+    sys.exit(CommandLineInterface.entrypoint())
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 191, in entrypoint
+    cls().run(sys.argv[1:])
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 252, in run
+    application = import_by_path(args.application)
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/utils.py", line 14, in import_by_path
+    target = getattr(target, bit)
+AttributeError: module 'chat.asgi' has no attribute 'channel_layer'
+Traceback (most recent call last):
+  File "/var/www/projects/myenv/bin/daphne", line 11, in <module>
+    sys.exit(CommandLineInterface.entrypoint())
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 191, in entrypoint
+    cls().run(sys.argv[1:])
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 252, in run
+    application = import_by_path(args.application)
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/utils.py", line 14, in import_by_path
+    target = getattr(target, bit)
+AttributeError: module 'chat.asgi' has no attribute 'channel_layer'
+Traceback (most recent call last):
+  File "/var/www/projects/myenv/bin/daphne", line 11, in <module>
+    sys.exit(CommandLineInterface.entrypoint())
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 191, in entrypoint
+    cls().run(sys.argv[1:])
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 252, in run
+    application = import_by_path(args.application)
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/utils.py", line 14, in import_by_path
+    target = getattr(target, bit)
+AttributeError: module 'chat.asgi' has no attribute 'channel_layer'
+Traceback (most recent call last):
+  File "/var/www/projects/myenv/bin/daphne", line 11, in <module>
+    sys.exit(CommandLineInterface.entrypoint())
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 191, in entrypoint
+    cls().run(sys.argv[1:])
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 252, in run
+    application = import_by_path(args.application)
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/utils.py", line 14, in import_by_path
+    target = getattr(target, bit)
+AttributeError: module 'chat.asgi' has no attribute 'channel_layer'
+Traceback (most recent call last):
+  File "/var/www/projects/myenv/bin/daphne", line 11, in <module>
+    sys.exit(CommandLineInterface.entrypoint())
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 191, in entrypoint
+    cls().run(sys.argv[1:])
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 252, in run
+    application = import_by_path(args.application)
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/utils.py", line 14, in import_by_path
+    target = getattr(target, bit)
+AttributeError: module 'chat.asgi' has no attribute 'channel_layer'
+Traceback (most recent call last):
+  File "/var/www/projects/myenv/bin/daphne", line 11, in <module>
+    sys.exit(CommandLineInterface.entrypoint())
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 191, in entrypoint
+    cls().run(sys.argv[1:])
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 252, in run
+    application = import_by_path(args.application)
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/utils.py", line 14, in import_by_path
+    target = getattr(target, bit)
+AttributeError: module 'chat.asgi' has no attribute 'channel_layer'
+Traceback (most recent call last):
+  File "/var/www/projects/myenv/bin/daphne", line 11, in <module>
+    sys.exit(CommandLineInterface.entrypoint())
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 191, in entrypoint
+    cls().run(sys.argv[1:])
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 252, in run
+    application = import_by_path(args.application)
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/utils.py", line 14, in import_by_path
+    target = getattr(target, bit)
+AttributeError: module 'chat.asgi' has no attribute 'channel_layer'
+Traceback (most recent call last):
+  File "/var/www/projects/myenv/bin/daphne", line 11, in <module>
+    sys.exit(CommandLineInterface.entrypoint())
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 191, in entrypoint
+    cls().run(sys.argv[1:])
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 252, in run
+    application = import_by_path(args.application)
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/utils.py", line 14, in import_by_path
+    target = getattr(target, bit)
+AttributeError: module 'chat.asgi' has no attribute 'channel_layer'
+Traceback (most recent call last):
+  File "/var/www/projects/myenv/bin/daphne", line 11, in <module>
+    sys.exit(CommandLineInterface.entrypoint())
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 191, in entrypoint
+    cls().run(sys.argv[1:])
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 252, in run
+    application = import_by_path(args.application)
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/utils.py", line 14, in import_by_path
+    target = getattr(target, bit)
+AttributeError: module 'chat.asgi' has no attribute 'channel_layer'
+Traceback (most recent call last):
+  File "/var/www/projects/myenv/bin/daphne", line 11, in <module>
+    sys.exit(CommandLineInterface.entrypoint())
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 191, in entrypoint
+    cls().run(sys.argv[1:])
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 252, in run
+    application = import_by_path(args.application)
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/utils.py", line 14, in import_by_path
+    target = getattr(target, bit)
+AttributeError: module 'chat.asgi' has no attribute 'channel_layer'
+Traceback (most recent call last):
+  File "/var/www/projects/myenv/bin/daphne", line 11, in <module>
+    sys.exit(CommandLineInterface.entrypoint())
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 191, in entrypoint
+    cls().run(sys.argv[1:])
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 252, in run
+    application = import_by_path(args.application)
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/utils.py", line 14, in import_by_path
+    target = getattr(target, bit)
+AttributeError: module 'chat.asgi' has no attribute 'channel_layer'
+Traceback (most recent call last):
+  File "/var/www/projects/myenv/bin/daphne", line 11, in <module>
+    sys.exit(CommandLineInterface.entrypoint())
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 191, in entrypoint
+    cls().run(sys.argv[1:])
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 252, in run
+    application = import_by_path(args.application)
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/utils.py", line 14, in import_by_path
+    target = getattr(target, bit)
+AttributeError: module 'chat.asgi' has no attribute 'channel_layer'
+Traceback (most recent call last):
+  File "/var/www/projects/myenv/bin/daphne", line 11, in <module>
+    sys.exit(CommandLineInterface.entrypoint())
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 191, in entrypoint
+    cls().run(sys.argv[1:])
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 252, in run
+    application = import_by_path(args.application)
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/utils.py", line 14, in import_by_path
+    target = getattr(target, bit)
+AttributeError: module 'chat.asgi' has no attribute 'channel_layer'
+Traceback (most recent call last):
+  File "/var/www/projects/myenv/bin/daphne", line 11, in <module>
+    sys.exit(CommandLineInterface.entrypoint())
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 191, in entrypoint
+    cls().run(sys.argv[1:])
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 252, in run
+    application = import_by_path(args.application)
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/utils.py", line 14, in import_by_path
+    target = getattr(target, bit)
+AttributeError: module 'chat.asgi' has no attribute 'channel_layer'
+Traceback (most recent call last):
+  File "/var/www/projects/myenv/bin/daphne", line 11, in <module>
+    sys.exit(CommandLineInterface.entrypoint())
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 191, in entrypoint
+    cls().run(sys.argv[1:])
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 252, in run
+    application = import_by_path(args.application)
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/utils.py", line 14, in import_by_path
+    target = getattr(target, bit)
+AttributeError: module 'chat.asgi' has no attribute 'channel_layer'
+Traceback (most recent call last):
+  File "/var/www/projects/myenv/bin/daphne", line 11, in <module>
+    sys.exit(CommandLineInterface.entrypoint())
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 191, in entrypoint
+    cls().run(sys.argv[1:])
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 252, in run
+    application = import_by_path(args.application)
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/utils.py", line 14, in import_by_path
+    target = getattr(target, bit)
+AttributeError: module 'chat.asgi' has no attribute 'channel_layer'
+Traceback (most recent call last):
+  File "/var/www/projects/myenv/bin/daphne", line 11, in <module>
+    sys.exit(CommandLineInterface.entrypoint())
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 191, in entrypoint
+    cls().run(sys.argv[1:])
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 252, in run
+    application = import_by_path(args.application)
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/utils.py", line 14, in import_by_path
+    target = getattr(target, bit)
+AttributeError: module 'chat.asgi' has no attribute 'channel_layer'
+Traceback (most recent call last):
+  File "/var/www/projects/myenv/bin/daphne", line 11, in <module>
+    sys.exit(CommandLineInterface.entrypoint())
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 191, in entrypoint
+    cls().run(sys.argv[1:])
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 252, in run
+    application = import_by_path(args.application)
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/utils.py", line 14, in import_by_path
+    target = getattr(target, bit)
+AttributeError: module 'chat.asgi' has no attribute 'channel_layer'
+Traceback (most recent call last):
+  File "/var/www/projects/myenv/bin/daphne", line 11, in <module>
+    sys.exit(CommandLineInterface.entrypoint())
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 191, in entrypoint
+    cls().run(sys.argv[1:])
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 252, in run
+    application = import_by_path(args.application)
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/utils.py", line 14, in import_by_path
+    target = getattr(target, bit)
+AttributeError: module 'chat.asgi' has no attribute 'channel_layer'
+Traceback (most recent call last):
+  File "/var/www/projects/myenv/bin/daphne", line 11, in <module>
+    sys.exit(CommandLineInterface.entrypoint())
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 191, in entrypoint
+    cls().run(sys.argv[1:])
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 252, in run
+    application = import_by_path(args.application)
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/utils.py", line 14, in import_by_path
+    target = getattr(target, bit)
+AttributeError: module 'chat.asgi' has no attribute 'channel_layer'
+Traceback (most recent call last):
+  File "/var/www/projects/myenv/bin/daphne", line 11, in <module>
+    sys.exit(CommandLineInterface.entrypoint())
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 191, in entrypoint
+    cls().run(sys.argv[1:])
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 252, in run
+    application = import_by_path(args.application)
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/utils.py", line 14, in import_by_path
+    target = getattr(target, bit)
+AttributeError: module 'chat.asgi' has no attribute 'channel_layer'
+Traceback (most recent call last):
+  File "/var/www/projects/myenv/bin/daphne", line 11, in <module>
+    sys.exit(CommandLineInterface.entrypoint())
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 191, in entrypoint
+    cls().run(sys.argv[1:])
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 252, in run
+    application = import_by_path(args.application)
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/utils.py", line 14, in import_by_path
+    target = getattr(target, bit)
+AttributeError: module 'chat.asgi' has no attribute 'channel_layer'
+Traceback (most recent call last):
+  File "/var/www/projects/myenv/bin/daphne", line 11, in <module>
+    sys.exit(CommandLineInterface.entrypoint())
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 191, in entrypoint
+    cls().run(sys.argv[1:])
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 252, in run
+    application = import_by_path(args.application)
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/utils.py", line 14, in import_by_path
+    target = getattr(target, bit)
+AttributeError: module 'chat.asgi' has no attribute 'channel_layer'
+Traceback (most recent call last):
+  File "/var/www/projects/myenv/bin/daphne", line 11, in <module>
+    sys.exit(CommandLineInterface.entrypoint())
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 191, in entrypoint
+    cls().run(sys.argv[1:])
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 252, in run
+    application = import_by_path(args.application)
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/utils.py", line 14, in import_by_path
+    target = getattr(target, bit)
+AttributeError: module 'chat.asgi' has no attribute 'channel_layer'
+Traceback (most recent call last):
+  File "/var/www/projects/myenv/bin/daphne", line 11, in <module>
+    sys.exit(CommandLineInterface.entrypoint())
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 191, in entrypoint
+    cls().run(sys.argv[1:])
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 252, in run
+    application = import_by_path(args.application)
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/utils.py", line 14, in import_by_path
+    target = getattr(target, bit)
+AttributeError: module 'chat.asgi' has no attribute 'channel_layer'
+Traceback (most recent call last):
+  File "/var/www/projects/myenv/bin/daphne", line 11, in <module>
+    sys.exit(CommandLineInterface.entrypoint())
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 191, in entrypoint
+    cls().run(sys.argv[1:])
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 252, in run
+    application = import_by_path(args.application)
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/utils.py", line 14, in import_by_path
+    target = getattr(target, bit)
+AttributeError: module 'chat.asgi' has no attribute 'channel_layer'
+Traceback (most recent call last):
+  File "/var/www/projects/myenv/bin/daphne", line 11, in <module>
+    sys.exit(CommandLineInterface.entrypoint())
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 191, in entrypoint
+    cls().run(sys.argv[1:])
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 252, in run
+    application = import_by_path(args.application)
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/utils.py", line 14, in import_by_path
+    target = getattr(target, bit)
+AttributeError: module 'chat.asgi' has no attribute 'channel_layer'
+Traceback (most recent call last):
+  File "/var/www/projects/myenv/bin/daphne", line 11, in <module>
+    sys.exit(CommandLineInterface.entrypoint())
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 191, in entrypoint
+    cls().run(sys.argv[1:])
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 252, in run
+    application = import_by_path(args.application)
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/utils.py", line 14, in import_by_path
+    target = getattr(target, bit)
+AttributeError: module 'chat.asgi' has no attribute 'channel_layer'
+Traceback (most recent call last):
+  File "/var/www/projects/myenv/bin/daphne", line 11, in <module>
+    sys.exit(CommandLineInterface.entrypoint())
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 191, in entrypoint
+    cls().run(sys.argv[1:])
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 252, in run
+    application = import_by_path(args.application)
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/utils.py", line 14, in import_by_path
+    target = getattr(target, bit)
+AttributeError: module 'chat.asgi' has no attribute 'channel_layer'
+Traceback (most recent call last):
+  File "/var/www/projects/myenv/bin/daphne", line 11, in <module>
+    sys.exit(CommandLineInterface.entrypoint())
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 191, in entrypoint
+    cls().run(sys.argv[1:])
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 252, in run
+    application = import_by_path(args.application)
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/utils.py", line 14, in import_by_path
+    target = getattr(target, bit)
+AttributeError: module 'chat.asgi' has no attribute 'channel_layer'
+Traceback (most recent call last):
+  File "/var/www/projects/myenv/bin/daphne", line 11, in <module>
+    sys.exit(CommandLineInterface.entrypoint())
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 191, in entrypoint
+    cls().run(sys.argv[1:])
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 252, in run
+    application = import_by_path(args.application)
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/utils.py", line 14, in import_by_path
+    target = getattr(target, bit)
+AttributeError: module 'chat.asgi' has no attribute 'channel_layer'
+Traceback (most recent call last):
+  File "/var/www/projects/myenv/bin/daphne", line 11, in <module>
+    sys.exit(CommandLineInterface.entrypoint())
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 191, in entrypoint
+    cls().run(sys.argv[1:])
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 252, in run
+    application = import_by_path(args.application)
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/utils.py", line 14, in import_by_path
+    target = getattr(target, bit)
+AttributeError: module 'chat.asgi' has no attribute 'channel_layer'
+Traceback (most recent call last):
+  File "/var/www/projects/myenv/bin/daphne", line 11, in <module>
+    sys.exit(CommandLineInterface.entrypoint())
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 191, in entrypoint
+    cls().run(sys.argv[1:])
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 252, in run
+    application = import_by_path(args.application)
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/utils.py", line 14, in import_by_path
+    target = getattr(target, bit)
+AttributeError: module 'chat.asgi' has no attribute 'channel_layer'
+Traceback (most recent call last):
+  File "/var/www/projects/myenv/bin/daphne", line 11, in <module>
+    sys.exit(CommandLineInterface.entrypoint())
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 191, in entrypoint
+    cls().run(sys.argv[1:])
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 252, in run
+    application = import_by_path(args.application)
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/utils.py", line 14, in import_by_path
+    target = getattr(target, bit)
+AttributeError: module 'chat.asgi' has no attribute 'channel_layer'
+Traceback (most recent call last):
+  File "/var/www/projects/myenv/bin/daphne", line 11, in <module>
+    sys.exit(CommandLineInterface.entrypoint())
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 191, in entrypoint
+    cls().run(sys.argv[1:])
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 252, in run
+    application = import_by_path(args.application)
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/utils.py", line 14, in import_by_path
+    target = getattr(target, bit)
+AttributeError: module 'chat.asgi' has no attribute 'channel_layer'
+Traceback (most recent call last):
+  File "/var/www/projects/myenv/bin/daphne", line 11, in <module>
+    sys.exit(CommandLineInterface.entrypoint())
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 191, in entrypoint
+    cls().run(sys.argv[1:])
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 252, in run
+    application = import_by_path(args.application)
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/utils.py", line 14, in import_by_path
+    target = getattr(target, bit)
+AttributeError: module 'chat.asgi' has no attribute 'channel_layer'
+Traceback (most recent call last):
+  File "/var/www/projects/myenv/bin/daphne", line 11, in <module>
+    sys.exit(CommandLineInterface.entrypoint())
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 191, in entrypoint
+    cls().run(sys.argv[1:])
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 252, in run
+    application = import_by_path(args.application)
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/utils.py", line 14, in import_by_path
+    target = getattr(target, bit)
+AttributeError: module 'chat.asgi' has no attribute 'channel_layer'
+Traceback (most recent call last):
+  File "/var/www/projects/myenv/bin/daphne", line 11, in <module>
+    sys.exit(CommandLineInterface.entrypoint())
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 191, in entrypoint
+    cls().run(sys.argv[1:])
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 252, in run
+    application = import_by_path(args.application)
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/utils.py", line 14, in import_by_path
+    target = getattr(target, bit)
+AttributeError: module 'chat.asgi' has no attribute 'channel_layer'
+Traceback (most recent call last):
+  File "/var/www/projects/myenv/bin/daphne", line 11, in <module>
+    sys.exit(CommandLineInterface.entrypoint())
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 191, in entrypoint
+    cls().run(sys.argv[1:])
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 252, in run
+    application = import_by_path(args.application)
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/utils.py", line 14, in import_by_path
+    target = getattr(target, bit)
+AttributeError: module 'chat.asgi' has no attribute 'channel_layer'
+Traceback (most recent call last):
+  File "/var/www/projects/myenv/bin/daphne", line 11, in <module>
+    sys.exit(CommandLineInterface.entrypoint())
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 191, in entrypoint
+    cls().run(sys.argv[1:])
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 252, in run
+    application = import_by_path(args.application)
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/utils.py", line 14, in import_by_path
+    target = getattr(target, bit)
+AttributeError: module 'chat.asgi' has no attribute 'channel_layer'
+Traceback (most recent call last):
+  File "/var/www/projects/myenv/bin/daphne", line 11, in <module>
+    sys.exit(CommandLineInterface.entrypoint())
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 191, in entrypoint
+    cls().run(sys.argv[1:])
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 252, in run
+    application = import_by_path(args.application)
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/utils.py", line 14, in import_by_path
+    target = getattr(target, bit)
+AttributeError: module 'chat.asgi' has no attribute 'channel_layer'
+Traceback (most recent call last):
+  File "/var/www/projects/myenv/bin/daphne", line 11, in <module>
+    sys.exit(CommandLineInterface.entrypoint())
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 191, in entrypoint
+    cls().run(sys.argv[1:])
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 252, in run
+    application = import_by_path(args.application)
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/utils.py", line 14, in import_by_path
+    target = getattr(target, bit)
+AttributeError: module 'chat.asgi' has no attribute 'channel_layer'
+Traceback (most recent call last):
+  File "/var/www/projects/myenv/bin/daphne", line 11, in <module>
+    sys.exit(CommandLineInterface.entrypoint())
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 191, in entrypoint
+    cls().run(sys.argv[1:])
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 252, in run
+    application = import_by_path(args.application)
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/utils.py", line 14, in import_by_path
+    target = getattr(target, bit)
+AttributeError: module 'chat.asgi' has no attribute 'channel_layer'
+Traceback (most recent call last):
+  File "/var/www/projects/myenv/bin/daphne", line 11, in <module>
+    sys.exit(CommandLineInterface.entrypoint())
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 191, in entrypoint
+    cls().run(sys.argv[1:])
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 252, in run
+    application = import_by_path(args.application)
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/utils.py", line 14, in import_by_path
+    target = getattr(target, bit)
+AttributeError: module 'chat.asgi' has no attribute 'channel_layer'
+Traceback (most recent call last):
+  File "/var/www/projects/myenv/bin/daphne", line 11, in <module>
+    sys.exit(CommandLineInterface.entrypoint())
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 191, in entrypoint
+    cls().run(sys.argv[1:])
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 252, in run
+    application = import_by_path(args.application)
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/utils.py", line 14, in import_by_path
+    target = getattr(target, bit)
+AttributeError: module 'chat.asgi' has no attribute 'channel_layer'
+Traceback (most recent call last):
+  File "/var/www/projects/myenv/bin/daphne", line 11, in <module>
+    sys.exit(CommandLineInterface.entrypoint())
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 191, in entrypoint
+    cls().run(sys.argv[1:])
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 252, in run
+    application = import_by_path(args.application)
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/utils.py", line 14, in import_by_path
+    target = getattr(target, bit)
+AttributeError: module 'chat.asgi' has no attribute 'channel_layer'
+Traceback (most recent call last):
+  File "/var/www/projects/myenv/bin/daphne", line 11, in <module>
+    sys.exit(CommandLineInterface.entrypoint())
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 191, in entrypoint
+    cls().run(sys.argv[1:])
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 252, in run
+    application = import_by_path(args.application)
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/utils.py", line 14, in import_by_path
+    target = getattr(target, bit)
+AttributeError: module 'chat.asgi' has no attribute 'channel_layer'
+Traceback (most recent call last):
+  File "/var/www/projects/myenv/bin/daphne", line 11, in <module>
+    sys.exit(CommandLineInterface.entrypoint())
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 191, in entrypoint
+    cls().run(sys.argv[1:])
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 252, in run
+    application = import_by_path(args.application)
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/utils.py", line 14, in import_by_path
+    target = getattr(target, bit)
+AttributeError: module 'chat.asgi' has no attribute 'channel_layer'
+Traceback (most recent call last):
+  File "/var/www/projects/myenv/bin/daphne", line 11, in <module>
+    sys.exit(CommandLineInterface.entrypoint())
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 191, in entrypoint
+    cls().run(sys.argv[1:])
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 252, in run
+    application = import_by_path(args.application)
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/utils.py", line 14, in import_by_path
+    target = getattr(target, bit)
+AttributeError: module 'chat.asgi' has no attribute 'channel_layer'
+Traceback (most recent call last):
+  File "/var/www/projects/myenv/bin/daphne", line 11, in <module>
+    sys.exit(CommandLineInterface.entrypoint())
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 191, in entrypoint
+    cls().run(sys.argv[1:])
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 252, in run
+    application = import_by_path(args.application)
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/utils.py", line 14, in import_by_path
+    target = getattr(target, bit)
+AttributeError: module 'chat.asgi' has no attribute 'channel_layer'
+Traceback (most recent call last):
+  File "/var/www/projects/myenv/bin/daphne", line 11, in <module>
+    sys.exit(CommandLineInterface.entrypoint())
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 191, in entrypoint
+    cls().run(sys.argv[1:])
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 252, in run
+    application = import_by_path(args.application)
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/utils.py", line 14, in import_by_path
+    target = getattr(target, bit)
+AttributeError: module 'chat.asgi' has no attribute 'channel_layer'
+Traceback (most recent call last):
+  File "/var/www/projects/myenv/bin/daphne", line 11, in <module>
+    sys.exit(CommandLineInterface.entrypoint())
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 191, in entrypoint
+    cls().run(sys.argv[1:])
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 252, in run
+    application = import_by_path(args.application)
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/utils.py", line 14, in import_by_path
+    target = getattr(target, bit)
+AttributeError: module 'chat.asgi' has no attribute 'channel_layer'
+Traceback (most recent call last):
+  File "/var/www/projects/myenv/bin/daphne", line 11, in <module>
+    sys.exit(CommandLineInterface.entrypoint())
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 191, in entrypoint
+    cls().run(sys.argv[1:])
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 252, in run
+    application = import_by_path(args.application)
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/utils.py", line 14, in import_by_path
+    target = getattr(target, bit)
+AttributeError: module 'chat.asgi' has no attribute 'channel_layer'
+Traceback (most recent call last):
+  File "/var/www/projects/myenv/bin/daphne", line 11, in <module>
+    sys.exit(CommandLineInterface.entrypoint())
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 191, in entrypoint
+    cls().run(sys.argv[1:])
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 252, in run
+    application = import_by_path(args.application)
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/utils.py", line 14, in import_by_path
+    target = getattr(target, bit)
+AttributeError: module 'chat.asgi' has no attribute 'channel_layer'
+Traceback (most recent call last):
+  File "/var/www/projects/myenv/bin/daphne", line 11, in <module>
+    sys.exit(CommandLineInterface.entrypoint())
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 191, in entrypoint
+    cls().run(sys.argv[1:])
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 252, in run
+    application = import_by_path(args.application)
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/utils.py", line 14, in import_by_path
+    target = getattr(target, bit)
+AttributeError: module 'chat.asgi' has no attribute 'channel_layer'
+Traceback (most recent call last):
+  File "/var/www/projects/myenv/bin/daphne", line 11, in <module>
+    sys.exit(CommandLineInterface.entrypoint())
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 191, in entrypoint
+    cls().run(sys.argv[1:])
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 252, in run
+    application = import_by_path(args.application)
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/utils.py", line 14, in import_by_path
+    target = getattr(target, bit)
+AttributeError: module 'chat.asgi' has no attribute 'channel_layer'
+Traceback (most recent call last):
+  File "/var/www/projects/myenv/bin/daphne", line 11, in <module>
+    sys.exit(CommandLineInterface.entrypoint())
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 191, in entrypoint
+    cls().run(sys.argv[1:])
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 252, in run
+    application = import_by_path(args.application)
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/utils.py", line 14, in import_by_path
+    target = getattr(target, bit)
+AttributeError: module 'chat.asgi' has no attribute 'channel_layer'
+Traceback (most recent call last):
+  File "/var/www/projects/myenv/bin/daphne", line 11, in <module>
+    sys.exit(CommandLineInterface.entrypoint())
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 191, in entrypoint
+    cls().run(sys.argv[1:])
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 252, in run
+    application = import_by_path(args.application)
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/utils.py", line 14, in import_by_path
+    target = getattr(target, bit)
+AttributeError: module 'chat.asgi' has no attribute 'channel_layer'
+Traceback (most recent call last):
+  File "/var/www/projects/myenv/bin/daphne", line 11, in <module>
+    sys.exit(CommandLineInterface.entrypoint())
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 191, in entrypoint
+    cls().run(sys.argv[1:])
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 252, in run
+    application = import_by_path(args.application)
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/utils.py", line 14, in import_by_path
+    target = getattr(target, bit)
+AttributeError: module 'chat.asgi' has no attribute 'channel_layer'
+Traceback (most recent call last):
+  File "/var/www/projects/myenv/bin/daphne", line 11, in <module>
+    sys.exit(CommandLineInterface.entrypoint())
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 191, in entrypoint
+    cls().run(sys.argv[1:])
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 252, in run
+    application = import_by_path(args.application)
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/utils.py", line 14, in import_by_path
+    target = getattr(target, bit)
+AttributeError: module 'chat.asgi' has no attribute 'channel_layer'
+Traceback (most recent call last):
+  File "/var/www/projects/myenv/bin/daphne", line 11, in <module>
+    sys.exit(CommandLineInterface.entrypoint())
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 191, in entrypoint
+    cls().run(sys.argv[1:])
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 252, in run
+    application = import_by_path(args.application)
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/utils.py", line 14, in import_by_path
+    target = getattr(target, bit)
+AttributeError: module 'chat.asgi' has no attribute 'channel_layer'
+Traceback (most recent call last):
+  File "/var/www/projects/myenv/bin/daphne", line 11, in <module>
+    sys.exit(CommandLineInterface.entrypoint())
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 191, in entrypoint
+    cls().run(sys.argv[1:])
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 252, in run
+    application = import_by_path(args.application)
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/utils.py", line 14, in import_by_path
+    target = getattr(target, bit)
+AttributeError: module 'chat.asgi' has no attribute 'channel_layer'
+Traceback (most recent call last):
+  File "/var/www/projects/myenv/bin/daphne", line 11, in <module>
+    sys.exit(CommandLineInterface.entrypoint())
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 191, in entrypoint
+    cls().run(sys.argv[1:])
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 252, in run
+    application = import_by_path(args.application)
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/utils.py", line 14, in import_by_path
+    target = getattr(target, bit)
+AttributeError: module 'chat.asgi' has no attribute 'channel_layer'
+Traceback (most recent call last):
+  File "/var/www/projects/myenv/bin/daphne", line 11, in <module>
+    sys.exit(CommandLineInterface.entrypoint())
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 191, in entrypoint
+    cls().run(sys.argv[1:])
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 252, in run
+    application = import_by_path(args.application)
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/utils.py", line 14, in import_by_path
+    target = getattr(target, bit)
+AttributeError: module 'chat.asgi' has no attribute 'channel_layer'
+Traceback (most recent call last):
+  File "/var/www/projects/myenv/bin/daphne", line 11, in <module>
+    sys.exit(CommandLineInterface.entrypoint())
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 191, in entrypoint
+    cls().run(sys.argv[1:])
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 252, in run
+    application = import_by_path(args.application)
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/utils.py", line 14, in import_by_path
+    target = getattr(target, bit)
+AttributeError: module 'chat.asgi' has no attribute 'channel_layer'
+Traceback (most recent call last):
+  File "/var/www/projects/myenv/bin/daphne", line 11, in <module>
+    sys.exit(CommandLineInterface.entrypoint())
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 191, in entrypoint
+    cls().run(sys.argv[1:])
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 252, in run
+    application = import_by_path(args.application)
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/utils.py", line 14, in import_by_path
+    target = getattr(target, bit)
+AttributeError: module 'chat.asgi' has no attribute 'channel_layer'
+Traceback (most recent call last):
+  File "/var/www/projects/myenv/bin/daphne", line 11, in <module>
+    sys.exit(CommandLineInterface.entrypoint())
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 191, in entrypoint
+    cls().run(sys.argv[1:])
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 252, in run
+    application = import_by_path(args.application)
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/utils.py", line 14, in import_by_path
+    target = getattr(target, bit)
+AttributeError: module 'chat.asgi' has no attribute 'channel_layer'
+Traceback (most recent call last):
+  File "/var/www/projects/myenv/bin/daphne", line 11, in <module>
+    sys.exit(CommandLineInterface.entrypoint())
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 191, in entrypoint
+    cls().run(sys.argv[1:])
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 252, in run
+    application = import_by_path(args.application)
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/utils.py", line 14, in import_by_path
+    target = getattr(target, bit)
+AttributeError: module 'chat.asgi' has no attribute 'channel_layer'
+Traceback (most recent call last):
+  File "/var/www/projects/myenv/bin/daphne", line 11, in <module>
+    sys.exit(CommandLineInterface.entrypoint())
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 191, in entrypoint
+    cls().run(sys.argv[1:])
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 252, in run
+    application = import_by_path(args.application)
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/utils.py", line 14, in import_by_path
+    target = getattr(target, bit)
+AttributeError: module 'chat.asgi' has no attribute 'channel_layer'
+Traceback (most recent call last):
+  File "/var/www/projects/myenv/bin/daphne", line 11, in <module>
+    sys.exit(CommandLineInterface.entrypoint())
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 191, in entrypoint
+    cls().run(sys.argv[1:])
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 252, in run
+    application = import_by_path(args.application)
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/utils.py", line 14, in import_by_path
+    target = getattr(target, bit)
+AttributeError: module 'chat.asgi' has no attribute 'channel_layer'
+Traceback (most recent call last):
+  File "/var/www/projects/myenv/bin/daphne", line 11, in <module>
+    sys.exit(CommandLineInterface.entrypoint())
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 191, in entrypoint
+    cls().run(sys.argv[1:])
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 252, in run
+    application = import_by_path(args.application)
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/utils.py", line 14, in import_by_path
+    target = getattr(target, bit)
+AttributeError: module 'chat.asgi' has no attribute 'channel_layer'
+Traceback (most recent call last):
+  File "/var/www/projects/myenv/bin/daphne", line 11, in <module>
+    sys.exit(CommandLineInterface.entrypoint())
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 191, in entrypoint
+    cls().run(sys.argv[1:])
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 252, in run
+    application = import_by_path(args.application)
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/utils.py", line 14, in import_by_path
+    target = getattr(target, bit)
+AttributeError: module 'chat.asgi' has no attribute 'channel_layer'
+Traceback (most recent call last):
+  File "/var/www/projects/myenv/bin/daphne", line 11, in <module>
+    sys.exit(CommandLineInterface.entrypoint())
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 191, in entrypoint
+    cls().run(sys.argv[1:])
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 252, in run
+    application = import_by_path(args.application)
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/utils.py", line 14, in import_by_path
+    target = getattr(target, bit)
+AttributeError: module 'chat.asgi' has no attribute 'channel_layer'
+Traceback (most recent call last):
+  File "/var/www/projects/myenv/bin/daphne", line 11, in <module>
+    sys.exit(CommandLineInterface.entrypoint())
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 191, in entrypoint
+    cls().run(sys.argv[1:])
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 252, in run
+    application = import_by_path(args.application)
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/utils.py", line 14, in import_by_path
+    target = getattr(target, bit)
+AttributeError: module 'chat.asgi' has no attribute 'channel_layer'
+Traceback (most recent call last):
+  File "/var/www/projects/myenv/bin/daphne", line 11, in <module>
+    sys.exit(CommandLineInterface.entrypoint())
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 191, in entrypoint
+    cls().run(sys.argv[1:])
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 252, in run
+    application = import_by_path(args.application)
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/utils.py", line 14, in import_by_path
+    target = getattr(target, bit)
+AttributeError: module 'chat.asgi' has no attribute 'channel_layer'
+Traceback (most recent call last):
+  File "/var/www/projects/myenv/bin/daphne", line 11, in <module>
+    sys.exit(CommandLineInterface.entrypoint())
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 191, in entrypoint
+    cls().run(sys.argv[1:])
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 252, in run
+    application = import_by_path(args.application)
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/utils.py", line 14, in import_by_path
+    target = getattr(target, bit)
+AttributeError: module 'chat.asgi' has no attribute 'channel_layer'
+Traceback (most recent call last):
+  File "/var/www/projects/myenv/bin/daphne", line 11, in <module>
+    sys.exit(CommandLineInterface.entrypoint())
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 191, in entrypoint
+    cls().run(sys.argv[1:])
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 252, in run
+    application = import_by_path(args.application)
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/utils.py", line 14, in import_by_path
+    target = getattr(target, bit)
+AttributeError: module 'chat.asgi' has no attribute 'channel_layer'
+Traceback (most recent call last):
+  File "/var/www/projects/myenv/bin/daphne", line 11, in <module>
+    sys.exit(CommandLineInterface.entrypoint())
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 191, in entrypoint
+    cls().run(sys.argv[1:])
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 252, in run
+    application = import_by_path(args.application)
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/utils.py", line 14, in import_by_path
+    target = getattr(target, bit)
+AttributeError: module 'chat.asgi' has no attribute 'channel_layer'
+Traceback (most recent call last):
+  File "/var/www/projects/myenv/bin/daphne", line 11, in <module>
+    sys.exit(CommandLineInterface.entrypoint())
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 191, in entrypoint
+    cls().run(sys.argv[1:])
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 252, in run
+    application = import_by_path(args.application)
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/utils.py", line 14, in import_by_path
+    target = getattr(target, bit)
+AttributeError: module 'chat.asgi' has no attribute 'channel_layer'
+Traceback (most recent call last):
+  File "/var/www/projects/myenv/bin/daphne", line 11, in <module>
+    sys.exit(CommandLineInterface.entrypoint())
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 191, in entrypoint
+    cls().run(sys.argv[1:])
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 252, in run
+    application = import_by_path(args.application)
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/utils.py", line 14, in import_by_path
+    target = getattr(target, bit)
+AttributeError: module 'chat.asgi' has no attribute 'channel_layer'
+Traceback (most recent call last):
+  File "/var/www/projects/myenv/bin/daphne", line 11, in <module>
+    sys.exit(CommandLineInterface.entrypoint())
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 191, in entrypoint
+    cls().run(sys.argv[1:])
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 252, in run
+    application = import_by_path(args.application)
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/utils.py", line 14, in import_by_path
+    target = getattr(target, bit)
+AttributeError: module 'chat.asgi' has no attribute 'channel_layer'
+Traceback (most recent call last):
+  File "/var/www/projects/myenv/bin/daphne", line 11, in <module>
+    sys.exit(CommandLineInterface.entrypoint())
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 191, in entrypoint
+    cls().run(sys.argv[1:])
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 252, in run
+    application = import_by_path(args.application)
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/utils.py", line 14, in import_by_path
+    target = getattr(target, bit)
+AttributeError: module 'chat.asgi' has no attribute 'channel_layer'
+Traceback (most recent call last):
+  File "/var/www/projects/myenv/bin/daphne", line 11, in <module>
+    sys.exit(CommandLineInterface.entrypoint())
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 191, in entrypoint
+    cls().run(sys.argv[1:])
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 252, in run
+    application = import_by_path(args.application)
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/utils.py", line 14, in import_by_path
+    target = getattr(target, bit)
+AttributeError: module 'chat.asgi' has no attribute 'channel_layer'
+Traceback (most recent call last):
+  File "/var/www/projects/myenv/bin/daphne", line 11, in <module>
+    sys.exit(CommandLineInterface.entrypoint())
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 191, in entrypoint
+    cls().run(sys.argv[1:])
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 252, in run
+    application = import_by_path(args.application)
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/utils.py", line 14, in import_by_path
+    target = getattr(target, bit)
+AttributeError: module 'chat.asgi' has no attribute 'channel_layer'
+Traceback (most recent call last):
+  File "/var/www/projects/myenv/bin/daphne", line 11, in <module>
+    sys.exit(CommandLineInterface.entrypoint())
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 191, in entrypoint
+    cls().run(sys.argv[1:])
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 252, in run
+    application = import_by_path(args.application)
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/utils.py", line 14, in import_by_path
+    target = getattr(target, bit)
+AttributeError: module 'chat.asgi' has no attribute 'channel_layer'
+Traceback (most recent call last):
+  File "/var/www/projects/myenv/bin/daphne", line 11, in <module>
+    sys.exit(CommandLineInterface.entrypoint())
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 191, in entrypoint
+    cls().run(sys.argv[1:])
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 252, in run
+    application = import_by_path(args.application)
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/utils.py", line 14, in import_by_path
+    target = getattr(target, bit)
+AttributeError: module 'chat.asgi' has no attribute 'channel_layer'
+Traceback (most recent call last):
+  File "/var/www/projects/myenv/bin/daphne", line 11, in <module>
+    sys.exit(CommandLineInterface.entrypoint())
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 191, in entrypoint
+    cls().run(sys.argv[1:])
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 252, in run
+    application = import_by_path(args.application)
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/utils.py", line 14, in import_by_path
+    target = getattr(target, bit)
+AttributeError: module 'chat.asgi' has no attribute 'channel_layer'
+Traceback (most recent call last):
+  File "/var/www/projects/myenv/bin/daphne", line 11, in <module>
+    sys.exit(CommandLineInterface.entrypoint())
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 191, in entrypoint
+    cls().run(sys.argv[1:])
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 252, in run
+    application = import_by_path(args.application)
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/utils.py", line 14, in import_by_path
+    target = getattr(target, bit)
+AttributeError: module 'chat.asgi' has no attribute 'channel_layer'
+Traceback (most recent call last):
+  File "/var/www/projects/myenv/bin/daphne", line 11, in <module>
+    sys.exit(CommandLineInterface.entrypoint())
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 191, in entrypoint
+    cls().run(sys.argv[1:])
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 252, in run
+    application = import_by_path(args.application)
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/utils.py", line 14, in import_by_path
+    target = getattr(target, bit)
+AttributeError: module 'chat.asgi' has no attribute 'channel_layer'
+Traceback (most recent call last):
+  File "/var/www/projects/myenv/bin/daphne", line 11, in <module>
+    sys.exit(CommandLineInterface.entrypoint())
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 191, in entrypoint
+    cls().run(sys.argv[1:])
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 252, in run
+    application = import_by_path(args.application)
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/utils.py", line 14, in import_by_path
+    target = getattr(target, bit)
+AttributeError: module 'chat.asgi' has no attribute 'channel_layer'
+Traceback (most recent call last):
+  File "/var/www/projects/myenv/bin/daphne", line 11, in <module>
+    sys.exit(CommandLineInterface.entrypoint())
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 191, in entrypoint
+    cls().run(sys.argv[1:])
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 252, in run
+    application = import_by_path(args.application)
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/utils.py", line 14, in import_by_path
+    target = getattr(target, bit)
+AttributeError: module 'chat.asgi' has no attribute 'channel_layer'
+Traceback (most recent call last):
+  File "/var/www/projects/myenv/bin/daphne", line 11, in <module>
+    sys.exit(CommandLineInterface.entrypoint())
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 191, in entrypoint
+    cls().run(sys.argv[1:])
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 252, in run
+    application = import_by_path(args.application)
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/utils.py", line 14, in import_by_path
+    target = getattr(target, bit)
+AttributeError: module 'chat.asgi' has no attribute 'channel_layer'
+Traceback (most recent call last):
+  File "/var/www/projects/myenv/bin/daphne", line 11, in <module>
+    sys.exit(CommandLineInterface.entrypoint())
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 191, in entrypoint
+    cls().run(sys.argv[1:])
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 252, in run
+    application = import_by_path(args.application)
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/utils.py", line 14, in import_by_path
+    target = getattr(target, bit)
+AttributeError: module 'chat.asgi' has no attribute 'channel_layer'
+Traceback (most recent call last):
+  File "/var/www/projects/myenv/bin/daphne", line 11, in <module>
+    sys.exit(CommandLineInterface.entrypoint())
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 191, in entrypoint
+    cls().run(sys.argv[1:])
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 252, in run
+    application = import_by_path(args.application)
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/utils.py", line 14, in import_by_path
+    target = getattr(target, bit)
+AttributeError: module 'chat.asgi' has no attribute 'channel_layer'
+Traceback (most recent call last):
+  File "/var/www/projects/myenv/bin/daphne", line 11, in <module>
+    sys.exit(CommandLineInterface.entrypoint())
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 191, in entrypoint
+    cls().run(sys.argv[1:])
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 252, in run
+    application = import_by_path(args.application)
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/utils.py", line 14, in import_by_path
+    target = getattr(target, bit)
+AttributeError: module 'chat.asgi' has no attribute 'channel_layer'
+Traceback (most recent call last):
+  File "/var/www/projects/myenv/bin/daphne", line 11, in <module>
+    sys.exit(CommandLineInterface.entrypoint())
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 191, in entrypoint
+    cls().run(sys.argv[1:])
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 252, in run
+    application = import_by_path(args.application)
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/utils.py", line 14, in import_by_path
+    target = getattr(target, bit)
+AttributeError: module 'chat.asgi' has no attribute 'channel_layer'
+Traceback (most recent call last):
+  File "/var/www/projects/myenv/bin/daphne", line 11, in <module>
+    sys.exit(CommandLineInterface.entrypoint())
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 191, in entrypoint
+    cls().run(sys.argv[1:])
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 252, in run
+    application = import_by_path(args.application)
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/utils.py", line 14, in import_by_path
+    target = getattr(target, bit)
+AttributeError: module 'chat.asgi' has no attribute 'channel_layer'
+Traceback (most recent call last):
+  File "/var/www/projects/myenv/bin/daphne", line 11, in <module>
+    sys.exit(CommandLineInterface.entrypoint())
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 191, in entrypoint
+    cls().run(sys.argv[1:])
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 252, in run
+    application = import_by_path(args.application)
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/utils.py", line 14, in import_by_path
+    target = getattr(target, bit)
+AttributeError: module 'chat.asgi' has no attribute 'channel_layer'
+Traceback (most recent call last):
+  File "/var/www/projects/myenv/bin/daphne", line 11, in <module>
+    sys.exit(CommandLineInterface.entrypoint())
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 191, in entrypoint
+    cls().run(sys.argv[1:])
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 252, in run
+    application = import_by_path(args.application)
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/utils.py", line 14, in import_by_path
+    target = getattr(target, bit)
+AttributeError: module 'chat.asgi' has no attribute 'channel_layer'
+Traceback (most recent call last):
+  File "/var/www/projects/myenv/bin/daphne", line 11, in <module>
+    sys.exit(CommandLineInterface.entrypoint())
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 191, in entrypoint
+    cls().run(sys.argv[1:])
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 252, in run
+    application = import_by_path(args.application)
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/utils.py", line 14, in import_by_path
+    target = getattr(target, bit)
+AttributeError: module 'chat.asgi' has no attribute 'channel_layer'
+Traceback (most recent call last):
+  File "/var/www/projects/myenv/bin/daphne", line 11, in <module>
+    sys.exit(CommandLineInterface.entrypoint())
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 191, in entrypoint
+    cls().run(sys.argv[1:])
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 252, in run
+    application = import_by_path(args.application)
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/utils.py", line 14, in import_by_path
+    target = getattr(target, bit)
+AttributeError: module 'chat.asgi' has no attribute 'channel_layer'
+Traceback (most recent call last):
+  File "/var/www/projects/myenv/bin/daphne", line 11, in <module>
+    sys.exit(CommandLineInterface.entrypoint())
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 191, in entrypoint
+    cls().run(sys.argv[1:])
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 252, in run
+    application = import_by_path(args.application)
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/utils.py", line 14, in import_by_path
+    target = getattr(target, bit)
+AttributeError: module 'chat.asgi' has no attribute 'channel_layer'
+Traceback (most recent call last):
+  File "/var/www/projects/myenv/bin/daphne", line 11, in <module>
+    sys.exit(CommandLineInterface.entrypoint())
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 191, in entrypoint
+    cls().run(sys.argv[1:])
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 252, in run
+    application = import_by_path(args.application)
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/utils.py", line 14, in import_by_path
+    target = getattr(target, bit)
+AttributeError: module 'chat.asgi' has no attribute 'channel_layer'
+Traceback (most recent call last):
+  File "/var/www/projects/myenv/bin/daphne", line 11, in <module>
+    sys.exit(CommandLineInterface.entrypoint())
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 191, in entrypoint
+    cls().run(sys.argv[1:])
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 252, in run
+    application = import_by_path(args.application)
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/utils.py", line 14, in import_by_path
+    target = getattr(target, bit)
+AttributeError: module 'chat.asgi' has no attribute 'channel_layer'
+Traceback (most recent call last):
+  File "/var/www/projects/myenv/bin/daphne", line 11, in <module>
+    sys.exit(CommandLineInterface.entrypoint())
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 191, in entrypoint
+    cls().run(sys.argv[1:])
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 252, in run
+    application = import_by_path(args.application)
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/utils.py", line 14, in import_by_path
+    target = getattr(target, bit)
+AttributeError: module 'chat.asgi' has no attribute 'channel_layer'
+Traceback (most recent call last):
+  File "/var/www/projects/myenv/bin/daphne", line 11, in <module>
+    sys.exit(CommandLineInterface.entrypoint())
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 191, in entrypoint
+    cls().run(sys.argv[1:])
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 252, in run
+    application = import_by_path(args.application)
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/utils.py", line 14, in import_by_path
+    target = getattr(target, bit)
+AttributeError: module 'chat.asgi' has no attribute 'channel_layer'
+Traceback (most recent call last):
+  File "/var/www/projects/myenv/bin/daphne", line 11, in <module>
+    sys.exit(CommandLineInterface.entrypoint())
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 191, in entrypoint
+    cls().run(sys.argv[1:])
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 252, in run
+    application = import_by_path(args.application)
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/utils.py", line 14, in import_by_path
+    target = getattr(target, bit)
+AttributeError: module 'chat.asgi' has no attribute 'channel_layer'
+Traceback (most recent call last):
+  File "/var/www/projects/myenv/bin/daphne", line 11, in <module>
+    sys.exit(CommandLineInterface.entrypoint())
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 191, in entrypoint
+    cls().run(sys.argv[1:])
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 252, in run
+    application = import_by_path(args.application)
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/utils.py", line 14, in import_by_path
+    target = getattr(target, bit)
+AttributeError: module 'chat.asgi' has no attribute 'channel_layer'
+Traceback (most recent call last):
+  File "/var/www/projects/myenv/bin/daphne", line 11, in <module>
+    sys.exit(CommandLineInterface.entrypoint())
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 191, in entrypoint
+    cls().run(sys.argv[1:])
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 252, in run
+    application = import_by_path(args.application)
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/utils.py", line 14, in import_by_path
+    target = getattr(target, bit)
+AttributeError: module 'chat.asgi' has no attribute 'channel_layer'
+Traceback (most recent call last):
+  File "/var/www/projects/myenv/bin/daphne", line 11, in <module>
+    sys.exit(CommandLineInterface.entrypoint())
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 191, in entrypoint
+    cls().run(sys.argv[1:])
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 252, in run
+    application = import_by_path(args.application)
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/utils.py", line 14, in import_by_path
+    target = getattr(target, bit)
+AttributeError: module 'chat.asgi' has no attribute 'channel_layer'
+Traceback (most recent call last):
+  File "/var/www/projects/myenv/bin/daphne", line 11, in <module>
+    sys.exit(CommandLineInterface.entrypoint())
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 191, in entrypoint
+    cls().run(sys.argv[1:])
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 252, in run
+    application = import_by_path(args.application)
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/utils.py", line 14, in import_by_path
+    target = getattr(target, bit)
+AttributeError: module 'chat.asgi' has no attribute 'channel_layer'
+Traceback (most recent call last):
+  File "/var/www/projects/myenv/bin/daphne", line 11, in <module>
+    sys.exit(CommandLineInterface.entrypoint())
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 191, in entrypoint
+    cls().run(sys.argv[1:])
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 252, in run
+    application = import_by_path(args.application)
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/utils.py", line 14, in import_by_path
+    target = getattr(target, bit)
+AttributeError: module 'chat.asgi' has no attribute 'channel_layer'
+Traceback (most recent call last):
+  File "/var/www/projects/myenv/bin/daphne", line 11, in <module>
+    sys.exit(CommandLineInterface.entrypoint())
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 191, in entrypoint
+    cls().run(sys.argv[1:])
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 252, in run
+    application = import_by_path(args.application)
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/utils.py", line 14, in import_by_path
+    target = getattr(target, bit)
+AttributeError: module 'chat.asgi' has no attribute 'channel_layer'
+Traceback (most recent call last):
+  File "/var/www/projects/myenv/bin/daphne", line 11, in <module>
+    sys.exit(CommandLineInterface.entrypoint())
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 191, in entrypoint
+    cls().run(sys.argv[1:])
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 252, in run
+    application = import_by_path(args.application)
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/utils.py", line 14, in import_by_path
+    target = getattr(target, bit)
+AttributeError: module 'chat.asgi' has no attribute 'channel_layer'
+Traceback (most recent call last):
+  File "/var/www/projects/myenv/bin/daphne", line 11, in <module>
+    sys.exit(CommandLineInterface.entrypoint())
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 191, in entrypoint
+    cls().run(sys.argv[1:])
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 252, in run
+    application = import_by_path(args.application)
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/utils.py", line 14, in import_by_path
+    target = getattr(target, bit)
+AttributeError: module 'chat.asgi' has no attribute 'channel_layer'
+Traceback (most recent call last):
+  File "/var/www/projects/myenv/bin/daphne", line 11, in <module>
+    sys.exit(CommandLineInterface.entrypoint())
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 191, in entrypoint
+    cls().run(sys.argv[1:])
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 252, in run
+    application = import_by_path(args.application)
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/utils.py", line 14, in import_by_path
+    target = getattr(target, bit)
+AttributeError: module 'chat.asgi' has no attribute 'channel_layer'
+Traceback (most recent call last):
+  File "/var/www/projects/myenv/bin/daphne", line 11, in <module>
+    sys.exit(CommandLineInterface.entrypoint())
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 191, in entrypoint
+    cls().run(sys.argv[1:])
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 252, in run
+    application = import_by_path(args.application)
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/utils.py", line 14, in import_by_path
+    target = getattr(target, bit)
+AttributeError: module 'chat.asgi' has no attribute 'channel_layer'
+Traceback (most recent call last):
+  File "/var/www/projects/myenv/bin/daphne", line 11, in <module>
+    sys.exit(CommandLineInterface.entrypoint())
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 191, in entrypoint
+    cls().run(sys.argv[1:])
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 252, in run
+    application = import_by_path(args.application)
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/utils.py", line 14, in import_by_path
+    target = getattr(target, bit)
+AttributeError: module 'chat.asgi' has no attribute 'channel_layer'
+Traceback (most recent call last):
+  File "/var/www/projects/myenv/bin/daphne", line 11, in <module>
+    sys.exit(CommandLineInterface.entrypoint())
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 191, in entrypoint
+    cls().run(sys.argv[1:])
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 252, in run
+    application = import_by_path(args.application)
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/utils.py", line 14, in import_by_path
+    target = getattr(target, bit)
+AttributeError: module 'chat.asgi' has no attribute 'channel_layer'
+Traceback (most recent call last):
+  File "/var/www/projects/myenv/bin/daphne", line 11, in <module>
+    sys.exit(CommandLineInterface.entrypoint())
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 191, in entrypoint
+    cls().run(sys.argv[1:])
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 252, in run
+    application = import_by_path(args.application)
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/utils.py", line 14, in import_by_path
+    target = getattr(target, bit)
+AttributeError: module 'chat.asgi' has no attribute 'channel_layer'
+Traceback (most recent call last):
+  File "/var/www/projects/myenv/bin/daphne", line 11, in <module>
+    sys.exit(CommandLineInterface.entrypoint())
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 191, in entrypoint
+    cls().run(sys.argv[1:])
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 252, in run
+    application = import_by_path(args.application)
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/utils.py", line 14, in import_by_path
+    target = getattr(target, bit)
+AttributeError: module 'chat.asgi' has no attribute 'channel_layer'
+Traceback (most recent call last):
+  File "/var/www/projects/myenv/bin/daphne", line 11, in <module>
+    sys.exit(CommandLineInterface.entrypoint())
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 191, in entrypoint
+    cls().run(sys.argv[1:])
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 252, in run
+    application = import_by_path(args.application)
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/utils.py", line 14, in import_by_path
+    target = getattr(target, bit)
+AttributeError: module 'chat.asgi' has no attribute 'channel_layer'
+Traceback (most recent call last):
+  File "/var/www/projects/myenv/bin/daphne", line 11, in <module>
+    sys.exit(CommandLineInterface.entrypoint())
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 191, in entrypoint
+    cls().run(sys.argv[1:])
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 252, in run
+    application = import_by_path(args.application)
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/utils.py", line 14, in import_by_path
+    target = getattr(target, bit)
+AttributeError: module 'chat.asgi' has no attribute 'channel_layer'
+Traceback (most recent call last):
+  File "/var/www/projects/myenv/bin/daphne", line 11, in <module>
+    sys.exit(CommandLineInterface.entrypoint())
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 191, in entrypoint
+    cls().run(sys.argv[1:])
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 252, in run
+    application = import_by_path(args.application)
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/utils.py", line 14, in import_by_path
+    target = getattr(target, bit)
+AttributeError: module 'chat.asgi' has no attribute 'channel_layer'
+Traceback (most recent call last):
+  File "/var/www/projects/myenv/bin/daphne", line 11, in <module>
+    sys.exit(CommandLineInterface.entrypoint())
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 191, in entrypoint
+    cls().run(sys.argv[1:])
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 252, in run
+    application = import_by_path(args.application)
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/utils.py", line 14, in import_by_path
+    target = getattr(target, bit)
+AttributeError: module 'chat.asgi' has no attribute 'channel_layer'
+Traceback (most recent call last):
+  File "/var/www/projects/myenv/bin/daphne", line 11, in <module>
+    sys.exit(CommandLineInterface.entrypoint())
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 191, in entrypoint
+    cls().run(sys.argv[1:])
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 252, in run
+    application = import_by_path(args.application)
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/utils.py", line 14, in import_by_path
+    target = getattr(target, bit)
+AttributeError: module 'chat.asgi' has no attribute 'channel_layer'
+Traceback (most recent call last):
+  File "/var/www/projects/myenv/bin/daphne", line 11, in <module>
+    sys.exit(CommandLineInterface.entrypoint())
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 191, in entrypoint
+    cls().run(sys.argv[1:])
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 252, in run
+    application = import_by_path(args.application)
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/utils.py", line 14, in import_by_path
+    target = getattr(target, bit)
+AttributeError: module 'chat.asgi' has no attribute 'channel_layer'
+Traceback (most recent call last):
+  File "/var/www/projects/myenv/bin/daphne", line 11, in <module>
+    sys.exit(CommandLineInterface.entrypoint())
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 191, in entrypoint
+    cls().run(sys.argv[1:])
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 252, in run
+    application = import_by_path(args.application)
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/utils.py", line 14, in import_by_path
+    target = getattr(target, bit)
+AttributeError: module 'chat.asgi' has no attribute 'channel_layer'
+Traceback (most recent call last):
+  File "/var/www/projects/myenv/bin/daphne", line 11, in <module>
+    sys.exit(CommandLineInterface.entrypoint())
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 191, in entrypoint
+    cls().run(sys.argv[1:])
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 252, in run
+    application = import_by_path(args.application)
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/utils.py", line 14, in import_by_path
+    target = getattr(target, bit)
+AttributeError: module 'chat.asgi' has no attribute 'channel_layer'
+Traceback (most recent call last):
+  File "/var/www/projects/myenv/bin/daphne", line 11, in <module>
+    sys.exit(CommandLineInterface.entrypoint())
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 191, in entrypoint
+    cls().run(sys.argv[1:])
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 252, in run
+    application = import_by_path(args.application)
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/utils.py", line 14, in import_by_path
+    target = getattr(target, bit)
+AttributeError: module 'chat.asgi' has no attribute 'channel_layer'
+Traceback (most recent call last):
+  File "/var/www/projects/myenv/bin/daphne", line 11, in <module>
+    sys.exit(CommandLineInterface.entrypoint())
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 191, in entrypoint
+    cls().run(sys.argv[1:])
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 252, in run
+    application = import_by_path(args.application)
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/utils.py", line 14, in import_by_path
+    target = getattr(target, bit)
+AttributeError: module 'chat.asgi' has no attribute 'channel_layer'
+Traceback (most recent call last):
+  File "/var/www/projects/myenv/bin/daphne", line 11, in <module>
+    sys.exit(CommandLineInterface.entrypoint())
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 191, in entrypoint
+    cls().run(sys.argv[1:])
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 252, in run
+    application = import_by_path(args.application)
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/utils.py", line 14, in import_by_path
+    target = getattr(target, bit)
+AttributeError: module 'chat.asgi' has no attribute 'channel_layer'
+Traceback (most recent call last):
+  File "/var/www/projects/myenv/bin/daphne", line 11, in <module>
+    sys.exit(CommandLineInterface.entrypoint())
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 191, in entrypoint
+    cls().run(sys.argv[1:])
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 252, in run
+    application = import_by_path(args.application)
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/utils.py", line 14, in import_by_path
+    target = getattr(target, bit)
+AttributeError: module 'chat.asgi' has no attribute 'channel_layer'
+Traceback (most recent call last):
+  File "/var/www/projects/myenv/bin/daphne", line 11, in <module>
+    sys.exit(CommandLineInterface.entrypoint())
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 191, in entrypoint
+    cls().run(sys.argv[1:])
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 252, in run
+    application = import_by_path(args.application)
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/utils.py", line 14, in import_by_path
+    target = getattr(target, bit)
+AttributeError: module 'chat.asgi' has no attribute 'channel_layer'
+Traceback (most recent call last):
+  File "/var/www/projects/myenv/bin/daphne", line 11, in <module>
+    sys.exit(CommandLineInterface.entrypoint())
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 191, in entrypoint
+    cls().run(sys.argv[1:])
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 252, in run
+    application = import_by_path(args.application)
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/utils.py", line 14, in import_by_path
+    target = getattr(target, bit)
+AttributeError: module 'chat.asgi' has no attribute 'channel_layer'
+Traceback (most recent call last):
+  File "/var/www/projects/myenv/bin/daphne", line 11, in <module>
+    sys.exit(CommandLineInterface.entrypoint())
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 191, in entrypoint
+    cls().run(sys.argv[1:])
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 252, in run
+    application = import_by_path(args.application)
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/utils.py", line 14, in import_by_path
+    target = getattr(target, bit)
+AttributeError: module 'chat.asgi' has no attribute 'channel_layer'
+Traceback (most recent call last):
+  File "/var/www/projects/myenv/bin/daphne", line 11, in <module>
+    sys.exit(CommandLineInterface.entrypoint())
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 191, in entrypoint
+    cls().run(sys.argv[1:])
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 252, in run
+    application = import_by_path(args.application)
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/utils.py", line 14, in import_by_path
+    target = getattr(target, bit)
+AttributeError: module 'chat.asgi' has no attribute 'channel_layer'
+Traceback (most recent call last):
+  File "/var/www/projects/myenv/bin/daphne", line 11, in <module>
+    sys.exit(CommandLineInterface.entrypoint())
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 191, in entrypoint
+    cls().run(sys.argv[1:])
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 252, in run
+    application = import_by_path(args.application)
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/utils.py", line 14, in import_by_path
+    target = getattr(target, bit)
+AttributeError: module 'chat.asgi' has no attribute 'channel_layer'
+Traceback (most recent call last):
+  File "/var/www/projects/myenv/bin/daphne", line 11, in <module>
+    sys.exit(CommandLineInterface.entrypoint())
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 191, in entrypoint
+    cls().run(sys.argv[1:])
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 252, in run
+    application = import_by_path(args.application)
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/utils.py", line 14, in import_by_path
+    target = getattr(target, bit)
+AttributeError: module 'chat.asgi' has no attribute 'channel_layer'
+Traceback (most recent call last):
+  File "/var/www/projects/myenv/bin/daphne", line 11, in <module>
+    sys.exit(CommandLineInterface.entrypoint())
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 191, in entrypoint
+    cls().run(sys.argv[1:])
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 252, in run
+    application = import_by_path(args.application)
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/utils.py", line 14, in import_by_path
+    target = getattr(target, bit)
+AttributeError: module 'chat.asgi' has no attribute 'channel_layer'
+Traceback (most recent call last):
+  File "/var/www/projects/myenv/bin/daphne", line 11, in <module>
+    sys.exit(CommandLineInterface.entrypoint())
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 191, in entrypoint
+    cls().run(sys.argv[1:])
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 252, in run
+    application = import_by_path(args.application)
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/utils.py", line 14, in import_by_path
+    target = getattr(target, bit)
+AttributeError: module 'chat.asgi' has no attribute 'channel_layer'
+Traceback (most recent call last):
+  File "/var/www/projects/myenv/bin/daphne", line 11, in <module>
+    sys.exit(CommandLineInterface.entrypoint())
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 191, in entrypoint
+    cls().run(sys.argv[1:])
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 252, in run
+    application = import_by_path(args.application)
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/utils.py", line 14, in import_by_path
+    target = getattr(target, bit)
+AttributeError: module 'chat.asgi' has no attribute 'channel_layer'
+Traceback (most recent call last):
+  File "/var/www/projects/myenv/bin/daphne", line 11, in <module>
+    sys.exit(CommandLineInterface.entrypoint())
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 191, in entrypoint
+    cls().run(sys.argv[1:])
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 252, in run
+    application = import_by_path(args.application)
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/utils.py", line 14, in import_by_path
+    target = getattr(target, bit)
+AttributeError: module 'chat.asgi' has no attribute 'channel_layer'
+Traceback (most recent call last):
+  File "/var/www/projects/myenv/bin/daphne", line 11, in <module>
+    sys.exit(CommandLineInterface.entrypoint())
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 191, in entrypoint
+    cls().run(sys.argv[1:])
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 252, in run
+    application = import_by_path(args.application)
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/utils.py", line 14, in import_by_path
+    target = getattr(target, bit)
+AttributeError: module 'chat.asgi' has no attribute 'channel_layer'
+Traceback (most recent call last):
+  File "/var/www/projects/myenv/bin/daphne", line 11, in <module>
+    sys.exit(CommandLineInterface.entrypoint())
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 191, in entrypoint
+    cls().run(sys.argv[1:])
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 252, in run
+    application = import_by_path(args.application)
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/utils.py", line 14, in import_by_path
+    target = getattr(target, bit)
+AttributeError: module 'chat.asgi' has no attribute 'channel_layer'
+Traceback (most recent call last):
+  File "/var/www/projects/myenv/bin/daphne", line 11, in <module>
+    sys.exit(CommandLineInterface.entrypoint())
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 191, in entrypoint
+    cls().run(sys.argv[1:])
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 252, in run
+    application = import_by_path(args.application)
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/utils.py", line 14, in import_by_path
+    target = getattr(target, bit)
+AttributeError: module 'chat.asgi' has no attribute 'channel_layer'
+Traceback (most recent call last):
+  File "/var/www/projects/myenv/bin/daphne", line 11, in <module>
+    sys.exit(CommandLineInterface.entrypoint())
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 191, in entrypoint
+    cls().run(sys.argv[1:])
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 252, in run
+    application = import_by_path(args.application)
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/utils.py", line 14, in import_by_path
+    target = getattr(target, bit)
+AttributeError: module 'chat.asgi' has no attribute 'channel_layer'
+Traceback (most recent call last):
+  File "/var/www/projects/myenv/bin/daphne", line 11, in <module>
+    sys.exit(CommandLineInterface.entrypoint())
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 191, in entrypoint
+    cls().run(sys.argv[1:])
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 252, in run
+    application = import_by_path(args.application)
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/utils.py", line 14, in import_by_path
+    target = getattr(target, bit)
+AttributeError: module 'chat.asgi' has no attribute 'channel_layer'
+Traceback (most recent call last):
+  File "/var/www/projects/myenv/bin/daphne", line 11, in <module>
+    sys.exit(CommandLineInterface.entrypoint())
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 191, in entrypoint
+    cls().run(sys.argv[1:])
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 252, in run
+    application = import_by_path(args.application)
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/utils.py", line 14, in import_by_path
+    target = getattr(target, bit)
+AttributeError: module 'chat.asgi' has no attribute 'channel_layer'
+Traceback (most recent call last):
+  File "/var/www/projects/myenv/bin/daphne", line 11, in <module>
+    sys.exit(CommandLineInterface.entrypoint())
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 191, in entrypoint
+    cls().run(sys.argv[1:])
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 252, in run
+    application = import_by_path(args.application)
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/utils.py", line 14, in import_by_path
+    target = getattr(target, bit)
+AttributeError: module 'chat.asgi' has no attribute 'channel_layer'
+Traceback (most recent call last):
+  File "/var/www/projects/myenv/bin/daphne", line 11, in <module>
+    sys.exit(CommandLineInterface.entrypoint())
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 191, in entrypoint
+    cls().run(sys.argv[1:])
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 252, in run
+    application = import_by_path(args.application)
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/utils.py", line 14, in import_by_path
+    target = getattr(target, bit)
+AttributeError: module 'chat.asgi' has no attribute 'channel_layer'
+Traceback (most recent call last):
+  File "/var/www/projects/myenv/bin/daphne", line 11, in <module>
+    sys.exit(CommandLineInterface.entrypoint())
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 191, in entrypoint
+    cls().run(sys.argv[1:])
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 252, in run
+    application = import_by_path(args.application)
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/utils.py", line 14, in import_by_path
+    target = getattr(target, bit)
+AttributeError: module 'chat.asgi' has no attribute 'channel_layer'
+Traceback (most recent call last):
+  File "/var/www/projects/myenv/bin/daphne", line 11, in <module>
+    sys.exit(CommandLineInterface.entrypoint())
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 191, in entrypoint
+    cls().run(sys.argv[1:])
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 252, in run
+    application = import_by_path(args.application)
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/utils.py", line 14, in import_by_path
+    target = getattr(target, bit)
+AttributeError: module 'chat.asgi' has no attribute 'channel_layer'
+Traceback (most recent call last):
+  File "/var/www/projects/myenv/bin/daphne", line 11, in <module>
+    sys.exit(CommandLineInterface.entrypoint())
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 191, in entrypoint
+    cls().run(sys.argv[1:])
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 252, in run
+    application = import_by_path(args.application)
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/utils.py", line 14, in import_by_path
+    target = getattr(target, bit)
+AttributeError: module 'chat.asgi' has no attribute 'channel_layer'
+Traceback (most recent call last):
+  File "/var/www/projects/myenv/bin/daphne", line 11, in <module>
+    sys.exit(CommandLineInterface.entrypoint())
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 191, in entrypoint
+    cls().run(sys.argv[1:])
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 252, in run
+    application = import_by_path(args.application)
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/utils.py", line 14, in import_by_path
+    target = getattr(target, bit)
+AttributeError: module 'chat.asgi' has no attribute 'channel_layer'
+Traceback (most recent call last):
+  File "/var/www/projects/myenv/bin/daphne", line 11, in <module>
+    sys.exit(CommandLineInterface.entrypoint())
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 191, in entrypoint
+    cls().run(sys.argv[1:])
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 252, in run
+    application = import_by_path(args.application)
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/utils.py", line 14, in import_by_path
+    target = getattr(target, bit)
+AttributeError: module 'chat.asgi' has no attribute 'channel_layer'
+Traceback (most recent call last):
+  File "/var/www/projects/myenv/bin/daphne", line 11, in <module>
+    sys.exit(CommandLineInterface.entrypoint())
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 191, in entrypoint
+    cls().run(sys.argv[1:])
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 252, in run
+    application = import_by_path(args.application)
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/utils.py", line 14, in import_by_path
+    target = getattr(target, bit)
+AttributeError: module 'chat.asgi' has no attribute 'channel_layer'
+Traceback (most recent call last):
+  File "/var/www/projects/myenv/bin/daphne", line 11, in <module>
+    sys.exit(CommandLineInterface.entrypoint())
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 191, in entrypoint
+    cls().run(sys.argv[1:])
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 252, in run
+    application = import_by_path(args.application)
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/utils.py", line 14, in import_by_path
+    target = getattr(target, bit)
+AttributeError: module 'chat.asgi' has no attribute 'channel_layer'
+Traceback (most recent call last):
+  File "/var/www/projects/myenv/bin/daphne", line 11, in <module>
+    sys.exit(CommandLineInterface.entrypoint())
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 191, in entrypoint
+    cls().run(sys.argv[1:])
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 252, in run
+    application = import_by_path(args.application)
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/utils.py", line 14, in import_by_path
+    target = getattr(target, bit)
+AttributeError: module 'chat.asgi' has no attribute 'channel_layer'
+Traceback (most recent call last):
+  File "/var/www/projects/myenv/bin/daphne", line 11, in <module>
+    sys.exit(CommandLineInterface.entrypoint())
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 191, in entrypoint
+    cls().run(sys.argv[1:])
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 252, in run
+    application = import_by_path(args.application)
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/utils.py", line 14, in import_by_path
+    target = getattr(target, bit)
+AttributeError: module 'chat.asgi' has no attribute 'channel_layer'
+Traceback (most recent call last):
+  File "/var/www/projects/myenv/bin/daphne", line 11, in <module>
+    sys.exit(CommandLineInterface.entrypoint())
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 191, in entrypoint
+    cls().run(sys.argv[1:])
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 252, in run
+    application = import_by_path(args.application)
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/utils.py", line 14, in import_by_path
+    target = getattr(target, bit)
+AttributeError: module 'chat.asgi' has no attribute 'channel_layer'
+Traceback (most recent call last):
+  File "/var/www/projects/myenv/bin/daphne", line 11, in <module>
+    sys.exit(CommandLineInterface.entrypoint())
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 191, in entrypoint
+    cls().run(sys.argv[1:])
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 252, in run
+    application = import_by_path(args.application)
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/utils.py", line 14, in import_by_path
+    target = getattr(target, bit)
+AttributeError: module 'chat.asgi' has no attribute 'channel_layer'
+Traceback (most recent call last):
+  File "/var/www/projects/myenv/bin/daphne", line 11, in <module>
+    sys.exit(CommandLineInterface.entrypoint())
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 191, in entrypoint
+    cls().run(sys.argv[1:])
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 252, in run
+    application = import_by_path(args.application)
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/utils.py", line 14, in import_by_path
+    target = getattr(target, bit)
+AttributeError: module 'chat.asgi' has no attribute 'channel_layer'
+Traceback (most recent call last):
+  File "/var/www/projects/myenv/bin/daphne", line 11, in <module>
+    sys.exit(CommandLineInterface.entrypoint())
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 191, in entrypoint
+    cls().run(sys.argv[1:])
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 252, in run
+    application = import_by_path(args.application)
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/utils.py", line 14, in import_by_path
+    target = getattr(target, bit)
+AttributeError: module 'chat.asgi' has no attribute 'channel_layer'
+Traceback (most recent call last):
+  File "/var/www/projects/myenv/bin/daphne", line 11, in <module>
+    sys.exit(CommandLineInterface.entrypoint())
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 191, in entrypoint
+    cls().run(sys.argv[1:])
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 252, in run
+    application = import_by_path(args.application)
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/utils.py", line 14, in import_by_path
+    target = getattr(target, bit)
+AttributeError: module 'chat.asgi' has no attribute 'channel_layer'
+Traceback (most recent call last):
+  File "/var/www/projects/myenv/bin/daphne", line 11, in <module>
+    sys.exit(CommandLineInterface.entrypoint())
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 191, in entrypoint
+    cls().run(sys.argv[1:])
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 252, in run
+    application = import_by_path(args.application)
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/utils.py", line 14, in import_by_path
+    target = getattr(target, bit)
+AttributeError: module 'chat.asgi' has no attribute 'channel_layer'
+Traceback (most recent call last):
+  File "/var/www/projects/myenv/bin/daphne", line 11, in <module>
+    sys.exit(CommandLineInterface.entrypoint())
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 191, in entrypoint
+    cls().run(sys.argv[1:])
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 252, in run
+    application = import_by_path(args.application)
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/utils.py", line 14, in import_by_path
+    target = getattr(target, bit)
+AttributeError: module 'chat.asgi' has no attribute 'channel_layer'
+Traceback (most recent call last):
+  File "/var/www/projects/myenv/bin/daphne", line 11, in <module>
+    sys.exit(CommandLineInterface.entrypoint())
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 191, in entrypoint
+    cls().run(sys.argv[1:])
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 252, in run
+    application = import_by_path(args.application)
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/utils.py", line 14, in import_by_path
+    target = getattr(target, bit)
+AttributeError: module 'chat.asgi' has no attribute 'channel_layer'
+Traceback (most recent call last):
+  File "/var/www/projects/myenv/bin/daphne", line 11, in <module>
+    sys.exit(CommandLineInterface.entrypoint())
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 191, in entrypoint
+    cls().run(sys.argv[1:])
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 252, in run
+    application = import_by_path(args.application)
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/utils.py", line 14, in import_by_path
+    target = getattr(target, bit)
+AttributeError: module 'chat.asgi' has no attribute 'channel_layer'
+Traceback (most recent call last):
+  File "/var/www/projects/myenv/bin/daphne", line 11, in <module>
+    sys.exit(CommandLineInterface.entrypoint())
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 191, in entrypoint
+    cls().run(sys.argv[1:])
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 252, in run
+    application = import_by_path(args.application)
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/utils.py", line 14, in import_by_path
+    target = getattr(target, bit)
+AttributeError: module 'chat.asgi' has no attribute 'channel_layer'
+Traceback (most recent call last):
+  File "/var/www/projects/myenv/bin/daphne", line 11, in <module>
+    sys.exit(CommandLineInterface.entrypoint())
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 191, in entrypoint
+    cls().run(sys.argv[1:])
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 252, in run
+    application = import_by_path(args.application)
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/utils.py", line 14, in import_by_path
+    target = getattr(target, bit)
+AttributeError: module 'chat.asgi' has no attribute 'channel_layer'
+Traceback (most recent call last):
+  File "/var/www/projects/myenv/bin/daphne", line 11, in <module>
+    sys.exit(CommandLineInterface.entrypoint())
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 191, in entrypoint
+    cls().run(sys.argv[1:])
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 252, in run
+    application = import_by_path(args.application)
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/utils.py", line 14, in import_by_path
+    target = getattr(target, bit)
+AttributeError: module 'chat.asgi' has no attribute 'channel_layer'
+Traceback (most recent call last):
+  File "/var/www/projects/myenv/bin/daphne", line 11, in <module>
+    sys.exit(CommandLineInterface.entrypoint())
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 191, in entrypoint
+    cls().run(sys.argv[1:])
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 252, in run
+    application = import_by_path(args.application)
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/utils.py", line 14, in import_by_path
+    target = getattr(target, bit)
+AttributeError: module 'chat.asgi' has no attribute 'channel_layer'
+Traceback (most recent call last):
+  File "/var/www/projects/myenv/bin/daphne", line 11, in <module>
+    sys.exit(CommandLineInterface.entrypoint())
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 191, in entrypoint
+    cls().run(sys.argv[1:])
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 252, in run
+    application = import_by_path(args.application)
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/utils.py", line 14, in import_by_path
+    target = getattr(target, bit)
+AttributeError: module 'chat.asgi' has no attribute 'channel_layer'
+Traceback (most recent call last):
+  File "/var/www/projects/myenv/bin/daphne", line 11, in <module>
+    sys.exit(CommandLineInterface.entrypoint())
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 191, in entrypoint
+    cls().run(sys.argv[1:])
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 252, in run
+    application = import_by_path(args.application)
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/utils.py", line 14, in import_by_path
+    target = getattr(target, bit)
+AttributeError: module 'chat.asgi' has no attribute 'channel_layer'
+Traceback (most recent call last):
+  File "/var/www/projects/myenv/bin/daphne", line 11, in <module>
+    sys.exit(CommandLineInterface.entrypoint())
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 191, in entrypoint
+    cls().run(sys.argv[1:])
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 252, in run
+    application = import_by_path(args.application)
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/utils.py", line 14, in import_by_path
+    target = getattr(target, bit)
+AttributeError: module 'chat.asgi' has no attribute 'channel_layer'
+Traceback (most recent call last):
+  File "/var/www/projects/myenv/bin/daphne", line 11, in <module>
+    sys.exit(CommandLineInterface.entrypoint())
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 191, in entrypoint
+    cls().run(sys.argv[1:])
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 252, in run
+    application = import_by_path(args.application)
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/utils.py", line 14, in import_by_path
+    target = getattr(target, bit)
+AttributeError: module 'chat.asgi' has no attribute 'channel_layer'
+Traceback (most recent call last):
+  File "/var/www/projects/myenv/bin/daphne", line 11, in <module>
+    sys.exit(CommandLineInterface.entrypoint())
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 191, in entrypoint
+    cls().run(sys.argv[1:])
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 252, in run
+    application = import_by_path(args.application)
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/utils.py", line 14, in import_by_path
+    target = getattr(target, bit)
+AttributeError: module 'chat.asgi' has no attribute 'channel_layer'
+Traceback (most recent call last):
+  File "/var/www/projects/myenv/bin/daphne", line 11, in <module>
+    sys.exit(CommandLineInterface.entrypoint())
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 191, in entrypoint
+    cls().run(sys.argv[1:])
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 252, in run
+    application = import_by_path(args.application)
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/utils.py", line 14, in import_by_path
+    target = getattr(target, bit)
+AttributeError: module 'chat.asgi' has no attribute 'channel_layer'
+Traceback (most recent call last):
+  File "/var/www/projects/myenv/bin/daphne", line 11, in <module>
+    sys.exit(CommandLineInterface.entrypoint())
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 191, in entrypoint
+    cls().run(sys.argv[1:])
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 252, in run
+    application = import_by_path(args.application)
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/utils.py", line 14, in import_by_path
+    target = getattr(target, bit)
+AttributeError: module 'chat.asgi' has no attribute 'channel_layer'
+Traceback (most recent call last):
+  File "/var/www/projects/myenv/bin/daphne", line 11, in <module>
+    sys.exit(CommandLineInterface.entrypoint())
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 191, in entrypoint
+    cls().run(sys.argv[1:])
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 252, in run
+    application = import_by_path(args.application)
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/utils.py", line 14, in import_by_path
+    target = getattr(target, bit)
+AttributeError: module 'chat.asgi' has no attribute 'channel_layer'
+Traceback (most recent call last):
+  File "/var/www/projects/myenv/bin/daphne", line 11, in <module>
+    sys.exit(CommandLineInterface.entrypoint())
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 191, in entrypoint
+    cls().run(sys.argv[1:])
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/cli.py", line 252, in run
+    application = import_by_path(args.application)
+  File "/var/www/projects/myenv/lib64/python3.6/site-packages/daphne/utils.py", line 14, in import_by_path
+    target = getattr(target, bit)
+AttributeError: module 'chat.asgi' has no attribute 'channel_layer'

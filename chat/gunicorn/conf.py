@@ -23,9 +23,9 @@ timeout = 600
 keepalive = 2
 
 spew = False
-daemon = False
-user = "root"
-group = "root"
+daemon = True
+user = "chatuser"
+group = "chatuser"
 
 errorlog = 'gunicorn/error.log'
 loglevel = 'debug'
