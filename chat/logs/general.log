@@ -1,0 +1,2 @@
+[ERROR]	asctime:2019-05-28 23:43:26,515	module:consumers	message:("local variable 'logger' referenced before assignment",)
+[INFO]	asctime:2019-05-28 23:44:01,323	module:consumers	message:after notify user

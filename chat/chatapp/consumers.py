@@ -60,7 +60,7 @@ class ChatConsumer(AsyncJsonWebsocketConsumer):
             try:
                 await self.send_room(content["room"], content["message"], content['attachment'])
             except Exception as e:
-                myLogger(str(e.args))
+                mylogger.error(str(e.args))
 
 
 
@@ -170,7 +170,7 @@ class ChatConsumer(AsyncJsonWebsocketConsumer):
         room = await self._get_room_by_pk(room_id)
         m = await self._create_new_message(user, room, message)
         
-        logger = logger.getLogger('myLogger')
+        logger = logging.getLogger('myLogger')
         await self._notify_others(room, user)
         logger.info('after notify user')
         for pk in attachment_list:
