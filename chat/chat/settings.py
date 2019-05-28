@@ -107,6 +107,54 @@ DATABASES = {
 }
 
 
+LOGGING = {
+    'version': 1,   # これを設定しないと怒られる
+    'disable_existing_loggers': False,
+    'formatters': { # 出力フォーマットを文字列形式で指定する
+        'all': {    # 出力フォーマットに`all`という名前をつける
+            'format': '\t'.join([
+                "[%(levelname)s]",
+                "asctime:%(asctime)s",
+                "module:%(module)s",
+                "message:%(message)s",
+            ])
+        },
+    },
+    'filters': {
+        'require_debug_false': {
+            '()': 'django.utils.log.RequireDebugFalse',
+        },
+        'require_debug_true': {
+            '()': 'django.utils.log.RequireDebugTrue',
+        },
+    },
+    'handlers': {  # ログをどこに出すかの設定
+        'console': {
+            'level': 'INFO',
+            'filters': ['require_debug_true'],
+            'class': 'logging.StreamHandler',
+        },
+        'file_general': { 
+            'level': 'DEBUG',  # DEBUG以上のログを取り扱うという意味
+            'class': 'logging.handlers.RotatingFileHandler',
+            'filename': os.path.join(BASE_DIR, 'logs/general.log'),
+            'formatter': 'all',
+            'maxBytes': 1024 * 1024,
+            'backupCount': 10,
+        },
+
+    },
+    'loggers': {  # どんなloggerがあるかを設定する
+        'myLogger': { 
+            'handlers': ['file_general', 'console'],  # 先述のfile, consoleの設定で出力
+            'level': 'DEBUG',
+        },
+    },
+}
+
+
+
+
 # Password validation
 # https://docs.djangoproject.com/en/2.1/ref/settings/#auth-password-validators
 

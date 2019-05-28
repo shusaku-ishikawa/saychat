@@ -8,6 +8,7 @@ from django.conf import settings
 from channels.db import database_sync_to_async
 from django.utils import timezone
 from django.urls import reverse, reverse_lazy
+import logging
 
 class ChatConsumer(AsyncJsonWebsocketConsumer):
     async def connect(self):
@@ -38,7 +39,8 @@ class ChatConsumer(AsyncJsonWebsocketConsumer):
         # Messages will have a "command" key we can switch on
        
         command = content.get("command", None)
-     
+        mylogger = logging.getLogger('myLogger')
+
         if command == "join":
             # Make them join the room
             print('join')
@@ -55,7 +57,11 @@ class ChatConsumer(AsyncJsonWebsocketConsumer):
 
         elif command == "send":
             print('commend send')
-            await self.send_room(content["room"], content["message"], content['attachment'])
+            try:
+                await self.send_room(content["room"], content["message"], content['attachment'])
+            except Exception as e:
+                myLogger(str(e.args))
+
 
 
     async def join_room(self, room_id):
@@ -165,12 +171,10 @@ class ChatConsumer(AsyncJsonWebsocketConsumer):
         m = await self._create_new_message(user, room, message)
         await self._notify_others(room, user)
 
-        print('attachment: ' + str(attachment_list))
         for pk in attachment_list:
             a = await self._get_attachment_by_pk(pk)
             await self._set_attachment_to_message(a, m)
 
-        print('send group called')
         await self.channel_layer.group_send(
             room.group_name,
             {
