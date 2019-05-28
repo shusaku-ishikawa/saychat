@@ -297,6 +297,3 @@ class ChatConsumer(AsyncJsonWebsocketConsumer):
         for rm in room.members.all():
             if rm.user != me and rm.user.alert_freq == User.NOTIFY_EVERYTIME:
                 rm.user.notify_new_message()
-                print('after notify')
-               
-

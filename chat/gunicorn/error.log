@@ -27230,3 +27230,204 @@ ValueError: Unable to configure handler 'file_general': [Errno 13] Permission de
 [2019-05-28 19:07:47 +0900] [12997] [DEBUG] GET /chat/history
 [2019-05-28 19:07:59 +0900] [12997] [DEBUG] GET /chat/logout
 [2019-05-28 19:07:59 +0900] [12997] [DEBUG] GET /chat/
+[2019-05-28 19:16:00 +0900] [12997] [DEBUG] GET /chat/top
+[2019-05-28 19:16:00 +0900] [12997] [DEBUG] GET /chat/
+[2019-05-28 19:16:00 +0900] [12997] [DEBUG] GET /chat/
+[2019-05-28 19:16:03 +0900] [12997] [DEBUG] POST /chat/
+[2019-05-28 19:16:04 +0900] [12997] [DEBUG] GET /chat/top
+[2019-05-28 19:16:07 +0900] [12997] [DEBUG] GET /chat/history
+[2019-05-28 20:12:31 +0900] [12994] [INFO] Handling signal: term
+[2019-05-28 20:12:31 +0900] [12997] [INFO] Worker exiting (pid: 12997)
+[2019-05-28 20:12:31 +0900] [12994] [INFO] Shutting down: Master
+[2019-05-28 20:12:31 +0900] [13244] [DEBUG] Current configuration:
+  config: gunicorn/conf.py
+  bind: ['127.0.0.1:8001']
+  backlog: 2048
+  workers: 1
+  worker_class: sync
+  threads: 1
+  worker_connections: 1000
+  max_requests: 0
+  max_requests_jitter: 0
+  timeout: 600
+  graceful_timeout: 30
+  keepalive: 2
+  limit_request_line: 4094
+  limit_request_fields: 100
+  limit_request_field_size: 8190
+  reload: False
+  reload_engine: auto
+  reload_extra_files: []
+  spew: False
+  check_config: False
+  preload_app: False
+  sendfile: None
+  reuse_port: False
+  chdir: /var/www/projects/chat.git/chat
+  daemon: False
+  raw_env: []
+  pidfile: None
+  worker_tmp_dir: None
+  user: 501
+  group: 501
+  umask: 0
+  initgroups: False
+  tmp_upload_dir: None
+  secure_scheme_headers: {'X-FORWARDED-PROTOCOL': 'ssl', 'X-FORWARDED-PROTO': 'https', 'X-FORWARDED-SSL': 'on'}
+  forwarded_allow_ips: ['127.0.0.1']
+  accesslog: gunicorn/access.log
+  disable_redirect_access_to_syslog: False
+  access_log_format: %(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"
+  errorlog: gunicorn/error.log
+  loglevel: debug
+  capture_output: False
+  logger_class: gunicorn.glogging.Logger
+  logconfig: None
+  logconfig_dict: {}
+  syslog_addr: udp://localhost:514
+  syslog: False
+  syslog_prefix: None
+  syslog_facility: user
+  enable_stdio_inheritance: False
+  statsd_host: None
+  statsd_prefix: 
+  proc_name: None
+  default_proc_name: chat.wsgi:application
+  pythonpath: None
+  paste: None
+  on_starting: <function OnStarting.on_starting at 0x7fbf1eebcae8>
+  on_reload: <function OnReload.on_reload at 0x7fbf1eebcbf8>
+  when_ready: <function when_ready at 0x7fbf1eec36a8>
+  pre_fork: <function pre_fork at 0x7fbf1eec3598>
+  post_fork: <function post_fork at 0x7fbf1eec3510>
+  post_worker_init: <function PostWorkerInit.post_worker_init at 0x7fbf1eeda0d0>
+  worker_int: <function worker_int at 0x7fbf1eec3730>
+  worker_abort: <function worker_abort at 0x7fbf1eec37b8>
+  pre_exec: <function pre_exec at 0x7fbf1eec3620>
+  pre_request: <function PreRequest.pre_request at 0x7fbf1eeda510>
+  post_request: <function PostRequest.post_request at 0x7fbf1eeda598>
+  child_exit: <function ChildExit.child_exit at 0x7fbf1eeda6a8>
+  worker_exit: <function WorkerExit.worker_exit at 0x7fbf1eeda7b8>
+  nworkers_changed: <function NumWorkersChanged.nworkers_changed at 0x7fbf1eeda8c8>
+  on_exit: <function OnExit.on_exit at 0x7fbf1eeda9d8>
+  proxy_protocol: False
+  proxy_allow_ips: ['127.0.0.1']
+  keyfile: None
+  certfile: None
+  ssl_version: 2
+  cert_reqs: 0
+  ca_certs: None
+  suppress_ragged_eofs: True
+  do_handshake_on_connect: False
+  ciphers: TLSv1
+  raw_paste_global_conf: []
+[2019-05-28 20:12:31 +0900] [13244] [INFO] Starting gunicorn 19.9.0
+[2019-05-28 20:12:31 +0900] [13244] [DEBUG] Arbiter booted
+[2019-05-28 20:12:31 +0900] [13244] [INFO] Listening at: http://127.0.0.1:8001 (13244)
+[2019-05-28 20:12:31 +0900] [13244] [INFO] Using worker: sync
+[2019-05-28 20:12:31 +0900] [13244] [INFO] Server is ready. Spawning workers
+[2019-05-28 20:12:31 +0900] [13247] [INFO] Booting worker with pid: 13247
+[2019-05-28 20:12:31 +0900] [13247] [INFO] Worker spawned (pid: 13247)
+[2019-05-28 20:12:31 +0900] [13244] [DEBUG] 1 workers
+[2019-05-28 20:12:47 +0900] [13247] [DEBUG] GET /chat
+[2019-05-28 20:12:47 +0900] [13247] [DEBUG] GET /chat/
+[2019-05-28 20:12:49 +0900] [13247] [DEBUG] POST /chat/
+[2019-05-28 20:12:49 +0900] [13247] [DEBUG] GET /chat/top
+[2019-05-28 20:12:52 +0900] [13247] [DEBUG] GET /chat/history
+[2019-05-28 20:13:27 +0900] [13247] [DEBUG] GET /chat/admin
+[2019-05-28 20:13:27 +0900] [13247] [DEBUG] GET /chat/admin/
+[2019-05-28 20:13:29 +0900] [13247] [DEBUG] GET /chat/admin/chatapp/chatroommember/
+[2019-05-28 20:13:29 +0900] [13247] [DEBUG] GET /chat/admin/jsi18n/
+[2019-05-28 20:13:37 +0900] [13247] [DEBUG] GET /chat/admin/chatapp/chatroommember/2/change/
+[2019-05-28 20:13:37 +0900] [13247] [DEBUG] GET /chat/admin/jsi18n/
+[2019-05-28 20:57:42 +0900] [13247] [DEBUG] GET /chat/history
+[2019-05-28 20:57:42 +0900] [13247] [DEBUG] GET /chat/history
+[2019-05-28 20:57:50 +0900] [13247] [DEBUG] GET /chat/logout
+[2019-05-28 20:57:50 +0900] [13247] [DEBUG] GET /chat/
+[2019-05-28 20:58:01 +0900] [13247] [DEBUG] POST /chat/
+[2019-05-28 20:58:07 +0900] [13247] [DEBUG] POST /chat/
+[2019-05-28 20:58:17 +0900] [13247] [DEBUG] POST /chat/
+[2019-05-28 20:58:17 +0900] [13247] [DEBUG] GET /chat/top
+[2019-05-28 20:58:22 +0900] [13247] [DEBUG] GET /chat/history
+[2019-05-28 20:58:34 +0900] [13247] [DEBUG] GET /chat/top
+[2019-05-28 20:58:37 +0900] [13247] [DEBUG] GET /chat/history
+[2019-05-28 21:00:07 +0900] [13247] [DEBUG] GET /chat/history
+[2019-05-28 21:00:07 +0900] [13247] [DEBUG] GET /chat/history
+[2019-05-28 21:02:16 +0900] [13247] [DEBUG] GET /chat/user_update/10/
+[2019-05-28 21:02:25 +0900] [13247] [DEBUG] POST /chat/user_update/10/
+[2019-05-28 21:02:25 +0900] [13247] [DEBUG] GET /chat/user_update/10/
+[2019-05-28 21:02:28 +0900] [13247] [DEBUG] GET /chat/user_update/10/
+[2019-05-28 21:02:29 +0900] [13247] [DEBUG] GET /chat/top
+[2019-05-28 21:02:32 +0900] [13247] [DEBUG] GET /chat/history
+[2019-05-28 21:04:02 +0900] [13247] [DEBUG] GET /chat/logout
+[2019-05-28 21:04:02 +0900] [13247] [DEBUG] GET /chat/
+[2019-05-28 21:04:07 +0900] [13247] [DEBUG] POST /chat/
+[2019-05-28 21:04:07 +0900] [13247] [DEBUG] GET /chat/top
+[2019-05-28 21:04:11 +0900] [13247] [DEBUG] GET /chat/history
+[2019-05-28 21:04:23 +0900] [13247] [DEBUG] GET /chat/top
+[2019-05-28 21:04:27 +0900] [13247] [DEBUG] GET /chat/history
+[2019-05-28 21:06:37 +0900] [13247] [DEBUG] GET /chat/top
+[2019-05-28 21:06:37 +0900] [13247] [DEBUG] GET /chat/
+[2019-05-28 21:07:06 +0900] [13247] [DEBUG] GET /chat/top
+[2019-05-28 21:07:06 +0900] [13247] [DEBUG] GET /chat/
+[2019-05-28 21:07:46 +0900] [13247] [DEBUG] POST /chat/
+[2019-05-28 21:07:46 +0900] [13247] [DEBUG] GET /chat/top
+[2019-05-28 21:07:50 +0900] [13247] [DEBUG] GET /chat/history
+[2019-05-28 21:09:40 +0900] [13247] [DEBUG] GET /chat/top
+[2019-05-28 21:09:43 +0900] [13247] [DEBUG] GET /chat/history
+[2019-05-28 21:09:51 +0900] [13247] [DEBUG] GET /chat/history
+[2019-05-28 21:09:51 +0900] [13247] [DEBUG] GET /chat/history
+[2019-05-28 23:05:04 +0900] [13247] [DEBUG] GET /chat/top
+[2019-05-28 23:05:07 +0900] [13247] [DEBUG] GET /chat/history
+[2019-05-28 23:05:36 +0900] [13247] [DEBUG] GET /chat/logout
+[2019-05-28 23:05:36 +0900] [13247] [DEBUG] GET /chat/
+[2019-05-28 23:05:37 +0900] [13247] [DEBUG] GET /chat/password_reset/
+[2019-05-28 23:05:42 +0900] [13247] [DEBUG] POST /chat/password_reset/
+[2019-05-28 23:05:43 +0900] [13247] [DEBUG] GET /chat/password_reset/
+[2019-05-28 23:05:45 +0900] [13247] [DEBUG] GET /chat/password_reset/
+[2019-05-28 23:05:51 +0900] [13247] [DEBUG] GET /chat/top
+[2019-05-28 23:05:51 +0900] [13247] [DEBUG] GET /chat/
+[2019-05-28 23:05:53 +0900] [13247] [DEBUG] POST /chat/
+[2019-05-28 23:05:53 +0900] [13247] [DEBUG] GET /chat/top
+[2019-05-28 23:05:55 +0900] [13247] [DEBUG] GET /chat/history
+[2019-05-28 23:06:18 +0900] [13247] [DEBUG] GET /chat/password_reset/confirm/MTM/56p-f4545a0ec3d1570413e6/
+[2019-05-28 23:06:18 +0900] [13247] [DEBUG] GET /chat/password_reset/confirm/MTM/set-password/
+[2019-05-28 23:06:37 +0900] [13247] [DEBUG] POST /chat/password_reset/confirm/MTM/set-password/
+[2019-05-28 23:06:59 +0900] [13247] [DEBUG] POST /chat/password_reset/confirm/MTM/set-password/
+[2019-05-28 23:07:00 +0900] [13247] [DEBUG] GET /chat/password_reset/complete/
+[2019-05-28 23:07:02 +0900] [13247] [DEBUG] GET /chat/
+[2019-05-28 23:07:04 +0900] [13247] [DEBUG] POST /chat/
+[2019-05-28 23:07:13 +0900] [13247] [DEBUG] POST /chat/
+[2019-05-28 23:07:14 +0900] [13247] [DEBUG] GET /chat/top
+[2019-05-28 23:07:16 +0900] [13247] [DEBUG] GET /chat/history
+[2019-05-28 23:10:21 +0900] [13247] [DEBUG] GET /chat/top
+[2019-05-28 23:10:23 +0900] [13247] [DEBUG] GET /chat/history
+[2019-05-28 23:11:42 +0900] [13247] [DEBUG] GET /chat/top
+[2019-05-28 23:11:45 +0900] [13247] [DEBUG] GET /chat/history
+[2019-05-28 23:11:52 +0900] [13247] [DEBUG] GET /chat/history
+[2019-05-28 23:12:17 +0900] [13247] [DEBUG] GET /chat/top
+[2019-05-28 23:12:21 +0900] [13247] [DEBUG] GET /chat/history
+[2019-05-28 23:12:24 +0900] [13247] [DEBUG] GET /chat/history
+[2019-05-28 23:12:39 +0900] [13247] [DEBUG] GET /chat/top
+[2019-05-28 23:12:42 +0900] [13247] [DEBUG] GET /chat/history
+[2019-05-28 23:18:44 +0900] [13247] [DEBUG] GET /chat
+[2019-05-28 23:18:45 +0900] [13247] [DEBUG] GET /chat/
+[2019-05-28 23:18:47 +0900] [13247] [DEBUG] POST /chat/
+[2019-05-28 23:18:51 +0900] [13247] [DEBUG] POST /chat/
+[2019-05-28 23:18:57 +0900] [13247] [DEBUG] POST /chat/
+[2019-05-28 23:18:57 +0900] [13247] [DEBUG] GET /chat/top
+[2019-05-28 23:19:00 +0900] [13247] [DEBUG] GET /chat/history
+[2019-05-28 23:19:06 +0900] [13247] [DEBUG] GET /chat/history
+[2019-05-28 23:19:06 +0900] [13247] [DEBUG] GET /chat/history
+[2019-05-28 23:19:18 +0900] [13247] [DEBUG] GET /chat/history
+[2019-05-28 23:19:18 +0900] [13247] [DEBUG] GET /chat/history
+[2019-05-28 23:19:32 +0900] [13247] [DEBUG] GET /chat/admin
+[2019-05-28 23:19:32 +0900] [13247] [DEBUG] GET /chat/admin/
+[2019-05-28 23:19:36 +0900] [13247] [DEBUG] GET /chat/admin/chatapp/chatroommember/
+[2019-05-28 23:19:36 +0900] [13247] [DEBUG] GET /chat/admin/jsi18n/
+[2019-05-28 23:19:39 +0900] [13247] [DEBUG] GET /chat/admin/
+[2019-05-28 23:19:40 +0900] [13247] [DEBUG] GET /chat/admin/chatapp/chatroom/
+[2019-05-28 23:19:40 +0900] [13247] [DEBUG] GET /chat/admin/jsi18n/
+[2019-05-28 23:19:41 +0900] [13247] [DEBUG] GET /chat/admin/
+[2019-05-28 23:19:43 +0900] [13247] [DEBUG] GET /chat/admin/chatapp/user/
+[2019-05-28 23:19:43 +0900] [13247] [DEBUG] GET /chat/admin/jsi18n/
