@@ -1,2 +1,17 @@
-[ERROR]	asctime:2019-05-28 23:43:26,515	module:consumers	message:("local variable 'logger' referenced before assignment",)
-[INFO]	asctime:2019-05-28 23:44:01,323	module:consumers	message:after notify user
+[INFO]	asctime:2019-05-29 00:27:41,472	module:consumers	message:after notify user
+[INFO]	asctime:2019-05-29 00:27:49,710	module:consumers	message:after notify user
+[INFO]	asctime:2019-05-29 00:29:05,635	module:consumers	message:after notify user
+[INFO]	asctime:2019-05-29 00:29:08,749	module:consumers	message:after notify user
+[INFO]	asctime:2019-05-29 00:29:13,727	module:consumers	message:after notify user
+[INFO]	asctime:2019-05-29 08:56:55,188	module:consumers	message:after notify user
+[INFO]	asctime:2019-05-29 08:57:40,642	module:consumers	message:after notify user
+[INFO]	asctime:2019-05-29 08:58:22,447	module:consumers	message:after notify user
+[INFO]	asctime:2019-05-29 11:50:39,755	module:consumers	message:after notify user
+[INFO]	asctime:2019-05-29 11:54:00,433	module:consumers	message:after notify user
+[INFO]	asctime:2019-05-29 12:05:08,906	module:consumers	message:after notify user
+[INFO]	asctime:2019-05-29 12:09:20,144	module:consumers	message:after notify user
+[INFO]	asctime:2019-05-29 12:09:30,622	module:consumers	message:after notify user
+[INFO]	asctime:2019-05-29 12:11:01,494	module:consumers	message:after notify user
+[INFO]	asctime:2019-05-29 12:11:03,863	module:consumers	message:after notify user
+[INFO]	asctime:2019-05-29 12:11:05,543	module:consumers	message:after notify user
+[INFO]	asctime:2019-05-29 12:11:10,444	module:consumers	message:after notify user
