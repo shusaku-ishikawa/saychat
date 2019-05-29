@@ -23,7 +23,7 @@ timeout = 600
 keepalive = 2
 
 spew = False
-daemon = True
+daemon = False
 user = "chatuser"
 group = "chatuser"
 
