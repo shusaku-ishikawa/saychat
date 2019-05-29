@@ -54,18 +54,6 @@
         });
     }
 
-    function trim_date_str(original) {
-        var date = original.split(' ')[0];
-        var time = original.split(' ')[1];
-
-        month = date.split('/')[0].replace(/^0/, '');
-        day = date.split('/')[1].replace(/^0/, '');
-        
-        hour = time.split(':')[0].replace(/^0/, '');
-        minute = time.split(':')[1];
-
-        return month + '/' + day + ' ' + hour + ':' + minute
-    }
     function get_message_caption(message) {
         var char_num = 10;
         if (message.length < 10) {
@@ -91,6 +79,27 @@
             return entityMap[s];
         });
     }
+    function timestamp_to_readable(unixtime, as_jst = true) {
+        Date.prototype.addHours= function(h){
+            this.setHours(this.getHours()+h);
+            return this;
+        }
+
+        if (as_jst) {
+            var date = new Date(unixtime * 1000).addHours(9);
+        } else {
+            var date = new Date(unixtime * 1000);
+        }
+       
+        var month = date.getMonth() + 1 < 10 ? '0' + (date.getMonth() + 1):date.getMonth() + 1 ;
+        var day = date.getDate() < 10 ? '0' + date.getDate():date.getDate();
+        var hours = date.getHours() < 10 ? '0' + date.getHours():date.getHours();
+        var minutes = date.getMinutes() < 10 ? '0' + date.getMinutes():date.getMinutes();
+        var seconds = date.getSeconds() < 10 ? '0' + date.getSeconds():date.getSeconds();
+
+        return(month + "/" + day + " " + hours + ":" + minutes);
+    }
+
     function create_outgoing_message_dom(sent_by, thumbnail_url, sent_at, message, attachments, is_read) {
         console.log(sent_at)
         var $outer = $('<div>', { class: 'row outgoing_msg' });
@@ -123,7 +132,7 @@
             }))
             .appendTo($attchment_area).append($('<br>'));
         });
-        $('<span>', { class : 'outgoing_time_date', text: trim_date_str(sent_at) }).appendTo($inner);
+        $('<span>', { class : 'outgoing_time_date', text: timestamp_to_readable(sent_at, false) }).appendTo($inner);
         if (is_read) {
             $('<div>', { class: 'outgoing_is_read' }).append($('<i>', { class : "fas fa-check" })).append($('<span>', { text: '開封済' })).appendTo($inner);
             //$('<span>', { class : 'outgoing_is_read', text: '開封済み' }).appendTo($inner);
@@ -172,19 +181,12 @@
             }))
             .appendTo($attachment_area).append($('<br>'));
         });
-        var $sent_at = $('<span>', { class : 'time_date', text: trim_date_str(sent_at) }).appendTo($msg_inner);
+        var $sent_at = $('<span>', { class : 'time_date', text: timestamp_to_readable(sent_at, false) }).appendTo($msg_inner);
         
         return $outer;
     }
 
-    function getCurrentTime() {
-        var now = new Date();
-        var res = "" + padZero(now.getMonth() + 1) + 
-            "/" + padZero(now.getDate()) + " " + padZero(now.getHours()) + ":" + 
-            padZero(now.getMinutes());
-        return res;
-    }
-    
+   
     //先頭ゼロ付加
     function padZero(num) {
         var result;
@@ -292,7 +294,7 @@
                     $room_btn = $('button[room_id="' + data.room + '"]');
                     if (data.user != user_id) {
                         $room_btn.attr('opponent_is_reading', 'False');
-                        $room_btn.attr('opponent_last_logout', getCurrentTime());    
+                        $room_btn.attr('opponent_last_logout', new Date().getTime());    
                     }
                     
                     break;

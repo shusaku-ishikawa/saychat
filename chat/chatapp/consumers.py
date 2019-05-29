@@ -59,6 +59,7 @@ class ChatConsumer(AsyncJsonWebsocketConsumer):
             print('commend send')
             try:
                 await self.send_room(content["room"], content["message"], content['attachment'])
+                mylogger.info('after send room')
             except Exception as e:
                 mylogger.error(str(e.args))
 

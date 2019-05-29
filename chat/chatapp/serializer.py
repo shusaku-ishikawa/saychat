@@ -1,7 +1,8 @@
 from rest_framework import serializers
-from drf_extra_fields.fields import Base64ImageField
 from .models import *
 from django.core.exceptions import ObjectDoesNotExist
+import time
+from datetime import datetime, timedelta
 
 class UserSerializer(serializers.ModelSerializer):
     class Meta:
@@ -26,11 +27,14 @@ class AttachmentSerializer(serializers.ModelSerializer):
         model = Attachment
         fields = ('file','file_url', 'file_name')
 
-    
+class TimestampField(serializers.Field):
+    def to_representation(self, value):
+        return int(time.mktime(value.timetuple())) + 60 * 60 * 9
+
 class ChatMessageSerializer(serializers.ModelSerializer):
     speaker = UserSerializer(many = False, read_only = True)
     room = ChatRoomSerializer(many = False, read_only = True)
-    sent_at = serializers.DateTimeField(format="%m/%d %H:%M")
+    sent_at = TimestampField()
     attachments = AttachmentSerializer(many = True, read_only = True)
     class Meta:
         model = ChatMessage

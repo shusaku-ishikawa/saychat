@@ -264,7 +264,7 @@ class ChatMessage(models.Model):
     def is_read(self):
         rm = ChatRoomMember.objects.get(room = self.room, user = self.user)
         opponent = rm.opponent
-        if opponent.is_online:
+        if opponent.is_reading:
             return True
         else:
             if opponent.last_logout > self.sent_at:

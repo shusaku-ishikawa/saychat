@@ -52,8 +52,8 @@ def history(request):
 
     all_messages = ChatMessage.objects.filter(room = room).order_by('-sent_at')[offset:offset + limit]
 
-    serializer = ChatMessageSerializer(all_messages, many = True)
-    return JsonResponse(serializer.data, status = 200, safe = False)
+    serializered = ChatMessageSerializer(all_messages, many = True).data
+    return JsonResponse(serializered, status = 200, safe = False)
 
 
 
