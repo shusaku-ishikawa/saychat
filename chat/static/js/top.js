@@ -16,6 +16,11 @@
     var $preview_zone = $('#preview_zone');
     var attachment_pk_list = [];
     var $file_select_btn = $('button[name="fileupload"]');
+    var $loader_area = $('.loader-layer');
+    var $my_modal = $('#msg_modal');
+    var $my_modal_title = $('#modal_title');
+    var $my_modal_body = $('#modal_body');
+    
 
 
     const MSG_TYPE_MESSAGE = 0  // For standard messages
@@ -54,18 +59,6 @@
         });
     }
 
-    function trim_date_str(original) {
-        var date = original.split(' ')[0];
-        var time = original.split(' ')[1];
-
-        month = date.split('/')[0].replace(/^0/, '');
-        day = date.split('/')[1].replace(/^0/, '');
-        
-        hour = time.split(':')[0].replace(/^0/, '');
-        minute = time.split(':')[1];
-
-        return month + '/' + day + ' ' + hour + ':' + minute
-    }
     function get_message_caption(message) {
         var char_num = 10;
         if (message.length < 10) {
@@ -91,6 +84,27 @@
             return entityMap[s];
         });
     }
+    function timestamp_to_readable(unixtime, as_jst = true) {
+        Date.prototype.addHours= function(h){
+            this.setHours(this.getHours()+h);
+            return this;
+        }
+
+        if (as_jst) {
+            var date = new Date(unixtime * 1000).addHours(9);
+        } else {
+            var date = new Date(unixtime * 1000);
+        }
+       
+        var month = date.getMonth() + 1 < 10 ? '0' + (date.getMonth() + 1):date.getMonth() + 1 ;
+        var day = date.getDate() < 10 ? '0' + date.getDate():date.getDate();
+        var hours = date.getHours() < 10 ? '0' + date.getHours():date.getHours();
+        var minutes = date.getMinutes() < 10 ? '0' + date.getMinutes():date.getMinutes();
+        var seconds = date.getSeconds() < 10 ? '0' + date.getSeconds():date.getSeconds();
+
+        return(month + "/" + day + " " + hours + ":" + minutes);
+    }
+
     function create_outgoing_message_dom(sent_by, thumbnail_url, sent_at, message, attachments, is_read) {
         console.log(sent_at)
         var $outer = $('<div>', { class: 'row outgoing_msg' });
@@ -123,7 +137,7 @@
             }))
             .appendTo($attchment_area).append($('<br>'));
         });
-        $('<span>', { class : 'outgoing_time_date', text: trim_date_str(sent_at) }).appendTo($inner);
+        $('<span>', { class : 'outgoing_time_date', text: timestamp_to_readable(sent_at, false) }).appendTo($inner);
         if (is_read) {
             $('<div>', { class: 'outgoing_is_read' }).append($('<i>', { class : "fas fa-check" })).append($('<span>', { text: '開封済' })).appendTo($inner);
             //$('<span>', { class : 'outgoing_is_read', text: '開封済み' }).appendTo($inner);
@@ -172,19 +186,12 @@
             }))
             .appendTo($attachment_area).append($('<br>'));
         });
-        var $sent_at = $('<span>', { class : 'time_date', text: trim_date_str(sent_at) }).appendTo($msg_inner);
+        var $sent_at = $('<span>', { class : 'time_date', text: timestamp_to_readable(sent_at, false) }).appendTo($msg_inner);
         
         return $outer;
     }
 
-    function getCurrentTime() {
-        var now = new Date();
-        var res = "" + padZero(now.getMonth() + 1) + 
-            "/" + padZero(now.getDate()) + " " + padZero(now.getHours()) + ":" + 
-            padZero(now.getMinutes());
-        return res;
-    }
-    
+   
     //先頭ゼロ付加
     function padZero(num) {
         var result;
@@ -292,7 +299,7 @@
                     $room_btn = $('button[room_id="' + data.room + '"]');
                     if (data.user != user_id) {
                         $room_btn.attr('opponent_is_reading', 'False');
-                        $room_btn.attr('opponent_last_logout', getCurrentTime());    
+                        $room_btn.attr('opponent_last_logout', new Date().getTime());    
                     }
                     
                     break;
@@ -379,8 +386,8 @@
         };
 
         chatSocket.onclose = function(e) {
-             console.log(e);
-             console.error('Chat socket closed unexpectedly');
+            $my_modal_body.text('サーバとの通信が切断されました。画面の再読み込みを行ってください。');
+            $my_modal.modal('show');
         };
 
         $input_message.focus();
@@ -390,7 +397,8 @@
 
             var message = $input_message.val();
             if (message == '' && attachment_pk_list.length == 0) {
-                alert('メッセージを入力してください')
+                $my_modal_body.text('メッセージを入力してください');
+                $my_modal.modal('show');
                 return;
             }
 
@@ -414,7 +422,8 @@
                 call_history_api(active_room_id, message_offset, MSG_COUNT_PER_READ)
                 .done(load_messages_call_back(false,  opponent_is_reading, opponent_last_logout))
                 .fail(function() {
-                    alert('hello');
+                    $my_modal_body.text('過去メッセージの取得に失敗しました');
+                    $my_modal.modal('show');
                 });
             }
         });
@@ -457,7 +466,8 @@
                 call_history_api(active_room_id, message_offset, MSG_COUNT_PER_READ)
                 .done(load_messages_call_back(true, opponent_is_reading, opponent_last_logout))
                 .fail(function() {
-                    alert('hello');
+                    $my_modal_body.text('過去メッセージの取得に失敗しました');
+                    $my_modal.modal('show');
                 });
             }
         });
@@ -465,6 +475,7 @@
         $(document).on("keydown", "#chat-message-input", function(e){   
             if(e.shiftKey) {
                 if (e.keyCode === 13){
+                    e.preventDefault();
                     $btn_message_send.click();
                } 
             } 
@@ -480,7 +491,13 @@
             singleFileUploads: true,
             autoUpload: true,
             replaceFileInput: false,
+            add: function (e, data) {
+                
+                $loader_area.show();
+                data.submit();
+            },
             done: function (e, data) {  /* 3. PROCESS THE RESPONSE FROM THE SERVER */
+                $loader_area.hide();
                 if (data.result.error) {
                     alert('error');
                   
@@ -522,6 +539,8 @@
                 $del_btn = $('<button>', { text:'×', class:'btn del-img-btn'})
                 .appendTo($wrapper)
                 .on('click', function() {
+                    var $this = $(this);
+                    console.log('click')
                     var i = attachment_pk_list.indexOf($(this).attr('pk'));
                     attachment_pk_list.splice(i, 1);
                     call_attachment('DELETE', $(this).attr('pk'))
@@ -531,7 +550,7 @@
                             return;
                         }
                         $file_uploader.val("");
-                        $(this).parent().parent().remove();
+                        $this.parent().parent().remove();
                     })
                     .fail(function(data, textStatus, xhr) {
                         if (data.status == 401) {
@@ -546,15 +565,14 @@
                 
             },
             fail: function (e, data) {
-                alert('失敗しました');
+                $loader_area.hide();
+                $my_modal_body.text('ファイルをアップロードできませんでした');
+                $my_modal.modal('show');
                 return;
             }
         });
         
-        var last_room_id = $.cookie(COOKIE_LAST_ROOM_ID);
-        if (last_room_id !== null) {
-            //$('button[room_id="' + last_room_id + '"]').click();
-        }
+      
         openNav();
        
     });
