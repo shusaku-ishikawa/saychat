@@ -51,6 +51,11 @@
       body {
         background-color: #f8f9fa;
       }
+      .dismiss-btn {
+        background-color: var(--red);
+        color:white;
+        
+      }
     </style>
     {% block style %}{% endblock %}
     
@@ -90,6 +95,18 @@
     <!-- メインコンテント -->
     <div class="container my-container">
         {% block content %}{% endblock %}
+        <div class="modal fade" id="msg_modal" tabindex="-1" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-body" id="modal_body">
+                Modal body
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn dismiss-btn" data-dismiss="modal">閉じる</button>
+              </div>
+            </div>
+          </div>
+      </div>
     </div>
     <script>
       function getCookie(name) {

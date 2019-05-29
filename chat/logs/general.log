@@ -23,3 +23,5 @@
 [INFO]	asctime:2019-05-29 14:32:20,370	module:consumers	message:after send room
 [INFO]	asctime:2019-05-29 16:47:54,548	module:consumers	message:after notify user
 [INFO]	asctime:2019-05-29 16:47:54,557	module:consumers	message:after send room
+[INFO]	asctime:2019-05-29 20:42:10,678	module:consumers	message:after notify user
+[INFO]	asctime:2019-05-29 20:42:10,682	module:consumers	message:after send room

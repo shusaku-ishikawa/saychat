@@ -16,6 +16,11 @@
     var $preview_zone = $('#preview_zone');
     var attachment_pk_list = [];
     var $file_select_btn = $('button[name="fileupload"]');
+    var $loader_area = $('.loader-layer');
+    var $my_modal = $('#msg_modal');
+    var $my_modal_title = $('#modal_title');
+    var $my_modal_body = $('#modal_body');
+    
 
 
     const MSG_TYPE_MESSAGE = 0  // For standard messages
@@ -381,8 +386,8 @@
         };
 
         chatSocket.onclose = function(e) {
-             console.log(e);
-             console.error('Chat socket closed unexpectedly');
+            $my_modal_body.text('サーバとの通信が切断されました。画面の再読み込みを行ってください。');
+            $my_modal.modal('show');
         };
 
         $input_message.focus();
@@ -392,7 +397,8 @@
 
             var message = $input_message.val();
             if (message == '' && attachment_pk_list.length == 0) {
-                alert('メッセージを入力してください')
+                $my_modal_body.text('メッセージを入力してください');
+                $my_modal.modal('show');
                 return;
             }
 
@@ -416,7 +422,8 @@
                 call_history_api(active_room_id, message_offset, MSG_COUNT_PER_READ)
                 .done(load_messages_call_back(false,  opponent_is_reading, opponent_last_logout))
                 .fail(function() {
-                    alert('hello');
+                    $my_modal_body.text('過去メッセージの取得に失敗しました');
+                    $my_modal.modal('show');
                 });
             }
         });
@@ -459,7 +466,8 @@
                 call_history_api(active_room_id, message_offset, MSG_COUNT_PER_READ)
                 .done(load_messages_call_back(true, opponent_is_reading, opponent_last_logout))
                 .fail(function() {
-                    alert('hello');
+                    $my_modal_body.text('過去メッセージの取得に失敗しました');
+                    $my_modal.modal('show');
                 });
             }
         });
@@ -467,6 +475,7 @@
         $(document).on("keydown", "#chat-message-input", function(e){   
             if(e.shiftKey) {
                 if (e.keyCode === 13){
+                    e.preventDefault();
                     $btn_message_send.click();
                } 
             } 
@@ -482,7 +491,13 @@
             singleFileUploads: true,
             autoUpload: true,
             replaceFileInput: false,
+            add: function (e, data) {
+                
+                $loader_area.show();
+                data.submit();
+            },
             done: function (e, data) {  /* 3. PROCESS THE RESPONSE FROM THE SERVER */
+                $loader_area.hide();
                 if (data.result.error) {
                     alert('error');
                   
@@ -524,6 +539,8 @@
                 $del_btn = $('<button>', { text:'×', class:'btn del-img-btn'})
                 .appendTo($wrapper)
                 .on('click', function() {
+                    var $this = $(this);
+                    console.log('click')
                     var i = attachment_pk_list.indexOf($(this).attr('pk'));
                     attachment_pk_list.splice(i, 1);
                     call_attachment('DELETE', $(this).attr('pk'))
@@ -533,7 +550,7 @@
                             return;
                         }
                         $file_uploader.val("");
-                        $(this).parent().parent().remove();
+                        $this.parent().parent().remove();
                     })
                     .fail(function(data, textStatus, xhr) {
                         if (data.status == 401) {
@@ -548,15 +565,14 @@
                 
             },
             fail: function (e, data) {
-                alert('失敗しました');
+                $loader_area.hide();
+                $my_modal_body.text('ファイルをアップロードできませんでした');
+                $my_modal.modal('show');
                 return;
             }
         });
         
-        var last_room_id = $.cookie(COOKIE_LAST_ROOM_ID);
-        if (last_room_id !== null) {
-            //$('button[room_id="' + last_room_id + '"]').click();
-        }
+      
         openNav();
        
     });
