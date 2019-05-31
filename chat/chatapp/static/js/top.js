@@ -257,8 +257,8 @@
         var ws_scheme = window.location.protocol == "https:" ? "wss" : "ws";
         var ws_path = ws_scheme + '://' + window.location.host + "/ws/";
         console.log("Connecting to " + ws_path);
-        //var chatSocket = new WebSocket(ws_path);
-        var chatSocket = new WebSocket(ws_path);
+       
+        var chatSocket = new ReconnectingWebSocket(ws_path);
         
         chatSocket.onopen = function(e) {
           console.log(e);
@@ -400,8 +400,7 @@
         };
 
         chatSocket.onclose = function(e) {
-            $my_modal_body.text('サーバとの通信が切断されました。画面の再読み込みを行ってください。');
-            $my_modal.modal('show');
+            console.log('socket closed');
         };
 
         $input_message.focus();
