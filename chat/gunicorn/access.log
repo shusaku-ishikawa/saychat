@@ -2268,3 +2268,5 @@
 127.0.0.1 - - [31/May/2019:10:10:29 +0900] "GET /chat/top HTTP/1.0" 200 25441 "-" "Mozilla/5.0 (Windows NT 10.0; WOW64; Trident/7.0; rv:11.0) like Gecko"
 127.0.0.1 - - [31/May/2019:10:11:24 +0900] "GET /chat/top HTTP/1.0" 200 25441 "-" "Mozilla/5.0 (Windows NT 10.0; WOW64; Trident/7.0; rv:11.0) like Gecko"
 127.0.0.1 - - [31/May/2019:10:13:21 +0900] "GET /chat/top HTTP/1.0" 200 25441 "-" "Mozilla/5.0 (Windows NT 10.0; WOW64; Trident/7.0; rv:11.0) like Gecko"
+127.0.0.1 - - [31/May/2019:10:17:06 +0900] "GET /chat/top HTTP/1.0" 200 25439 "-" "Mozilla/5.0 (Windows NT 10.0; WOW64; Trident/7.0; rv:11.0) like Gecko"
+127.0.0.1 - - [31/May/2019:10:17:33 +0900] "GET /chat/top HTTP/1.0" 200 25439 "-" "Mozilla/5.0 (Windows NT 10.0; WOW64; Trident/7.0; rv:11.0) like Gecko"
