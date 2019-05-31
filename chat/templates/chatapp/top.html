@@ -306,7 +306,7 @@
     position: absolute;
     right: 0px;
     top: -15px;
-    background-color: var(--red);
+    background-color: #db362e;
     color:white;
     height: 40px;
     width: 40px;
@@ -455,19 +455,7 @@
     var user_id = '{{ user.pk }}';
     var file_prev_file = "{% static 'img/file.png' %}";
     var progress_img = "{% static 'img/ajax-loader.gif' %}";
-    function openNav() {
-      $('.openbtn').hide();
-      document.getElementById("mySidebar").style.width = "375px";
-      document.getElementById("main").style.marginLeft = "375px";
-    }
 
-    /* Set the width of the sidebar to 0 and the left margin of the page content to 0 */
-    function closeNav() {
-      $('.openbtn').show();
-      document.getElementById("mySidebar").style.width = "0";
-      document.getElementById("main").style.marginLeft = "0";
-    }
-    
 </script>
 <script src="{% static 'js/top.js' %}"></script>
 

@@ -20,7 +20,7 @@
     var $my_modal = $('#msg_modal');
     var $my_modal_title = $('#modal_title');
     var $my_modal_body = $('#modal_body');
-    
+    var $open_btn = $('.openbtn');
 
 
     const MSG_TYPE_MESSAGE = 0  // For standard messages
@@ -191,6 +191,20 @@
         return $outer;
     }
 
+    function openNav() {
+        $('.openbtn').hide();
+        $('#mySidebar').width("375px");
+        $('#main').css('marginLeft', "375px");
+       
+    }
+  
+      /* Set the width of the sidebar to 0 and the left margin of the page content to 0 */
+    function closeNav() {
+        $('.openbtn').show();
+        $('#mySidebar').width("0");
+        $('#main').css('marginLeft', "0");
+    }
+      
    
     //先頭ゼロ付加
     function padZero(num) {
@@ -391,6 +405,7 @@
         };
 
         $input_message.focus();
+
 
         $btn_message_send.on('click', function(e) {
             
