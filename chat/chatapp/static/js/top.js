@@ -84,7 +84,7 @@
             return entityMap[s];
         });
     }
-    function timestamp_to_readable(unixtime, as_jst = true) {
+    function timestamp_to_readable(unixtime, as_jst) {
         Date.prototype.addHours= function(h){
             this.setHours(this.getHours()+h);
             return this;
