@@ -475,15 +475,15 @@
         $(document).on("keydown", "#chat-message-input", function(e){   
             if(e.shiftKey) {
                 if (e.keyCode === 13){
-                    e.preventDefault();
                     $btn_message_send.click();
+                    e.preventDefault();
                } 
             } 
         });
 
          /* 2. INITIALIZE THE FILE UPLOAD COMPONENT */
          $file_select_btn.on('click', function() {
-           $file_uploader.click();
+           $file_uploader.click;
          });
 
          $file_uploader.fileupload({
