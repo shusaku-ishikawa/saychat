@@ -497,7 +497,7 @@
 
          /* 2. INITIALIZE THE FILE UPLOAD COMPONENT */
          $file_select_btn.on('click', function() {
-           $file_uploader.click;
+           $file_uploader.click();
          });
 
          $file_uploader.fileupload({
